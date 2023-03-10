@@ -31,7 +31,7 @@ with manual processes. The user-friendly interface and the ability to store larg
 will be valuable assets for the administrator to make informed decisions
 
 
-<table class="styled-table">
+<table>
     <thead>
         <tr>
             <th>Name with Initials</th>
@@ -39,8 +39,9 @@ will be valuable assets for the administrator to make informed decisions
             <th>Contact Phone Number</th>
             <th>Email</th>
         </tr>
-    </thead>
-    <tbody>
+   </thead>
+  
+  <tbody>
         <tr>
             <td>Sandanayake H.D</td>
             <td>IT21265174</td>
@@ -91,6 +92,5 @@ will be valuable assets for the administrator to make informed decisions
         </tr>
        
     </tbody>
- 
-</table>
+ </table>
 
