@@ -34,7 +34,7 @@ will be valuable assets for the administrator to make informed decisions
     </thead>
     <tbody>
         <tr class=""active-row>
-            <td>Sandanayake H.D <img src="https://komarev.com/ghpvc/?username=devsandanayake&label=Group%20Leader&color=0e75b6&style=flat" /></td>
+            <td><img src="https://komarev.com/ghpvc/?username=devsandanayake&label=Group%20Leader&color=0e75b6&style=flat" />Sandanayake H.D </td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
