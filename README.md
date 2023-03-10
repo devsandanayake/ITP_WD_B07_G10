@@ -36,10 +36,11 @@ will be valuable assets for the administrator to make informed decisions
     </thead>
     <tbody>
         <tr class=""active-row>
-            <td>Sandanayake H.D<img src="https://img.shields.io/badge/ld-Leader-red"></td>
+            <td>Sandanayake H.D</td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
+            <td><img src="https://img.shields.io/badge/⭐-Leader-red"></td>
         </tr>
         <tr>
             <td>Wickramaarachchi W.A.N.D</td>
