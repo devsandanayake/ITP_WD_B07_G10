@@ -30,7 +30,7 @@ mobile shop, allowing the management to focus on growing their business rather t
 with manual processes. The user-friendly interface and the ability to store large amounts of data 
 will be valuable assets for the administrator to make informed decisions
 
-
+<body>
 <table class="styled-table">
     <thead>
         <tr>
@@ -92,6 +92,7 @@ will be valuable assets for the administrator to make informed decisions
         <!-- and so on... -->
     </tbody>
 </table>
+<style>
 .styled-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -124,3 +125,5 @@ will be valuable assets for the administrator to make informed decisions
     font-weight: bold;
     color: #009879;
 }
+</style>
+</body>
