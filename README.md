@@ -5,14 +5,7 @@
 
 # ITP_WD_B07_G10
 
-1. Sandanayake H.D - IT21265174 (Leader)
-2. Wijayanayake J.M.A.P - IT21272790
-3. Chandrasena R HV - IT21264566
-4. Chamod S.G.K - IT21261596
-5. Wickramaarachchi W.A.N.D - IT21272868
-6. Wijerama H.J.K.S.R - IT21343520
-7. Wickramasinghe W.A.R.M - IT21233494
-8. Gunathilaka K.A.R - IT21265006
+ 
 
 Description of the Project:
              The Mern web application being developed for the Onetel mobile shop is aimed at streamlining 
@@ -41,7 +34,7 @@ will be valuable assets for the administrator to make informed decisions
     </thead>
     <tbody>
         <tr class=""active-row>
-            <td>Sandanayake H.D <img src="https://komarev.com/ghpvc/?username=devsandanayake&label=Group%20Leader&color=0e75b6&style=flat" alt="devsandanayake" /></td>
+            <td>Sandanayake H.D <img src="https://komarev.com/ghpvc/?username=devsandanayake&label=Group%20Leader&color=0e75b6&style=flat" /></td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
