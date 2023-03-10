@@ -48,8 +48,46 @@ will be valuable assets for the administrator to make informed decisions
             <td>it21265174@my.sliit.lk</td>
         </tr>
         <tr class="active-row">
-            <td>Melissa</td>
-            <td>5150</td>
+             <td>Wickramaarachchi W.A.N.D</td>
+            <td>IT21265174</td>
+            <td>0717648566</td>
+            <td>it21265174@my.sliit.lk</td>
+        </tr>
+        <tr class="active-row">
+             <td>Gunathilaka K.A.R</td>
+            <td>IT21265174</td>
+            <td>0717648566</td>
+            <td>it21265174@my.sliit.lk</td>
+        </tr>
+        <tr class="active-row">
+             <td>Chamod S.G.K</td>
+            <td>IT21265174</td>
+            <td>0717648566</td>
+            <td>it21265174@my.sliit.lk</td>
+        </tr>
+        <tr class="active-row">
+             <td>Chandrasena R.H.V</td>
+            <td>IT21265174</td>
+            <td>0717648566</td>
+            <td>it21265174@my.sliit.lk</td>
+        </tr>
+        <tr class="active-row">
+             <td>Wijayanayake J.M.A.P</td>
+            <td>IT21265174</td>
+            <td>0717648566</td>
+            <td>it21265174@my.sliit.lk</td>
+        </tr>
+         <tr class="active-row">
+             <td>Wickramasinghe W.A.R.M</td>
+            <td>IT21265174</td>
+            <td>0717648566</td>
+            <td>it21265174@my.sliit.lk</td>
+        </tr>
+         <tr class="active-row">
+             <td>Wijerama H.J.K.S.R</td>
+            <td>IT21265174</td>
+            <td>0717648566</td>
+            <td>it21265174@my.sliit.lk</td>
         </tr>
         <!-- and so on... -->
     </tbody>
