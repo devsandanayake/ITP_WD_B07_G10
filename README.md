@@ -2,6 +2,7 @@
 
 <img src="https://img.shields.io/github/gist/stars/45?style=social">
 <img src="https://img.shields.io/github/watchers/badges/shields?style=social">
+<img src="https://komarev.com/ghpvc/?username=devsandanayake&label=%20Leader&color=0e75b6&style=flat" alt="devsandanayake" />
 
 
 # ITP_WD_B07_G10
@@ -39,7 +40,7 @@ will be valuable assets for the administrator to make informed decisions
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
-            <img src="https://komarev.com/ghpvc/?username=ds&label=%20Leader&color=0e75b6&style=flat" />
+           
         </tr>
         <tr>
             <td>Wickramaarachchi W.A.N.D</td>
