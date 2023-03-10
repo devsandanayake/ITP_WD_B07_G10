@@ -5,7 +5,7 @@
 
 # ITP_WD_B07_G10
 
-1. Sandanayake H.D - IT21265174
+1. Sandanayake H.D - IT21265174 (Leader)
 2. Wijayanayake J.M.A.P - IT21272790
 3. Chandrasena R HV - IT21264566
 4. Chamod S.G.K - IT21261596
