@@ -32,7 +32,7 @@ will be valuable assets for the administrator to make informed decisions
 
 <body>
 <table class="styled-table">
-    <thead>
+    <thead bgcolor="green">
         <tr>
             <th>Name with Initials</th>
             <th>Registration Number</th>
