@@ -29,7 +29,7 @@ Description of the Project:
        with manual processes. The user-friendly interface and the ability to store large amounts of data 
        will be valuable assets for the administrator to make informed decisions
 
-<table class="styled-table">
+<table class="styled-table" align="center">
     <thead>
         <tr>
               <th>Name with Initials</th>
