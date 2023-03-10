@@ -29,3 +29,28 @@ The Mern web application will bring a new level of organization and efficiency t
 mobile shop, allowing the management to focus on growing their business rather than dealing 
 with manual processes. The user-friendly interface and the ability to store large amounts of data 
 will be valuable assets for the administrator to make informed decisions
+
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Name with Initials</th>
+            <th>Registration Number</th>
+            <th>Contact Phone Number</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Sandanayake H.D</td>
+            <td>IT21265174</td>
+            <td>0717648566</td>
+            <td>it21265174@my.sliit.lk</td>
+        </tr>
+        <tr class="active-row">
+            <td>Melissa</td>
+            <td>5150</td>
+        </tr>
+        <!-- and so on... -->
+    </tbody>
+</table>
