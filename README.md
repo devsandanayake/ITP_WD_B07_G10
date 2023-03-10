@@ -31,7 +31,7 @@ with manual processes. The user-friendly interface and the ability to store larg
 will be valuable assets for the administrator to make informed decisions
 
 <body>
-<table class="styled-table">
+<table class="styled-table" style="bgcolor:red">
     <thead bgcolor="green">
         <tr>
             <th>Name with Initials</th>
