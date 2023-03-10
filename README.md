@@ -36,7 +36,7 @@ Description of the Project:
             <th>Registration Number</th>
             <th>Contact Phone Number</th>
             <th>Email</th>
-            <th></th>
+            <th>Badge</th>
         </tr>
     </thead>
     <tbody>
