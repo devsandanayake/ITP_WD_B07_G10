@@ -1,6 +1,6 @@
 ![MasterHead](https://static.sliit.lk/wp-content/uploads/2021/10/24070027/SLIIT.png)
 
-
+<img src="https://img.shields.io/github/gist/stars/25?style=social">
 
 
 # ITP_WD_B07_G10
@@ -34,10 +34,11 @@ will be valuable assets for the administrator to make informed decisions
     </thead>
     <tbody>
         <tr class=""active-row>
-            <td><img src="https://komarev.com/ghpvc/?username=devsandanayake&label=Group%20Leader&color=0e75b6&style=flat" />Sandanayake H.D </td>
+            <td>Sandanayake H.D</td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
+            <img src="https://komarev.com/ghpvc/?username=ds&label=%20Leader&color=0e75b6&style=flat" />
         </tr>
         <tr>
             <td>Wickramaarachchi W.A.N.D</td>
