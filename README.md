@@ -30,9 +30,9 @@ mobile shop, allowing the management to focus on growing their business rather t
 with manual processes. The user-friendly interface and the ability to store large amounts of data 
 will be valuable assets for the administrator to make informed decisions
 
-<body>
-<table class="styled-table" style='background:red'>
-    <thead bgcolor="green">
+
+<table class="styled-table">
+    <thead>
         <tr>
             <th>Name with Initials</th>
             <th>Registration Number</th>
@@ -47,87 +47,50 @@ will be valuable assets for the administrator to make informed decisions
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
         </tr>
-        <tr class="active-row">
+        <tr>
              <td>Wickramaarachchi W.A.N.D</td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
         </tr>
-        <tr class="active-row">
-             <td>Gunathilaka K.A.R</td>
+        <tr>
+            <td>Gunathilaka K.A.R</td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
         </tr>
-        <tr class="active-row">
+        <tr>
              <td>Chamod S.G.K</td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
         </tr>
-        <tr class="active-row">
+        <tr>
              <td>Chandrasena R.H.V</td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
         </tr>
-        <tr class="active-row">
+        <tr>
              <td>Wijayanayake J.M.A.P</td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
         </tr>
-         <tr class="active-row">
+         <tr>
              <td>Wickramasinghe W.A.R.M</td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
         </tr>
-         <tr class="active-row">
+         <tr>
              <td>Wijerama H.J.K.S.R</td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
         </tr>
-        <!-- and so on... -->
+       
     </tbody>
-<style>    
-    
-    .styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-.styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
-}
-</style>
+ 
 </table>
-<style>
 
-</style>
-</body>
