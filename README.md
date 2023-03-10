@@ -59,42 +59,42 @@ Description of the Project:
             <td>IT21265006</td>
             <td>0711506842</td>
             <td>it21265006@my.sliit.lk</td>
-             <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
+            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
         </tr>
         <tr>
-             <td>Chamod S.G.K</td>
+            <td>Chamod S.G.K</td>
             <td>IT21261596</td>
             <td>0766642546</td>
             <td>it21262596@my.sliit.lk</td>
-             <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
+            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
         </tr>
          <tr>
+            <td>Wijayanayake J.M.A.P</td>
+            <td>IT21272790</td>
+            <td>0717648566</td>
+            <td>it21272790@my.sliit.lk</td>
+            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
+         </tr>
+        <tr>
             <td>Chandrasena R.H.V</td>
             <td>IT21264566</td>
             <td>0717648566</td>
             <td>it21264566@my.sliit.lk</td>
-             <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
-        </tr>
-        <tr>
-             <td>Wijayanayake J.M.A.P</td>
-            <td>IT21272790</td>
-            <td>0717648566</td>
-            <td>it21272790@my.sliit.lk</td>
-             <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
-        </tr>
+            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
+         </tr>
          <tr>
-             <td>Wickramasinghe W.A.R.M</td>
+            <td>Wickramasinghe W.A.R.M</td>
             <td>IT21233494</td>
             <td>0717648566</td>
             <td>it21233494@my.sliit.lk</td>
-             <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
+            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
         </tr>
          <tr>
-             <td>Wijerama H.J.K.S.R</td>
+            <td>Wijerama H.J.K.S.R</td>
             <td>IT21343520</td>
             <td>0717648566</td>
             <td>it21343520@my.sliit.lk</td>
-             <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
+            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
         </tr>
         <!-- and so on... -->
     </tbody>
