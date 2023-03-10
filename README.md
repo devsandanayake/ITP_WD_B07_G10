@@ -41,7 +41,7 @@ will be valuable assets for the administrator to make informed decisions
         </tr>
    </thead>
   
-  <tbody>
+  
         <tr>
             <td>Sandanayake H.D</td>
             <td>IT21265174</td>
@@ -91,6 +91,6 @@ will be valuable assets for the administrator to make informed decisions
             <td>it21265174@my.sliit.lk</td>
         </tr>
        
-    </tbody>
+    
  </table>
 
