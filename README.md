@@ -36,7 +36,7 @@ will be valuable assets for the administrator to make informed decisions
     </thead>
     <tbody>
         <tr class=""active-row>
-            <td>Sandanayake H.D</td>
+            <td>Sandanayake H.Dimg src="https://img.shields.io/badge/ld-Leader-red"</td>
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
