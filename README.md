@@ -1,4 +1,4 @@
-![MasterHead](https://th.bing.com/th/id/OIP.Gt_iAJp4thupvFrVEgKlgQAAAA?pid=ImgDet&rs=1)
+![MasterHead](https://static.sliit.lk/wp-content/uploads/2021/10/24070027/SLIIT.png)
 
 
 
