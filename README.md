@@ -1,7 +1,7 @@
 ![MasterHead](https://static.sliit.lk/wp-content/uploads/2021/10/24070027/SLIIT.png)
 
 <img src="https://img.shields.io/github/gist/stars/45?style=social">
-<img src="https://img.shields.io/github/watchers/badges/shields?style=social">
+<img src="https://img.shields.io/github/watchers/:devsandanayake/:ITP_WD_B07_G10?style=social">
 <img src="https://komarev.com/ghpvc/?username=devsandanayake&label=%20Leader&color=0e75b6&style=flat" alt="devsandanayake" />
 
 
