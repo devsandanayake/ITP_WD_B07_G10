@@ -1,6 +1,6 @@
 ![MasterHead](https://static.sliit.lk/wp-content/uploads/2021/10/24070027/SLIIT.png)
 
-<img src="https://img.shields.io/github/gist/stars/25?style=social">
+<img src="https://img.shields.io/github/gist/stars/45?style=social">
 <img src="https://img.shields.io/github/watchers/badges/shields?style=social">
 
 
