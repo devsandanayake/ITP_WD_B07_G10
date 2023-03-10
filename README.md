@@ -40,7 +40,6 @@ will be valuable assets for the administrator to make informed decisions
             <td>IT21265174</td>
             <td>0717648566</td>
             <td>it21265174@my.sliit.lk</td>
-           
         </tr>
         <tr>
             <td>Wickramaarachchi W.A.N.D</td>
