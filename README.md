@@ -91,6 +91,8 @@ will be valuable assets for the administrator to make informed decisions
         </tr>
         <!-- and so on... -->
     </tbody>
+<style>    
+    
     .styled-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -123,6 +125,7 @@ will be valuable assets for the administrator to make informed decisions
     font-weight: bold;
     color: #009879;
 }
+</style>
 </table>
 <style>
 
