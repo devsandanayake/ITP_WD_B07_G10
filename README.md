@@ -71,28 +71,28 @@ Description of the Project:
          <tr>
             <td>Wijayanayake J.M.A.P</td>
             <td>IT21272790</td>
-            <td>0717648566</td>
+            <td>0756258508</td>
             <td>it21272790@my.sliit.lk</td>
             <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
          </tr>
         <tr>
             <td>Chandrasena R.H.V</td>
             <td>IT21264566</td>
-            <td>0717648566</td>
+            <td>0760914580</td>
             <td>it21264566@my.sliit.lk</td>
             <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
          </tr>
          <tr>
             <td>Wickramasinghe W.A.R.M</td>
             <td>IT21233494</td>
-            <td>0717648566</td>
+            <td>0771782698</td>
             <td>it21233494@my.sliit.lk</td>
             <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
         </tr>
          <tr>
             <td>Wijerama H.J.K.S.R</td>
             <td>IT21343520</td>
-            <td>0717648566</td>
+            <td>0764888184</td>
             <td>it21343520@my.sliit.lk</td>
             <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
         </tr>
