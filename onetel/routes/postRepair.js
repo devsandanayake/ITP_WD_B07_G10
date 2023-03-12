@@ -5,7 +5,7 @@ const Postrepair = require('../models/postRepair')
 
 const router = express.Router();
 
-//save post
+//save posts
 
 router.post('/repair/save',(req,res)=>{
     let newPost = new Postrepair(req.body);

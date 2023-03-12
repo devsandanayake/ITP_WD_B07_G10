@@ -2,7 +2,7 @@ const express = require('express');
 
 const userdb = require('../models/postUsers');
  
-
+var bcrypt = require("bcryptjs");
 const router = express.Router();
 
 // for user registration

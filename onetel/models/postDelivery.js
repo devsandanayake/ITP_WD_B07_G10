@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-//models
+
 const postdeliverySchema = new mongoose.Schema({
     Name:{
         type:String,
