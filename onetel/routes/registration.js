@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 
 const userdb = require('../models/postUsers');
  
@@ -43,4 +43,4 @@ router.post("/register", async (req, res) => {
 
 });
 
-module.exports = router;
+module.exports = router;*/ 

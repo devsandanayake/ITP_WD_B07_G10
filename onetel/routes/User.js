@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const  cors = require('cors');
 const User = require('../models/postUsers');
+router.use(cors());
 
 process.env.SECRET_KEY = 'secret';
 
@@ -69,3 +71,25 @@ router.post('/login',(req,res)=>{
         res.send("error" +err);
        })
 })
+
+router.get('/profile',(req,res)=>{
+    var decoded = jwt.verify(req.headers['authorization'],process.env.SECRET_KEY)
+
+    User.findOne({
+        _id:decoded._id
+    })
+      .then(user =>{
+        if(user){
+            res.json(user)
+        }else{
+            res.send("User Doesnot exist");
+        }
+      })
+      .catch(err=>{
+        res.send("ERRor"+err);
+      })
+
+
+})
+
+module.exports = router;

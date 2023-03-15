@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 const  cors = require('cors');
 const app = express();
 
+
 const PORT = process.env.PORT || 8070;
 //import routes
 const postDelivery = require('./routes/postD');
 const postProduct = require('./routes/postProduct'); 
 const postRepair = require('./routes/postRepair');
-const postReg = require('./routes/registration');
+const User = require('./routes/User');
+
 
 
 //app middelware
@@ -24,8 +26,7 @@ app.use(cors());
 app.use(postDelivery);
 app.use(postProduct);
 app.use(postRepair);
-app.use(postReg);
-
+app.use(User);
 
 
 
