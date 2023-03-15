@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const validator = require('validator');
 
-const postuserSchema = new mongoose.Schema({
-   
-    fname: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    email: {
+ const UserSchema = new mongoose.Schema({
+    first_name: {
+         type: String,
+        },
+    last_name:{
+           type: String,
+        },
+    email:{
         type: String,
         required: true,
         unique: true,
@@ -19,25 +19,14 @@ const postuserSchema = new mongoose.Schema({
         }
     },
     password: {
-        type: String,
-        required: true,
-        minlength: 6
-    },
-    cpassword: {
-        type: String,
-        required: true,
-        minlength: 6
-    },
-    tokens: [
-        {
-            token: {
-                type: String,
-                required: true,
-            }
+           type: String,
+           required: true,
+           minlength: 6
+        },
+    date: {
+           type: Date,
+           default: Date.now
         }
-    ]
-   
-
-});
-
-module.exports = mongoose.model('users',postuserSchema);    
+ });
+ module.exports  = mongoose.model('users',UserSchema)
+ 
