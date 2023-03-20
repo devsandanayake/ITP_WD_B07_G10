@@ -29,6 +29,11 @@ Description of the Project:
        with manual processes. The user-friendly interface and the ability to store large amounts of data 
        will be valuable assets for the administrator to make informed decisions
 
+### 👨‍💻 Development with MERN Stack Todo Application
+
+- `Backend` - Node.js, Express.js & MongoDB database
+- `Frontend` - React.js, Redux.js, & Tailwind CSS
+
 <table class="styled-table" align="center">
     <thead>
         <tr>
