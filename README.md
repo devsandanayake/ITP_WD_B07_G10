@@ -34,6 +34,7 @@ Description of the Project:
 - `Backend` - Node.js, Express.js & MongoDB database
 - `Frontend` - React.js, Redux.js, & Tailwind CSS
 
+
 <table class="styled-table" align="center">
     <thead>
         <tr>
