@@ -28,8 +28,7 @@ Description of the Project:
        mobile shop, allowing the management to focus on growing their business rather than dealing 
        with manual processes. The user-friendly interface and the ability to store large amounts of data 
        will be valuable assets for the administrator to make informed decisions
-
-### 👨‍💻 Development with MERN Stack Todo Application
+### 👨‍💻 Development with MERN Stack 
 
 - `Backend` - Node.js, Express.js & MongoDB database
 - `Frontend` - React.js, Redux.js, & Tailwind CSS
