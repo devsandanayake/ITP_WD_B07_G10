@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {login} from './userFuntion';
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
  
 export default class Login extends Component {
 
@@ -67,9 +67,7 @@ export default class Login extends Component {
                              </div>
                              <button className='btn  btn-outline-primary'>Sign in</button>
                                
-                               <Link className="btn btn-outline-danger mx-2" to="/register">
-              register
-            </Link>
+                               <Link className="btn btn-outline-danger mx-2" to="/register"> register </Link>
                         </h1>
                     </form>
                 </div>
