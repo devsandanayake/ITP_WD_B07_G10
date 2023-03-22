@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import './table.css'
+ 
 
-export default class DeliveryAdmin extends Component {
+
+export default class CustomerAdmin extends Component {
 
  constructor(props){
    super(props);
@@ -16,7 +17,7 @@ export default class DeliveryAdmin extends Component {
  }
 //retrivew funtion
  viewPosts(){
-   axios.get("http://localhost:8070/posts").then(res =>{
+   axios.get("http://localhost:8070/getData").then(res =>{
      if(res.data.success){
        this.setState({
          posts:res.data.existingPosts
@@ -28,7 +29,7 @@ export default class DeliveryAdmin extends Component {
  }
   //delete function
   onDelete=(id)=>{
-    axios.delete(`http://localhost:8070/post/delete/${id}`).then((res)=>{
+    axios.delete(`http://localhost:8070/user/delete/${id}`).then((res)=>{
       alert("Deleted");
       this.viewPosts();
     })
@@ -42,10 +43,10 @@ export default class DeliveryAdmin extends Component {
            <thead>
              <tr>
              <th scope="col">Index</th>
-             <th scope="col">Name</th>
-             <th scope="col">Address</th>
-             <th scope="col">Phone</th>
-             <th scope="col">NIC</th>
+             <th scope="col">First Name</th>
+             <th scope="col">Last Name</th>
+             <th scope="col">Email</th>
+             <th scope="col">Date</th>
              </tr>
            </thead>
          
@@ -53,15 +54,12 @@ export default class DeliveryAdmin extends Component {
             {this.state.posts.map((posts,index)=>(
                  <tr key={index}>
                     <th scope="row">{index+1}</th>
-                    <td>{posts.Name}</td>
-                    <td>{posts.Address}</td>
-                    <td>{posts.phone}</td>
-                    <td>{posts.NIC}</td>
+                    <td>{posts.first_name}</td>
+                    <td>{posts.last_name}</td>
+                    <td>{posts.email}</td>
+                    <td>{posts.date}</td>
                     <td>
-                       <a className="btn btn-warning" href={`/edit/${posts._id}`}>
-                         <i className="fas fa-edit"></i>&nbsp;Edit
-                       </a>
-                       &nbsp; &nbsp; 
+                                             
                        <a className="btn btn-danger" href="#" onClick={()=>this.onDelete(posts._id)}>
                          <i className="fas fa-tash-altt"></i>&nbsp;Delete
                        </a>

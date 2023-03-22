@@ -92,4 +92,42 @@ router.get('/profile',(req,res)=>{
 
 })
 
+//get posts
+
+router.get('/getData',(req,res)=>{
+  User.find().exec((err,user)=>{
+      if(err){
+          return res.status(400).json({
+              error:err
+          });
+      }
+          return res.status(200).json({
+              success:true,
+              existingPosts:user
+          });
+      
+  });
+});
+
+
+//delete post
+router.delete('/user/delete/:id',(req,res)=>{
+    User.findByIdAndRemove(req.params.id).exec((err,user)=>{
+        if(err)
+            return res.status(400).json({
+                massage:"Delete unsuccesful",err
+            });
+            return res.json({
+                massege:"Delete Succesfully",user
+                
+            });
+        
+
+    });
+});
+
+
+ 
+
+
 module.exports = router;

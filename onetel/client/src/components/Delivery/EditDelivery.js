@@ -1,3 +1,4 @@
+ 
 //import React, { Component } from 'react'
 /*import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -106,7 +107,7 @@ export default class EditDelivery extends Component {
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-
+import './table.css'
 export default function EditUser() {
   let navigate = useNavigate();
 
