@@ -1,47 +1,82 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
  
- 
-export default class NavBar extends Component {
+  class NavBar extends Component {
+  logout(e){
+    e.preventDefault( )
+    localStorage.removeItem('usertoken');
+   
+    this.props.history.push(`/`)
+   
+  }
+   
 
   render() {
-    return(
-      
-    <nav className="navbar navbar-expand-lg bg-primary">
-    <div className="container-fluid">
-    <a className="navbar-brand" href="/admin">Adminstration</a>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catargory</a>
-            <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="/delivery/ad">Delivery</a></li>
-            <li><a className="dropdown-item" href="#">Another action</a></li>
-            <li><a className="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Pricing</a>
-          </li>   
-          <li className="nav-item">
-            <a className="nav-link" href='#'>About</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href='/login'>Logout</a>
-            </li>
-            <li className="nav-item">
-            <a className="nav-link" href='/profile'>Profile</a>
-          </li>
-        </ul>   
-      </div>
-    </div>
-  </nav>
-  
+     
+       
+       const loginRegLink = (
+       <ul className='nav nav-tabs'>
+        <li className='nav-item'>
+            <Link to="/login" className="nav-link">
+                <h1><img src="https://img.icons8.com/cute-clipart/64/000000/login-rounded-right.png"/>Login</h1>
+            </Link>
+        </li>
+
+        <li className='nav-item'>
+            <Link to="/register" className="nav-link">
+                <h1><img src="https://img.icons8.com/cute-clipart/64/000000/check.png"/>Register</h1>
+            </Link>
+        </li>
+       </ul>
     )
+    
+    const userLink = (
+      <ul className='nav nav-tabs'>
+        <li className='nav-item'>
+            <Link to="/profile" className="nav-link">
+                <h1><img src="https://img.icons8.com/cute-clipart/64/000000/login-rounded-right.png"/>Profile</h1>
+            </Link>
+        </li>
+
+        <li className='nav-item'>
+            <Link to="/registedr" className="nav-link">
+                <h1><img src="https://img.icons8.com/cute-clipart/64/000000/check.png"/>cart</h1>
+            </Link>
+        </li>
+        
+        <li className='nav-item'>
+             <a herf="" onClick={this.logout.bind(this)} className="nav-link">
+              <h1><img src="https://img.icons8.com/cute-clipart/64/000000/Logout-rounded-down.png"/>LogOut</h1>
+             </a>
+        </li> 
+
+       </ul>
+       
+    )
+    
+       
+    
+    return(
+       <nav className='navbar nab-expand navbar-light rouned'>
+       
+         <dic className="collapes navbar-collape justify-content-md-center" id="navbar1">
+         <ul className="nav nav-tabs">
+              <li className="nav-item">
+              <Link to = "/" className = "nav-link">
+              <h1><img src="https://img.icons8.com/flat_round/64/000000/home.png"/>Home</h1>
+              </Link>
+              </li>
+              </ul>
+              {localStorage.usertoken? userLink:loginRegLink}
+              
+         </dic>
+       </nav>
+    )
+     
+    
   }
+
 }
+export default  NavBar;
+
+  

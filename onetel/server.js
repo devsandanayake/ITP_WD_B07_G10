@@ -11,7 +11,7 @@ const postDelivery = require('./routes/postD');
 const postProduct = require('./routes/postProduct'); 
 const postRepair = require('./routes/postRepair');
 const User = require('./routes/User');
-
+const Admin = require('./routes/Admin')
 
 
 //app middelware
@@ -27,6 +27,7 @@ app.use(postDelivery);
 app.use(postProduct);
 app.use(postRepair);
 app.use(User);
+app.use(Admin);
 
 
 

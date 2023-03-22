@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import {adminlogin} from './adminFuntion';
 import {login} from './userFuntion';
 import { Link } from "react-router-dom";
-import '../styles/style.css'
+
 export default class Login extends Component {
 
   constructor(){
@@ -24,13 +25,25 @@ export default class Login extends Component {
         email:this.state.email,
         password:this.state.password
     }    
+    
+    const admin ={
+      email:this.state.email,
+      password:this.state.password
+  }    
 
-    login(user).then(res=>{
+   login(user).then(res=>{
         if(res){
           //this.props.history.push(`/profile`)
           window.location="/profile";
         }
     })
+
+    adminlogin(admin).then(res=>{
+      if(res){
+        //this.props.history.push(`/profile`)
+        window.location="/h";
+      }
+  })
   }
   
 

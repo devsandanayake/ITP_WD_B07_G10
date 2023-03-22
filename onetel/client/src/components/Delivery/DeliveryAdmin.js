@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import './table.css'
+ 
 
 export default class DeliveryAdmin extends Component {
 

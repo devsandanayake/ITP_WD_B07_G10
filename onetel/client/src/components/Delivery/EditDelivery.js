@@ -107,7 +107,7 @@ export default class EditDelivery extends Component {
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import './table.css'
+ 
 export default function EditUser() {
   let navigate = useNavigate();
 
