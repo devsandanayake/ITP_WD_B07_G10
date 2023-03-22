@@ -10,7 +10,7 @@ const MaybeShowNavBar=({ children}) =>{
        
        useEffect(() =>{
          console.log('this is location: ', location)
-          if (location.pathname === '/login' || (location.pathname === '/register')){
+          if (location.pathname === '/login' || (location.pathname === '/register')||  (location.pathname === '/')){
                 setShowNavBar(false)
                     
           } else {
