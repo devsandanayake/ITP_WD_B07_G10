@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
  
   class NavBar extends Component {
+   
+
   logout(e){
     e.preventDefault( )
     localStorage.removeItem('usertoken');
-   
-    this.props.history.push(`/`)
+     
+    window.location='/login'
    
   }
    
@@ -51,8 +53,7 @@ import { Link } from "react-router-dom";
       </ul>
       </nav>
        
-    )
-          
+    )  
     
     return(
 
@@ -67,13 +68,13 @@ import { Link } from "react-router-dom";
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="/">Home</a>
           </li>
-          
-         
+              
           <li className="nav-item">
             <a className="nav-link" href='#'>About</a>
           </li>
         </ul>   
         {localStorage.usertoken? userLink:loginRegLink}
+         
       </div>
     </div>
   </nav>

@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
 
 export default class Profile extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state ={
         first_name:'',
         last_name:'',

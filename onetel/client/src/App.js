@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar";
 import  Profile from './components/Profile'
 import Register from './components/Register';  
 import Login from './components/Login';
- 
+import Dashboard from './components/Dashboard';
 import InsertDelivery from './components/Delivery/InsertDelivery';
 import Home from './components/Home'; 
  
@@ -24,6 +24,7 @@ import CustomerAdmin from './components/Customer/CustomerAdmin';
         <div className="container">
         <Routes>
         <Route exact path="/"  element={<Home/>}></Route> 
+        <Route exact path="/admin"  element={<Dashboard/>}></Route> 
         <Route exact path="/profile"  element={<Profile/>}></Route> 
         <Route exact path="/login"  element={<Login/>}></Route> 
        <Route exact path="/register"  element={<Register/>}></Route> 

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
  
 class Register extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state =  {
          first_name:'',
          last_name:'',
@@ -33,7 +33,7 @@ class Register extends Component {
     register(user).then(res=>{
         if(res){
          
-          window.location="/login";
+          this.props.history.push(`/login`)
           
            
         }

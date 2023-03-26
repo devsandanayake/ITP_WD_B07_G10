@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-//import {adminlogin} from './adminFuntion';
+ 
 import {login} from './userFuntion';
 import { Link } from "react-router-dom";
 
 export default class Login extends Component {
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state =  {
          email : '',
          password : ''
@@ -26,14 +26,21 @@ export default class Login extends Component {
         password:this.state.password
     }    
     
+    if(this.state.email == "admin@gmail.com" && this.state.password == "1234"){
+          console.log('admin log')
+          window.location="/admin";
+    }
      
 
    login(user).then(res=>{
         if(res){
-          //this.props.history.push(`/profile`)
-          window.location="/";
+         //this.props.history.push(`/profile`)
+          window.location="/profile";
         }
     })
+
+    
+  
 
       
   }
