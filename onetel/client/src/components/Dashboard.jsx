@@ -31,15 +31,28 @@ const Dashboard = () => {
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/tables" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Tables</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="table">Delivery Management</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/profile" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="user">Customer Management</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/analytics" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">
-                Analytics
-              </CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="chart-line">Product Management</CDBSidebarMenuItem>
+            </NavLink>
+
+            <NavLink exact to="/analytics" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="chart-line">Repair Management</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/analytics" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="chart-line">Warrenty Management</CDBSidebarMenuItem>
+            </NavLink>
+
+            <NavLink exact to="/analytics" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="chart-line">Rent-item MAnagement</CDBSidebarMenuItem>
+            </NavLink>
+
+            <NavLink exact to="/analytics" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="chart-line">Payment Management</CDBSidebarMenuItem>
             </NavLink>
 
             <NavLink
