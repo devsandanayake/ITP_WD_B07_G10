@@ -9,6 +9,9 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import InsertDelivery from './components/Delivery/InsertDelivery';
 import Home from './components/Home'; 
+import Footer from './components/footer';
+import RepairCus from './components/Repair/RepairCus';
+import RepairAdmin from './components/Repair/RepairAdmin';
  
 import CustomerAdmin from './components/Customer/CustomerAdmin';
  export default class App extends Component {
@@ -35,10 +38,14 @@ import CustomerAdmin from './components/Customer/CustomerAdmin';
         
 
         <Route exact path="/customer/ad"  element={<CustomerAdmin/>}></Route> 
+
+
+        <Route exact path="/repairCus"  element={<RepairCus/>}></Route>
+        <Route exact path="/repairAdmin"  element={<RepairAdmin/>}></Route> 
     
        </Routes>
         </div>
-                  
+        <Footer/>          
       </BrowserRouter>
        </div>
      )

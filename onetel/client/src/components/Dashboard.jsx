@@ -30,17 +30,22 @@ const Dashboard = () => {
             <NavLink exact to="/" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/tables" activeClassName="activeClicked">
+            <NavLink exact to="/delivery/ad" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Delivery Management</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/profile" activeClassName="activeClicked">
+            <NavLink exact to="/customer/ad" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Customer Management</CDBSidebarMenuItem>
             </NavLink>
+
+            <NavLink exact to="/analytics" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="chart-line">Employeer Management</CDBSidebarMenuItem>
+            </NavLink>
+
             <NavLink exact to="/analytics" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="chart-line">Product Management</CDBSidebarMenuItem>
             </NavLink>
 
-            <NavLink exact to="/analytics" activeClassName="activeClicked">
+            <NavLink exact to="/repairAdmin" activeClassName="activeClicked"> 
               <CDBSidebarMenuItem icon="chart-line">Repair Management</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/analytics" activeClassName="activeClicked">
@@ -54,6 +59,8 @@ const Dashboard = () => {
             <NavLink exact to="/analytics" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="chart-line">Payment Management</CDBSidebarMenuItem>
             </NavLink>
+
+            
 
             <NavLink
               exact

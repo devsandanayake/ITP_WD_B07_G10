@@ -72,7 +72,9 @@ export default class DeliveryAdmin extends Component {
          </tbody>
        </table>
        
-
+       <a className="btn btn-warning" href={`/admin`}>
+                         <i className="fas fa-tash-altt"></i>Back
+                       </a>
       </div>
     )
   }

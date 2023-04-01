@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-export default class InsertDelivery extends Component {
+export default class payment extends Component {
  
   constructor(props){
     super(props);
