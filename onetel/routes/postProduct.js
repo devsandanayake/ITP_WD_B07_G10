@@ -109,7 +109,7 @@ h
 
             image:{
                 data:req.file.filename,
-                contentType:'image/png'
+                contentType:'image/jpg'
             }
         })
         newproduct.save().then(()=>res.send("successfull uploaded"))

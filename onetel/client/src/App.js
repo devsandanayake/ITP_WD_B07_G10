@@ -12,7 +12,7 @@ import Home from './components/Home';
 import Footer from './components/footer';
 import RepairCus from './components/Repair/RepairCus';
 import RepairAdmin from './components/Repair/RepairAdmin';
- 
+import AddProduct from './components/Product/addProduct'; 
 import CustomerAdmin from './components/Customer/CustomerAdmin';
  export default class App extends Component {
    render() {
@@ -42,6 +42,9 @@ import CustomerAdmin from './components/Customer/CustomerAdmin';
 
         <Route exact path="/repairCus"  element={<RepairCus/>}></Route>
         <Route exact path="/repairAdmin"  element={<RepairAdmin/>}></Route> 
+
+
+        <Route exact path="/addProduct"  element={<AddProduct/>}></Route> 
     
        </Routes>
         </div>
