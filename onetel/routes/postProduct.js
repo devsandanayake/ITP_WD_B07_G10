@@ -76,48 +76,62 @@ router.delete('/product/delete/:id',(req,res)=>{
                 
             });
         
-h 
+
     });
 });
 
  //storage
- const Storage = multer.diskStorage({
-    destination:'upload',
-    filename:(req, file ,cb)=>{
-        cb(null,file.originalname);
+ const storage = multer.diskStorage({
+    destination: function(req,file,cb){
+        cb(null,'./uploads')
     },
- });
-
- const upload = multer({
-    storage:Storage
- }).single('testImage')
-
-
- router.post('/rex',(req,res)=>{
-   upload(req,res,(err)=>{
-    if(err){
-        console.log(err)
+    filename:function(req,file,cb){
+        cb(null,file.fieldname+"_"+Date.now()+"_"+file.originalname)
     }
-    else{
-        const newproduct = new Postproduct({
-            Categories:req.body.Categories,
-            Brand:req.body.Brand,
-            Price:req.body.Price,
-            Model:req.body.Model,
-            Status:req.body.Status,
+});
+
+var upload = multer({
+    storage:storage,
+
+}).single('image');
+    
+//Inster an user into database router
+router.post('/add/pro',upload,(req,res)=>{
+    const product = new Postproduct({
+        Categories:req.body.Categories,
+        Brand:req.body.Brand,
+        Price:req.body.Price,
+        Model:req.body.Model,
+        Status:req.body.Status,
+    })
+})
+  
 
 
-            image:{
-                data:req.file.filename,
-                contentType:'image/jpg'
-            }
-        })
-        newproduct.save().then(()=>res.send("successfull uploaded"))
-        .catch((err)=>console.log(err));
-    }
-   }) 
- })
+//  router.post('/rex',(req,res)=>{
+//    upload(req,res,(err)=>{
+//     if(err){
+//         console.log(err)
+//     }
+//     else{
+//         const newproduct = new Postproduct({
+//             Categories:req.body.Categories,
+//             Brand:req.body.Brand,
+//             Price:req.body.Price,
+//             Model:req.body.Model,
+//             Status:req.body.Status,
 
+
+//             image:{
+//                 data:req.file.filename,
+//                 contentType:'image/'
+//             }
+//         })
+//         newproduct.save().then(()=>res.send("successfull uploaded"))
+//         .catch((err)=>console.log(err));
+//     }
+//    }) 
+//  })
 
 
 module.exports = router;
