@@ -103,6 +103,14 @@ router.post('/add/pro',upload,(req,res)=>{
         Price:req.body.Price,
         Model:req.body.Model,
         Status:req.body.Status,
+        image:req.body.image
+    })
+    product.save((err)=>{
+        if(err){
+            res.json({massage:err.massage,type:'danger'}); 
+        }else{
+            console.log("success")
+        }
     })
 })
   
