@@ -41,7 +41,7 @@ const Dashboard = () => {
               <CDBSidebarMenuItem icon="chart-line">Employeer Management</CDBSidebarMenuItem>
             </NavLink>
 
-            <NavLink exact to="/analytics" activeClassName="activeClicked">
+            <NavLink exact to="/addProduct" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="chart-line">Product Management</CDBSidebarMenuItem>
             </NavLink>
 
