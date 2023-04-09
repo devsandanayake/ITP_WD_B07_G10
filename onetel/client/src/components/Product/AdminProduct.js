@@ -50,7 +50,8 @@ export default class AdminProduct extends Component {
              <th scope="col">Price</th>
              <th scope="col">Model</th>
              <th scope="col">Status</th>
-             <th scope="col">image</th>
+             <th scope="col">Items-Image</th>
+             <th scope="col"></th>
              </tr>
            </thead>
          
