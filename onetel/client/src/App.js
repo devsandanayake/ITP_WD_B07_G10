@@ -3,7 +3,7 @@ import {BrowserRouter,Route, Routes} from 'react-router-dom'
 import DeliveryAdmin from "./components/Delivery/DeliveryAdmin";
 import EditDelivery from "./components/Delivery/EditDelivery";
 import NavBar from "./components/NavBar";
-import  Profile from './components/Profile'
+import Profile from './components/Profile'
 import Register from './components/Register';  
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
@@ -13,6 +13,7 @@ import Footer from './components/footer';
 import RepairCus from './components/Repair/RepairCus';
 import RepairAdmin from './components/Repair/RepairAdmin';
 import AddProduct from './components/Product/addProduct'; 
+import Check from './components/Product/Check';
 import CustomerAdmin from './components/Customer/CustomerAdmin';
  export default class App extends Component {
    render() {
@@ -44,7 +45,7 @@ import CustomerAdmin from './components/Customer/CustomerAdmin';
         <Route exact path="/repairAdmin"  element={<RepairAdmin/>}></Route> 
 
 
-        <Route exact path="/addProduct"  element={<AddProduct/>}></Route> 
+        <Route exact path="/addProduct"  element={<Check/>}></Route> 
     
        </Routes>
         </div>

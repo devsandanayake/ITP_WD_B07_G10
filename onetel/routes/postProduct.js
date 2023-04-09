@@ -80,39 +80,39 @@ router.delete('/product/delete/:id',(req,res)=>{
     });
 });
 
- //storage
- const storage = multer.diskStorage({
+//  //storage
+const storage = multer.diskStorage({
     destination: function(req,file,cb){
-        cb(null,'./uploads')
-    },
+         cb(null,'./upload')
+     },
     filename:function(req,file,cb){
-        cb(null,file.fieldname+"_"+Date.now()+"_"+file.originalname)
-    }
-});
+         cb(null,file.fieldname+"_"+Date.now()+"_"+file.originalname)
+     }
+ });
 
-var upload = multer({
-    storage:storage,
+ var upload = multer({
+     storage:storage,
 
-}).single('image');
+ }).single('image');
     
-//Inster an user into database router
+ //Inster an user into database router
 router.post('/add/pro',upload,(req,res)=>{
-    const product = new Postproduct({
-        Categories:req.body.Categories,
-        Brand:req.body.Brand,
-        Price:req.body.Price,
-        Model:req.body.Model,
-        Status:req.body.Status,
-        image:req.body.image
-    })
-    product.save((err)=>{
-        if(err){
-            res.json({massage:err.massage,type:'danger'}); 
-        }else{
-            console.log("success")
-        }
-    })
-})
+     const product = new Postproduct({
+         Categories:req.body.Categories,
+         Brand:req.body.Brand,
+         Price:req.body.Price,
+         Model:req.body.Model,
+         Status:req.body.Status,
+         image:req.file.filename,
+     });
+     product.save((err)=>{
+         if(err){
+             res.json({massage:err.massage,type:'danger'}); 
+         }else{
+             console.log("success");
+         }
+     })
+ })
   
 
 

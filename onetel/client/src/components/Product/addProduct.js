@@ -12,7 +12,7 @@ export default class addProduct extends Component {
         Price:"",
         Model:"",
         Status:"", 
-        testImage:""
+        image:""
     }
   }
 
@@ -29,7 +29,7 @@ export default class addProduct extends Component {
   onSubmit=(e)=>{
     e.preventDefault();
 
-    const { Categories,Brand,Price,Model,Status,testImage} = this.state;
+    const { Categories,Brand,Price,Model,Status,image} = this.state;
 
     const data ={
         Categories: Categories,
@@ -37,12 +37,12 @@ export default class addProduct extends Component {
         Price:Price,
         Model:Model,
         Status:Status, 
-        testImage:testImage
+        image:image
     }
 
     
 
-    axios.post("http://localhost:8070/rex",data).then((res)=>{
+    axios.post("http://localhost:8070/add/pro",data).then((res)=>{
       if(res.data.success){
         this.setState({
           Categories:"",
@@ -50,7 +50,7 @@ export default class addProduct extends Component {
           Price:"",
           Model:"",
           Status:"" ,
-          testImage:""
+          image:""
 
           
       })
@@ -69,7 +69,7 @@ export default class addProduct extends Component {
                     <p align="center">Add Product</p>
             </h1>   
          
-      <Form>
+      <Form action=''>
               
         <Form.Group className="mb-3" >
           <Form.Label htmlFor="TextInput">Name</Form.Label>
@@ -97,7 +97,7 @@ export default class addProduct extends Component {
         </Form.Group> 
         <Form.Group className='mb-3'>
          <Form.Label htmlFor="TextInput">NIC</Form.Label>
-         <Form.Control placeholder='Enter NIC number' type = 'file' name='testImage' value={this.state.testImage} onChange={this.handleInputChange}/>
+         <Form.Control placeholder='Enter NIC number' type = 'file' name='image' value={this.state.image} onChange={this.handleInputChange}/>
         </Form.Group>      
 
          
