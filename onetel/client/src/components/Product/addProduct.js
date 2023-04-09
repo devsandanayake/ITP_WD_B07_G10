@@ -12,6 +12,7 @@ export default function AddProduct() {
     const[image,setImage] = useState("")
    
 
+    
    const onChangeFile = e =>{
     setImage(e.target.files[0]);
    }
