@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useState } from 'react'
+ 
 export default function AddProduct() {
     
     const [Categories , setCategories] = useState("");
@@ -11,7 +12,8 @@ export default function AddProduct() {
     const[message,setMessage] = useState("");
     const[image,setImage] = useState("")
    
-
+   
+   
     
    const onChangeFile = e =>{
     setImage(e.target.files[0]);
@@ -42,6 +44,7 @@ export default function AddProduct() {
         
 
     }
+    
    
    return (
      <div className='container'>

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+
  
-import banner1 from '../images/banner1.jpg' 
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import { BsCart4} from "react-icons/bs";
 import Form from 'react-bootstrap/Form';
+
 
 export default class Home extends Component {
   constructor(props){
@@ -17,6 +18,7 @@ export default class Home extends Component {
   componentDidMount(){
     this.viewPosts();
   }
+   
  //retrivew funtion
   viewPosts(){
     axios.get("http://localhost:8070/products").then(res =>{
@@ -67,8 +69,7 @@ onSubmit=()=>{
 
 }
    
-   
-   
+
   render() {
     return (
        <div  className='container'>
