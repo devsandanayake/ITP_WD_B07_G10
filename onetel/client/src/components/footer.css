@@ -4,6 +4,16 @@
 body {
     line-height: 1.5;
     font-family: 'Poppins', sans-serif;
+    background-color: #195ca8;
+    background-image: linear-gradient(90deg, #13b1b4 0%, #16da88 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.main-footer {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
     background-color: #00DBDE;
     background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
     background-size: cover;

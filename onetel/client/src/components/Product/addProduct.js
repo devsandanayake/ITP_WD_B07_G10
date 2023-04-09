@@ -1,111 +1,113 @@
-import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import React from 'react'
 import axios from 'axios';
-export default class addProduct extends Component {
- 
-  constructor(props){
-    super(props);
-    this.state={
-        Categories:"",
-        Brand:"",
-        Price:"",
-        Model:"",
-        Status:"", 
-        image:""
-    }
-  }
-
-  handleInputChange=(e)=>{
-    const {name,value} = e.target;
-
-    this.setState({
-      ...this.state,
-      [name]:value
-    })
-
-  }
-
-  onSubmit=(e)=>{
-    e.preventDefault();
-
-    const { Categories,Brand,Price,Model,Status,image} = this.state;
-
-    const data ={
-        Categories: Categories,
-        Brand:Brand,
-        Price:Price,
-        Model:Model,
-        Status:Status, 
-        image:image
-    }
-
+import { useState } from 'react'
+export default function AddProduct() {
     
+    const [Categories , setCategories] = useState("");
+    const [Brand , setBrand] = useState("");
+    const [Price,setPrice] = useState("");
+    const [ Model,setModel] = useState("");
+    const[Status,setStatus] = useState("");
+    const[message,setMessage] = useState("");
+    const[image,setImage] = useState("")
+   
 
-    axios.post("http://localhost:8070/add/pro",data).then((res)=>{
-      if(res.data.success){
-        this.setState({
-          Categories:"",
-          Brand:"",
-          Price:"",
-          Model:"",
-          Status:"" ,
-          image:""
+   const onChangeFile = e =>{
+    setImage(e.target.files[0]);
+   }
 
-          
-      })
-      window.location = "/payment"
-      }
-    })
+   const changeOnClick = (e) =>{
+    e.preventDefault();
+    
+    const formData = new FormData();
 
-  }
+    formData.append("Categories",Categories)
+    formData.append("Brand",Brand)
+    formData.append("Price",Price)
+    formData.append("Model",Model)
+    formData.append("Status",Status)
+    formData.append("image",image)
 
- 
- 
-  render() {
-    return (
-        <div>
-        <h1 className='h3 mb-3 font-weight-normal'>
-                    <p align="center">Add Product</p>
-            </h1>   
-         
-      <Form action=''>
-              
-        <Form.Group className="mb-3" >
-          <Form.Label htmlFor="TextInput">Name</Form.Label>
-          <Form.Control  placeholder="Enter Name" name='Categories' value={this.state. Categories} onChange={this.handleInputChange} />
-        </Form.Group>
-
-        <Form.Group className="mb-3" >
-          <Form.Label htmlFor="TextInput">Address</Form.Label>
-          <Form.Control  placeholder="Enter Address" name='Brand'  value={this.state. Brand} onChange={this.handleInputChange} />
-        </Form.Group>
-
-        <Form.Group className="mb-3" >
-          <Form.Label htmlFor="TextInput">Phone</Form.Label>
-          <Form.Control  placeholder="Enter Your Contact-Num" name='Price' value={this.state.Price} onChange={this.handleInputChange} />
-        </Form.Group>
-
-       <Form.Group className='mb-3'>
-         <Form.Label htmlFor="TextInput">NIC</Form.Label>
-         <Form.Control placeholder='Enter NIC number' name='Model' value={this.state. Model} onChange={this.handleInputChange}/>
-        </Form.Group> 
-
-        <Form.Group className='mb-3'>
-         <Form.Label htmlFor="TextInput">NIC</Form.Label>
-         <Form.Control placeholder='Enter NIC number' name='Status' value={this.state. Status} onChange={this.handleInputChange}/>
-        </Form.Group> 
-        <Form.Group className='mb-3'>
-         <Form.Label htmlFor="TextInput">NIC</Form.Label>
-         <Form.Control placeholder='Enter NIC number' type = 'file' name='image' value={this.state.image} onChange={this.handleInputChange}/>
-        </Form.Group>      
-
-         
+    setCategories("");
+    setBrand("");
+    setPrice("");
+    setModel("");
+    setStatus("");
+    axios.post("http://localhost:8070/add/pro",formData)
+    .then((res) =>setMessage(res.data))
+    .catch((err)=>{
+        console.log(err);
+    });
         
-        <Button type="submit" onClick={this.onSubmit}>Save</Button>
-      
-    </Form>
-    </div>
-    )
-  }
-}
+
+    }
+   
+   return (
+     <div className='container'>
+         <form onSubmit={changeOnClick} encType='multipart/form-data'>
+           <div className='form-group'>
+           <label htmlFor="Categories">cat</label>
+            <input type={'text'}
+             value={Categories}
+             onChange={(e)=>setCategories(e.target.value)}
+             className='form-control'
+             placeholder='add c'
+             />
+             </div>
+
+             <div className='form-group'>
+           <label htmlFor="Brand">cat</label>
+            <input type={'text'}
+             value={Brand}
+             onChange={(e)=>setBrand(e.target.value)}
+             className='form-control'
+             placeholder='add c'
+             />
+             </div>
+
+             <div className='form-group'>
+           <label htmlFor="Price">cat</label>
+            <input type={'text'}
+             value={Price}
+             onChange={(e)=>setPrice(e.target.value)}
+             className='form-control'
+             placeholder='add c'
+             />
+             </div>
+
+
+           <div className='form-group'>
+           <label htmlFor="Model">cat</label>
+            <input type={'text'}
+             value={Model}
+             onChange={(e)=>setModel(e.target.value)}
+             className='form-control'
+             placeholder='add c'
+             />
+             </div>
+
+
+             <div className='form-group'>
+           <label htmlFor="Status">cat</label>
+            <input type={'text'}
+             value={Status}
+             onChange={(e)=>setStatus(e.target.value)}
+             className='form-control'
+             placeholder='add c'
+             />
+             </div>
+
+             <div className='form-group'>
+           <label htmlFor="file">cat</label>
+            <input type={'file'}
+             image="image"
+             onChange={onChangeFile}
+             className='form-control'
+             placeholder='add c'
+             />
+             </div>
+             <button type='submit'>add</button>
+         </form>
+     </div>
+   )
+ }

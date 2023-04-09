@@ -3,8 +3,8 @@ import './footer.css'
 
 export default function footer() {
   return (
-    <div className='main-footer'>
-        <div className='container'>
+    <div className='main-footer offset border rounded p-4 mt-2 shadow'>
+        <div className='container '>
         <div className="row">
                 <div className="footer-col">
                     <h4>Company</h4>
