@@ -47,7 +47,7 @@ export default function AddProduct() {
      <div className='container'>
          <form onSubmit={changeOnClick} encType='multipart/form-data'>
            <div className='form-group'>
-           <label htmlFor="Categories">cat</label>
+           <label htmlFor="Categories">Categories</label>
             <input type={'text'}
              value={Categories}
              onChange={(e)=>setCategories(e.target.value)}
@@ -57,7 +57,7 @@ export default function AddProduct() {
              </div>
 
              <div className='form-group'>
-           <label htmlFor="Brand">cat</label>
+           <label htmlFor="Brand">Brand</label>
             <input type={'text'}
              value={Brand}
              onChange={(e)=>setBrand(e.target.value)}
@@ -67,7 +67,7 @@ export default function AddProduct() {
              </div>
 
              <div className='form-group'>
-           <label htmlFor="Price">cat</label>
+           <label htmlFor="Price">Price</label>
             <input type={'text'}
              value={Price}
              onChange={(e)=>setPrice(e.target.value)}
@@ -78,7 +78,7 @@ export default function AddProduct() {
 
 
            <div className='form-group'>
-           <label htmlFor="Model">cat</label>
+           <label htmlFor="Model">Model</label>
             <input type={'text'}
              value={Model}
              onChange={(e)=>setModel(e.target.value)}
@@ -89,7 +89,7 @@ export default function AddProduct() {
 
 
              <div className='form-group'>
-           <label htmlFor="Status">cat</label>
+           <label htmlFor="Status">Status</label>
             <input type={'text'}
              value={Status}
              onChange={(e)=>setStatus(e.target.value)}
@@ -99,7 +99,7 @@ export default function AddProduct() {
              </div>
 
              <div className='form-group'>
-           <label htmlFor="file">cat</label>
+           <label htmlFor="file">image</label>
             <input type={'file'}
              image="image"
              onChange={onChangeFile}

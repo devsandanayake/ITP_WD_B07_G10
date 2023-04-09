@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import s10 from '../images/s10.jpg' 
+ 
 import banner1 from '../images/banner1.jpg' 
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
