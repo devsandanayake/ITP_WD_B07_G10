@@ -15,14 +15,14 @@ import { Link } from "react-router-dom";
 
   render() {
      const loginRegLink = (
-      <nav className="navbar navbar-expand-lg bg-primary" id="navbarNav">
+      <nav className="navbar navbar-expand-lg bg-dark" id="navbarNav">
        <ul className="navbar-nav"> 
         <li className='nav-item'>
-        <a className="nav-link" style={{ color: 'black' }} href="/login">Login</a>
+        <a className="nav-link" style={{ color: '#1dff1d' }}   href="/login">Login</a>
         </li>
 
         <li className='nav-item'>
-        <a className="nav-link"  style={{ color: 'black' }} href="/register">Register</a>
+        <a className="nav-link"  style={{ color: 'red' }} href="/register">Register</a>
         </li>
        </ul>
        </nav>
@@ -32,15 +32,15 @@ import { Link } from "react-router-dom";
     )
     
     const userLink = (
-      <nav className="navbar navbar-expand-lg bg-primary" id="navbarNav">
+      <nav className="navbar navbar-expand-lg bg-dark" id="navbarNav">
       <ul className="navbar-nav"> 
        <li className='nav-item'>
-       <a className="nav-link"  style={{ color: 'black' }}  href="/profile">profile</a>
+       <a className="nav-link"  style={{ color: 'white' }}  href="/profile">profile</a>
        </li>
       
 
        <li className='nav-item'>
-       <a className="nav-link"  style={{ color: 'black' }} href="/repairCus">Repair Items</a>
+       <a className="nav-link"  style={{ color: 'white' }} href="/repairCus">Repair Items</a>
        </li>
        &nbsp; &nbsp; 
        <li className='nav-item'>
@@ -52,19 +52,19 @@ import { Link } from "react-router-dom";
     )  
     
     return(
-    <nav className="navbar navbar-expand-lg bg-primary">
+    <nav className="navbar navbar-expand-lg bg-dark">
     <div className="container-fluid">
-    <a className="navbar-brand" href="#">Onetel</a>
+    <a className="navbar-brand" href="#" style={{ color: 'white' }} >Onetel</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">Home</a>
+            <a className="nav-link"  style={{ color: 'white' }}  href="/">Home</a>
           </li>
          <li className="nav-item">
-            <a className="nav-link"  style={{ color: 'black' }} href='#'>About</a>
+            <a className="nav-link"  style={{ color: 'white' }} href='#'>About</a>
           </li>
         </ul>   
         {localStorage.usertoken? userLink:loginRegLink}

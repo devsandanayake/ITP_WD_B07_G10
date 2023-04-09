@@ -73,7 +73,7 @@ onSubmit=()=>{
     return (
        <div  className='container'>
            <div className='banner'>
-               <img src={banner1}className='card-img'/>
+               {/* <img src={banner1}className='card-img'/> */}
                </div><br/>
                <Form className="d-flex">
                   <Form.Control
@@ -84,7 +84,7 @@ onSubmit=()=>{
                     name="searchQuary"
                     onChange={this.handleSearchArea}
                   />
-                  <Button variant="outline-success">Search</Button>
+                  <Button variant="success">Search</Button>
                 </Form><br/>
         
           <div className='row'>
