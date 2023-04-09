@@ -37,15 +37,19 @@ export default class DeliveryAdmin extends Component {
 
   render() {
     return (
-      <div>
-       <table className="table" >
+      <div className='container'>
+        <div className='row my-4'>
+          <div className='col-lg-12'>
+            <div className='table-responsive'>
+       <table className="table table-striped text-center" >
            <thead>
-             <tr>
+             <tr className='table-dark'>
              <th scope="col">Index</th>
              <th scope="col">Name</th>
              <th scope="col">Address</th>
              <th scope="col">Phone</th>
              <th scope="col">NIC</th>
+             <th scope="col"></th>
              </tr>
            </thead>
          
@@ -75,7 +79,7 @@ export default class DeliveryAdmin extends Component {
        <a className="btn btn-warning" href={`/admin`}>
                          <i className="fas fa-tash-altt"></i>Back
                        </a>
-      </div>
+      </div></div></div></div>
     )
   }
 }
