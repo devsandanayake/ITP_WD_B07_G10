@@ -37,15 +37,20 @@ export default class AdminProduct extends Component {
 
   render() {
     return (
-      <div>
-       <table className="table" >
+      <div className='container'>
+        <div className='row my-4'>
+          <div className='col-lg-12'>
+            <div className='table-responsive'>
+       <table className="table table-striped text-center" >
            <thead>
-             <tr>
+             <tr className='table-dark'>
              <th scope="col">Index</th>
-             <th scope="col">Name</th>
-             <th scope="col">Address</th>
-             <th scope="col">Phone</th>
-             <th scope="col">NIC</th>
+             <th scope="col">Categories</th>
+             <th scope="col">Brand</th>
+             <th scope="col">Price</th>
+             <th scope="col">Model</th>
+             <th scope="col">Status</th>
+             <th scope="col">image</th>
              </tr>
            </thead>
          
@@ -58,7 +63,7 @@ export default class AdminProduct extends Component {
                     <td>{posts.Price}</td>
                     <td>{posts.Model}</td>
                     <td>{posts.Status}</td>
-                    <td>{posts.image}</td>
+                    <td><img src={posts.image} width={50}/></td>
                     <td>
                        <a className="btn btn-warning" href={`/edit/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit
@@ -80,6 +85,9 @@ export default class AdminProduct extends Component {
                        <a className="btn btn-warning" href={`/addProduct`}>
                          <i className="fas fa-tash-altt"></i>ADD
                        </a>
+      </div>
+      </div>
+      </div>
       </div>
     )
   }
