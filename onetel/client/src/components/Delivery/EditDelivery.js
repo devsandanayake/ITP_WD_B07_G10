@@ -1,109 +1,3 @@
- 
-//import React, { Component } from 'react'
-/*import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import axios from 'axios';
-export default class EditDelivery extends Component {
-   
- 
-  constructor(props){
-    super(props);
-    this.state={
-      Name:"",
-      Address:"",
-      phone:"",
-      NIC:"" 
-    }
-  }
-
-  handleInputChange=(e)=>{
-    const {name,value} = e.target;
-
-    this.setState({
-      ...this.state,
-      [name]:value
-    })
-
-  }
-
-  onSubmit=(e)=>{
-    e.preventDefault();
-   
-    const id = this.props.match.params._id;
-   
-    const {Name,Address,phone,NIC} = this.state;
-
-    const data ={
-      Name:Name,
-      Address:Address,
-      phone:phone,
-      NIC:NIC
-    }
-
-
-    axios.put(`http://localhost:8070/post/update/${id}`,data).then((res)=>{
-      if(res.data.success){
-       
-        alert("Update");
-        this.setState({
-          
-          Name:"",
-          Address:"",
-          phone:"",
-          NIC:"" 
-      })
-      }
-    })
-
-  }
-  componentDidMount(){
-    
-    const id = this.props.match.params._id;
-
-
-    axios.get(`http://localhost:8070/post/${id}`).then((res)=>{
-      if(res.data.success){
-         this.setState({
-          Name:res.data.post.Name,
-          Address:res.data.post.Address,
-          phone:res.data.post.phone,
-          NIC:res.data.post.NIC
-        });
-          console.log(this.state.post);
-      }
-    });
-  }
-
-  render() {
-    return (
-      <Form>
-      
-      <Form.Group className="mb-3" >
-        <Form.Label htmlFor="TextInput">Name</Form.Label>
-        <Form.Control  placeholder="Enter Name" name='Name' value={this.state.Name} onChange={this.handleInputChange} />
-      </Form.Group>
-
-      <Form.Group className="mb-3" >
-        <Form.Label htmlFor="TextInput">Address</Form.Label>
-        <Form.Control  placeholder="Enter Name" name='Address'  value={this.state.Address} onChange={this.handleInputChange} />
-      </Form.Group>
-
-      <Form.Group className="mb-3" >
-        <Form.Label htmlFor="TextInput">Job</Form.Label>
-        <Form.Control  placeholder="Enter Name" name='Job' value={this.state.phone} onChange={this.handleInputChange} />
-      </Form.Group>
-      
-      <Form.Group className="mb-3" >
-        <Form.Label htmlFor="TextInput">Job</Form.Label>
-        <Form.Control  placeholder="Enter Name" name='Job' value={this.state.NIC} onChange={this.handleInputChange} />
-      </Form.Group>
-      
-      <Button type="submit"  onClick={this.onSubmit}>Save</Button>
-    
-  </Form>
-    )
-  }
-}*/
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -117,10 +11,11 @@ export default function EditDelivery() {
     Name: "",
     Address: "",
     phone: "",
-    NIC:""
+    NIC:"",
+    email:""
   });
 
-  const { Name, Address, phone,NIC } = delivery;
+  const { Name, Address, phone,NIC , email} = delivery;
 
   const onInputChange = (e) => {
     setDelivery({ ...delivery, [e.target.name]: e.target.value });
@@ -197,6 +92,20 @@ export default function EditDelivery() {
                 placeholder="Enter your NIC"
                 name="NIC"
                 value={NIC}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                type={"email"}
+                className="form-control"
+                placeholder="Enter your NIC"
+                name="email"
+                value={email}
                 onChange={(e) => onInputChange(e)}
               />
             </div>

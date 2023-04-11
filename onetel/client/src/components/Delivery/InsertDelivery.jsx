@@ -10,7 +10,9 @@ export default class InsertDelivery extends Component {
       Name:"",
       Address:"",
       phone:"",
-      NIC:"" 
+      NIC:"" ,
+      email:"",
+      
     }
   }
 
@@ -27,13 +29,16 @@ export default class InsertDelivery extends Component {
   onSubmit=(e)=>{
     e.preventDefault();
 
-    const {Name,Address,phone,NIC} = this.state;
+    const {Name,Address,phone,NIC,email,Status} = this.state;
 
     const data ={
       Name:Name,
       Address:Address,
       phone:phone,
-      NIC:NIC
+      NIC:NIC,
+      email:email,
+     
+      
     }
 
     
@@ -44,7 +49,9 @@ export default class InsertDelivery extends Component {
           Name:"",
           Address:"",
           phone:"",
-          NIC:"" 
+          NIC:"" ,
+          email:"",
+           
 
           
       })
@@ -83,8 +90,13 @@ export default class InsertDelivery extends Component {
        <Form.Group className='mb-3'>
          <Form.Label htmlFor="TextInput">NIC</Form.Label>
          <Form.Control placeholder='Enter NIC number' name='NIC' value={this.state.NIC} onChange={this.handleInputChange}/>
-        </Form.Group>        
-        
+        </Form.Group>   
+
+           <Form.Group className='mb-3'>
+         <Form.Label htmlFor="email">Email</Form.Label>
+         <Form.Control placeholder='Enter Email' name='email' value={this.state.email} onChange={this.handleInputChange}/>
+        </Form.Group>  
+               
         <Button type="submit" onClick={this.onSubmit}>Save</Button>
       
     </Form>

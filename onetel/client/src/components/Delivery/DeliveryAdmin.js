@@ -33,9 +33,10 @@ export default class DeliveryAdmin extends Component {
       this.viewPosts();
     })
   }
-
+   
 
   render() {
+     
     return (
       <div className='container'>
         <div className='row my-4'>
@@ -49,6 +50,8 @@ export default class DeliveryAdmin extends Component {
              <th scope="col">Address</th>
              <th scope="col">Phone</th>
              <th scope="col">NIC</th>
+             <th scope="col">Email</th>
+             <th scope="col">Status</th>
              <th scope="col"></th>
              </tr>
            </thead>
@@ -61,6 +64,9 @@ export default class DeliveryAdmin extends Component {
                     <td>{posts.Address}</td>
                     <td>{posts.phone}</td>
                     <td>{posts.NIC}</td>
+                    <td>{posts.email}</td>
+                    <td style={{color:'Red'}}>{posts.Status}</td>
+                    
                     <td>
                        <a className="btn btn-warning" href={`/edit/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit

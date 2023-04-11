@@ -15,6 +15,9 @@ import RepairAdmin from './components/Repair/RepairAdmin';
 import AddProduct from './components/Product/AddProduct'; 
 import AdminProduct from './components/Product/AdminProduct';
 import CustomerAdmin from './components/Customer/CustomerAdmin';
+import DeliveryPerson from './components/Delivery/DeliveryPerson';
+
+import Checkperson from './components/Delivery/Checkperson';
  export default class App extends Component {
    render() {
      return (
@@ -31,11 +34,14 @@ import CustomerAdmin from './components/Customer/CustomerAdmin';
         <Route exact path="/admin"  element={<Dashboard/>}></Route> 
         <Route exact path="/profile"  element={<Profile/>}></Route> 
         <Route exact path="/login"  element={<Login/>}></Route> 
-       <Route exact path="/register"  element={<Register/>}></Route> 
-       <Route exact path="/insertDelivery"  element={<InsertDelivery/>}></Route> 
+       <Route exact path="/register"  element={<Register/>}></Route>
 
-       <Route exact path="/delivery/ad"  element={<DeliveryAdmin/>}></Route> 
+       {/* delivery Management part */}
+        <Route exact path="/insertDelivery"  element={<InsertDelivery/>}></Route> 
+        <Route exact path="/delivery/ad"  element={<DeliveryAdmin/>}></Route> 
         <Route exact  path="/edit/:id"  element={<EditDelivery/>}/>
+        <Route exact path = "/delivery/person" element={<DeliveryPerson/> } />
+        <Route exact path = "/editc/:id" element={<Checkperson/> } />
         
 
         <Route exact path="/customer/ad"  element={<CustomerAdmin/>}></Route> 

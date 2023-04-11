@@ -16,6 +16,14 @@ const postdeliverySchema = new mongoose.Schema({
     NIC:{
         type:String,
         required:true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    Status:{
+        type:String
+                
     }
 });
 

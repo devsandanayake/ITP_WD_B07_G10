@@ -100,13 +100,13 @@ onSubmit=()=>{
                         <a className="btn btn-primary" href={``}><BsCart4/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       
                         <Button type="submit" className='btn btn-success' onClick={this.onSubmit}>Buy</Button>
-                         </div>
+                    </div>
                 </div>
              </div>
           
            ))}
            </div>
-               </div>
+          </div>
                
        
     
