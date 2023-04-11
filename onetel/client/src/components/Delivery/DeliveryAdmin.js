@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
- 
+import { BsDatabaseFillAdd,BsFillCaretLeftFill } from 'react-icons/bs';
 
 export default class DeliveryAdmin extends Component {
 
@@ -56,7 +56,7 @@ export default class DeliveryAdmin extends Component {
              </tr>
            </thead>
          
-         <tbody>
+         <tbody style={{background:'pink'}}>
             {this.state.posts.map((posts,index)=>(
                  <tr key={index}>
                     <th scope="row">{index+1}</th>
@@ -65,7 +65,7 @@ export default class DeliveryAdmin extends Component {
                     <td>{posts.phone}</td>
                     <td>{posts.NIC}</td>
                     <td>{posts.email}</td>
-                    <td style={{color:'Red'}}>{posts.Status}</td>
+                    <td  style={{background:'#998'}}>{posts.Status}</td>
                     
                     <td>
                        <a className="btn btn-warning" href={`/edit/${posts._id}`}>
@@ -83,7 +83,7 @@ export default class DeliveryAdmin extends Component {
        </table>
        
        <a className="btn btn-warning" href={`/admin`}>
-                         <i className="fas fa-tash-altt"></i>Back
+       <BsFillCaretLeftFill/>Back
                        </a>
       </div></div></div></div>
     )

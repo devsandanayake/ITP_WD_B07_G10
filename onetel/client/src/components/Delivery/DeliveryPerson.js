@@ -3,7 +3,7 @@
   
  import R from '../../images/R.gif';
  import banner from '../../images/dbanner.gif';
- import {  BsFillSendCheckFill} from "react-icons/bs";
+ import {  BsFillSendCheckFill,BsCursorFill} from "react-icons/bs";
 
  
  export default class DeliveryPerson extends Component {
@@ -44,7 +44,7 @@
         <div className='banner'>
           <img src={banner} className='img-top img-fluid' alt='banner'/>
            <br/>
-          <h5 className='shadow text-center'style={{background:'white'}}>Onetel Delivery service</h5><br/>
+          <h5 className='shadow text-center'style={{background:'white'}}><BsCursorFill/>&nbsp;Onetel Delivery service protel</h5><br/>
         </div>
         
         
@@ -63,9 +63,10 @@
                     <li className='card-text'>NIC:-{posts.NIC}</li>
                     <li className='card-text'>Email:-{posts.email}</li>
                     </ol>
-                    <a className="btn btn-warning" href={`/editc/${posts._id}`}>
+                    <center><a className="btn btn-outline-primary"href={`/editc/${posts._id}`}>
                        < BsFillSendCheckFill/> &nbsp; Status
                        </a>
+                     </center>
                        </div>
               
        

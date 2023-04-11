@@ -39,13 +39,13 @@ export default function EditDelivery() {
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2">
           <h2 className="text-center m-4">Update Your Task</h2>
-
+          <center>
           <form onSubmit={(e) => onSubmit(e)}>
            
                                    
             
             <select className="col-md- offset-md- border rounded p-1 mt-3 text-center" name="Status" value={Status} onChange={(e) => onInputChange(e)}>
-                <option>Select Item</option>
+                <option value="">--Select Task--</option>
                 <option value="Successful" >Successful</option>
                 <option value="Unsuccessful">Unsuccessful</option>
                  
@@ -58,7 +58,7 @@ export default function EditDelivery() {
             <Link className="btn btn-outline-danger mx-2" to="/delivery/person">
               Cancel
             </Link>
-          </form>
+          </form></center>
         </div>
       </div>
     </div>

@@ -45,14 +45,14 @@ class Register extends Component {
     return (
       <div className='container'>
         <h2>
-            <div className='row'>
+            <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
                 <div className='cil-md-6 mt-5 mx-auto'>
                     <form noValidate onSubmit={this.onSubmit}>
-                        <h1 className='h3 mb-3 font-weight-normal'>
-                            <p align="center">Registration</p>
+                        <h1 className='h6 mb-3 font-weight-normal'>
+                            <p className='h2 mb-5' style={{color:"pink"}}align="left">Registration</p>
 
                             <div className='form-group'>
-                                <label htmlFor='first_name'>First Name</label>
+                                <label htmlFor='first_name'>First Name</label><br/><br/>
                                 <input type='text' 
                                        className='form-control'
                                        name='first_name'
@@ -60,10 +60,10 @@ class Register extends Component {
                                        value={this.state.first_name}
                                        onChange={this.onChange}
                                        />
-                            </div>
+                            </div><br/>
 
                             <div className='form-group'>
-                                <label htmlFor='last_name'>Last Name</label>
+                                <label htmlFor='last_name'>Last Name</label><br/><br/>
                                 <input type='text' 
                                        className='form-control'
                                        name='last_name'
@@ -71,11 +71,11 @@ class Register extends Component {
                                        value={this.state.last_name}
                                        onChange={this.onChange}
                                        />
-                            </div>
+                            </div><br/>
 
 
                             <div className='form-group'>
-                                <label htmlFor='email'>Email Address</label>
+                                <label htmlFor='email'>Email Address</label><br/><br/>
                                 <input type='email' 
                                        className='form-control'
                                        name='email'
@@ -83,9 +83,9 @@ class Register extends Component {
                                        value={this.state.email}
                                        onChange={this.onChange}
                                        />
-                            </div>
+                            </div><br/>
                             <div className='form-group'>
-                            <label htmlFor='password'>Password</label>
+                            <label htmlFor='password'>Password</label><br/><br/>
                                 <input type='password' 
                                        className='form-control'
                                        name='password'
@@ -93,8 +93,8 @@ class Register extends Component {
                                        value={this.state.password}
                                        onChange={this.onChange}
                                        />
-                             </div>
-                               <button className='btn btn-outline-primary btn-block' >Register</button><br/><br/>
+                             </div><br/>
+                               <button className='btn btn-outline-primary btn-block' >Register</button> 
                                <Link className="btn btn-danger mx-2" to="/login">Login</Link>
                         </h1>
                     </form>

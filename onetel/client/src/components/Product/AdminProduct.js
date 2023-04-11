@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
- 
+import { BsDatabaseFillAdd,BsFillCaretLeftFill } from 'react-icons/bs';
 
 export default class AdminProduct extends Component {
 
@@ -55,7 +55,7 @@ export default class AdminProduct extends Component {
              </tr>
            </thead>
          
-         <tbody>
+         <tbody style={{background:'pink'}}>
             {this.state.posts.map((posts,index)=>(
                  <tr key={index}>
                     <th scope="row">{index+1}</th>
@@ -81,10 +81,11 @@ export default class AdminProduct extends Component {
        </table>
        
        <a className="btn btn-warning" href={`/admin`}>
-                         <i className="fas fa-tash-altt"></i>Back
+       <BsFillCaretLeftFill/>Back
                        </a>
-                       <a className="btn btn-warning" href={`/addProduct`}>
-                         <i className="fas fa-tash-altt"></i>ADD
+                       <a className="btn btn-primary" href={`/addProduct`} style={{marginLeft:'5rem'}}>
+                         <BsDatabaseFillAdd/>
+                         &nbsp;ADD
                        </a>
       </div>
       </div>

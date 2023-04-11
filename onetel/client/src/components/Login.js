@@ -29,6 +29,8 @@ export default class Login extends Component {
     if(this.state.email == "admin@gmail.com" && this.state.password == "1234"){
           console.log('admin log')
           window.location="/admin";
+    }if(this.state.email == "ad@gmail.com" && this.state.password == "1234"){
+      window.location="/delivery/person";
     }
      
 
@@ -52,13 +54,13 @@ export default class Login extends Component {
     return (
       <div className='container'>
         <h2>
-            <div className='row'>
+            <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
                 <div className='cil-md-6 mt-5 mx-auto'>
                     <form noValidate onSubmit={this.onSubmit}>
-                        <h1 className='h3 mb-3 font-weight-normal'>
-                            <p align="center">Login</p>
+                        <h6 className='h6 mb-3 font-weight-normal text-center'>
+                            <p className='h2 mb-5' style={{color:"pink"}}align="left">Login</p>
                             <div className='form-group'>
-                                <label htmlFor='email'>Email Address</label>
+                                <label htmlFor='email'>Email Address</label><br/>
                                 <input type='email' 
                                        className='form-control'
                                        name='email'
@@ -66,9 +68,9 @@ export default class Login extends Component {
                                        value={this.state.email}
                                        onChange={this.onChange}
                                        />
-                            </div>
+                            </div><br/>
                             <div className='form-group'>
-                            <label htmlFor='password'>Password</label>
+                            <label htmlFor='password'>Password</label><br/>
                                 <input type='password' 
                                        className='form-control'
                                        name='password'
@@ -76,11 +78,11 @@ export default class Login extends Component {
                                        value={this.state.password}
                                        onChange={this.onChange}
                                        />
-                             </div>
-                             <button className='btn  btn-outline-primary'>Sign in</button>
+                             </div><br/><center>
+                             <button className='btn  btn-primary'>Sign in</button>
                                
-                               <Link className="btn btn-outline-danger mx-2" to="/register"> register </Link>
-                        </h1>
+                               <Link className="btn btn-danger mx-2" to="/register"> register </Link></center>
+                        </h6>
                     </form>
                 </div>
             </div>
