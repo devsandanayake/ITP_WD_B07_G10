@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { BsDatabaseFillAdd,BsFillCaretLeftFill } from 'react-icons/bs';
+ 
 
 export default class DeliveryAdmin extends Component {
 
@@ -37,11 +38,13 @@ export default class DeliveryAdmin extends Component {
 
   render() {
      
-    return (
+    return ( 
+      
       <div className='container'>
+       
         <div className='row my-4'>
           <div className='col-lg-12'>
-            <div className='table-responsive'>
+            <div className='table-responsive'> 
        <table className="table table-striped text-center" >
            <thead>
              <tr className='table-dark'>

@@ -1,92 +1,103 @@
-import React from 'react';
-import {
-  CDBSidebar,
-  CDBSidebarContent,
-  CDBSidebarFooter,
-  CDBSidebarHeader,
-  CDBSidebarMenu,
-  CDBSidebarMenuItem,
-} from 'cdbreact';
-import { NavLink } from 'react-router-dom';
-
-const Dashboard = () => {
+import React from 'react'
+import { BsCaretRightSquare} from "react-icons/bs";
+import './card.css'
+import cus from '../images/cus.jpg'
+import product from  '../images/product.jpg'
+import Repair from '../images/Repair.png'
+import delivery from '../images/delivery.gif'
+import R1 from '../images/R1.gif'
+import Rent from '../images/Rent.png'
+import order from '../images/order.jpg'
+import stock from '../images/stock.png'
+import banner from'../images/banner.jpg'
+ 
+export default function Dashboard() {
   return (
-    <div
-      style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}
-    >
-      <CDBSidebar textColor="#fff" backgroundColor="#333">
-        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-          <a
-            href="/"
-            className="text-decoration-none"
-            style={{ color: 'inherit' }}
-          >
-            Sidebar
-          </a>
-        </CDBSidebarHeader>
+    <div className="admin">
+       <br/><br/>
+    <div className='container row'>
+    <div className='card-container1 mb-5'>
+       <div className="image-container row">
+           <img src={order}></img>
+        </div> 
+        <div className=" text-center"> 
+                    <div className='card-title'>Order Management</div>
+                    <a className="btn btn-secondary" href={``}><BsCaretRightSquare/></a>
+          </div>          
+       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <CDBSidebarContent className="sidebar-content">
-          <CDBSidebarMenu>
-            <NavLink exact to="/" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
-            </NavLink>
-            <NavLink exact to="/delivery/ad" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Delivery Management</CDBSidebarMenuItem>
-            </NavLink>
-            <NavLink exact to="/customer/ad" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Customer Management</CDBSidebarMenuItem>
-            </NavLink>
+       <div className='card-container2 mb-5'>
+       <div className="image-container row">
+           <img src={product}></img>
+        </div> 
+        <div className="text-center"> 
+                    <div className='card-title'>Product Management</div>
+                    <a className="btn btn-success" href={``}><BsCaretRightSquare/></a>
+          </div>          
+       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <NavLink exact to="/analytics" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">Employeer Management</CDBSidebarMenuItem>
-            </NavLink>
+       <div className='card-container3 mb-5'>
+       <div className="image-container row">
+           <img src={Repair}></img>
+        </div> 
+        <div className="text-center"> 
+                    <div className='card-title'>Repair Management</div>
+                    <a className="btn btn-warning" href={``}><BsCaretRightSquare/></a>
+          </div>          
+       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <NavLink exact to="/adminManageProduct" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">Product Management</CDBSidebarMenuItem>
-            </NavLink>
+       <div className='card-container4 mb-5'>
+       <div className="image-container row">
+           <img src={delivery}></img>
+        </div> 
+        <div className="text-center"> 
+                    <div className='card-title'>Delivery Management</div>
+                    <a className="btn btn-light" href={`/delivery/ad`}><BsCaretRightSquare/></a>
+          </div>          
+       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <NavLink exact to="/repairAdmin" activeClassName="activeClicked"> 
-              <CDBSidebarMenuItem icon="chart-line">Repair Management</CDBSidebarMenuItem>
-            </NavLink>
-            <NavLink exact to="/analytics" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">Warrenty Management</CDBSidebarMenuItem>
-            </NavLink>
 
-            <NavLink exact to="/analytics" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">Rent-item MAnagement</CDBSidebarMenuItem>
-            </NavLink>
+       <div className='card-container5 mb-5'>
+       <div className="image-container row">
+           <img src={R1}></img>
+        </div> 
+        <div className="text-center"> 
+                    <div className='card-title'>Warrenty Management</div>
+                    <a className="btn btn-danger" href={``}><BsCaretRightSquare/></a>
+          </div>          
+       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <NavLink exact to="/analytics" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">Payment Management</CDBSidebarMenuItem>
-            </NavLink>
 
-            
+       <div className='card-container6 mb-5'>
+       <div className="image-container row">
+           <img src={Rent}></img>
+        </div> 
+        <div className="text-center"> 
+                    <div className='card-title'>Rent Management</div>
+                    <a className="btn btn-info" href={``}><BsCaretRightSquare/></a>
+          </div>          
+       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            <NavLink
-              exact
-              to="/hero404"
-              target="_blank"
-              activeClassName="activeClicked"
-            >
-              <CDBSidebarMenuItem icon="exclamation-circle">
-                404 page
-              </CDBSidebarMenuItem>
-            </NavLink>
-          </CDBSidebarMenu>
-        </CDBSidebarContent>
+       <div className='card-container7 mb-5'>
+       <div className="image-container row">
+           <img src={cus}></img>
+        </div> 
+        <div className="text-center"> 
+                    <div className='card-title'>Customer Management</div>
+                    <a className="btn btn-dark" href={``}><BsCaretRightSquare/></a>
+          </div>          
+       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <CDBSidebarFooter style={{ textAlign: 'center' }}>
-          <div
-            style={{
-              padding: '20px 5px',
-            }}
-          >
-            Sidebar Footer
-          </div>
-        </CDBSidebarFooter>
-      </CDBSidebar>
-    </div>
-  );
-};
-
-export default Dashboard;
+       <div className='card-container8 mb-5'>
+       <div className="image-container row">
+           <img src={stock}></img>
+        </div> 
+        <div className="text-center"> 
+                    <div className='card-title'>Stock Management</div>
+                    <a className="btn btn-primary" href={``}><BsCaretRightSquare/></a>
+          </div>          
+       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+    </div></div>
+  )
+}

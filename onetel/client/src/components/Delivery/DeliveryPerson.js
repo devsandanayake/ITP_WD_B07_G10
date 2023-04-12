@@ -12,9 +12,10 @@
  
     this.state={
       posts:[],
-     
+      
     };
   }
+   
    
 
   componentDidMount(){
@@ -38,6 +39,7 @@
 
   
    render() {
+   
      return (
        
       <div className='row'>

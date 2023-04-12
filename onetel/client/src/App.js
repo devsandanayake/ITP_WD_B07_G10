@@ -25,12 +25,11 @@ import Checkperson from './components/Delivery/Checkperson';
         <BrowserRouter>
       
         <NavBar/>
-        
-            
-        
+                
         <div className="container">
         <Routes>
         <Route exact path="/"  element={<Home/>}></Route> 
+       
         <Route exact path="/admin"  element={<Dashboard/>}></Route> 
         <Route exact path="/profile"  element={<Profile/>}></Route> 
         <Route exact path="/login"  element={<Login/>}></Route> 

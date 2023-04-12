@@ -1,0 +1,117 @@
+ 
+.card-container1{
+    width: 219px;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    background-color: rgb(199, 147, 14);
+}
+.card-container1:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+.card-container2{
+    width: 219px;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    background-color: rgb(156, 199, 14);
+}
+.card-container2:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+.card-container3{
+    width: 219px;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    background-color: rgb(199, 76, 14);
+}
+.card-container3:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+.card-container4{
+    width: 219px;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    background-color: rgb(14, 199, 140);
+}
+.card-container4:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+.card-container5{
+    width: 219px;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    background-color: rgb(193, 14, 199);
+}
+.card-container5:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+.card-container6{
+    width: 219px;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    background-color: rgb(199, 14, 94);
+}
+.card-container6:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+.card-container7{
+    width: 219px;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    background-color: rgb(14, 171, 199);
+}
+.card-container7:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+.card-container8{
+    width: 219px;
+    height: 250px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    background-color: rgb(254, 240, 41);
+}
+.card-container8:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px 0px;
+}
+.image-container img{
+    overflow: hidden;
+    height: 160px;
+    width: 219px;
+}
+
+ 
