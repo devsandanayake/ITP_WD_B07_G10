@@ -34,61 +34,7 @@ Description of the Project:
 - `Frontend` - React.js, Redux.js, & Tailwind CSS
 
 
-<table class="styled-table">
-    <thead>
-        <tr>
-            <th>Name with Initials</th>
-            <th>Registration Number</th>
-            <th>Email</th>
-            <th>Badge</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class=""active-row>
-            <td>Sandanayake H.D</td>
-            <td>IT21265174</td>
-            <td>it21265174@my.sliit.lk</td>
-            <td><img src="https://img.shields.io/badge/⭐-Leader-red"></td>
-        </tr>
-        <tr>
-            <td>Wickramaarachchi W.A.N.D</td>
-            <td>IT21272868</td>
-            <td>it21272868@my.sliit.lk</td>
-            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
-        </tr>
-          <tr>
-            <td>Gunathilaka K.A.R </td>
-            <td>IT21265006</td>
-            <td>it21265006@my.sliit.lk</td>
-            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
-        </tr>
-        <tr>
-            <td>Chamod S.G.K</td>
-            <td>IT21261596</td>
-            <td>it21262596@my.sliit.lk</td>
-            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
-        </tr>
-         <tr>
-            <td>Wijayanayake J.M.A.P</td>
-            <td>IT21272790</td>
-            <td>it21272790@my.sliit.lk</td>
-            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
-         </tr>
-        <tr>
-            <td>Chandrasena R.H.V</td>
-            <td>IT21264566</td>
-            <td>it21264566@my.sliit.lk</td>
-            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
-         </tr>
-         <tr>
-            <td>Wickramasinghe W.A.R.M</td>
-            <td>IT21233494</td>
-            <td>it21233494@my.sliit.lk</td>
-            <td><img src="https://img.shields.io/badge/⭐-Member-blue"></td>
-        </tr>
-       <!-- and so on... -->
-    </tbody>
-</table>
+ 
 
 
 <img alt="app" src="https://camo.githubusercontent.com/2a63ca5341c9dd769b3cf9c86d6e31c37c586cb6a32176b8797454aa683b500f/68747470733a2f2f6469676974616c65646765746563682e696e2f696d616765732f42616e6e65725f30332e676966">
