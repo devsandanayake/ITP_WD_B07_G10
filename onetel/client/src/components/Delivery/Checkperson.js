@@ -46,7 +46,7 @@ export default function EditDelivery() {
             
             <select className="col-md- offset-md- border rounded p-1 mt-3 text-center" name="Status" value={Status} onChange={(e) => onInputChange(e)}>
                 <option value="">--Select Task--</option>
-                <option value="Successful" >Successful</option>
+                <option value="Successful">Successful</option>
                 <option value="Unsuccessful">Unsuccessful</option>
                  
             </select><br/><br/>

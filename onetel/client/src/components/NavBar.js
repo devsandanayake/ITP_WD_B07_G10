@@ -40,7 +40,7 @@ import { Link } from "react-router-dom";
       
 
        <li className='nav-item'>
-       <a className="nav-link"  style={{ color: 'white' }} href="/repairCus">Repair Items</a>
+       <a className="nav-link"  style={{ color: 'white' }} href="/repairCus">Service</a>
        </li>
        &nbsp; &nbsp; 
        <li className='nav-item'>

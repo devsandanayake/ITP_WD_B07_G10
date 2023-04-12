@@ -16,15 +16,16 @@ import AddProduct from './components/Product/AddProduct';
 import AdminProduct from './components/Product/AdminProduct';
 import CustomerAdmin from './components/Customer/CustomerAdmin';
 import DeliveryPerson from './components/Delivery/DeliveryPerson';
-
+import MaybeShowNavBar from './components/MaybeShowNavBar';
 import Checkperson from './components/Delivery/Checkperson';
  export default class App extends Component {
    render() {
      return (
        <div>
         <BrowserRouter>
-      
+      <MaybeShowNavBar>
         <NavBar/>
+        </MaybeShowNavBar>
                 
         <div className="container">
         <Routes>

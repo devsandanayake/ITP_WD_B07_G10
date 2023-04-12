@@ -1,7 +1,9 @@
 import React from 'react'
 import { BsCaretRightSquare} from "react-icons/bs";
 import './card.css'
+import './Slidebar.css'
 import cus from '../images/cus.jpg'
+import logo from '../images/logo.jpg'
 import product from  '../images/product.jpg'
 import Repair from '../images/Repair.png'
 import delivery from '../images/delivery.gif'
@@ -9,11 +11,31 @@ import R1 from '../images/R1.gif'
 import Rent from '../images/Rent.png'
 import order from '../images/order.jpg'
 import stock from '../images/stock.png'
-import banner from'../images/banner.jpg'
- 
+import { RiDashboard2Line } from "react-icons/ri";
+import { FiSettings } from "react-icons/fi";
+import { HiOutlineDocumentReport } from "react-icons/hi";
+import { MdSwitchAccount } from "react-icons/md";
+import { SlLogout} from "react-icons/sl";
+import {MdAttachMoney} from "react-icons/md";
+import {AiOutlineHome} from "react-icons/ai";
+import {FiPhoneCall} from "react-icons/fi";
 export default function Dashboard() {
   return (
-    <div className="admin">
+    <div className="admin"> 
+      <div className='Slidebar'><br/>
+        <h4 className='text-center mb-5' style={{color:'white'}}>Onetel-Admin</h4>
+        <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/admin'}><RiDashboard2Line/>&nbsp;Dashboard</a></div><br/>
+        <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/'}><AiOutlineHome/>&nbsp;Home</a></div><br/>
+        <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/setting'}><FiSettings/>&nbsp;Web Setting</a></div><br/>
+        <div className='item'><a className='btn btn-primary col-12' style={{background:"rgb(23, 102, 221)"}}href={'/report'}><HiOutlineDocumentReport/>&nbsp;Montly Report</a></div><br/>
+        <div className='item' ><a className='btn btn-primary col-12' style={{background:"rgb(23, 102, 221)"}}href={'/fin'}><MdAttachMoney/>&nbsp;Financial</a></div><br/>
+        <div className='item'><a className='btn btn-primary col-12' style={{background:"rgb(23, 102, 221)"}} href={'/acc'}><MdSwitchAccount/>&nbsp;Accounts</a></div><br/>
+        <div className='item' style={{background:"red"}}><a className='btn btn-danger col-12' style={{background:"red"}} href={'/login'}><SlLogout/>&nbsp;LogOut</a></div><br/>
+        
+         <div className="log"><img  src={logo}></img>
+         </div><br/>
+         <div className='copyright'>Copyright © dev_Snayake_2023 </div><br/>
+        </div>
        <br/><br/>
     <div className='container row'>
     <div className='card-container1 mb-5'>
