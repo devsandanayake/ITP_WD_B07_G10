@@ -39,7 +39,7 @@ export default class Login extends Component {
            window.location="/profile";
          }
     })){
-      
+ 
     }else{
       window.alert("erro")
     }

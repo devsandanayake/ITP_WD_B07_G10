@@ -71,6 +71,59 @@ onSubmit=()=>{
    
 
   render() {
+
+    const Link = (
+      <div className='row'>
+      {this.state.posts.map((posts)=>(
+      <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
+        <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
+        <a href={`http:/localhost:8070/products/${posts._id}`}> <img src={posts.image} className='card-img-top img-fluid' alt='brand'/></a>   
+             <div className='card-body text-center'>  
+                  <h5 className='card-title'>{posts.Brand}</h5>
+                  <h5 className='card-title'>{posts.Price}</h5>
+                  <p className='card-text'> {posts.Status}</p>
+           
+                  <Button type="submit" className='btn btn-success' onClick={this.onSubmit}>Buy</Button>
+              </div>
+          </div>
+          
+       </div>
+             
+     ))}
+     </div>
+             
+    )
+    
+    const userLink = (
+      
+      <div className='row'>
+      {this.state.posts.map((posts)=>(
+      <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
+        <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
+        <a href={`http:/localhost:8070/products/${posts._id}`}> <img src={posts.image} className='card-img-top img-fluid' alt='brand'/></a>   
+             <div className='card-body text-center'>  
+                  <h5 className='card-title'>{posts.Brand}</h5>
+                  <h5 className='card-title'>{posts.Price}</h5>
+                  <p className='card-text'> {posts.Status}</p>
+                  <a className="btn btn-primary" href={``}><BsCart4/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a className="btn btn-success" href={`http:/localhost:8070/products/${posts._id}`}>Buy</a>                
+                  
+              </div>
+          </div>
+          
+       </div>
+             
+     ))}
+     </div>
+             
+    
+       
+    )  
+
+
+
+
+
     return (
        <div  className='container'>
            <div className='banner'>
@@ -88,11 +141,11 @@ onSubmit=()=>{
                   <Button variant="success">Search</Button>
                 </Form><br/>
         
-          <div className='row'>
+          {/* <div className='row'>
             {this.state.posts.map((posts)=>(
             <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
               <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
-               <img src={posts.image} className='card-img-top img-fluid' alt='brand'/>   
+              <a href={`http:/localhost:8070/products/${posts._id}`}> <img src={posts.image} className='card-img-top img-fluid' alt='brand'/></a>   
                    <div className='card-body text-center'>  
                         <h5 className='card-title'>{posts.Brand}</h5>
                         <h5 className='card-title'>{posts.Price}</h5>
@@ -101,11 +154,12 @@ onSubmit=()=>{
                       
                         <Button type="submit" className='btn btn-success' onClick={this.onSubmit}>Buy</Button>
                     </div>
-                </div>
-             </div>
-          
-           ))}
-           </div>
+                </div> */}
+                {localStorage.usertoken? userLink:Link}
+             {/* </div> */}
+                   
+           {/* ))} */}
+           {/* </div> */}
           </div>
                
        

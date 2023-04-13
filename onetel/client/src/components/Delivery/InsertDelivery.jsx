@@ -29,7 +29,7 @@ export default class InsertDelivery extends Component {
   onSubmit=(e)=>{
     e.preventDefault();
 
-    const {Name,Address,phone,NIC,email,Status} = this.state;
+    const {Name,Address,phone,NIC,email} = this.state;
 
     const data ={
       Name:Name,

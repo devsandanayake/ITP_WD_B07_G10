@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { useState } from 'react'
  
-export default function AddProduct() {
+export default function addProduct() {
     
     const [Categories , setCategories] = useState("");
     const [Brand , setBrand] = useState("");
