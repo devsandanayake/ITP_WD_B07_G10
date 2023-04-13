@@ -33,7 +33,7 @@ export default class Home extends Component {
   }
     //seraching part  
     filterData(posts,searchKey){
-  
+         
 
       const result = posts.filter((post)=>
           post.Brand.toLowerCase().includes(searchKey)||
@@ -77,7 +77,7 @@ onSubmit=()=>{
       {this.state.posts.map((posts)=>(
       <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
         <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
-        <a href={`http:/localhost:8070/products/${posts._id}`}> <img src={posts.image} className='card-img-top img-fluid' alt='brand'/></a>   
+        <img src={posts.image} className='card-img-top img-fluid' alt='brand'/>   
              <div className='card-body text-center'>  
                   <h5 className='card-title'>{posts.Brand}</h5>
                   <h5 className='card-title'>{posts.Price}</h5>
@@ -100,13 +100,13 @@ onSubmit=()=>{
       {this.state.posts.map((posts)=>(
       <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
         <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
-        <a href={`http:/localhost:8070/products/${posts._id}`}> <img src={posts.image} className='card-img-top img-fluid' alt='brand'/></a>   
+        <a href={`/order/${posts._id}`}> <img src={posts.image} className='card-img-top img-fluid' alt='brand'/></a>   
              <div className='card-body text-center'>  
                   <h5 className='card-title'>{posts.Brand}</h5>
                   <h5 className='card-title'>{posts.Price}</h5>
                   <p className='card-text'> {posts.Status}</p>
                   <a className="btn btn-primary" href={``}><BsCart4/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a className="btn btn-success" href={`http:/localhost:8070/products/${posts._id}`}>Buy</a>                
+                  <a className="btn btn-success" href={`/order/${posts._id}`}>Buy</a>                
                   
               </div>
           </div>

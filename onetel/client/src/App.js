@@ -12,13 +12,14 @@ import Home from './components/Home';
 import Footer from './components/footer';
 import RepairCus from './components/Repair/RepairCus';
 import RepairAdmin from './components/Repair/RepairAdmin';
-import AddProduct from './components/Product/addProduct'; 
+import AddProduct from './components/Product/AddProduct'; 
 import AdminProduct from './components/Product/AdminProduct';
 import CustomerAdmin from './components/Customer/CustomerAdmin';
 import DeliveryPerson from './components/Delivery/DeliveryPerson';
 import MaybeShowNavBar from './components/MaybeShowNavBar';
 import Checkperson from './components/Delivery/Checkperson';
 import Adminacc from './components/Account/Adminacc';
+import AddOrder from './components/Order/AddOrder';
  export default class App extends Component {
    render() {
      return (
@@ -58,6 +59,9 @@ import Adminacc from './components/Account/Adminacc';
         <Route exact path="/addProduct"  element={<AddProduct/>}></Route> 
         
         <Route exact path="/adminManageProduct"  element={<AdminProduct/>}></Route>
+
+
+        <Route exact path ="/order" element={<AddOrder/>}></Route> 
        </Routes>
         </div>
         <Footer/>          
