@@ -22,8 +22,9 @@ const postdeliverySchema = new mongoose.Schema({
         required:true
     },
     Status:{
-        type:String
-                
+        type:String,
+        default:"Pending"
+                        
     }
 });
 

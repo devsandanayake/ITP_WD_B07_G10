@@ -18,6 +18,7 @@ import CustomerAdmin from './components/Customer/CustomerAdmin';
 import DeliveryPerson from './components/Delivery/DeliveryPerson';
 import MaybeShowNavBar from './components/MaybeShowNavBar';
 import Checkperson from './components/Delivery/Checkperson';
+import Adminacc from './components/Account/Adminacc';
  export default class App extends Component {
    render() {
      return (
@@ -32,6 +33,9 @@ import Checkperson from './components/Delivery/Checkperson';
         <Route exact path="/"  element={<Home/>}></Route> 
        
         <Route exact path="/admin"  element={<Dashboard/>}></Route> 
+        <Route exact path="/account"  element={<Adminacc/>}></Route> 
+    
+
         <Route exact path="/profile"  element={<Profile/>}></Route> 
         <Route exact path="/login"  element={<Login/>}></Route> 
        <Route exact path="/register"  element={<Register/>}></Route>

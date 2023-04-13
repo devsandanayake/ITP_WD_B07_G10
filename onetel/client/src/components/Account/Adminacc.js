@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
- 
-import {login} from './userFuntion';
-import { Link } from "react-router-dom";
-import { BsWindowSidebar } from 'react-icons/bs';
+import {adminregister} from './adminFuntion';
 
-export default class Login extends Component {
+import { Link } from "react-router-dom";
+ 
+ 
+class Register extends Component {
 
   constructor(props){
     super(props);
     this.state =  {
+         
+         name:'',
          email : '',
          password : ''
     }
@@ -22,37 +24,22 @@ export default class Login extends Component {
   onSubmit(e){
     e.preventDefault()
 
-    const user ={
+    const admin ={
+        name:this.state.name,
         email:this.state.email,
         password:this.state.password
     }    
-    
-    if(this.state.email == "admin@gmail.com" && this.state.password == "1234"){
-          console.log('admin log')
-          window.location="/admin";
-   }
-    else if(this.state.email == "ad@gmail.com" && this.state.password == "1234"){ 
-      window.location="/delivery/person";
-    }
-    else if(login(user).then(res=>{
+
+   adminregister(admin).then(res=>{
         if(res){
-           window.location="/profile";
-         }
-    })){
-      
-    }else{
-      window.alert("erro")
-    }
-
-       
-   
-  
-
-      
+         
+          this.props.history.push(`/login`)
+          
+           
+        }
+    })
   }
   
-
-
 
   render() {
     return (
@@ -61,10 +48,25 @@ export default class Login extends Component {
             <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
                 <div className='cil-md-6 mt-5 mx-auto'>
                     <form noValidate onSubmit={this.onSubmit}>
-                        <h6 className='h6 mb-3 font-weight-normal text-center'>
-                            <p className='h2 mb-5' style={{color:"pink"}}align="left">Login</p>
+                        <h1 className='h6 mb-3 font-weight-normal'>
+                            <p className='h2 mb-5' style={{color:"pink"}}align="left">Registration</p>
+
+                          
+
                             <div className='form-group'>
-                                <label htmlFor='email'>Email Address</label><br/>
+                                <label htmlFor='last_name'>Name</label><br/><br/>
+                                <input type='text' 
+                                       className='form-control'
+                                       name='name'
+                                       placeholder='Enter Last Name'
+                                       value={this.state.name}
+                                       onChange={this.onChange}
+                                       />
+                            </div><br/>
+
+
+                            <div className='form-group'>
+                                <label htmlFor='email'>Email Address</label><br/><br/>
                                 <input type='email' 
                                        className='form-control'
                                        name='email'
@@ -74,7 +76,7 @@ export default class Login extends Component {
                                        />
                             </div><br/>
                             <div className='form-group'>
-                            <label htmlFor='password'>Password</label><br/>
+                            <label htmlFor='password'>Password</label><br/><br/>
                                 <input type='password' 
                                        className='form-control'
                                        name='password'
@@ -82,11 +84,10 @@ export default class Login extends Component {
                                        value={this.state.password}
                                        onChange={this.onChange}
                                        />
-                             </div><br/><center>
-                             <button className='btn  btn-primary'>Sign in</button>
-                               
-                               <Link className="btn btn-danger mx-2" to="/register"> register </Link></center>
-                        </h6>
+                             </div><br/>
+                               <button className='btn btn-outline-primary btn-block' >Register</button> 
+                               <Link className="btn btn-danger mx-2" to="/login">Login</Link>
+                        </h1>
                     </form>
                 </div>
             </div>
@@ -95,3 +96,5 @@ export default class Login extends Component {
     )
   }
 }
+
+export default Register;

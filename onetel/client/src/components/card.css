@@ -7,7 +7,7 @@
     transition: 0.3s;
     animation: ease-in;
     background-color: rgb(199, 147, 14);
-    margin-left:20rem;
+    margin-left:25rem;
 }
 .card-container1:hover{
     transform: scale(1.1);
@@ -49,7 +49,7 @@
     transition: 0.3s;
     animation: ease-in;
     background-color: rgb(14, 199, 140);
-    margin-left:20rem;
+    margin-left:25rem;
 }
 .card-container4:hover{
     transform: scale(1.1);
@@ -91,7 +91,7 @@
     transition: 0.3s;
     animation: ease-in;
     background-color: rgb(14, 171, 199);
-    margin-left:20rem;
+    margin-left:25rem;
 }
 .card-container7:hover{
     transform: scale(1.1);
