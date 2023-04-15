@@ -54,7 +54,7 @@ export default function Dashboard() {
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Product Management</div>
-                    <a className="btn btn-success" href={``}><BsCaretRightSquare/></a>
+                    <a className="btn btn-success" href={`/adminManageProduct`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -64,7 +64,7 @@ export default function Dashboard() {
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Repair Management</div>
-                    <a className="btn btn-warning" href={``}><BsCaretRightSquare/></a>
+                    <a className="btn btn-warning" href={`/repairAdmin`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

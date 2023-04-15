@@ -141,5 +141,30 @@ router.post('/add/pro',upload,(req,res)=>{
 //    }) 
 //  })
 
+//get a specific product
+// router.get('/product/:id',(res,req)=>{
+//     let PId = req.params.id;
+
+//     Postproduct.find(({id:PId}),(err,product)=>{
+//         if(err){
+//             return res.status(400).json({success:false,err});
+//         }
+//         return res.status(200).json({
+//             success:true,
+//             product
+//         })
+//     })
+// })
+router.get('/product/view/:id', async (req, res) => {
+    const id = req.params.id;
+    try {
+      const data = await Postproduct.findById(id);
+      res.json(data);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  });
+
+
 
 module.exports = router;

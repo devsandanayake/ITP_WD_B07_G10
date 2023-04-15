@@ -3,15 +3,20 @@ const mongoose = require('mongoose');
 const postdeliverySchema = new mongoose.Schema({
     Name:{
         type:String,
-        required:true
+        required:true,
+        minlength:[5, "minlength is 5"],
+        maxlength:[20,"maxlength is 20"]
     },
     Address:{
         type:String,
         required:true
+       
     },
     phone:{
-        type:String,
-        required:true
+        type:Number,
+        required:true,
+        
+
     },
     NIC:{
         type:String,

@@ -66,7 +66,7 @@ export default class AdminProduct extends Component {
                     <td>{posts.Status}</td>
                     <td><img src={posts.image} width={50}/></td>
                     <td>
-                       <a className="btn btn-warning" href={`/edit/${posts._id}`}>
+                       <a className="btn btn-warning" href={`/editProduct/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit
                        </a>
                        &nbsp; &nbsp; 

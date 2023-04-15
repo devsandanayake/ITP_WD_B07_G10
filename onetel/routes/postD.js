@@ -79,4 +79,20 @@ router.delete('/post/delete/:id',(req,res)=>{
 });
 
 
+//get a specific delivery
+router.get("/deliveryP/:id",(res,req)=>{
+    let postID = req.params.id;
+
+    Postdelivery.findById(postID,(err,posts)=>{
+        if(err){
+            return res.status(400).json({success:false,err});
+        }
+        return res.status(200).json({
+            success:true,
+            posts
+        })
+    })
+})
+
+
 module.exports = router;

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
  
-export default function EditDelivery() {
+export default function EditProduct() {
   let navigate = useNavigate();
 
   const { id } = useParams();
@@ -50,7 +50,7 @@ export default function EditDelivery() {
               <input
                 type={"text"}
                 className="form-control"
-                placeholder="Enter Name"
+                placeholder="Enter"
                 name="Name"
                 value={Name}
                 onChange={(e) => onInputChange(e)}

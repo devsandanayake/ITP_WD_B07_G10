@@ -14,6 +14,7 @@ import RepairCus from './components/Repair/RepairCus';
 import RepairAdmin from './components/Repair/RepairAdmin';
 import AddProduct from './components/Product/AddProduct'; 
 import AdminProduct from './components/Product/AdminProduct';
+import EditProduct from './components/Product/Editproduct';
 import CustomerAdmin from './components/Customer/CustomerAdmin';
 import DeliveryPerson from './components/Delivery/DeliveryPerson';
 import MaybeShowNavBar from './components/MaybeShowNavBar';
@@ -57,11 +58,11 @@ import AddOrder from './components/Order/AddOrder';
 
 
         <Route exact path="/addProduct"  element={<AddProduct/>}></Route> 
-        
         <Route exact path="/adminManageProduct"  element={<AdminProduct/>}></Route>
+        <Route exact path="/editProduct/:id"  element={<EditProduct/>}></Route>
 
 
-        <Route exact path ="/order" element={<AddOrder/>}></Route> 
+        <Route exact path ="/:id" element={<AddOrder/>}></Route> 
        </Routes>
         </div>
         <Footer/>          
