@@ -26,7 +26,7 @@ export default function Dashboard() {
         <h4 className='text-center mb-5' style={{color:'white'}}>Onetel-Admin</h4>
         <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/admin'}><RiDashboard2Line/>&nbsp;Dashboard</a></div><br/>
         <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/'}><AiOutlineHome/>&nbsp;Home</a></div><br/>
-        <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/setting'}><FiSettings/>&nbsp;Web Setting</a></div><br/>
+        <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/#setting'}><FiSettings/>&nbsp;Web Setting</a></div><br/>
         <div className='item'><a className='btn btn-primary col-12' style={{background:"rgb(23, 102, 221)"}}href={'/report'}><HiOutlineDocumentReport/>&nbsp;Montly Report</a></div><br/>
         <div className='item' ><a className='btn btn-primary col-12' style={{background:"rgb(23, 102, 221)"}}href={'/fin'}><MdAttachMoney/>&nbsp;Financial</a></div><br/>
         <div className='item'><a className='btn btn-primary col-12' style={{background:"rgb(23, 102, 221)"}} href={'/acc'}><MdSwitchAccount/>&nbsp;Accounts</a></div><br/>

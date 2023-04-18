@@ -1,24 +1,33 @@
 .orders{
-    height: 350px;
+    height: 400px;
     width:350px;
-    margin-top: 40px;
+    margin-top: 30px;
+    position: relative;
     
 }
 .details{
-    background-color: rgb(245, 191, 74);
+    background-color: rgb(46, 199, 219);
     margin-left: 400px;
-    margin-top: -250px;
+    margin-top: -360px;
     border-color:red;
     border-radius: 5px;
     align-items: center;
     position: absolute;
     width:  600px;
-    height: 220px;
+    height: 350px;
     box-shadow: 0px 0px 15px -5px;
     transition: 0.3s;
     animation: ease-in;
 }
-.details:hover{
+/* .details:hover{
     transform: scale(1.1);
     box-shadow: 0px 0px 15px 0px;
+} */
+.form-group1{
+    display: none;
+}
+.form-email{
+    align-items: center;
+    max-width: 250px;
+    margin-left: 185px;
 }

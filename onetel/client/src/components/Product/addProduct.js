@@ -59,7 +59,7 @@ export default function AddProduct() {
              />
              </div>
 
-             <div className='form-group'>
+           <div className='form-group'>
            <label htmlFor="Brand">Brand</label>
             <input type={'text'}
              value={Brand}
