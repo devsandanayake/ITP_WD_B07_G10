@@ -42,7 +42,7 @@ import { BsWhatsapp } from 'react-icons/bs';
 
         
        <NavDropdown title="Service" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/repairCus">Service</NavDropdown.Item>
+              <NavDropdown.Item href="/repairCus">Repair Item</NavDropdown.Item>
               <NavDropdown.Item href="/addwarenty">
                 Warrenty Clame
               </NavDropdown.Item>

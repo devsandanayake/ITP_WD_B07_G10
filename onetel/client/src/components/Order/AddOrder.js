@@ -10,9 +10,6 @@ export default function AddOrder() {
   const[Email,setEmail] = useState("");
   const[message,setMessage] = useState("");
     
- 
- 
- 
   
   
 
