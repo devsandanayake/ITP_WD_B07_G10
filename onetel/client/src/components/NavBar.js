@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
- 
+import NavDropdown from 'react-bootstrap/NavDropdown';
   class NavBar extends Component {
    
 
@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
   render() {
      const loginRegLink = (
-      <nav className="navbar navbar-expand-lg bg-dark" id="navbarNav">
+      <nav className="navbar navbar-expand-lg bg-primary" id="navbarNav">
        <ul className="navbar-nav"> 
         <li className='nav-item'>
         <a className="nav-link" style={{ color: '#1dff1d' }}   href="/login">Login</a>
@@ -32,17 +32,27 @@ import { Link } from "react-router-dom";
     )
     
     const userLink = (
-      <nav className="navbar navbar-expand-lg bg-dark" id="navbarNav">
+      <nav className="navbar navbar-expand-lg bg-primary" id="navbarNav">
       <ul className="navbar-nav"> 
        <li className='nav-item'>
-       <a className="nav-link"  style={{ color: 'white' }}  href="/profile">profile</a>
+       <a className="nav-link"    href="/profile">profile</a>
        </li>
       
 
-       <li className='nav-item'>
-       <a className="nav-link"  style={{ color: 'white' }} href="/repairCus">Service</a>
-       </li>
-       &nbsp; &nbsp; 
+        
+       <NavDropdown title="Service" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/repairCus">Service</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+    
+       &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
        <li className='nav-item'>
          <a  className="btn btn-danger"  onClick={this.logout.bind(this)} herf="">Logout</a>
        </li>
@@ -52,19 +62,19 @@ import { Link } from "react-router-dom";
     )  
     
     return(
-    <nav className="navbar navbar-expand-lg bg-dark"  style={{ color: 'white' }}>
+    <nav className="navbar navbar-expand-lg bg-primary" >
     <div className="container-fluid">
-    <a className="navbar-brand" href="#" style={{ color: 'white' }}>Onetel</a>
+    <a className="navbar-brand" href="#" >Onetel</a>
       <button className="navbar-toggler bg-white"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon bg-white"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link"  style={{ color: 'white' }}  href="/">Home</a>
+            <a className="nav-link"    href="/">Home</a>
           </li>
          <li className="nav-item">
-            <a className="nav-link"  style={{ color: 'white' }} href='#'>About</a>
+            <a className="nav-link"   href='#'>About</a>
           </li>
         </ul>   
         {localStorage.usertoken? userLink:loginRegLink}
