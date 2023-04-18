@@ -52,10 +52,10 @@ export default function EditDelivery() {
             </select><br/><br/>
 
            
-            <button type="submit" className="btn btn-outline-primary" >
+            <button type="submit" className="btn btn-warning" >
               Submit
             </button>
-            <Link className="btn btn-outline-danger mx-2" to="/delivery/person">
+            <Link className="btn btn-danger mx-2" to="/delivery/person">
               Cancel
             </Link>
           </form></center>

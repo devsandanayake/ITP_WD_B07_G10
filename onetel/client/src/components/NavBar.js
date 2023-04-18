@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { BsWhatsapp } from 'react-icons/bs';
   class NavBar extends Component {
    
 
@@ -42,13 +43,13 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
         
        <NavDropdown title="Service" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/repairCus">Service</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+              <NavDropdown.Item href="/addwarenty">
+                Warrenty Clame
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="/rent">Rent Item</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item href="https://wa.me/+94785748316" style={{color:"green"}}>
+              <BsWhatsapp/>&nbsp;WhatsApp
               </NavDropdown.Item>
             </NavDropdown>
     
