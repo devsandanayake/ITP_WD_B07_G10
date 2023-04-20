@@ -155,6 +155,7 @@ router.post('/add/pro',upload,(req,res)=>{
 //         })
 //     })
 // })
+
 router.get('/product/view/:id', async (req, res) => {
     const id = req.params.id;
     try {

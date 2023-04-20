@@ -36,7 +36,7 @@ router.get('/Warrenty', (req, res) => {
         }
         return res.status(200).json({
             success: true,
-            existingPosts: postsWarrenty
+            existingPosts: postWarrenty
         });
 
     });
@@ -92,10 +92,10 @@ const Storage = multer.diskStorage({
 
 const upload = multer({
     storage: Storage
-}).single('testImage1')
+}).single('warrenty')
 
 
-router.post('/abc', (req, res) => {
+router.post('/add/War', (req, res) => {
     upload(req, res, (err) => {
         if (err) {
             console.log(err)
@@ -105,13 +105,11 @@ router.post('/abc', (req, res) => {
                 ItemName: req.body.ItemName,
                 customerID: req.body.customerID,
                 customerName: req.body.customerName,
+                cusEmail:req.body.cusEmail,
                 Reason: req.body.Reason,
-
-
-                imageWarrenty: {
-                    data: req.file.filename,
-                    contentType: 'image/png'
-                }
+               warrenty:req.file.filename
+                    
+                
             })
             newWarrenty.save().then(() => res.send("successfull uploaded"))
                 .catch((err) => console.log(err));

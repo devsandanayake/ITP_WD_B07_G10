@@ -42,8 +42,6 @@ export default function AddOrder() {
   //view order for customer
   const {id }= useParams()
 
-
-
   const [order,setorder]=useState({
       Categories:"",
       Brand:"",

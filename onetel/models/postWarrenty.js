@@ -5,7 +5,7 @@ const postwarrentySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    ItemName: {
+    ItemName:{
         type: String,
         required: true
     },
@@ -17,9 +17,13 @@ const postwarrentySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    imageWarrenty: {
-        data: Buffer,
-        contentType: String
+    cusEmail:{
+        type:String,
+        required:true
+    },
+    warrenty: {
+        type: String,
+        
     },
     Reason: {
         type: String,

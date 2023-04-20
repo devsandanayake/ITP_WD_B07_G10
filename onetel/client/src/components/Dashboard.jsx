@@ -85,7 +85,7 @@ export default function Dashboard() {
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Warrenty Management</div>
-                    <a className="btn btn-danger" href={``}><BsCaretRightSquare/></a>
+                    <a className="btn btn-danger" href={`/Adminwarrenty`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

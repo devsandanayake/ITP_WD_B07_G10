@@ -21,6 +21,8 @@ import MaybeShowNavBar from './components/MaybeShowNavBar';
 import Checkperson from './components/Delivery/Checkperson';
 import Adminacc from './components/Account/Adminacc';
 import AddOrder from './components/Order/AddOrder';
+import AddWarranty from './components/warrentyItem/WarrentyCus';
+import AdminWarrenty from './components/warrentyItem/AdminWarrenty';
  export default class App extends Component {
    render() {
      return (
@@ -63,6 +65,11 @@ import AddOrder from './components/Order/AddOrder';
 
 
         <Route exact path ="/:id" element={<AddOrder/>}></Route> 
+
+
+        //warrenty
+        <Route exact path="/Addwarrenty"  element={<AddWarranty/>}></Route> 
+        <Route exact path="/Adminwarrenty"  element={<AdminWarrenty/>}></Route> 
        </Routes>
         </div>
         <Footer/>          
