@@ -31,7 +31,7 @@ Description of the Project:
 ### 👨‍💻 Development with MERN Stack 
 
 - `Backend` - Node.js, Express.js & MongoDB database
-- `Frontend` - React.js,CSS
+- `Frontend` - React.js
 
 
  
