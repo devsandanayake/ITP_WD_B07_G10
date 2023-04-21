@@ -13,6 +13,8 @@ const postRepair = require('./routes/postRepair');
 const User = require('./routes/User');
 const Admin = require('./routes/Admin');
 const postWarrenty = require('./routes/postWarrenty')
+const postOrder = require('./routes/Order')
+const postEmp = require('./routes/emp')
 
 
 //app middelware
@@ -31,6 +33,8 @@ app.use(postRepair);
 app.use(User);
 app.use(Admin);
 app.use(postWarrenty);
+app.use(postOrder);
+app.use(postEmp);
 
 
 

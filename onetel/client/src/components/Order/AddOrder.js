@@ -3,11 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './order.css'
 export default function AddOrder() {
-  const [Categories , setCategories] = useState("");
-  const [Brand , setBrand] = useState("");
-  const [Price,setPrice] = useState("");
-  const [ Model,setModel] = useState("");
+   
   const[Email,setEmail] = useState("");
+  const[Quntity,setQuntity] = useState("");
   const[message,setMessage] = useState("");
     
   
@@ -18,19 +16,17 @@ export default function AddOrder() {
   
   const formData = new FormData();
 
-  formData.append("Categories",Categories)
-  formData.append("Brand",Brand)
-  formData.append("Price",Price)
-  formData.append("Model",Model)
+  // formData.append("Categories",order.Categories)
+  // formData.append("Brand",order.Brand)
+  // formData.append("Price",order.Price)
+  // formData.append("Model",order.Model)
   formData.append("Email",Email)
+  formData.append("Quntity",Quntity)
    
 
-  setCategories("");
-  setBrand("");
-  setPrice("");
-  setModel("");
-  setEmail("");
-  axios.post("http://localhost:8070/order/pro",formData)
+   setEmail("");
+   setQuntity("");
+  axios.post("http://localhost:8070/order/save",formData)
   .then((res) =>setMessage(res.data))
   .catch((err)=>{
       console.log(err);
@@ -81,49 +77,10 @@ export default function AddOrder() {
          
 
          <form  onSubmit={changeOnClick} encType='multipart/form-data'>
-         <div className='form-group1'>
-           <label htmlFor="Categories">Categories</label>
-            <input type={'text'}
-             value={order.Categories}
-             onChange={(e)=>setCategories(e.target.value)}
-             className='form-control'
-             placeholder='add c'
-             />
-             </div>
-
-             <div className='form-group1'>
-           <label htmlFor="Brand">Brand</label>
-            <input type={'text'}
-             value={order.Brand}
-             onChange={(e)=>setBrand(e.target.value)}
-             className='form-control'
-             placeholder='add c'
-             />
-             </div>
-
-             <div className='form-group1'>
-           <label htmlFor="Price">Price</label>
-            <input type={'price'}
-             value={order.Price}
-             onChange={(e)=>setPrice(e.target.value)}
-             className='form-control'
-             placeholder='add c'
-             />
-             </div>
-
-
-           <div className='form-group1'>
-           <label htmlFor="Model">Model</label>
-            <input type={'text'}
-             value={order.Model}
-             onChange={(e)=>setModel(e.target.value)}
-             className='form-control'
-             placeholder='add c'
-             />
-             </div>
+         
 
              <center>
-           <select className="col-md- offset-md- border rounded p-1 mt-3 text-center" name="Status">
+           <select className="col-md- offset-md- border rounded p-1 mt-3 text-center" name="Quntity"  value={Quntity} onChange={(e) => setQuntity(e.target.value)}>
                <option value="1">1</option>
                <option value="2">2</option>
                <option value="3">3</option>
