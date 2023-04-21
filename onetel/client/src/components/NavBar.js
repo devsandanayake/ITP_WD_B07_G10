@@ -16,7 +16,7 @@ import { BsWhatsapp } from 'react-icons/bs';
 
   render() {
      const loginRegLink = (
-      <nav className="navbar navbar-expand-lg bg-primary" id="navbarNav">
+       <nav className="navbar navbar-expand-lg bg-primary" id="navbarNav">
        <ul className="navbar-nav"> 
         <li className='nav-item'>
         <a className="nav-link" style={{ color: '#1dff1d' }}   href="/login">Login</a>

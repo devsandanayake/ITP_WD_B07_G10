@@ -24,6 +24,7 @@ import AddOrder from './components/Order/AddOrder';
 import AddWarranty from './components/warrentyItem/WarrentyCus';
 import AdminWarrenty from './components/warrentyItem/AdminWarrenty';
 import AdminEmp from './components/Account/ViewEmp'
+import DeliveryR from './components/Report/DeliveryR'; 
  export default class App extends Component {
    render() {
      return (
@@ -51,7 +52,9 @@ import AdminEmp from './components/Account/ViewEmp'
         <Route exact  path="/edit/:id"  element={<EditDelivery/>}/>
         <Route exact path = "/delivery/person" element={<DeliveryPerson/> } />
         <Route exact path = "/editc/:id" element={<Checkperson/> } />
+        <Route exact path = "/delivery/report" element={<DeliveryR/> } />
         
+       
 
         <Route exact path="/customer/ad"  element={<CustomerAdmin/>}></Route> 
 

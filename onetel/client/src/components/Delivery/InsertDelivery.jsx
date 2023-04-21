@@ -83,7 +83,7 @@ export default class InsertDelivery extends Component {
         </Form.Group>
 
         <Form.Group className="mb-3" >
-          <Form.Label htmlFor="TextInput">Phone</Form.Label>
+          <Form.Label htmlFor="Number">Phone</Form.Label>
           <Form.Control  placeholder="Enter Your Contact-Num" name='phone' value={this.state.phone} onChange={this.handleInputChange} />
         </Form.Group>
 

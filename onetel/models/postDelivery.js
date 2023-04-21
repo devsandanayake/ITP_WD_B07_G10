@@ -37,7 +37,11 @@ const postdeliverySchema = new mongoose.Schema({
         type:String,
         default:"Pending"
                         
-    }
+    },
+    date: {
+        type: Date,
+        default: Date.now
+     }
 });
 
 module.exports = mongoose.model('postDelivery',postdeliverySchema);
