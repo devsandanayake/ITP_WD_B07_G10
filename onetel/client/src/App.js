@@ -23,6 +23,7 @@ import Adminacc from './components/Account/Adminacc';
 import AddOrder from './components/Order/AddOrder';
 import AddWarranty from './components/warrentyItem/WarrentyCus';
 import AdminWarrenty from './components/warrentyItem/AdminWarrenty';
+import AdminEmp from './components/Account/ViewEmp'
  export default class App extends Component {
    render() {
      return (
@@ -70,6 +71,10 @@ import AdminWarrenty from './components/warrentyItem/AdminWarrenty';
         //warrenty
         <Route exact path="/Addwarrenty"  element={<AddWarranty/>}></Route> 
         <Route exact path="/Adminwarrenty"  element={<AdminWarrenty/>}></Route> 
+
+        //emp
+        <Route exact path="/Emp"  element={<AdminEmp/>}></Route> 
+
        </Routes>
         </div>
         <Footer/>          

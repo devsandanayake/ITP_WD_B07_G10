@@ -35,10 +35,10 @@ const validator = require('validator');
          },
 
 
-    date: {
-           type: Date,
-           default: Date.now
-        }
+     date: {
+            type: Date,
+            default: Date.now
+         }
  });
  module.exports  = mongoose.model('Employeer',EmpSchema)
  

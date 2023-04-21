@@ -57,7 +57,7 @@ router.delete('/Emp/delete/:id', (req, res) => {
             });
         return res.json({
             massege: "Delete Succesfully",
-            deletedEmp
+            existingPosts:deletedEmp
 
         });
 
