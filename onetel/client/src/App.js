@@ -25,6 +25,8 @@ import AddWarranty from './components/warrentyItem/WarrentyCus';
 import AdminWarrenty from './components/warrentyItem/AdminWarrenty';
 import AdminEmp from './components/Account/ViewEmp'
 import DeliveryR from './components/Report/DeliveryR'; 
+import AdminRentItem from './components/Rent/AdminRentItem';
+import AddRentItem from './components/Rent/AddRentItem';
  export default class App extends Component {
    render() {
      return (
@@ -77,6 +79,10 @@ import DeliveryR from './components/Report/DeliveryR';
 
         //emp
         <Route exact path="/Emp"  element={<AdminEmp/>}></Route> 
+
+        //rentItem
+        <Route exact path ="/rentItem" element={<AdminRentItem/>}/>
+        <Route exact path ="/add/rentItem" element={<AddRentItem/>}/>
 
        </Routes>
         </div>

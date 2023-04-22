@@ -11,7 +11,7 @@ export default function AddRentItem() {
     const[Price,setPrice] = useState("");
     const[Features,setFeatures] = useState("");
     const[message,setMessage] = useState("");
-    const[image,setImage] = useState("")
+    const[imageRent,setImage] = useState("")
    
    
    
@@ -31,7 +31,7 @@ export default function AddRentItem() {
     formData.append("UPC",UPC)
     formData.append("Price",Price)
     formData.append("Features",Features)
-    formData.append("image",image)
+    formData.append("imageRent",imageRent)
 
     setProductName("");
     setSKU("");
@@ -117,7 +117,7 @@ export default function AddRentItem() {
              <div className='form-group'>
            <label htmlFor="file">image</label>
             <input type={'file'}
-             image="image"
+             image="imageRent"
              onChange={onChangeFile}
              className='form-control'
              placeholder='add c'

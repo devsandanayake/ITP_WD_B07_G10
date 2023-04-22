@@ -66,7 +66,7 @@ export default class AdminRentItem extends Component {
                     <td>{posts.UPC}</td>
                     <td>{posts.Price}</td>
                     <td>{posts.Features}</td>
-                    <td><img src={posts.image} width={50}/></td>
+                    <td><img src={posts.imageRent} width={50}/></td>
                     <td>
                        <a className="btn btn-warning" href={`/editrentitem/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit
@@ -85,7 +85,7 @@ export default class AdminRentItem extends Component {
        <a className="btn btn-warning" href={`/admin`}>
        <BsFillCaretLeftFill/>Back
                        </a>
-                       <a className="btn btn-primary" href={`/addrentitem`} style={{marginLeft:'5rem'}}>
+                       <a className="btn btn-primary" href={`/add/rentitem`} style={{marginLeft:'5rem'}}>
                          <BsDatabaseFillAdd/>
                          &nbsp;ADD
                        </a>

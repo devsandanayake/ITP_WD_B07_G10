@@ -26,7 +26,7 @@ const postRentSchema = new mongoose.Schema({
         type:String,
         required:true 
     },
-    image:{
+    imageRent:{
         type:String,
         required:true 
     }

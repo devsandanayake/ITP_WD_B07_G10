@@ -96,7 +96,7 @@ export default function Dashboard() {
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Rent Management</div>
-                    <a className="btn btn-info" href={``}><BsCaretRightSquare/></a>
+                    <a className="btn btn-info" href={`/rentItem`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

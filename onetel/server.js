@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.json());
 app.use(express.static('upload'));
+app.use(express.static('rentUpload'));
 app.use(cors());
 
 

@@ -94,7 +94,7 @@ const storage = multer.diskStorage({
  var upload = multer({
      storage:storage,
 
- }).single('image');
+ }).single('imageRent');
     
  //Inster an user into database router
 router.post('/Rent/add',upload,(req,res)=>{
@@ -105,7 +105,7 @@ router.post('/Rent/add',upload,(req,res)=>{
          UPC:req.body.UPC,
          Price:req.body.Price,
          Features:req.body.Features,
-         image:req.file.filename,
+         imageRent:req.file.filename,
      });
      rentItem.save((err)=>{
          if(err){
