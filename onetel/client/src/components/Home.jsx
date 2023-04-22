@@ -46,7 +46,7 @@ export default class Home extends Component {
   
   handleSearchArea =(e)=>{
   
-  //console.log(e.currentTarget.value);
+  //console.log(e.currentTarget.value); okey
   
   const searchKey = e.currentTarget.value;
   
