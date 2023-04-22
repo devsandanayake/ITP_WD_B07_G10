@@ -27,7 +27,7 @@ export default function Dashboard() {
         <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/admin'}><RiDashboard2Line/>&nbsp;Dashboard</a></div><br/>
         <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/'}><AiOutlineHome/>&nbsp;Home</a></div><br/>
         <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/#setting'}><FiSettings/>&nbsp;Web Setting</a></div><br/>
-        <div className='item'><a className='btn btn-primary col-12' style={{background:"rgb(23, 102, 221)"}}href={'/report'}><HiOutlineDocumentReport/>&nbsp;Montly Report</a></div><br/>
+        <div className='item'><a className='btn btn-primary col-12' style={{background:"rgb(23, 102, 221)"}}href={'/delivery/report'}><HiOutlineDocumentReport/>&nbsp;Montly Report</a></div><br/>
         <div className='item' ><a className='btn btn-primary col-12' style={{background:"rgb(23, 102, 221)"}}href={'/fin'}><MdAttachMoney/>&nbsp;Financial</a></div><br/>
         <div className='item'><a className='btn btn-primary col-12' style={{background:"rgb(23, 102, 221)"}} href={'/Emp'}><MdSwitchAccount/>&nbsp;Emp-Accounts</a></div><br/>
         <div className='item' style={{background:"red"}}><a className='btn btn-danger col-12' style={{background:"red"}} href={'/login'}><SlLogout/>&nbsp;LogOut</a></div><br/>
