@@ -16,6 +16,7 @@ const postWarrenty = require('./routes/postWarrenty');
 const postOrder = require('./routes/Order');
 const postEmp = require('./routes/emp');
 const postRent = require('./routes/postRent');
+const postRebtReq = require('./routes/postRentReq');
 
 
 //app middelware
@@ -38,6 +39,7 @@ app.use(postWarrenty);
 app.use(postOrder);
 app.use(postEmp);
 app.use(postRent);
+app.use(postRebtReq);
 
 
 

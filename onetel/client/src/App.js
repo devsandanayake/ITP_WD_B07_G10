@@ -27,6 +27,7 @@ import AdminEmp from './components/Account/ViewEmp'
 import DeliveryR from './components/Report/DeliveryR'; 
 import AdminRentItem from './components/Rent/AdminRentItem';
 import AddRentItem from './components/Rent/AddRentItem';
+import EditRentIem from './components/Rent/EditRentItem';
  export default class App extends Component {
    render() {
      return (
@@ -83,6 +84,7 @@ import AddRentItem from './components/Rent/AddRentItem';
         //rentItem
         <Route exact path ="/rentItem" element={<AdminRentItem/>}/>
         <Route exact path ="/add/rentItem" element={<AddRentItem/>}/>
+        <Route exact path="/editrentitem/:id" element={<EditRentIem/>}/>
 
        </Routes>
         </div>
