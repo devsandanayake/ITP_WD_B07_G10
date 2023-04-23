@@ -130,7 +130,7 @@ export default class DeliveryAdmin extends Component {
                     <td>{posts.phone}</td>
                     <td>{posts.NIC}</td>
                     <td>{posts.email}</td>
-                    <h4><td style={{background:'#FF6833'}}>{posts.Status}</td></h4>
+                    <td style={{background:'#FF6833'}}>{posts.Status}</td>
                     
                     <td>
                        <a className="btn btn-warning" href={`/edit/${posts._id}`}>
