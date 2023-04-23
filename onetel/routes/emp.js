@@ -29,7 +29,8 @@ router.get('/Emp', (req, res) => {
 
 router.put('/Emp/update/:id', (req, res) => {
     postEmp.findByIdAndUpdate(
-        req.params.id, {
+        req.params.id,
+        {
             $set: req.body
         },
         (err, postEmp) => {
@@ -38,7 +39,7 @@ router.put('/Emp/update/:id', (req, res) => {
             }
             return res.status(200).json({
                 success: "Updated Succesfully",
-                existingPosts: postEmp
+                
 
             });
         }

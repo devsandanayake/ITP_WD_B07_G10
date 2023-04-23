@@ -16,6 +16,7 @@ const postdeliverySchema = new mongoose.Schema({
     phone:{
         type:Number,
         required:true,
+        maxlength:[10,"maxlength is 10"]
         
 
     },
