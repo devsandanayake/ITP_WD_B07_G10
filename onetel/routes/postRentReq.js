@@ -2,10 +2,10 @@ const express = require('express');
 const multer = require('multer');
 
 
-const postRentReq = require('../')
+const postRentReq = require('../models/postRentReq')
 
 
-const router = express.Router('C:\Users\dell\Desktop\ITP_WD_B07_G10\onetel\models\postRentReq.js');
+const router = express.Router();
 
 //save posts
 
