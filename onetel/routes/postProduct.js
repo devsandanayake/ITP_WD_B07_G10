@@ -167,5 +167,34 @@ router.get('/product/view/:id', async (req, res) => {
   });
 
 
+  // img update
+
+//   router.put('/:id', upload.single('image'), async (req, res) => {
+//     const { id } = req.params;
+//     const { title, description } = req.body;
+//     try {
+//       const image = await Image.findById(id);
+//       if (!image) {
+//         return res.status(404).json({ message: 'Image not found' });
+//       }
+//       if (req.file) {
+//         const imagePath = path.join(__dirname, '..', image.path);
+//         fs.unlinkSync(imagePath);
+//         const imageBuffer = await sharp(req.file.buffer).resize({ width: 500 }).toBuffer();
+//         fs.writeFileSync(path.join('uploads', req.file.originalname), imageBuffer);
+//         image.path = `uploads/${req.file.originalname}`;
+//         image.filename = req.file.originalname;
+//       }
+//       image.title = title;
+//       image.description = description;
+//       await image.save();
+//       res.json(image);
+//     } catch (error) {
+//       console.log(error);
+//       res.status(500).json({ message: 'Server error' });
+//     }
+//   });
+  
+ 
 
 module.exports = router;

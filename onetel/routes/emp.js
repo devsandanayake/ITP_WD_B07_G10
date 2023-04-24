@@ -7,7 +7,22 @@ const postEmp = require('../models/emp')
 
 const router = express.Router();
 
+//save posts
+     
+router.post('/Emp/save',(req,res)=>{
+    let newPost = new postEmp(req.body);
 
+    newPost.save((err)=>{
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+        }
+        return res.status(200).json({
+            success:"Post save successfully"
+        });
+    });
+});
 //get posts
 
 router.get('/Emp', (req, res) => {
@@ -29,7 +44,8 @@ router.get('/Emp', (req, res) => {
 
 router.put('/Emp/update/:id', (req, res) => {
     postEmp.findByIdAndUpdate(
-        req.params.id, {
+        req.params.id,
+        {
             $set: req.body
         },
         (err, postEmp) => {
@@ -38,7 +54,7 @@ router.put('/Emp/update/:id', (req, res) => {
             }
             return res.status(200).json({
                 success: "Updated Succesfully",
-                existingPosts: postEmp
+                
 
             });
         }
