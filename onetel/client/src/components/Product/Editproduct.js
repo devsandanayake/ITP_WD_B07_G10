@@ -7,18 +7,18 @@ export default function EditProduct() {
 
   const { id } = useParams();
 
-  const [delivery, setDelivery] = useState({
-    Name: "",
-    Address: "",
-    phone: "",
-    NIC:"",
-    email:""
+  const [product, setProduct] = useState({
+    Categories: "",
+    Brand: "",
+    Price: "",
+    Model:"",
+    Status:""  
   });
 
-  const { Name, Address, phone,NIC , email} = delivery;
+  const { Categories, Brand, Price,Model , Status} = product;
 
   const onInputChange = (e) => {
-    setDelivery({ ...delivery, [e.target.name]: e.target.value });
+    setProduct({ ...product, [e.target.name]: e.target.value });
   };
 
   useEffect(() => {
@@ -27,85 +27,85 @@ export default function EditProduct() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8070/post/update/${id}`, delivery);
-    navigate("/delivery/ad");
+    await axios.put(`http://localhost:8070/product/update/${id}`, product);
+    navigate("/adminManageProduct");
   };
 
   const loadDelivery = async () => {
-    const result = await axios.get(`http://localhost:8070/post/update/${id}`);
-    setDelivery(result.data);
+    const result = await axios.get(`http://localhost:8070/product/update/${id}`);
+    setProduct(result.data);
   };
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Edit User</h2>
+          <h2 className="text-center m-4">Edit Product</h2>
 
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
               <label htmlFor="Name" className="form-label">
-                Name
+              Categories:
               </label>
               <input
                 type={"text"}
                 className="form-control"
                 placeholder="Enter"
-                name="Name"
-                value={Name}
+                name="Categories"
+                value={Categories}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
               <label htmlFor="Address" className="form-label">
-                Address
+               Brand:
               </label>
               <input
                 type={"text"}
                 className="form-control"
                 placeholder="Enter your address"
-                name="Address"
-                value={Address}
+                name="Brand"
+                value={Brand}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
               <label htmlFor="phone" className="form-label">
-                Phone
+              Price:
               </label>
               <input
                 type={"text"}
                 className="form-control"
                 placeholder="Enter your number"
-                name="phone"
-                value={phone}
+                name="Price"
+                value={Price}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
               <label htmlFor="NIC" className="form-label">
-                NIC
+              Model:
               </label>
               <input
                 type={"text"}
                 className="form-control"
                 placeholder="Enter your NIC"
-                name="NIC"
-                value={NIC}
+                name="Model"
+                value={Model}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
 
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
-                Email
+              Status:
               </label>
               <input
-                type={"email"}
+                type={"text"}
                 className="form-control"
                 placeholder="Enter your NIC"
-                name="email"
-                value={email}
+                name="Status"
+                value={Status}
                 onChange={(e) => onInputChange(e)}
               />
             </div>

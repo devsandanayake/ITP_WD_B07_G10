@@ -7,7 +7,22 @@ const postEmp = require('../models/emp')
 
 const router = express.Router();
 
+//save posts
+     
+router.post('/Emp/save',(req,res)=>{
+    let newPost = new postEmp(req.body);
 
+    newPost.save((err)=>{
+        if(err){
+            return res.status(400).json({
+                error:err
+            });
+        }
+        return res.status(200).json({
+            success:"Post save successfully"
+        });
+    });
+});
 //get posts
 
 router.get('/Emp', (req, res) => {
