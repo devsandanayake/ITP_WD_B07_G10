@@ -40,7 +40,10 @@ export default function AddRentItem() {
     setPrice("");
     setFeatures("");
     axios.post("http://localhost:8070/Rent/add",formData)
-    .then((res) =>setMessage(res.data))
+    .then((res) =>{
+        setMessage(res.data);
+        alert("Success");
+    })
     .catch((err)=>{
         console.log(err);
     });

@@ -7,112 +7,130 @@ export default function EditRentIem() {
 
   const { id } = useParams();
 
-  const [delivery, setDelivery] = useState({
-    Name: "",
-    Address: "",
-    phone: "",
-    NIC:"",
-    email:""
+  const [rent, setRentItem] = useState({
+    ProductName:"",
+    SKU: "",
+    Model: "",
+    UPC: "",
+    Price: "",
+    Features: ""
+
+
   });
 
-  const { Name, Address, phone,NIC , email} = delivery;
+  const { ProductName, SKU,Model,UPC,Price,Features} = rent;
 
   const onInputChange = (e) => {
-    setDelivery({ ...delivery, [e.target.name]: e.target.value });
+    setRentItem({ ...rent, [e.target.name]: e.target.value });
   };
 
   useEffect(() => {
-    loadDelivery();
+    loadRentItem();
   }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8070/post/update/${id}`, delivery);
-    navigate("/delivery/ad");
+    await axios.put(`http://localhost:8070/rentItem/update/${id}`, rent);
+    navigate("/rentItem");
   };
 
-  const loadDelivery = async () => {
-    const result = await axios.get(`http://localhost:8070/post/update/${id}`);
-    setDelivery(result.data);
+  const loadRentItem = async () => {
+    const result = await axios.get(`http://localhost:8070/rentItem/update/${id}`);
+    setRentItem(result.data);
   };
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Edit User</h2>
+          <h2 className="text-center m-4">Edit Rent Item Deatils</h2>
 
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
-              <label htmlFor="Name" className="form-label">
-                Name
+              <label htmlFor="ProductName" className="form-label">
+                ProductName
               </label>
               <input
                 type={"text"}
                 className="form-control"
                 placeholder="Enter"
-                name="Name"
-                value={Name}
+                name="ProductName"
+                value={ProductName}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="Address" className="form-label">
-                Address
+              <label htmlFor="SKU" className="form-label">
+                SKU
               </label>
               <input
                 type={"text"}
                 className="form-control"
                 placeholder="Enter your address"
-                name="Address"
-                value={Address}
+                name="SKU"
+                value={SKU}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="phone" className="form-label">
-                Phone
+              <label htmlFor="Model" className="form-label">
+                Model
               </label>
               <input
                 type={"text"}
                 className="form-control"
                 placeholder="Enter your number"
-                name="phone"
-                value={phone}
+                name="Model"
+                value={Model}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="NIC" className="form-label">
-                NIC
+              <label htmlFor="UPC" className="form-label">
+                UPC
               </label>
               <input
                 type={"text"}
                 className="form-control"
-                placeholder="Enter your NIC"
-                name="NIC"
-                value={NIC}
+                placeholder="Enter your UPC"
+                name="UPC"
+                value={UPC}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
 
             <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-                Email
+              <label htmlFor="Price" className="form-label">
+                Price
               </label>
               <input
-                type={"email"}
+                type={"text"}
                 className="form-control"
-                placeholder="Enter your NIC"
-                name="email"
-                value={email}
+                placeholder="Enter your UPC"
+                name="Price"
+                value={Price}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
+
+            <div className="mb-3">
+              <label htmlFor="Features" className="form-label">
+                Features
+              </label>
+              <input
+                type={"text"}
+                className="form-control"
+                placeholder="Enter your UPC"
+                name="Features"
+                value={Features}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
+
             <button type="submit" className="btn btn-outline-primary" >
               Submit
             </button>
-            <Link className="btn btn-outline-danger mx-2" to="/delivery/ad">
+            <Link className="btn btn-outline-danger mx-2" to="/rentitem">
               Cancel
             </Link>
           </form>
