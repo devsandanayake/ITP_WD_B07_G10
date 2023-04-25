@@ -36,7 +36,8 @@ export default class Login extends Component {
     }
     else if(login(user).then(res=>{
         if(res){
-           window.location="/profile";
+           window.location.href="/profile";
+          
          }
     })){
  
