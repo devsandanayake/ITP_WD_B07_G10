@@ -28,6 +28,7 @@ import DeliveryR from './components/Report/DeliveryR';
 import AdminRentItem from './components/Rent/AdminRentItem';
 import AddRentItem from './components/Rent/AddRentItem';
 import EditRentIem from './components/Rent/EditRentItem';
+import EditWarranty from './components/warrentyItem/EditWarranty';
  export default class App extends Component {
    render() {
      return (
@@ -77,6 +78,7 @@ import EditRentIem from './components/Rent/EditRentItem';
         //warrenty
         <Route exact path="/Addwarrenty"  element={<AddWarranty/>}></Route> 
         <Route exact path="/Adminwarrenty"  element={<AdminWarrenty/>}></Route> 
+        <Route exact path="/editWarranty/:id" element={<EditWarranty/>}/>
 
         //emp
         <Route exact path="/Emp"  element={<AdminEmp/>}></Route> 
@@ -85,6 +87,7 @@ import EditRentIem from './components/Rent/EditRentItem';
         <Route exact path ="/rentItem" element={<AdminRentItem/>}/>
         <Route exact path ="/add/rentItem" element={<AddRentItem/>}/>
         <Route exact path="/editrentitem/:id" element={<EditRentIem/>}/>
+       
 
        </Routes>
         </div>
