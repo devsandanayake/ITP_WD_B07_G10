@@ -78,7 +78,8 @@ import EditWarranty from './components/warrentyItem/EditWarranty';
         //warrenty
         <Route exact path="/Addwarrenty"  element={<AddWarranty/>}></Route> 
         <Route exact path="/Adminwarrenty"  element={<AdminWarrenty/>}></Route> 
-        <Route exact path="/editWarranty/:id" element={<EditWarranty/>}/>
+        <Route exact path="/EditWarranty/:id" element={<EditWarranty/>}/>
+        
 
         //emp
         <Route exact path="/Emp"  element={<AdminEmp/>}></Route> 

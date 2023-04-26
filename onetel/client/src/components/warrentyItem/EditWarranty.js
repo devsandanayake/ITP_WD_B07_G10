@@ -13,11 +13,10 @@ export default function EditWarranty() {
     customerID: "",
     customerName:"",
     cusEmail:"",
-    warrenty:"",
     Reason: ""
   });
 
-  const { ItemCode, ItemName, customerID, customerName,  cusEmail,warrenty, Reason} = warranty;
+  const { ItemCode, ItemName, customerID, customerName,  cusEmail, Reason} = warranty;
 
   const onInputChange = (e) => {
     setWarranty({ ...warranty, [e.target.name]: e.target.value });
@@ -29,12 +28,12 @@ export default function EditWarranty() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(`http://localhost:8070/Warranty/update/${id}`, warranty);
+    await axios.put(`http://localhost:8070/Warrenty/update/${id}`, warranty);
     navigate("/AdminWarrenty");
   };
 
   const loadDelivery = async () => {
-    const result = await axios.get(`http://localhost:8070/Warranty/update/${id}`);
+    const result = await axios.get(`http://localhost:8070/Warrenty/update/${id}`);
     setWarranty(result.data);
   };
 
@@ -128,7 +127,7 @@ export default function EditWarranty() {
             <button type="submit" className="btn btn-outline-primary" >
               Submit
             </button>
-            <Link className="btn btn-outline-danger mx-2" to="/delivery/ad">
+            <Link className="btn btn-outline-danger mx-2" to="/warranty/ad">
               Cancel
             </Link>
           </form>
