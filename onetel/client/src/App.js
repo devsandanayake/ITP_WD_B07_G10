@@ -48,6 +48,7 @@ import PostOrder from './components/Order/PostOrder'
 import Adminorder from './components/Order/Adminorder'
 import Editorder from './components/Order/Editorder';
 import OrderR from './components/Report/OrderR'
+import Payment from './components/payment';
  export default class App extends Component {
    render() {
      return (
@@ -60,6 +61,8 @@ import OrderR from './components/Report/OrderR'
         <div className="container">
         <Routes>
         <Route exact path="/"  element={<Home/>}></Route> 
+
+        <Route exact path="/payment"  element={<Payment/>}></Route> 
        
         <Route exact path="/admin"  element={<Dashboard/>}></Route> 
         <Route exact path="/account"  element={<Adminacc/>}></Route> 
