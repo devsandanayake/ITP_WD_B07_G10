@@ -1,24 +1,166 @@
-import React from 'react'
-import jsPDF from 'jspdf';
-export default function DeliveryR() {
-   
-    function print() {
-        var doc = new jsPDF('p', 'pt');
-        doc.setTextColor(254, 8, 8);
-        doc.text(20, 20, "Montly Delivery Report")
-        doc.addFont('helvetica', 'normal')
-        doc.setFontSize(12);
-        doc.setTextColor(3, 3, 3);
-        doc.text(25, 60, ' Delivery ')
-        
-        doc.save('Report.pdf')
-    
-      }
-  return (
-    <div> <div className='col'>
-    <button type="submit" className="btn btn-success btn-block" onClick={print}
-    >Receipt</button>
-  </div></div>
-  )
-}
+import React, { Component } from "react";
+import axios from "axios";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+//import moment from "moment";
+import  Button  from "react-bootstrap/Button";
 
+//import "../Styles/Report.css";
+
+export default class DeliveryR extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ReportData: [],
+    };
+  }
+  printDocument() {
+    const input = document.getElementById("pdfdiv");
+    html2canvas(input).then((canvas) => {
+      var img = new Image();
+      const doc = new jsPDF("p", "mm", "a4");
+      doc.setTextColor(255, 0, 0);
+      doc.setFontSize(28);
+      doc.text(85, 10, "OneTel Mobile");
+      doc.setTextColor(0, 0, 255);
+      doc.setFontSize(16);
+      doc.text(10, 70, "Delivery Management");
+      doc.setTextColor(0, 255, 0);
+      doc.setFontSize(12);
+      
+      //Date
+      var m_names = new Array(
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      );
+
+      var today = new Date();
+      var seconds = today.getSeconds();
+      var minutes = today.getMinutes();
+      var hours = today.getHours();
+      var curr_date = today.getDate();
+      var curr_month = today.getMonth();
+      var curr_year = today.getFullYear();
+
+      today =
+        m_names[curr_month] +
+        " " +
+        curr_date +
+        "/ " +
+        curr_year +
+        " | " +
+        hours +
+        "h : " +
+        minutes +
+        "min : " +
+        seconds +
+        "sec";
+      var newdat = today;
+      doc.setTextColor(0, 0, 0);
+      doc.setFontSize(11);
+      doc.text(130, 93, newdat);
+      var imgHeight = (canvas.height * 200) / canvas.width;
+      const imgData = canvas.toDataURL("image/png");
+      doc.addImage(imgData, "JPEG", 5, 100, 200, imgHeight);
+      const date = Date().split(" ");
+      // we use a date string to generate our filename.
+      const dateStr =
+        "DeliveryManagement" + date[0] + date[1] + date[2] + date[3] + date[4];
+      doc.save(`report_${dateStr}.pdf`);
+    });
+  }
+
+  viewPosts(){
+    axios.get("/posts").then(res =>{
+      if(res.data.success){
+        this.setState({
+          ReportData:res.data.existingPosts,
+                    
+        });
+        //show array list 
+        console.log(this.state.posts )
+         
+      }
+    });
+  }
+
+  componentDidMount() {
+    this.viewPosts()
+  }
+
+  render() {
+    return (
+      <>
+      <div className='container' id="pdfdiv">
+         <div className='row my-4'>
+          <div className='col-lg-12'>
+            <div className='table-responsive'> 
+       <table className="table table-striped text-center" >
+           <thead>
+             <tr className='table-dark'>
+             <th scope="col">Index</th>
+             <th scope="col">Name</th>
+             <th scope="col">Address</th>
+             <th scope="col">Phone</th>
+             <th scope="col">NIC</th>
+             <th scope="col">Email</th>
+             <th scope="col">Status</th>
+             <th scope="col"></th>
+             </tr>
+           </thead>
+         
+         <tbody style={{background:'pink'}}>
+            {this.state.ReportData.map((posts,index)=>(
+                 <tr key={index}>
+                    <th scope="row">{index+1}</th>
+                    <td>{posts.Name}</td>
+                    <td>{posts.Address}</td>
+                    <td>{posts.phone}</td>
+                    <td>{posts.NIC}</td>
+                    <td>{posts.email}</td>
+                    <td style={{background:'#FF6833'}}>{posts.Status}</td>
+                    
+                    
+                 </tr>
+
+            ))}
+         </tbody>
+       </table>
+       
+      
+      </div></div></div></div>
+        <center>
+          <div>
+            <Button
+              className="info__button"
+              onClick={this.printDocument}
+              variant="contained"
+              color="primary"
+            >
+              <div className=" mb-5">
+                <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Download PDF
+              </div>
+            </Button>
+            <br />
+          </div>
+        </center>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </>
+    );
+  }
+}
