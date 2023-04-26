@@ -68,7 +68,7 @@ export default class Home extends Component {
                     <p className='text'>{posts.Address}</p>
                     <p className='text'>{posts.date}</p>
              
-                    <a className="btn btn-warning" href={`/editEmp/${posts._id}`}>
+                    <a className="btn btn-warning" href={`/Editemp/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit
                        </a>
                        &nbsp; &nbsp; 

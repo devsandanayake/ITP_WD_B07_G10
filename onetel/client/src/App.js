@@ -33,6 +33,8 @@ import EditWarranty from './components/warrentyItem/EditWarranty';
 import ReportHome from './components/Report/ReportHome';
 import Addemp from './components/Account/Addemp';
 import RepairR from './components/Report/RepairR';
+import Editemp from './components/Account/Editemp';
+
  export default class App extends Component {
    render() {
      return (
@@ -89,11 +91,14 @@ import RepairR from './components/Report/RepairR';
         //emp
         <Route exact path="/Emp"  element={<AdminEmp/>}></Route> 
         <Route exact path="/add/emp"  element={<Addemp/>}></Route> 
+        <Route exact path="/Editemp/:id" element={<Editemp/>}></Route> 
+
 
         //rentItem
         <Route exact path ="/rentItem" element={<AdminRentItem/>}/>
         <Route exact path ="/add/rentItem" element={<AddRentItem/>}/>
         <Route exact path="/editrentitem/:id" element={<EditRentIem/>}/>
+
        
 
 
