@@ -115,6 +115,7 @@ export default class DeliveryR extends Component {
              <th scope="col">NIC</th>
              <th scope="col">Email</th>
              <th scope="col">Status</th>
+             <th scope="col">Date</th>
             
              </tr>
            </thead>
@@ -129,7 +130,7 @@ export default class DeliveryR extends Component {
                     <td>{posts.NIC}</td>
                     <td>{posts.email}</td>
                     <td style={{background:'#FF6833'}}>{posts.Status}</td>
-                    
+                    <td>{posts.date}</td>
                     
                  </tr>
 
