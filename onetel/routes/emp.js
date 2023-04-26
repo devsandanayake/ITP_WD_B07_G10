@@ -93,6 +93,22 @@ const upload = multer({
     storage: Storage
 }).single('CusImg')
 
+//get a specific post
+router.get('/Emp/:id', async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const post = await postEmp.findById(postId);
+        if (!post) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
+        return res.status(200).json({
+            success: true,
+            post
+        });
+    } catch (err) {
+        return res.status(400).json({ success: false, error: err.message });
+    }
+});
 
 router.post('/add/emp', (req, res) => {
     upload(req, res, (err) => {
