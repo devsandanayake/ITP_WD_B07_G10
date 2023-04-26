@@ -1,124 +1,147 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
- 
-export default function EditProduct() {
-  let navigate = useNavigate();
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
 
+export default function Editproduct() {
   const { id } = useParams();
-
-  const [product, setProduct] = useState({
+  const navigate = useNavigate();
+  const [post, setPost] = useState({});
+  const [updatedPost, setUpdatedPost] = useState({
     Categories: "",
     Brand: "",
     Price: "",
     Model:"",
     Status:""  
+    
   });
 
-  const { Categories, Brand, Price,Model , Status} = product;
-
-  const onInputChange = (e) => {
-    setProduct({ ...product, [e.target.name]: e.target.value });
-  };
-
   useEffect(() => {
-    loadDelivery();
-  }, []);
+    axios.get(`/product/${id}`).then((res) => {
+      if (res.data.success) {
+        setPost(res.data.post);
+        setUpdatedPost({
+          Categories: res.data.post.Categories,
+          Brand: res.data.post.Brand,
+          Price: res.data.post.Price,
+          Model: res.data.post.Model,
+          Status: res.data.post.Status
+           
+        });
+      }
+    });
+  }, [id]);
+  console.log(post);
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    await axios.put(`http://localhost:8070/product/update/${id}`, product);
-    navigate("/adminManageProduct");
+  const {Categories,Brand,Price,Model,Status} = updatedPost;
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    setUpdatedPost({
+      ...updatedPost,
+      [name]: value,
+    });
   };
 
-  const loadDelivery = async () => {
-    const result = await axios.get(`http://localhost:8070/product/update/${id}`);
-    setProduct(result.data);
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      Categories: updatedPost.Categories,
+      Brand: updatedPost.Brand,
+      Price: updatedPost.Price,
+      Model: updatedPost.Model,
+      Status: updatedPost.Status
+       
+       
+    };
+
+    axios.put(`/product/update/${id}`, data).then((res) => {
+      console.log(res.data);
+      alert('Post updated successfully!');
+      setUpdatedPost({
+        Categories: "",
+        Brand: "",
+        Price: "",
+        Model:"",
+        Status:""  
+      });
+      navigate('/adminManageProduct');
+    });
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Edit Product</h2>
+    <div style={{ marginTop: '20px' }}>
+      <h4>Edit Repairs</h4>
+      <hr />
 
-          <form onSubmit={(e) => onSubmit(e)}>
-            <div className="mb-3">
-              <label htmlFor="Name" className="form-label">
-              Categories:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter"
-                name="Categories"
-                value={Categories}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="Address" className="form-label">
-               Brand:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter your address"
-                name="Brand"
-                value={Brand}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="phone" className="form-label">
-              Price:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter your number"
-                name="Price"
-                value={Price}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="NIC" className="form-label">
-              Model:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter your NIC"
-                name="Model"
-                value={Model}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-              Status:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter your NIC"
-                name="Status"
-                value={Status}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <button type="submit" className="btn btn-outline-primary" >
-              Submit
-            </button>
-            <Link className="btn btn-outline-danger mx-2" to="/delivery/ad">
-              Cancel
-            </Link>
-          </form>
+      <form onSubmit={handleFormSubmit}>
+        <div className='form-group'>
+          <label>Categories:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='Categories'
+            value={Categories}
+            onChange={handleInputChange}
+          />
         </div>
-      </div>
-    </div>
-  );
-}
 
+        <div className='form-group'>
+          <label>Brand:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='Brand'
+            value={Brand}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className='form-group'>
+          <label>Price:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='Price'
+            value={Price}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className='form-group'>
+          <label>Model:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='Model'
+            value={Model}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className='form-group'>
+          <label>Status:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='Status'
+            value={Status}
+            onChange={handleInputChange}
+          />
+        </div>
+          
+     
+
+        <button
+          type='submit'
+          className='btn btn-success'
+          style={{ marginTop: '15px' }}
+        >
+          <i className='far fa-check-square'></i>
+          &nbsp;Update
+        </button>
+      </form>
+ </div>
+);
+}

@@ -73,7 +73,7 @@ export default function EditPost() {
         Model:"",
         reason:""
       });
-      navigate('/delivery/ad');
+      navigate('/repairAdmin');
     });
   };
 
