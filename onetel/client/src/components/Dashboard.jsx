@@ -128,7 +128,7 @@ export default function Dashboard() {
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Return Management</div>
-                    <a className="btn btn-dark" href={`/customer/ad`}><BsCaretRightSquare/></a>
+                    <a className="btn btn-dark" href={`/AdminReturn`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         

@@ -37,6 +37,9 @@ import Editemp from './components/Account/Editemp';
 import RentReqCus from './components/Rent/RentReqCus';
 import RentItemdisplay from './components/Rent/RentItemdisplay';
 import AdminRentReq from './components/Rent/AdminRentReq';
+import AddReturn from './components/Return/Returncus';
+import AdminReturn from './components/Return/AdminReturn';
+import EditReturn from './components/Return/EditReturn';
 
  export default class App extends Component {
    render() {
@@ -106,7 +109,11 @@ import AdminRentReq from './components/Rent/AdminRentReq';
         < Route exact path="/adminrentreq" element={<AdminRentReq/>}/>
 
        
+        //return
 
+<Route exact path="/AddReturn" element={<AddReturn/>}/>
+<Route exact path="/AdminReturn" element={<AdminReturn/>}/>
+<Route exact path="/EditReturn" element={<EditReturn/>}/>
 
         <Route exact path = "/report" element={<ReportHome/> } />
         <Route exact path = "/repair/report" element={<RepairR/>}/>
