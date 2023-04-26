@@ -44,7 +44,7 @@ export default function Dashboard() {
         </div> 
         <div className=" text-center"> 
                     <div className='card-title'>Order Management</div>
-                    <a className="btn btn-secondary" href={``}><BsCaretRightSquare/></a>
+                    <a className="btn btn-secondary" href={`/adminorder`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

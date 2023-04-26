@@ -44,8 +44,10 @@ import AddReturn from './components/Return/Returncus';
 import AdminReturn from './components/Return/AdminReturn';
 import EditReturn from './components/Return/EditReturn';
 import RentReqR from './components/Report/RentReqR';
-
-
+import PostOrder from './components/Order/PostOrder'
+import Adminorder from './components/Order/Adminorder'
+import Editorder from './components/Order/Editorder';
+import OrderR from './components/Report/OrderR'
  export default class App extends Component {
    render() {
      return (
@@ -118,14 +120,23 @@ import RentReqR from './components/Report/RentReqR';
        
         //return
 
-<Route exact path="/AddReturn" element={<AddReturn/>}/>
-<Route exact path="/AdminReturn" element={<AdminReturn/>}/>
-<Route exact path="/EditReturn" element={<EditReturn/>}/>
+        <Route exact path="/AddReturn" element={<AddReturn/>}/>
+        <Route exact path="/AdminReturn" element={<AdminReturn/>}/>
+        <Route exact path="/EditReturn" element={<EditReturn/>}/>
 
         <Route exact path = "/report" element={<ReportHome/> } />
         <Route exact path = "/repair/report" element={<RepairR/>}/>
         <Route exact path = "/warrentyReport" element={<WarR/>}/>
         <Route exact path = "/productReport"  element={<ProductR/>}/>
+
+
+
+        //order
+        <Route exact path = "/addOrder"  element={<PostOrder/>}/>
+        <Route exact path = "/adminorder"  element={<Adminorder/>}/>
+        <Route exact path = "/editOrder/:id"  element={<Editorder/>}/>
+        <Route exact path = "/orderReport"  element={<OrderR/>}/>
+
        </Routes>
         </div>
         <Footer/>          

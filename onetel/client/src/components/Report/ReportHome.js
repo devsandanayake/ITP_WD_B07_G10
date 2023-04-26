@@ -4,7 +4,6 @@ import './card.css'
 import './Slidebar.css'
 import cus from './images/cus.jpg'
 import logo from './images/logo.jpg'
- 
 import R from './images/report.jpg'
 import { RiDashboard2Line } from "react-icons/ri";
 import { FiSettings } from "react-icons/fi";
@@ -40,7 +39,7 @@ export default function ReportHome() {
         </div> 
         <div className=" text-center"> 
                     <div className='card-title'>Order Report</div>
-                    <a className="btn btn-dark" href={``}><BsCaretRightSquare/></a>
+                    <a className="btn btn-dark" href={`/orderReport`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
