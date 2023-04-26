@@ -110,6 +110,8 @@ export default function Dashboard() {
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+    
+
        <div className='card-container8 mb-5'>
        <div className="image-container row">
            <img src={stock}></img>
@@ -119,7 +121,18 @@ export default function Dashboard() {
                     <a className="btn btn-primary" href={``}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+       <div className='card-container10 mb-5'>
+       <div className="image-container row">
+           <img src={cus}></img>
+        </div> 
+        <div className="text-center"> 
+                    <div className='card-title'>Return Management</div>
+                    <a className="btn btn-dark" href={`/customer/ad`}><BsCaretRightSquare/></a>
+          </div>          
+       </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
     </div></div>
   )
 }
+
