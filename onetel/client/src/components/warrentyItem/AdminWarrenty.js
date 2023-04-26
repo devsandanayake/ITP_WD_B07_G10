@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { BsDatabaseFillAdd,BsFillCaretLeftFill } from 'react-icons/bs';
-
-export default class AdminProduct extends Component {
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+export default class AdminWarrenty extends Component {
 
  constructor(props){
    super(props);
@@ -33,11 +34,53 @@ export default class AdminProduct extends Component {
       this.viewPosts();
     })
   }
+ //seraching part  
+ filterData(posts,searchKey){
+  
 
+  const result = posts.filter((post)=>
+      post.ItemCode.toLowerCase().includes(searchKey)||
+      post.customerID.toLowerCase().includes(searchKey)||
+      post.cusEmail.toLowerCase().includes(searchKey)
+       
+       
+
+      
+  )
+  this.setState({posts:result})
+}
+
+
+handleSearchArea =(e)=>{
+
+console.log(e.currentTarget.value);
+
+const searchKey = e.currentTarget.value;
+
+axios.get("http://localhost:8070/Warrenty").then(res =>{
+if(res.data.success){
+  
+  this.filterData(res.data.existingPosts,searchKey)
+         
+}
+});
+}
+   
 
   render() {
     return (
       <div className='container'>
+         <Form className="d-flex mb-4 mx-0" >
+                  <Form.Control
+                    type="search"
+                    placeholder="Enter"
+                    className="me-2"
+                    aria-label="Search"
+                    name="searchQuary"
+                    onChange={this.handleSearchArea}
+                  />
+                  <Button variant="danger">Search</Button>
+                </Form><br/>
         <div className='row my-4'>
           <div className='col-lg-12'>
             <div className='table-responsive'>

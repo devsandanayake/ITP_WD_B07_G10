@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
- 
+import Button from 'react-bootstrap/Button';
+
+import Form from 'react-bootstrap/Form';
 
 export default class RepairAdmin extends Component {
 
@@ -34,10 +36,54 @@ export default class RepairAdmin extends Component {
     })
   }
 
+   //seraching part  
+   filterData(posts,searchKey){
+  
+
+    const result = posts.filter((post)=>
+        post.name.toLowerCase().includes(searchKey)||
+        post.address.toLowerCase().includes(searchKey)||
+        post.contactNumber.toLowerCase().includes(searchKey)||
+        post.email.toLowerCase().includes(searchKey)||
+        post.Model.toLowerCase().includes(searchKey)||
+        post.category.toLowerCase().includes(searchKey)
+        
+    )
+    this.setState({posts:result})
+}
+
+
+handleSearchArea =(e)=>{
+
+console.log(e.currentTarget.value);
+
+const searchKey = e.currentTarget.value;
+
+axios.get("http://localhost:8070/repair").then(res =>{
+  if(res.data.success){
+    
+    this.filterData(res.data.existingPosts,searchKey)
+           
+  }
+});
+}
+
+
 
   render() {
     return (
       <div>
+        <Form className="d-flex mb-4 mx-0" >
+                  <Form.Control
+                    type="search"
+                    placeholder="Search"
+                    className="me-2"
+                    aria-label="Search"
+                    name="searchQuary"
+                    onChange={this.handleSearchArea}
+                  />
+                  <Button variant="danger">Search</Button>
+                </Form>
        <table className="table" >
            <thead>
              <tr>
