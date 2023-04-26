@@ -118,7 +118,6 @@ export default class RentReqR extends Component {
              <th scope="col">Phone</th>
              <th scope="col">StartDate</th>
              <th scope="col">EndDate</th>
-             <th scope="col">Items-Image</th>
              <th scope="col"></th>
              </tr>
            </thead>

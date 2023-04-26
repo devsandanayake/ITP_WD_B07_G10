@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import { BsDatabaseFillAdd,BsFillCaretLeftFill } from 'react-icons/bs';
 
-export default class AdminRentReq extends Component {
+export default class RentedItems extends Component {
 
  constructor(props){
    super(props);
@@ -36,6 +36,8 @@ export default class AdminRentReq extends Component {
 
 
   render() {
+    
+    
     return (
       <div className='container'>
         <div className='row my-4'>
@@ -75,9 +77,9 @@ export default class AdminRentReq extends Component {
                     <td>{posts.EndDate}</td>
 
                     <td><img src={posts.NIC} width={50}/></td>
-                    <td style={{background:'#e6a267'}}>{posts.ReqStatus}</td>
+                    <td  style={{background:'#e6a267'}}>{posts.ReqStatus}</td>
                     <td>
-                       <a className="b btn-primarytn" href={`/reqc/${posts._id}`}>
+                       <a className="b btn-primarytn" href={`/rentc/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Change Status
                        </a>
                        &nbsp; &nbsp; 
@@ -89,17 +91,15 @@ export default class AdminRentReq extends Component {
          </tbody>
        </table>
        
-       <a className="btn btn-warning" href={`/rentItem`}>
+       <a className="btn btn-warning" href={`/adminrentreq`}>
        <BsFillCaretLeftFill/>Back
-                       </a> &nbsp; &nbsp;
-                       
-                       <a className="btn btn-warning" href={`/rented`}>
-       <BsFillCaretLeftFill/>request
                        </a>
+                       
       </div>
       </div>
       </div>
       </div>
     )
+           
   }
 }

@@ -38,6 +38,9 @@ import RentReqCus from './components/Rent/RentReqCus';
 import RentItemdisplay from './components/Rent/RentItemdisplay';
 import AdminRentReq from './components/Rent/AdminRentReq';
 import RentReqR from './components/Report/RentReqR';
+import RequestControl from './components/Rent/RequestControl';
+import RentedItems from './components/Rent/RentedItems';
+import RentC from './components/Rent/RentC';
 
  export default class App extends Component {
    render() {
@@ -106,6 +109,10 @@ import RentReqR from './components/Report/RentReqR';
         < Route exact path="/rentitemdisplay" element={<RentItemdisplay/>}/>
         < Route exact path="/adminrentreq" element={<AdminRentReq/>}/>
         < Route exact path="/rentreqr" element={<RentReqR/>}/>
+        < Route exact path="/reqc/:id" element={<RequestControl/>}/>
+        < Route exact path="/rented" element={<RentedItems/>}/>
+        < Route exact path="/rentc/:id" element={<RentC/>}/>
+
 
        
 
