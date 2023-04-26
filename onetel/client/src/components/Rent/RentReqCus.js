@@ -13,7 +13,7 @@ export default function RentReqCus() {
     const [ Phone,setCusPhone] = useState("");
     const [ StartDate,setCusStart] = useState("");
     const [ EndDate,setCusEnd] = useState("");
-    const[NIC,setImage] = useState("");
+    const[NIC,setNIC] = useState("");
     const[message,setMessage] = useState("");
    
    
@@ -23,7 +23,7 @@ export default function RentReqCus() {
    
     
    const onChangeFile = e =>{
-    setImage(e.target.files[0]);
+    setNIC(e.target.files[0]);
    }
 
    const changeOnClick = (e) =>{
@@ -51,7 +51,7 @@ export default function RentReqCus() {
     setCusPhone("");
     setCusStart("");
     setCusEnd("");
-    axios.post("http://localhost:8070/RentReq/save",formData)
+    axios.post("http://localhost:8070/add/rent",formData)
     .then((res) =>setMessage(res.data))
     .catch((err)=>{
         console.log(err);
@@ -160,7 +160,7 @@ export default function RentReqCus() {
              <div className='form-group'>
            <label htmlFor="file">image</label>
             <input type={'file'}
-             image="warrenty"
+             image="NIC"
              onChange={onChangeFile}
              className='form-control'
              placeholder='add c'

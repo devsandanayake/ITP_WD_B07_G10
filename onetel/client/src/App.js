@@ -43,6 +43,7 @@ import ProductR from './components/Report/ProductR';
 import AddReturn from './components/Return/Returncus';
 import AdminReturn from './components/Return/AdminReturn';
 import EditReturn from './components/Return/EditReturn';
+import RentReqR from './components/Report/RentReqR';
 
 
  export default class App extends Component {
@@ -112,6 +113,7 @@ import EditReturn from './components/Return/EditReturn';
         <Route exact path="/RentReqCus" element={<RentReqCus/>}/>
         < Route exact path="/rentitemdisplay" element={<RentItemdisplay/>}/>
         < Route exact path="/adminrentreq" element={<AdminRentReq/>}/>
+        < Route exact path="/rentreqr" element={<RentReqR/>}/>
 
        
         //return
