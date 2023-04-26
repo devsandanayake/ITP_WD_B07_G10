@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
-export default function EditPost() {
+export default function RepairEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState({});

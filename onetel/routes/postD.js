@@ -111,8 +111,8 @@ router.get('/deliveryP/:id', async (req, res) => {
             post
         });
     } catch (err) {
-        return res.status(400).json({ success: false, error: err.message });
-    }
+        return res.status(400).json({ success: false, error: err.message});
+}
 });
 
 
