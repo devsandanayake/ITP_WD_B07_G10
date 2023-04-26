@@ -82,12 +82,12 @@ onSubmit=()=>{
         <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
          <img src={posts.imageRent} className='card-img-top img-fluid' alt='brand'/>   
              <div className='card-body text-center'>  
-             <h5 className='card-title'>{posts.ProductName}</h5>
-                        <h5 className='card-title'>{posts.UPC}</h5>
-                        <h5 className='card-title'>{posts.SKU}</h5>
-                        <h5 className='card-title'>{posts.Model}</h5>
+             <h4 className='card-title'>{posts.ProductName}</h4>
+                        UPC:<h6 className='card-title'>{posts.UPC}</h6>
+                        <p>ItemCode:<h6 className='card-title'>{posts.SKU}</h6></p>
+                        Model:<h6 className='card-title'>{posts.Model}</h6>
                         <h5 className='card-title'>{posts.Price}</h5>
-                        <p className='card-text'> {posts.Features}</p>
+                        Features:<p className='card-text'> {posts.Features}</p>
                   
                   <a className="btn btn-success" href={`/RentReqCus`}>Rent </a>                
                   
