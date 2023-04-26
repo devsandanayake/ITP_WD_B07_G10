@@ -1,137 +1,137 @@
- .card-container1 {
+ .card-container1x {
      width: 219px;
      height: 250px;
      overflow: hidden;
      box-shadow: 0px 0px 15px -5px;
      transition: 0.3s;
      animation: ease-in;
-     background-color: rgb(199, 85, 14);
+     background-color: rgb(199, 14, 14);
      margin-left: 25rem;
  }
  
- .card-container1:hover {
+ .card-container1x:hover {
      transform: scale(1.1);
      box-shadow: 0px 0px 15px 0px;
  }
  
- .card-container2 {
+ .card-container2x {
      width: 219px;
      height: 250px;
      overflow: hidden;
      box-shadow: 0px 0px 15px -5px;
      transition: 0.3s;
      animation: ease-in;
-     background-color: rgb(14, 20, 199);
+     background-color: rgb(199, 14, 14);
  }
  
- .card-container2:hover {
+ .card-container2x:hover {
      transform: scale(1.1);
      box-shadow: 0px 0px 15px 0px;
  }
  
- .card-container3 {
+ .card-container3x {
      width: 219px;
      height: 250px;
      overflow: hidden;
      box-shadow: 0px 0px 15px -5px;
      transition: 0.3s;
      animation: ease-in;
-     background-color: rgb(199, 76, 14);
+     background-color: rgb(199, 14, 14);
  }
  
- .card-container3:hover {
+ .card-container3x:hover {
      transform: scale(1.1);
      box-shadow: 0px 0px 15px 0px;
  }
  
- .card-container4 {
+ .card-container4x {
      width: 219px;
      height: 250px;
      overflow: hidden;
      box-shadow: 0px 0px 15px -5px;
      transition: 0.3s;
      animation: ease-in;
-     background-color: rgb(14, 199, 140);
+     background-color: rgb(199, 14, 14);
      margin-left: 25rem;
  }
  
- .card-container4:hover {
+ .card-container4x:hover {
      transform: scale(1.1);
      box-shadow: 0px 0px 15px 0px;
  }
  
- .card-container5 {
+ .card-container5x {
      width: 219px;
      height: 250px;
      overflow: hidden;
      box-shadow: 0px 0px 15px -5px;
      transition: 0.3s;
      animation: ease-in;
-     background-color: rgb(193, 14, 199);
+     background-color: rgb(199, 14, 14);
  }
  
- .card-container5:hover {
+ .card-container5x:hover {
      transform: scale(1.1);
      box-shadow: 0px 0px 15px 0px;
  }
  
- .card-container6 {
+ .card-container6x {
      width: 219px;
      height: 250px;
      overflow: hidden;
      box-shadow: 0px 0px 15px -5px;
      transition: 0.3s;
      animation: ease-in;
-     background-color: rgb(199, 14, 94);
+     background-color: rgb(199, 14, 14);
  }
  
- .card-container6:hover {
+ .card-container6x:hover {
      transform: scale(1.1);
      box-shadow: 0px 0px 15px 0px;
  }
  
- .card-container7 {
+ .card-container7x{
      width: 219px;
      height: 250px;
      overflow: hidden;
      box-shadow: 0px 0px 15px -5px;
      transition: 0.3s;
      animation: ease-in;
-     background-color: rgb(14, 171, 199);
+     background-color: rgb(199, 14, 14);
      margin-left: 25rem;
  }
  
- .card-container7:hover {
+ .card-container7x:hover {
      transform: scale(1.1);
      box-shadow: 0px 0px 15px 0px;
  }
  
- .card-container8 {
+ .card-container8x{
      width: 219px;
      height: 250px;
      overflow: hidden;
      box-shadow: 0px 0px 15px -5px;
      transition: 0.3s;
      animation: ease-in;
-     background-color: rgb(254, 240, 41);
+     background-color: rgb(199, 14, 14);
  }
  
- .card-container8:hover {
+ .card-container8x:hover {
      transform: scale(1.1);
      box-shadow: 0px 0px 15px 0px;
  }
  
- .card-container10 {
+ .card-container10x {
      width: 219px;
      height: 250px;
      overflow: hidden;
      box-shadow: 0px 0px 15px -5px;
      transition: 0.3s;
      animation: ease-in;
-     background-color: rgb(14, 199, 140);
+     background-color: rgb(199, 14, 14);
  }
  
- .card-container10:hover {
+ .card-container10x:hover {
      transform: scale(1.1);
      box-shadow: 0px 0px 15px 0px;
  }

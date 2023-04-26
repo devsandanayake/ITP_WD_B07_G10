@@ -7,7 +7,7 @@ import  Button  from "react-bootstrap/Button";
 
 
 
-export default class RepairR extends Component {
+export default class EmpR extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,7 +24,7 @@ export default class RepairR extends Component {
       doc.text(85, 10, "OneTel Mobile");
       doc.setTextColor(0, 0, 255);
       doc.setFontSize(16);
-      doc.text(10, 70, "Repair Details");
+      doc.text(10, 70, "Employee Details");
       doc.setTextColor(0, 255, 0);
       doc.setFontSize(12);
       
@@ -75,13 +75,13 @@ export default class RepairR extends Component {
       const date = Date().split(" ");
       // we use a date string to generate our filename.
       const dateStr =
-        "Delivery_Management" + date[0] + date[1] + date[2] + date[3] + date[4];
+        "Order_Management" + date[0] + date[1] + date[2] + date[3] + date[4];
       doc.save(`report_${dateStr}.pdf`);
     });
   }
 
   viewPosts(){
-    axios.get("/repair").then(res =>{
+    axios.get("/Emp").then(res =>{
       if(res.data.success){
         this.setState({
           ReportData:res.data.existingPosts,
@@ -107,16 +107,15 @@ export default class RepairR extends Component {
             <div className='table-responsive'> 
        <table className="table table-striped text-center" >
            <thead>
-             <tr>
+             <tr className='table-dark'>
              <th scope="col">Index</th>
-             <th scope="col">Customer-Name</th>
-             <th scope="col">Address</th>
-             <th scope="col">Phone</th>
+             <th scope="col">Profile-Pic</th>
+             <th scope="col">Name</th>
              <th scope="col">Email</th>
-             <th scope="col">Category</th>
-             <th scope="col">Model-Num</th>
-             <th scope="col">Reason</th>
-            
+             <th scope="col">Phone</th>
+             <th scope="col">Address</th>
+             <th scope="col">Date</th>
+                          
              </tr>
            </thead>
          
@@ -124,13 +123,13 @@ export default class RepairR extends Component {
             {this.state.ReportData.map((posts,index)=>(
                  <tr key={index}>
                     <th scope="row">{index+1}</th>
-                    <td>{posts.name}</td>
-                    <td>{posts.address}</td>
-                    <td>{posts.contactNumber}</td>
+                    <td><img src={posts.CusImg} width={50}/></td>
+                    <td>{posts.first_name}&nbsp;{posts.last_name}</td>
                     <td>{posts.email}</td>
-                    <td>{posts.category}</td>
-                    <td>{posts.Model}</td>
-                    <td>{posts.reason}</td>
+                    <td>{posts.Phone}</td>
+                    <td>{posts.Address}</td>
+                    <td>{posts.date}</td>
+                     
                     
                     
                  </tr>
