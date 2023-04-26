@@ -7,7 +7,7 @@ import  Button  from "react-bootstrap/Button";
 
 
 
-export default class DeliveryR extends Component {
+export default class RepairR extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -81,7 +81,7 @@ export default class DeliveryR extends Component {
   }
 
   viewPosts(){
-    axios.get("/posts").then(res =>{
+    axios.get("/repair").then(res =>{
       if(res.data.success){
         this.setState({
           ReportData:res.data.existingPosts,
@@ -107,14 +107,15 @@ export default class DeliveryR extends Component {
             <div className='table-responsive'> 
        <table className="table table-striped text-center" >
            <thead>
-             <tr className='table-dark'>
+             <tr>
              <th scope="col">Index</th>
-             <th scope="col">Name</th>
+             <th scope="col">Customer-Name</th>
              <th scope="col">Address</th>
              <th scope="col">Phone</th>
-             <th scope="col">NIC</th>
              <th scope="col">Email</th>
-             <th scope="col">Status</th>
+             <th scope="col">Category</th>
+             <th scope="col">Model-Num</th>
+             <th scope="col">Reason</th>
             
              </tr>
            </thead>
@@ -123,12 +124,13 @@ export default class DeliveryR extends Component {
             {this.state.ReportData.map((posts,index)=>(
                  <tr key={index}>
                     <th scope="row">{index+1}</th>
-                    <td>{posts.Name}</td>
-                    <td>{posts.Address}</td>
-                    <td>{posts.phone}</td>
-                    <td>{posts.NIC}</td>
+                    <td>{posts.name}</td>
+                    <td>{posts.address}</td>
+                    <td>{posts.contactNumber}</td>
                     <td>{posts.email}</td>
-                    <td style={{background:'#FF6833'}}>{posts.Status}</td>
+                    <td>{posts.category}</td>
+                    <td>{posts.Model}</td>
+                    <td>{posts.reason}</td>
                     
                     
                  </tr>

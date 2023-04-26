@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
-import axios from 'axios';
+//import axios from 'axios';
 export default class Profile extends Component {
   constructor(props){
     super(props)
@@ -8,7 +8,7 @@ export default class Profile extends Component {
         first_name:'',
         last_name:'',
         email:'',
-        posts:[]
+        //posts:[]
     }
   }
 
@@ -21,26 +21,26 @@ export default class Profile extends Component {
         email : decode.email
 
     })
-    this.viewPosts();
+    //this.viewPosts();
   }
-  //retrivew funtion
- viewPosts(){
-  axios.get("http://localhost:8070/posts").then(res =>{
-    if(res.data.success){
-      this.setState({
-        posts:res.data.existingPosts
-      });
-      //show array list 
-      console.log(this.state.posts)        
-    }
-  });
-}
+//   //retrivew funtion
+//  viewPosts(){
+//   axios.get("http://localhost:8070/posts").then(res =>{
+//     if(res.data.success){
+//       this.setState({
+//         posts:res.data.existingPosts
+//       });
+//       //show array list 
+//       console.log(this.state.posts)        
+//     }
+//   });
+
 
   render() {
                                      
-    let email = this.state.email;
+    //let email = this.state.email;
      
-        
+    
     
     return (
         <div className="container">
@@ -66,6 +66,7 @@ export default class Profile extends Component {
                          </tbody>
                       </h2>
                    </table>
+                 
              </div>
              
         </div>

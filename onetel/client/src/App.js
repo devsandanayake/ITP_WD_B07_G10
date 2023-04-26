@@ -28,9 +28,16 @@ import DeliveryR from './components/Report/DeliveryR';
 import AdminRentItem from './components/Rent/AdminRentItem';
 import AddRentItem from './components/Rent/AddRentItem';
 import EditRentIem from './components/Rent/EditRentItem';
+import RepairEdit from './components/Repair/RepairEdit'
+import EditWarranty from './components/warrentyItem/EditWarranty';
+import ReportHome from './components/Report/ReportHome';
+import Addemp from './components/Account/Addemp';
+import RepairR from './components/Report/RepairR';
+import Editemp from './components/Account/Editemp';
 import RentReqCus from './components/Rent/RentReqCus';
 import RentItemdisplay from './components/Rent/RentItemdisplay';
 import AdminRentReq from './components/Rent/AdminRentReq';
+
  export default class App extends Component {
    render() {
      return (
@@ -67,6 +74,7 @@ import AdminRentReq from './components/Rent/AdminRentReq';
 
         <Route exact path="/repairCus"  element={<RepairCus/>}></Route>
         <Route exact path="/repairAdmin"  element={<RepairAdmin/>}></Route> 
+        <Route exact path="/repairedit/:id"  element={<RepairEdit/>}></Route> 
 
 
         <Route exact path="/addProduct"  element={<AddProduct/>}></Route> 
@@ -80,9 +88,14 @@ import AdminRentReq from './components/Rent/AdminRentReq';
         //warrenty
         <Route exact path="/Addwarrenty"  element={<AddWarranty/>}></Route> 
         <Route exact path="/Adminwarrenty"  element={<AdminWarrenty/>}></Route> 
+        <Route exact path="/EditWarranty/:id" element={<EditWarranty/>}/>
+        
 
         //emp
         <Route exact path="/Emp"  element={<AdminEmp/>}></Route> 
+        <Route exact path="/add/emp"  element={<Addemp/>}></Route> 
+        <Route exact path="/Editemp/:id" element={<Editemp/>}></Route> 
+
 
         //rentItem
         <Route exact path ="/rentItem" element={<AdminRentItem/>}/>
@@ -92,6 +105,11 @@ import AdminRentReq from './components/Rent/AdminRentReq';
         < Route exact path="/rentitemdisplay" element={<RentItemdisplay/>}/>
         < Route exact path="/adminrentreq" element={<AdminRentReq/>}/>
 
+       
+
+
+        <Route exact path = "/report" element={<ReportHome/> } />
+        <Route exact path = "/repair/report" element={<RepairR/>}/>
        </Routes>
         </div>
         <Footer/>          

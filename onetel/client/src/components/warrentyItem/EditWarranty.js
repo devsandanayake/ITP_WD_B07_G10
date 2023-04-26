@@ -2,29 +2,32 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
-export default function Editproduct() {
+export default function RepairEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState({});
   const [updatedPost, setUpdatedPost] = useState({
-    Categories: "",
-    Brand: "",
-    Price: "",
-    Model:"",
-    Status:""  
+     ItemCode:"",
+     ItemName:"",
+     customerID:"",
+     customerName:"",
+     cusEmail:"",
+     Reason:""
     
   });
 
   useEffect(() => {
-    axios.get(`/product/${id}`).then((res) => {
+    axios.get(`/Warrenty/${id}`).then((res) => {
       if (res.data.success) {
         setPost(res.data.post);
         setUpdatedPost({
-          Categories: res.data.post.Categories,
-          Brand: res.data.post.Brand,
-          Price: res.data.post.Price,
-          Model: res.data.post.Model,
-          Status: res.data.post.Status
+          ItemCode: res.data.post.ItemCode,
+          ItemName: res.data.post.ItemName,
+          customerID: res.data.post.customerID,
+          customerName: res.data.post.customerName,
+          cusEmail: res.data.post.cusEmail,
+          Reason: res.data.post.Reason
+          
            
         });
       }
@@ -32,7 +35,7 @@ export default function Editproduct() {
   }, [id]);
   console.log(post);
 
-  const {Categories,Brand,Price,Model,Status} = updatedPost;
+  const {ItemCode,ItemName,customerID,customerName,cusEmail,Reason} = updatedPost;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -47,26 +50,28 @@ export default function Editproduct() {
     e.preventDefault();
 
     const data = {
-      Categories: updatedPost.Categories,
-      Brand: updatedPost.Brand,
-      Price: updatedPost.Price,
-      Model: updatedPost.Model,
-      Status: updatedPost.Status
-       
+      ItemCode: updatedPost.ItemCode,
+      ItemName: updatedPost.ItemName,
+      customerID: updatedPost.customerID,
+      customerName: updatedPost.customerName,
+      cusEmail: updatedPost.cusEmail,
+      Reason: updatedPost.Reason
        
     };
 
-    axios.put(`/product/update/${id}`, data).then((res) => {
+    axios.put(`/Warrenty/update/${id}`, data).then((res) => {
       console.log(res.data);
       alert('Post updated successfully!');
       setUpdatedPost({
-        Categories: "",
-        Brand: "",
-        Price: "",
-        Model:"",
-        Status:""  
+        ItemCode:"",
+        ItemName:"",
+        customerID:"",
+        customerName:"",
+        cusEmail:"",
+        Reason:""
+         
       });
-      navigate('/adminManageProduct');
+      navigate('/AdminWarrenty');
     });
   };
 
@@ -77,61 +82,71 @@ export default function Editproduct() {
 
       <form onSubmit={handleFormSubmit}>
         <div className='form-group'>
-          <label>Categories:</label>
+          <label>ItemCode:</label>
           <input
             type='text'
             className='form-control'
-            name='Categories'
-            value={Categories}
+            name='ItemCode'
+            value={ItemCode}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>Brand:</label>
+          <label>ItemName:</label>
           <input
             type='text'
             className='form-control'
-            name='Brand'
-            value={Brand}
+            name='ItemName'
+            value={ItemName}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>Price:</label>
+          <label>customerID:</label>
           <input
-            type='text'
+            type='number'
             className='form-control'
-            name='Price'
-            value={Price}
+            name='customerID'
+            value={customerID}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>Model:</label>
+          <label>customerName:</label>
           <input
             type='text'
             className='form-control'
-            name='Model'
-            value={Model}
+            name='customerName'
+            value={customerName}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>Status:</label>
+          <label>cusEmail:</label>
           <input
-            type='text'
+            type='email'
             className='form-control'
-            name='Status'
-            value={Status}
+            name='cusEmail'
+            value={cusEmail}
             onChange={handleInputChange}
           />
         </div>
-          
-     
+
+  
+        <div className='form-group'>
+          <label>Reason:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='Reason'
+            value={Reason}
+            onChange={handleInputChange}
+          />
+        </div>
 
         <button
           type='submit'

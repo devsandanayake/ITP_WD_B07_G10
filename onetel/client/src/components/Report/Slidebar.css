@@ -1,0 +1,40 @@
+.item a{ 
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: ease-in;
+    overflow: hidden;
+    border-radius: 9px;
+    background-color: rgb(23, 102, 221);
+    color: azure;
+    
+}
+.item:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 4px 0px;
+    background-color: rgb(41, 106, 247);
+
+}
+.Slidebar{
+    width: 250px;
+    height: 950px;
+    background-color: rgb(0, 3, 89);
+    position: absolute;
+    display: block;
+    margin-left: -83px;
+    box-shadow: 0px 0px 15px -5px;
+}
+.log img{
+    overflow: hidden;
+    height: 160px;
+    width: 219px;
+    margin-left: 15px;
+    margin-top: 25px;
+}
+.copyright{
+    color: rgba(170, 170, 164, 0.801);
+    margin-top: 55px;
+    font-size: 10px;
+    text-align: center;
+}

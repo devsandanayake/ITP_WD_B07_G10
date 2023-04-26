@@ -2,29 +2,33 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
-export default function Editproduct() {
+export default function RepairEdit() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState({});
   const [updatedPost, setUpdatedPost] = useState({
-    Categories: "",
-    Brand: "",
-    Price: "",
+    name: "",
+    address: "",
+    contactNumber: "",
+    email:"",
+    category:"",
     Model:"",
-    Status:""  
+    reason:""
     
   });
 
   useEffect(() => {
-    axios.get(`/product/${id}`).then((res) => {
+    axios.get(`/repair/${id}`).then((res) => {
       if (res.data.success) {
         setPost(res.data.post);
         setUpdatedPost({
-          Categories: res.data.post.Categories,
-          Brand: res.data.post.Brand,
-          Price: res.data.post.Price,
+          name: res.data.post.name,
+          address: res.data.post.address,
+          contactNumber: res.data.post.contactNumber,
+          email: res.data.post.email,
+          category: res.data.post.category,
           Model: res.data.post.Model,
-          Status: res.data.post.Status
+          reason: res.data.post.reason
            
         });
       }
@@ -32,7 +36,7 @@ export default function Editproduct() {
   }, [id]);
   console.log(post);
 
-  const {Categories,Brand,Price,Model,Status} = updatedPost;
+  const {name, address, contactNumber,email , category,Model,reason} = updatedPost;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -47,26 +51,29 @@ export default function Editproduct() {
     e.preventDefault();
 
     const data = {
-      Categories: updatedPost.Categories,
-      Brand: updatedPost.Brand,
-      Price: updatedPost.Price,
+      name: updatedPost.name,
+      address: updatedPost.address,
+      contactNumber: updatedPost.contactNumber,
+      email: updatedPost.email,
+      category: updatedPost.category,
       Model: updatedPost.Model,
-      Status: updatedPost.Status
-       
+      reason: updatedPost.reason
        
     };
 
-    axios.put(`/product/update/${id}`, data).then((res) => {
+    axios.put(`/repair/update/${id}`, data).then((res) => {
       console.log(res.data);
       alert('Post updated successfully!');
       setUpdatedPost({
-        Categories: "",
-        Brand: "",
-        Price: "",
+        name: "",
+        address: "",
+        contactNumber: "",
+        email:"",
+        category:"",
         Model:"",
-        Status:""  
+        reason:""
       });
-      navigate('/adminManageProduct');
+      navigate('/repairAdmin');
     });
   };
 
@@ -77,40 +84,63 @@ export default function Editproduct() {
 
       <form onSubmit={handleFormSubmit}>
         <div className='form-group'>
-          <label>Categories:</label>
+          <label>Name:</label>
           <input
             type='text'
             className='form-control'
-            name='Categories'
-            value={Categories}
+            name='name'
+            value={name}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>Brand:</label>
+          <label>Address:</label>
           <input
             type='text'
             className='form-control'
-            name='Brand'
-            value={Brand}
+            name='address'
+            value={address}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>Price:</label>
+          <label>Phone Number:</label>
           <input
-            type='text'
+            type='number'
             className='form-control'
-            name='Price'
-            value={Price}
+            name='contactNumber'
+            value={contactNumber}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>Model:</label>
+          <label>NIC:</label>
+          <input
+            type='email'
+            className='form-control'
+            name='email'
+            value={email}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className='form-group'>
+          <label>email:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='category'
+            value={category}
+            onChange={handleInputChange}
+          />
+        </div>
+
+  
+        <div className='form-group'>
+          <label>email:</label>
           <input
             type='text'
             className='form-control'
@@ -121,17 +151,19 @@ export default function Editproduct() {
         </div>
 
         <div className='form-group'>
-          <label>Status:</label>
+          <label>email:</label>
           <input
             type='text'
             className='form-control'
-            name='Status'
-            value={Status}
+            name='reason'
+            value={reason}
             onChange={handleInputChange}
           />
         </div>
-          
-     
+
+       
+        
+        
 
         <button
           type='submit'

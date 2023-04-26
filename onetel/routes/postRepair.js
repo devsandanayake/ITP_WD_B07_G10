@@ -78,5 +78,22 @@ router.delete('/repair/delete/:id',(req,res)=>{
     });
 });
 
+//get a specific post
+router.get('/repair/:id', async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const post = await Postrepair.findById(postId);
+        if (!post) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
+        return res.status(200).json({
+            success: true,
+            post
+        });
+    } catch (err) {
+        return res.status(400).json({ success: false, error: err.message });
+    }
+});
+
 
 module.exports = router;

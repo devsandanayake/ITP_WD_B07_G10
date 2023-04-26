@@ -2,17 +2,18 @@ const express = require('express');
 const multer = require('multer');
 
 
-const postWarrenty = require('../models/postWarrenty')
+const postReturn = require('../models/postReturn');
+const postReturn = require('../models/post.Return');
 
 
 const router = express.Router();
 
 //save posts
 
-router.post('/Warrenty/save', (req, res) => {
-    let newWarrenty = new postWarrenty(req.body);
+router.post('/Return/save', (req, res) => {
+    let newReturn = new postReturn(req.body);
 
-    newWarrenty.save((err) => {
+    newReturn.save((err) => {
         if (err) {
             return res.status(400).json({
                 error: err
@@ -27,8 +28,8 @@ router.post('/Warrenty/save', (req, res) => {
 
 //get posts
 
-router.get('/Warrenty', (req, res) => {
-    postWarrenty.find().exec((err, postWarrenty) => {
+router.get('/Return', (req, res) => {
+    postReturn.find().exec((err, postReturn) => {
         if (err) {
             return res.status(400).json({
                 error: err
@@ -36,7 +37,7 @@ router.get('/Warrenty', (req, res) => {
         }
         return res.status(200).json({
             success: true,
-            existingPosts: postWarrenty
+            existingPosts: postReturn
         });
 
     });
@@ -44,8 +45,8 @@ router.get('/Warrenty', (req, res) => {
 
 //update Posts
 
-router.put('/Warrenty/update/:id', (req, res) => {
-    postWarrenty.findByIdAndUpdate(
+router.put('/Return/update/:id', (req, res) => {
+    postReturn.findByIdAndUpdate(
         req.params.id, {
             $set: req.body
         },
@@ -65,8 +66,8 @@ router.put('/Warrenty/update/:id', (req, res) => {
 
 
 //delete post
-router.delete('/Warrenty/delete/:id', (req, res) => {
-    postWarrenty.findByIdAndRemove(req.params.id).exec((err, deletedWarrenty) => {
+router.delete('/Return/delete/:id', (req, res) => {
+    postReturn.findByIdAndRemove(req.params.id).exec((err, deletedWarrenty) => {
         if (err)
             return res.status(400).json({
                 massage: "Delete unsuccesful",
@@ -74,7 +75,7 @@ router.delete('/Warrenty/delete/:id', (req, res) => {
             });
         return res.json({
             massege: "Delete Succesfully",
-            deletedWarrenty
+            deletedReturn
 
         });
 
@@ -92,46 +93,32 @@ const Storage = multer.diskStorage({
 
 const upload = multer({
     storage: Storage
-}).single('warrenty')
+}).single('return')
 
 
-router.post('/add/War', (req, res) => {
+router.post('/add/Ret', (req, res) => {
     upload(req, res, (err) => {
         if (err) {
             console.log(err)
         } else {
-            const newWarrenty = new postWarrenty({
+            const newReturn = new postReturn({
                 ItemCode: req.body.ItemCode,
                 ItemName: req.body.ItemName,
                 customerID: req.body.customerID,
                 customerName: req.body.customerName,
-                cusEmail:req.body.cusEmail,
-                Reason: req.body.Reason,
-               warrenty:req.file.filename
-                    
-                
+                cusEmail: req.body.cusEmail,
+                Address: req.body.Address,
+                Reason: req.body.Reason
+
+
+
             })
-            newWarrenty.save().then(() => res.send("successfull uploaded"))
+            newReturn.save().then(() => res.send("successfull uploaded"))
                 .catch((err) => console.log(err));
         }
     })
 })
 
-//get a specific post
-router.get('/Warrenty/:id', async (req, res) => {
-    try {
-        const postId = req.params.id;
-        const post = await postWarrenty.findById(postId);
-        if (!post) {
-            return res.status(404).json({ message: 'Post not found' });
-        }
-        return res.status(200).json({
-            success: true,
-            post
-        });
-    } catch (err) {
-        return res.status(400).json({ success: false, error: err.message});
-}
-});
+
 
 module.exports = router;

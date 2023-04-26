@@ -50,8 +50,12 @@ export default class Home extends Component {
 
 
     return (
+      
         <div className='container'><br/>
-        
+           
+        <a className="btn btn-primary" href="/add/emp" style={{marginBottom:'20px'}} onClick={("")}>
+                         <i className="fas fa-tash-altt"></i>&nbsp;Add new Employee
+           </a>
         <div className='row'>
         {this.state.posts.map((posts)=>(
         <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
@@ -64,7 +68,7 @@ export default class Home extends Component {
                     <p className='text'>{posts.Address}</p>
                     <p className='text'>{posts.date}</p>
              
-                    <a className="btn btn-warning" href={`/editEmp/${posts._id}`}>
+                    <a className="btn btn-warning" href={`/Editemp/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit
                        </a>
                        &nbsp; &nbsp; 
@@ -77,10 +81,14 @@ export default class Home extends Component {
             
          </div>
                
-       ))}<div className='btnback'>
+       ))}
+       <div className='btnback'>
        <a className="btn btn-warning" href={`/admin`}>
        <BsFillCaretLeftFill/>Back
+       
                        </a></div>
+                    
+                      
        </div>
                       
            </div> 

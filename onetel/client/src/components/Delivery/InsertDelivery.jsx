@@ -43,8 +43,9 @@ export default class InsertDelivery extends Component {
 
     
 
-    axios.post("http://localhost:8070/post/save",data).then((res)=>{
+    axios.post("/post/save",data).then((res)=>{
       if(res.data.success){
+        alert("Successful Add data")
         this.setState({
           Name:"",
           Address:"",
@@ -84,7 +85,7 @@ export default class InsertDelivery extends Component {
 
         <Form.Group className="mb-3" >
           <Form.Label htmlFor="Number">Phone</Form.Label>
-          <Form.Control  placeholder="Enter Your Contact-Num" name='phone' value={this.state.phone} onChange={this.handleInputChange} />
+          <Form.Control  placeholder="Enter Your Contact-Num"  type="number" name='phone' value={this.state.phone} onChange={this.handleInputChange} />
         </Form.Group>
 
        <Form.Group className='mb-3'>
@@ -94,7 +95,7 @@ export default class InsertDelivery extends Component {
 
            <Form.Group className='mb-3'>
          <Form.Label htmlFor="email">Email</Form.Label>
-         <Form.Control placeholder='Enter Email' name='email' value={this.state.email} onChange={this.handleInputChange}/>
+         <Form.Control placeholder='Enter Email' name='email' type="email" value={this.state.email} onChange={this.handleInputChange}/>
         </Form.Group>  
                
         <Button type="submit" onClick={this.onSubmit}>Save</Button>
