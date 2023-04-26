@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
- 
 import {login} from './userFuntion';
 import { Link } from "react-router-dom";
 
@@ -36,11 +35,14 @@ export default class Login extends Component {
     }
     else if(login(user).then(res=>{
         if(res){
-           window.location="/profile";
-         }
-    })){
+           window.location.href="/profile";
+          
+         }}))
+         {
+      
  
-    }else{
+         }
+    else{
       window.alert("erro")
     }
 

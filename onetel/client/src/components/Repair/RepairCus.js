@@ -92,7 +92,7 @@ export default class RepairCus extends Component {
         </Form.Group>
 
        <Form.Group className='mb-3'>
-         <Form.Control placeholder='Email' name='email' value={this.state.email} onChange={this.handleInputChange}/>
+         <Form.Control placeholder='Email'  required={true} name='email' value={this.state.email} onChange={this.handleInputChange}/>
         </Form.Group>    
         <Form.Group className='mb-3'>
         Select Your Item  :&nbsp; <select name='category'
