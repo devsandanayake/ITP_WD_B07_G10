@@ -46,8 +46,14 @@ import { BsWhatsapp } from 'react-icons/bs';
               <NavDropdown.Item href="/Addwarrenty">
                 Warrenty Clame
               </NavDropdown.Item>
+
+              <NavDropdown.Item href="/rentitemdisplay">Rent Item</NavDropdown.Item>
+              <NavDropdown.Item href="/AddReturn">ReturnItem</NavDropdown.Item>
+
               <NavDropdown.Item href="/">Rent Item</NavDropdown.Item>
+
               <NavDropdown.Divider />
+              
               <NavDropdown.Item href="https://wa.me/+94785748316" style={{color:"green"}}>
               <BsWhatsapp/>&nbsp;WhatsApp
               </NavDropdown.Item>

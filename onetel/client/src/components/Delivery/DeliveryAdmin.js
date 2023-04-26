@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { BsFillCaretLeftFill } from 'react-icons/bs';
+import Button from 'react-bootstrap/Button';
 
+import Form from 'react-bootstrap/Form';
 export default class DeliveryAdmin extends Component {
 
  constructor(props){
@@ -38,6 +40,34 @@ export default class DeliveryAdmin extends Component {
       this.viewPosts();
     })
   }
+  //seraching part  
+  filterData(posts,searchKey){
+  
+
+    const result = posts.filter((post)=>
+        post.NIC.toLowerCase().includes(searchKey)||
+        post.email.toLowerCase().includes(searchKey)||
+        post.Name.toLowerCase().includes(searchKey)
+        
+    )
+    this.setState({posts:result})
+}
+
+
+handleSearchArea =(e)=>{
+
+console.log(e.currentTarget.value);
+
+const searchKey = e.currentTarget.value;
+
+axios.get("http://localhost:8070/posts").then(res =>{
+  if(res.data.success){
+    
+    this.filterData(res.data.existingPosts,searchKey)
+           
+  }
+});
+}
    
 
   render() {
@@ -48,6 +78,7 @@ export default class DeliveryAdmin extends Component {
       return(
         <div>
             <div className='container'>
+           
          <div className='row my-4'>
           <div className='col-lg-12'>
             <div className='table-responsive'> 
@@ -103,7 +134,18 @@ export default class DeliveryAdmin extends Component {
      
     return ( 
       
-      <div className='container'>
+      <div className='container'><br/>
+       <Form className="d-flex mb-4 mx-0" >
+                  <Form.Control
+                    type="search"
+                    placeholder="Enter NIC num or Email or Name"
+                    className="me-2"
+                    aria-label="Search"
+                    name="searchQuary"
+                    onChange={this.handleSearchArea}
+                  />
+                  <Button variant="danger">Search</Button>
+                </Form>
          <div className='row my-4'>
           <div className='col-lg-12'>
             <div className='table-responsive'> 

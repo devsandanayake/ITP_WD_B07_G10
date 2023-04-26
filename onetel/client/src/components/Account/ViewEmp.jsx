@@ -7,7 +7,8 @@ import { BsCart4} from "react-icons/bs";
 import Form from 'react-bootstrap/Form';
 
 
-export default class Home extends Component {
+
+export default class ViewEmp extends Component {
   constructor(props){
     super(props);
  
@@ -39,7 +40,37 @@ export default class Home extends Component {
     })
   }
   
- 
+ //seraching part  
+ filterData(posts,searchKey){
+  
+
+  const result = posts.filter((post)=>
+      post.first_name.toLowerCase().includes(searchKey)||
+      post.last_name.toLowerCase().includes(searchKey)||
+      post.email.toLowerCase().includes(searchKey)||
+      post.NIC.toLowerCase().includes(searchKey)
+       
+
+      
+  )
+  this.setState({posts:result})
+}
+
+
+handleSearchArea =(e)=>{
+
+console.log(e.currentTarget.value);
+
+const searchKey = e.currentTarget.value;
+
+axios.get("http://localhost:8070/Emp").then(res =>{
+if(res.data.success){
+  
+  this.filterData(res.data.existingPosts,searchKey)
+         
+}
+});
+}
    
 
   render() {
@@ -51,7 +82,19 @@ export default class Home extends Component {
 
     return (
       
-        <div className='container'><br/>
+        <div className='container'>
+          <Form className="d-flex mb-4 mx-0" >
+                  <Form.Control
+                    type="search"
+                    placeholder="Enter"
+                    className="me-2"
+                    aria-label="Search"
+                    name="searchQuary"
+                    onChange={this.handleSearchArea}
+                  />
+                  <Button variant="danger">Search</Button>
+                </Form><br/>
+
            
         <a className="btn btn-primary" href="/add/emp" style={{marginBottom:'20px'}} onClick={("")}>
                          <i className="fas fa-tash-altt"></i>&nbsp;Add new Employee
@@ -66,6 +109,7 @@ export default class Home extends Component {
                     <p className='text'>{posts.email}</p>
                     <p className='text'>{posts.Phone}</p>
                     <p className='text'>{posts.Address}</p>
+                    <p className='text'>{posts.NIC}</p>
                     <p className='text'>{posts.date}</p>
              
                     <a className="btn btn-warning" href={`/Editemp/${posts._id}`}>
