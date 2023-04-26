@@ -37,7 +37,9 @@ import Editemp from './components/Account/Editemp';
 import RentReqCus from './components/Rent/RentReqCus';
 import RentItemdisplay from './components/Rent/RentItemdisplay';
 import AdminRentReq from './components/Rent/AdminRentReq';
-
+import EmpR from './components/Report/EmpR'
+import WarR from './components/Report/WarR'
+import ProductR from './components/Report/ProductR';
  export default class App extends Component {
    render() {
      return (
@@ -95,6 +97,7 @@ import AdminRentReq from './components/Rent/AdminRentReq';
         <Route exact path="/Emp"  element={<AdminEmp/>}></Route> 
         <Route exact path="/add/emp"  element={<Addemp/>}></Route> 
         <Route exact path="/Editemp/:id" element={<Editemp/>}></Route> 
+        <Route exact path = "/Empreport" element={<EmpR/>}/>
 
 
         //rentItem
@@ -110,6 +113,8 @@ import AdminRentReq from './components/Rent/AdminRentReq';
 
         <Route exact path = "/report" element={<ReportHome/> } />
         <Route exact path = "/repair/report" element={<RepairR/>}/>
+        <Route exact path = "/warrentyReport" element={<WarR/>}/>
+        <Route exact path = "/productReport"  element={<ProductR/>}/>
        </Routes>
         </div>
         <Footer/>          

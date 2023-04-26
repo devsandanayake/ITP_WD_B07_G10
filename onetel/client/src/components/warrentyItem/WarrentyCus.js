@@ -7,7 +7,7 @@ export default function AddWarranty() {
     const [ItemCode , setitemcode] = useState("");
     const [ItemName, setItemname] = useState("");
     const [customerID,setCusId] = useState("");
-    const [ customerName,setCusname] = useState("");
+    const [customerName,setCusname] = useState("");
     const [cusEmail,setcusEmail] = useState("");
     const[warrenty,setImage] = useState("");
     const[message,setMessage] = useState("");

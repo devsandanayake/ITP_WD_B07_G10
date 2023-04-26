@@ -4,13 +4,8 @@ import './card.css'
 import './Slidebar.css'
 import cus from './images/cus.jpg'
 import logo from './images/logo.jpg'
-import product from  './images/product.jpg'
-import Repair from './images/Repair.png'
-import delivery from './images/delivery.gif'
-import R1 from './images/R1.gif'
-import Rent from './images/Rent.png'
-import order from './images/order.jpg'
-import stock from './images/stock.png'
+ 
+import R from './images/report.jpg'
 import { RiDashboard2Line } from "react-icons/ri";
 import { FiSettings } from "react-icons/fi";
 import { HiOutlineDocumentReport } from "react-icons/hi";
@@ -23,7 +18,7 @@ export default function ReportHome() {
   return (
     <div className="admin"> 
       <div className='Slidebar'><br/>
-        <h4 className='text-center mb-5' style={{color:'white'}}>Onetel-Admin</h4>
+        <h4 className='text-center mb-5' style={{color:'white'}}>Report</h4>
         <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/admin'}><RiDashboard2Line/>&nbsp;Dashboard</a></div><br/>
         <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/'}><AiOutlineHome/>&nbsp;Home</a></div><br/>
         <div className='item'><a className='btn btn-primary col-12'style={{background:"rgb(23, 102, 221)"}} href={'/#setting'}><FiSettings/>&nbsp;Web Setting</a></div><br/>
@@ -38,93 +33,94 @@ export default function ReportHome() {
         </div>
        <br/><br/>
     <div className='container row'>
-    <div className='card-container1 mb-5'>
+        
+    <div className='card-container1x mb-5'>
        <div className="image-container row">
-           <img src={order}></img>
+           <img src={R}></img>
         </div> 
         <div className=" text-center"> 
                     <div className='card-title'>Order Report</div>
-                    <a className="btn btn-secondary" href={``}><BsCaretRightSquare/></a>
+                    <a className="btn btn-dark" href={``}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-       <div className='card-container2 mb-5'>
+       <div className='card-container2x mb-5'>
        <div className="image-container row">
-           <img src={product}></img>
+           <img src={R}></img>
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Product Report</div>
-                    <a className="btn btn-success" href={`/adminManageProduct`}><BsCaretRightSquare/></a>
+                    <a className="btn btn-dark" href={`/productReport`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-       <div className='card-container3 mb-5'>
+       <div className='card-container3x mb-5'>
        <div className="image-container row">
-           <img src={Repair}></img>
+           <img src={R}></img>
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Repair Report</div>
-                    <a className="btn btn-warning" href={`/repair/report`}><BsCaretRightSquare/></a>
+                    <a className="btn btn-dark" href={`/repair/report`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-       <div className='card-container4 mb-5'>
+       <div className='card-container4x mb-5'>
        <div className="image-container row">
-           <img src={delivery}></img>
+           <img src={R}></img>
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Delivery Report</div>
-                    <a className="btn btn-light" href={`/delivery/report`}><BsCaretRightSquare/></a>
+                    <a className="btn btn-dark" href={`/delivery/report`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-       <div className='card-container5 mb-5'>
+       <div className='card-container5x mb-5'>
        <div className="image-container row">
-           <img src={R1}></img>
+           <img src={R}></img>
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Warrenty Report</div>
-                    <a className="btn btn-danger" href={`/Adminwarrenty`}><BsCaretRightSquare/></a>
+                    <a className="btn btn-dark" href={`/warrentyReport`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-       <div className='card-container6 mb-5'>
+       <div className='card-container6x mb-5'>
        <div className="image-container row">
-           <img src={Rent}></img>
+           <img src={R}></img>
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Rent Report</div>
-                    <a className="btn btn-info" href={`/rentItem`}><BsCaretRightSquare/></a>
+                    <a className="btn btn-dark" href={`/rentItem`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-       <div className='card-container7 mb-5'>
+       <div className='card-container7x mb-5'>
        <div className="image-container row">
-           <img src={cus}></img>
+           <img src={R}></img>
         </div> 
         <div className="text-center"> 
-                    <div className='card-title'>Customer Report</div>
-                    <a className="btn btn-dark" href={`/customer/ad`}><BsCaretRightSquare/></a>
+                    <div className='card-title'>Empolyee Report</div>
+                    <a className="btn btn-dark" href={`/Empreport`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     
 
-       <div className='card-container8 mb-5'>
+       <div className='card-container8x mb-5'>
        <div className="image-container row">
-           <img src={stock}></img>
+           <img src={R}></img>
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Stock Report</div>
-                    <a className="btn btn-primary" href={``}><BsCaretRightSquare/></a>
+                    <a className="btn btn-dark" href={``}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-       <div className='card-container10 mb-5'>
+       <div className='card-container10x mb-5'>
        <div className="image-container row">
-           <img src={cus}></img>
+           <img src={R}></img>
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Return Report</div>
