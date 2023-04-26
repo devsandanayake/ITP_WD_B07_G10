@@ -30,7 +30,7 @@ export default class Login extends Component {
           console.log('admin log')
           window.location="/admin";
    }
-    else if(this.state.email == "ad@gmail.com" && this.state.password == "1234"){ 
+    else if(this.state.email == "run@email.com" && this.state.password == "1234"){ 
       window.location="/delivery/person";
     }
     else if(login(user).then(res=>{
