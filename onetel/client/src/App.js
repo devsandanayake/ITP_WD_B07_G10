@@ -31,6 +31,7 @@ import EditRentIem from './components/Rent/EditRentItem';
 import RepairEdit from './components/Repair/RepairEdit'
 import EditWarranty from './components/warrentyItem/EditWarranty';
 import ReportHome from './components/Report/ReportHome';
+import Addemp from './components/Account/Addemp';
  export default class App extends Component {
    render() {
      return (
@@ -86,6 +87,7 @@ import ReportHome from './components/Report/ReportHome';
 
         //emp
         <Route exact path="/Emp"  element={<AdminEmp/>}></Route> 
+        <Route exact path="/add/emp"  element={<Addemp/>}></Route> 
 
         //rentItem
         <Route exact path ="/rentItem" element={<AdminRentItem/>}/>
