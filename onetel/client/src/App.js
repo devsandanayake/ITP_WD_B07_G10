@@ -34,6 +34,9 @@ import ReportHome from './components/Report/ReportHome';
 import Addemp from './components/Account/Addemp';
 import RepairR from './components/Report/RepairR';
 import Editemp from './components/Account/Editemp';
+import RentReqCus from './components/Rent/RentReqCus';
+import RentItemdisplay from './components/Rent/RentItemdisplay';
+import AdminRentReq from './components/Rent/AdminRentReq';
 
  export default class App extends Component {
    render() {
@@ -98,6 +101,9 @@ import Editemp from './components/Account/Editemp';
         <Route exact path ="/rentItem" element={<AdminRentItem/>}/>
         <Route exact path ="/add/rentItem" element={<AddRentItem/>}/>
         <Route exact path="/editrentitem/:id" element={<EditRentIem/>}/>
+        <Route exact path="/RentReqCus" element={<RentReqCus/>}/>
+        < Route exact path="/rentitemdisplay" element={<RentItemdisplay/>}/>
+        < Route exact path="/adminrentreq" element={<AdminRentReq/>}/>
 
        
 

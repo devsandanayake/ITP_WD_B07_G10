@@ -95,7 +95,7 @@ const upload = multer({
 }).single('RentReq')
 
 
-router.post('/add/War', (req, res) => {
+router.post('/add/rent', (req, res) => {
     upload(req, res, (err) => {
         if (err) {
             console.log(err)
