@@ -28,6 +28,7 @@ import DeliveryR from './components/Report/DeliveryR';
 import AdminRentItem from './components/Rent/AdminRentItem';
 import AddRentItem from './components/Rent/AddRentItem';
 import EditRentIem from './components/Rent/EditRentItem';
+import RepairEdit from './components/Repair/RepairEdit'
  export default class App extends Component {
    render() {
      return (
@@ -64,6 +65,7 @@ import EditRentIem from './components/Rent/EditRentItem';
 
         <Route exact path="/repairCus"  element={<RepairCus/>}></Route>
         <Route exact path="/repairAdmin"  element={<RepairAdmin/>}></Route> 
+        <Route exact path="/repairedit/:id"  element={<RepairEdit/>}></Route> 
 
 
         <Route exact path="/addProduct"  element={<AddProduct/>}></Route> 

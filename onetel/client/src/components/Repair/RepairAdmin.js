@@ -64,7 +64,7 @@ export default class RepairAdmin extends Component {
                     <td>{posts.Model}</td>
                     <td>{posts.reason}</td>
                     <td>
-                       <a className="btn btn-warning" href={`/edit/${posts._id}`}>
+                       <a className="btn btn-warning" href={`/repairedit/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit
                        </a>
                        &nbsp; &nbsp; 
