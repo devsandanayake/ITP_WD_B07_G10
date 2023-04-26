@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import axios from "axios";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-//import moment from "moment";
+
 import  Button  from "react-bootstrap/Button";
 
-//import "../Styles/Report.css";
+
 
 export default class DeliveryR extends Component {
   constructor(props) {
@@ -75,7 +75,7 @@ export default class DeliveryR extends Component {
       const date = Date().split(" ");
       // we use a date string to generate our filename.
       const dateStr =
-        "DeliveryManagement" + date[0] + date[1] + date[2] + date[3] + date[4];
+        "Delivery_Management" + date[0] + date[1] + date[2] + date[3] + date[4];
       doc.save(`report_${dateStr}.pdf`);
     });
   }
