@@ -168,5 +168,23 @@ router.get('/rentItem/view/:id', async (req, res) => {
   });
 
 
+//get a specific post
+router.get('/rentItem/:id', async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const post = await PostRent.findById(postId);
+        if (!post) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
+        return res.status(200).json({
+            success: true,
+            post
+        });
+    } catch (err) {
+        return res.status(400).json({ success: false, error: err.message});
+}
+});  
+
+
 
 module.exports = router;

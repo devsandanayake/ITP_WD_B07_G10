@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
-export default function EditPost() {
+export default function EditDelivery() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState({});
@@ -72,7 +72,7 @@ export default function EditPost() {
 
   return (
     <div style={{ marginTop: '20px' }}>
-      <h4>Edit Repairs</h4>
+      <h4>Edit Delivery Data</h4>
       <hr />
 
       <form onSubmit={handleFormSubmit}>
