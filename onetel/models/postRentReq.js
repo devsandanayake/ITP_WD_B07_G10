@@ -32,13 +32,19 @@ const postRentReqSchema = new mongoose.Schema({
     },
 
     StartDate:{
-        type: String,
+        type: Date,
         required:true
     },
 
     EndDate:{
-        type: String,
+        type: Date,
         required:true
+    },
+
+    ReqStatus:{
+        type: String,
+        default:"pending"
+
     },
 
     NIC:{

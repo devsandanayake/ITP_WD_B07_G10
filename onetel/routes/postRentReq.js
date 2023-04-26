@@ -92,7 +92,7 @@ const Storage = multer.diskStorage({
 
 const upload = multer({
     storage: Storage
-}).single('RentReq')
+}).single('NIC')
 
 
 router.post('/add/rent', (req, res) => {
