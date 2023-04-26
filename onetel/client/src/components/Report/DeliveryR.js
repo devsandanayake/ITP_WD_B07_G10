@@ -115,7 +115,7 @@ export default class DeliveryR extends Component {
              <th scope="col">NIC</th>
              <th scope="col">Email</th>
              <th scope="col">Status</th>
-             <th scope="col"></th>
+            
              </tr>
            </thead>
          
@@ -142,14 +142,12 @@ export default class DeliveryR extends Component {
         <center>
           <div>
             <Button
-              className="info__button"
+              className="btn btn-warning"
               onClick={this.printDocument}
               variant="contained"
               color="primary"
-            >
-              <div className=" mb-5">
-                <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Download PDF
-              </div>
+            > <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+              Download PDF
             </Button>
             <br />
           </div>
