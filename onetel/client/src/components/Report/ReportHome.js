@@ -64,7 +64,7 @@ export default function ReportHome() {
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Repair Report</div>
-                    <a className="btn btn-warning" href={`/repairAdmin`}><BsCaretRightSquare/></a>
+                    <a className="btn btn-warning" href={`/repair/report`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

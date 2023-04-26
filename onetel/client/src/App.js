@@ -32,6 +32,7 @@ import RepairEdit from './components/Repair/RepairEdit'
 import EditWarranty from './components/warrentyItem/EditWarranty';
 import ReportHome from './components/Report/ReportHome';
 import Addemp from './components/Account/Addemp';
+import RepairR from './components/Report/RepairR';
  export default class App extends Component {
    render() {
      return (
@@ -97,6 +98,7 @@ import Addemp from './components/Account/Addemp';
 
 
         <Route exact path = "/report" element={<ReportHome/> } />
+        <Route exact path = "/repair/report" element={<RepairR/>}/>
        </Routes>
         </div>
         <Footer/>          
