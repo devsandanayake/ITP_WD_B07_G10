@@ -76,11 +76,11 @@ export default class AdminRentReq extends Component {
                     <td><img src={posts.NIC} width={50}/></td>
                     <td>
                        <a className="btn btn-warning" href={`/editWarranty/${posts._id}`}>
-                         <i className="fas fa-edit"></i>&nbsp;Edit
+                         <i className="fas fa-edit"></i>&nbsp;Accept
                        </a>
                        &nbsp; &nbsp; 
                        <a className="btn btn-danger" href="#" onClick={()=>this.onDelete(posts._id)}>
-                         <i className="fas fa-tash-altt"></i>&nbsp;Delete
+                         <i className="fas fa-tash-altt"></i>&nbsp;Reject
                        </a>
                    </td>
                  </tr>
@@ -92,7 +92,7 @@ export default class AdminRentReq extends Component {
        <a className="btn btn-warning" href={`/admin`}>
        <BsFillCaretLeftFill/>Back
                        </a>
-                       <a className="btn btn-primary" href={`/Addwarranty`} style={{marginLeft:'5rem'}}>
+                       <a className="btn btn-primary" href={`/rentreqcus`} style={{marginLeft:'5rem'}}>
                          <BsDatabaseFillAdd/>
                          &nbsp;ADD
                        </a>

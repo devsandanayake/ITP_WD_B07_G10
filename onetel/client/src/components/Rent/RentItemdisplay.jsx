@@ -3,11 +3,11 @@ import React, { Component } from 'react'
  
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-
+import { BsCart4} from "react-icons/bs";
 import Form from 'react-bootstrap/Form';
 
 
-export default class RentItem extends Component {
+export default class RentItemdisplay extends Component {
   constructor(props){
     super(props);
  
@@ -36,7 +36,7 @@ export default class RentItem extends Component {
          
 
       const result = posts.filter((post)=>
-          post.Brand.toLowerCase().includes(searchKey)||
+          post.ProductName.toLowerCase().includes(searchKey)||
           post.Price.toLowerCase().includes(searchKey)
           
       )
@@ -61,7 +61,7 @@ export default class RentItem extends Component {
   }
 onSubmit=()=>{
   if(localStorage.getItem('usertoken')){
-    window.location='/insertDelivery' //change
+    window.location='/RenyReqcus'
   }
   else{
     window.alert("Login Your account");
@@ -72,35 +72,7 @@ onSubmit=()=>{
 
   render() {
 
-    const loginLink = (
-      <div className='row'>
-      {this.state.posts.map((posts)=>(
-      <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
-        <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
-        <img src={posts.imageRent} className='card-img-top img-fluid' alt='brand'/>   
-             <div className='card-body text-center'>  
-                  <h5 className='card-title'>{posts.ProductName}</h5>
-                  <h5 className='card-title'>{posts.UPC}</h5>
-                  <h5 className='card-title'>{posts.SKU}</h5>
-                  <h5 className='card-title'>{posts.Model}</h5>
-                  <h5 className='card-title'>{posts.Price}</h5>
-                  <p className='card-text'> {posts.Features}</p>
-                  
-
-
-                  
-                  
-           
-                  <Button type="submit" className='btn btn-success' onClick={this.onSubmit}>Request</Button>
-              </div>
-          </div>
-          
-       </div>
-             
-     ))}
-     </div>
-             
-    )
+    
     
     const homeLink = (
       
@@ -110,13 +82,14 @@ onSubmit=()=>{
         <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
          <img src={posts.imageRent} className='card-img-top img-fluid' alt='brand'/>   
              <div className='card-body text-center'>  
-                  <h5 className='card-title'>{posts.ProductName}</h5>
-                  <h5 className='card-title'>{posts.SKU}</h5>
-                  <h5 className='card-title'>{posts.Model}</h5>
-                  <h5 className='card-title'>{posts.Price}</h5>
+             <h5 className='card-title'>{posts.ProductName}</h5>
+                        <h5 className='card-title'>{posts.UPC}</h5>
+                        <h5 className='card-title'>{posts.SKU}</h5>
+                        <h5 className='card-title'>{posts.Model}</h5>
+                        <h5 className='card-title'>{posts.Price}</h5>
+                        <p className='card-text'> {posts.Features}</p>
                   
-                  
-                  <a className="btn btn-success" href={`/${posts._id}`}>Request</a>                
+                  <a className="btn btn-success" href={`/RentReqCus`}>Rent </a>                
                   
               </div>
           </div>
