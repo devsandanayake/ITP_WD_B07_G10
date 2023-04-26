@@ -72,7 +72,7 @@ export default function EditPost() {
 
   return (
     <div style={{ marginTop: '20px' }}>
-      <h4>Edit Repairs</h4>
+      <h4>Edit Employee</h4>
       <hr />
 
       <form onSubmit={handleFormSubmit}>
@@ -128,17 +128,6 @@ export default function EditPost() {
             className='form-control'
             name='email'
             value={email}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <div className='form-group'>
-          <label>Phone:</label>
-          <input
-            type='text'
-            className='form-control'
-            name='Phone'
-            value={Phone}
             onChange={handleInputChange}
           />
         </div>
