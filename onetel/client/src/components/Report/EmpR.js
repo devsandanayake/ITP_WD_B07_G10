@@ -24,7 +24,7 @@ export default class EmpR extends Component {
       doc.text(85, 10, "OneTel Mobile");
       doc.setTextColor(0, 0, 255);
       doc.setFontSize(16);
-      doc.text(10, 70, "Delivery Management");
+      doc.text(10, 70, "Employee Details");
       doc.setTextColor(0, 255, 0);
       doc.setFontSize(12);
       
