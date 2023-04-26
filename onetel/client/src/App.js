@@ -28,7 +28,6 @@ import DeliveryR from './components/Report/DeliveryR';
 import AdminRentItem from './components/Rent/AdminRentItem';
 import AddRentItem from './components/Rent/AddRentItem';
 import EditRentIem from './components/Rent/EditRentItem';
-
 import RepairEdit from './components/Repair/RepairEdit'
 import EditWarranty from './components/warrentyItem/EditWarranty';
 
