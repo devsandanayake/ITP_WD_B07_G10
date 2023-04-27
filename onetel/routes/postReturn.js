@@ -67,7 +67,7 @@ router.put('/Return/update/:id', (req, res) => {
 
 //delete post
 router.delete('/Return/delete/:id', (req, res) => {
-    postReturn.findByIdAndRemove(req.params.id).exec((err, deletedWarrenty) => {
+    postReturn.findByIdAndRemove(req.params.id).exec((err, deletedReturn) => {
         if (err)
             return res.status(400).json({
                 massage: "Delete unsuccesful",
@@ -120,5 +120,19 @@ router.post('/add/Ret', (req, res) => {
 })
 
 
-
+router.get('/returnItem/:id', async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const post = await postReturn.findById(postId);
+        if (!post) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
+        return res.status(200).json({
+            success: true,
+            post
+        });
+    } catch (err) {
+        return res.status(400).json({ success: false, error: err.message });
+    }
+});
 module.exports = router;

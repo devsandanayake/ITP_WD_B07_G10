@@ -71,7 +71,7 @@ export default function AddProduct() {
 
              <div className='form-group'>
            <label htmlFor="Price">Price</label>
-            <input type={'price'}
+            <input type={'number'}
              value={Price}
              onChange={(e)=>setPrice(e.target.value)}
              className='form-control'

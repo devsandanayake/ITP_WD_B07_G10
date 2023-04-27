@@ -1,156 +1,177 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
- 
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
+
 export default function EditReturn() {
-  let navigate = useNavigate();
-
   const { id } = useParams();
-
-  const [Return, setReturn] = useState({
-    ItemCode: "",
-    ItemName: "",
-    customerID: "",
-    customerName:"",
-    cusEmail:"",
-    cusAddress:"",
-    Reason: ""
+  const navigate = useNavigate();
+  const [post, setPost] = useState({});
+  const [updatedPost, setUpdatedPost] = useState({
+     ItemCode:"",
+     ItemName:"",
+     customerID:"",
+     customerName:"",
+     cusEmail:"",
+     cusAddress:"",
+     Reason:""
+    
   });
 
-  const { ItemCode, ItemName, customerID, customerName,  cusEmail,cusAddress, Reason} = Return;
-
-  const onInputChange = (e) => {
-    setReturn({ ...Return, [e.target.name]: e.target.value });
-  };
-
   useEffect(() => {
-    loadDelivery();
-  }, []);
+    axios.get(`/returnItem/${id}`).then((res) => {
+      if (res.data.success) {
+        setPost(res.data.post);
+        setUpdatedPost({
+          ItemCode: res.data.post.ItemCode,
+          ItemName: res.data.post.ItemName,
+          customerID: res.data.post.customerID,
+          customerName: res.data.post.customerName,
+          cusEmail: res.data.post.cusEmail,
+          Address: res.data.post.Address,
+          Reason: res.data.post.Reason
+          
+           
+        });
+      }
+    });
+  }, [id]);
+  console.log(post);
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    await axios.put(`http://localhost:8070/Return/update/${id}`, Return);
-    navigate("/AdminReturn");
+  const {ItemCode,ItemName,customerID,customerName,cusEmail,Address,Reason} = updatedPost;
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    setUpdatedPost({
+      ...updatedPost,
+      [name]: value,
+    });
   };
 
-  const loadDelivery = async () => {
-    const result = await axios.get(`http://localhost:8070/Return/update/${id}`);
-    setReturn(result.data);
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      ItemCode: updatedPost.ItemCode,
+      ItemName: updatedPost.ItemName,
+      customerID: updatedPost.customerID,
+      customerName: updatedPost.customerName,
+      cusEmail: updatedPost.cusEmail,
+      Address: updatedPost.Address,
+      Reason: updatedPost.Reason
+       
+    };
+
+    axios.put(`/Return/update/${id}`, data).then((res) => {
+      console.log(res.data);
+      alert('Post updated successfully!');
+      setUpdatedPost({
+        ItemCode:"",
+        ItemName:"",
+        customerID:"",
+        customerName:"",
+        cusEmail:"",
+        Address:"",
+        Reason:""
+         
+      });
+      navigate('/AdminReturn');
+    });
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Edit ReturnItem</h2>
+    <div style={{ marginTop: '20px' }}>
+      <h4>Edit Return</h4>
+      <hr />
 
-          <form onSubmit={(e) => onSubmit(e)}>
-            <div className="mb-3">
-              <label htmlFor="Itemcode" className="form-label">
-              ItemCode:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter"
-                name="ItemCode"
-                value={ItemCode}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="ItemName" className="form-label">
-              ItemName:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter Item Name"
-                name="ItemName"
-                value={ItemName}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="customerID" className="form-label">
-              customerID:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter your Customer Id"
-                name="customerID"
-                value={customerID}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="customerName" className="form-label">
-              customerName:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter your Name"
-                name="customerName"
-                value={customerName}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">
-              cusEmail:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter your E-mail"
-                name="cusEmail"
-                value={cusEmail}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="Address" className="form-label">
-              cusAddress:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter your Reason"
-                name="cusAddress"
-                value={cusAddress}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="Reason" className="form-label">
-              Reason:
-              </label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Enter your Reason"
-                name="Reason"
-                value={Reason}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <button type="submit" className="btn btn-outline-primary" >
-              Submit
-            </button>
-            <Link className="btn btn-outline-danger mx-2" to="/Return/ad">
-              Cancel
-            </Link>
-          </form>
+      <form onSubmit={handleFormSubmit}>
+        <div className='form-group'>
+          <label>ItemCode:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='ItemCode'
+            value={ItemCode}
+            onChange={handleInputChange}
+          />
         </div>
-      </div>
-    </div>
-  );
+
+        <div className='form-group'>
+          <label>ItemName:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='ItemName'
+            value={ItemName}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className='form-group'>
+          <label>customerID:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='customerID'
+            value={customerID}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className='form-group'>
+          <label>customerName:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='customerName'
+            value={customerName}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className='form-group'>
+          <label>cusEmail:</label>
+          <input
+            type='email'
+            className='form-control'
+            name='cusEmail'
+            value={cusEmail}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className='form-group'>
+          <label>cusAddress:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='Address'
+            value={Address}
+            onChange={handleInputChange}
+          />
+        </div>
+
+  
+        <div className='form-group'>
+          <label>Reason:</label>
+          <input
+            type='text'
+            className='form-control'
+            name='Reason'
+            value={Reason}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <button
+          type='submit'
+          className='btn btn-success'
+          style={{ marginTop: '15px' }}
+        >
+          <i className='far fa-check-square'></i>
+          &nbsp;Update
+        </button>
+      </form>
+ </div>
+);
 }
-
-
-

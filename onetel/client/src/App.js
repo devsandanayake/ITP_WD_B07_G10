@@ -125,7 +125,7 @@ import Payment from './components/payment';
 
         <Route exact path="/AddReturn" element={<AddReturn/>}/>
         <Route exact path="/AdminReturn" element={<AdminReturn/>}/>
-        <Route exact path="/EditReturn" element={<EditReturn/>}/>
+        <Route exact path="/EditReturn/:id" element={<EditReturn/>}/>
 
         <Route exact path = "/report" element={<ReportHome/> } />
         <Route exact path = "/repair/report" element={<RepairR/>}/>
