@@ -24,7 +24,7 @@ export default class DeliveryR extends Component {
       doc.text(85, 10, "OneTel Mobile");
       doc.setTextColor(0, 0, 255);
       doc.setFontSize(16);
-      doc.text(10, 70, "Delivery Management");
+      doc.text(10, 70, "Order Management");
       doc.setTextColor(0, 255, 0);
       doc.setFontSize(12);
       
@@ -75,13 +75,13 @@ export default class DeliveryR extends Component {
       const date = Date().split(" ");
       // we use a date string to generate our filename.
       const dateStr =
-        "Delivery_Management" + date[0] + date[1] + date[2] + date[3] + date[4];
+        "Order_Management" + date[0] + date[1] + date[2] + date[3] + date[4];
       doc.save(`report_${dateStr}.pdf`);
     });
   }
 
   viewPosts(){
-    axios.get("/posts").then(res =>{
+    axios.get("/orders").then(res =>{
       if(res.data.success){
         this.setState({
           ReportData:res.data.existingPosts,
@@ -107,30 +107,31 @@ export default class DeliveryR extends Component {
             <div className='table-responsive'> 
        <table className="table table-striped text-center" >
            <thead>
-             <tr className='table-dark'>
+            
+           
+           <tr className='table-dark'>
              <th scope="col">Index</th>
-             <th scope="col">Name</th>
-             <th scope="col">Address</th>
-             <th scope="col">Phone</th>
-             <th scope="col">NIC</th>
+             <th scope="col">Categories</th>
+             <th scope="col">Brand</th>
+             <th scope="col">Price</th>
+             <th scope="col">Model</th>
              <th scope="col">Email</th>
-             <th scope="col">Status</th>
-             <th scope="col">Date</th>
+             <th scope="col">Quntity</th>
             
              </tr>
            </thead>
          
          <tbody style={{background:'pink'}}>
             {this.state.ReportData.map((posts,index)=>(
-                 <tr key={index}>
-                    <th scope="row">{index+1}</th>
-                    <td>{posts.Name}</td>
-                    <td>{posts.Address}</td>
-                    <td>{posts.phone}</td>
-                    <td>{posts.NIC}</td>
-                    <td>{posts.email}</td>
-                    <td style={{background:'#FF6833'}}>{posts.Status}</td>
-                    <td>{posts.date}</td>
+                   <tr key={index}>
+                   <th scope="row">{index+1}</th>
+                    <td>{posts.Categories}</td>
+                    <td>{posts.Brand}</td>
+                    <td>{posts.Price}</td>
+                    <td>{posts.Model}</td>
+                    <td>{posts.Email}</td>
+                    <td>{posts.Quntity}</td>
+                    
                     
                  </tr>
 

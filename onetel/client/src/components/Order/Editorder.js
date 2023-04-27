@@ -2,31 +2,32 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
-export default function RepairEdit() {
+
+export default function Editorder() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState({});
   const [updatedPost, setUpdatedPost] = useState({
-     ItemCode:"",
-     ItemName:"",
-     customerID:"",
-     customerName:"",
-     cusEmail:"",
-     Reason:""
+    Categories: "",
+    Brand: "",
+    Price: "",
+    Model:"",
+    Email:"",
+    Quntity:""
     
   });
 
   useEffect(() => {
-    axios.get(`/Warrenty/${id}`).then((res) => {
+    axios.get(`/orders/${id}`).then((res) => {
       if (res.data.success) {
         setPost(res.data.post);
         setUpdatedPost({
-          ItemCode: res.data.post.ItemCode,
-          ItemName: res.data.post.ItemName,
-          customerID: res.data.post.customerID,
-          customerName: res.data.post.customerName,
-          cusEmail: res.data.post.cusEmail,
-          Reason: res.data.post.Reason
+          Categories: res.data.post.Categories,
+          Brand: res.data.post.Brand,
+          Price: res.data.post.Price,
+          Model: res.data.post.Model,
+          Email: res.data.post.Email,
+          Quntity: res.data.post.Quntity
           
            
         });
@@ -35,7 +36,7 @@ export default function RepairEdit() {
   }, [id]);
   console.log(post);
 
-  const {ItemCode,ItemName,customerID,customerName,cusEmail,Reason} = updatedPost;
+  const {Categories, Brand, Price,Model , Email,Quntity} = updatedPost;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -50,103 +51,108 @@ export default function RepairEdit() {
     e.preventDefault();
 
     const data = {
-      ItemCode: updatedPost.ItemCode,
-      ItemName: updatedPost.ItemName,
-      customerID: updatedPost.customerID,
-      customerName: updatedPost.customerName,
-      cusEmail: updatedPost.cusEmail,
-      Reason: updatedPost.Reason
+      Categories: updatedPost.Categories,
+      Brand: updatedPost.Brand,
+      Price: updatedPost.Price,
+      Model: updatedPost.Model,
+      Email: updatedPost.Email,
+      Quntity: updatedPost.Quntity
        
     };
 
-    axios.put(`/Warrenty/update/${id}`, data).then((res) => {
+    axios.put(`/order/update/${id}`, data).then((res) => {
       console.log(res.data);
       alert('Post updated successfully!');
       setUpdatedPost({
-        ItemCode:"",
-        ItemName:"",
-        customerID:"",
-        customerName:"",
-        cusEmail:"",
-        Reason:""
-         
+        Categories: "",
+        Brand: "",
+        Price: "",
+        Model:"",
+        Email:"",
+        Quntity:""
       });
-      navigate('/AdminWarrenty');
+      navigate('/adminorder');
     });
   };
 
   return (
     <div style={{ marginTop: '20px' }}>
-      <h4>Edit Warranty</h4>
+      <h4>Edit</h4>
       <hr />
 
       <form onSubmit={handleFormSubmit}>
         <div className='form-group'>
-          <label>ItemCode:</label>
+          <label>Categories:</label>
           <input
             type='text'
             className='form-control'
-            name='ItemCode'
-            value={ItemCode}
+            name='Categories'
+            value={Categories}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>ItemName:</label>
+          <label>Brand:</label>
           <input
             type='text'
             className='form-control'
-            name='ItemName'
-            value={ItemName}
+            name='Brand'
+            value={Brand}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>customerID:</label>
+          <label>Phone Number:</label>
           <input
             type='number'
             className='form-control'
-            name='customerID'
-            value={customerID}
+            name='Price'
+            value={Price}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>customerName:</label>
+          <label>Model:</label>
           <input
             type='text'
             className='form-control'
-            name='customerName'
-            value={customerName}
+            name='Model'
+            value={Model}
             onChange={handleInputChange}
           />
         </div>
 
         <div className='form-group'>
-          <label>cusEmail:</label>
+          <label>Email:</label>
           <input
-            type='email'
+            type='Email'
             className='form-control'
-            name='cusEmail'
-            value={cusEmail}
+            name='Email'
+            value={Email}
             onChange={handleInputChange}
           />
         </div>
 
-  
         <div className='form-group'>
-          <label>Reason:</label>
+          <label>Quntity:</label>
           <input
-            type='text'
+            type='number'
             className='form-control'
-            name='Reason'
-            value={Reason}
+            name='Quntity'
+            value={Quntity}
             onChange={handleInputChange}
           />
         </div>
+
+       
+
+        
+
+         
+        
 
         <button
           type='submit'

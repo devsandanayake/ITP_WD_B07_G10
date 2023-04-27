@@ -107,7 +107,7 @@ router.post('/add/pro',upload,(req,res)=>{
      });
      product.save((err)=>{
          if(err){
-             res.json({massage:err.massage,type:'danger'}); 
+             res.json({massage:err.massage,type:'want fill all fill'}); 
          }else{
              console.log("success");
          }
