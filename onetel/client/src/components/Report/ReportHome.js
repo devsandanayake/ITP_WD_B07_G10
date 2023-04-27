@@ -92,7 +92,7 @@ export default function ReportHome() {
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Rent Report</div>
-                  <a className="btn btn-dark" href={`/rentItem`}><BsCaretRightSquare/></a>
+                  
                     <a className="btn btn-info" href={`/rentreqr`}><BsCaretRightSquare/></a>
 
           </div>          

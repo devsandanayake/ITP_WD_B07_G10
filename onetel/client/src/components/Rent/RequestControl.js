@@ -46,8 +46,10 @@ export default function RequestControl() {
             
             <select className="col-md- offset-md- border rounded p-1 mt-3 text-center" name="ReqStatus" value={Status} onChange={(e) => onInputChange(e)}>
                 <option value="">--Select Task--</option>
-                <option value="Accepted">Accept</option>
-                <option value="❗️❗️Declined❗️❗️">Decline</option>
+                <option value=" Request Accepted">Accept</option>
+                <option value="❗️❗️ Request Declined❗️❗️">Decline</option>
+                <option value="Rented">Rent</option>
+                <option value="❗️Returned❗️">Return</option>
                  
             </select><br/><br/>
 

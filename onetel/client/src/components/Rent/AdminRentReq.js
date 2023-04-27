@@ -49,7 +49,7 @@ export default class AdminRentReq extends Component {
              <th scope="col">ItemName</th>
              <th scope="col">customerID</th>
              <th scope="col">customerName</th>
-             <th scope="col">CustomerNIC</th>
+            
              <th scope="col">cusEmail</th>
              <th scope="col">Phone</th>
              <th scope="col">StartDate</th>
@@ -68,7 +68,7 @@ export default class AdminRentReq extends Component {
                     <td>{posts.ItemName}</td>
                     <td>{posts.customerID}</td>
                     <td>{posts.customerName}</td>
-                    <td>{posts.customerNIC}</td>
+              
                     <td>{posts.cusEmail}</td>
                     <td>{posts.Phone}</td>
                     <td>{posts.StartDate}</td>
