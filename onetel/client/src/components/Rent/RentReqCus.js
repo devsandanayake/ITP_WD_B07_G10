@@ -35,7 +35,7 @@ export default function RentReqCus() {
     formData.append("ItemName",ItemName)
     formData.append("customerID",customerID)
     formData.append("customerName",customerName)
-    formData.append("customerNIC",customerNIC)
+    formData.append("CustomerNIC",customerNIC)
     formData.append("cusEmail",cusEmail)
     formData.append("Phone",Phone)
     formData.append("StartDate",StartDate)
@@ -70,7 +70,7 @@ export default function RentReqCus() {
              value={ItemCode}
              onChange={(e)=>setitemcode(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter ItemCode'
              />
              </div>
 
@@ -80,7 +80,7 @@ export default function RentReqCus() {
              value={ItemName}
              onChange={(e)=> setItemname(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter ItemName'
              />
              </div>
 
@@ -90,7 +90,7 @@ export default function RentReqCus() {
              value={customerID}
              onChange={(e)=>setCusId(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter customer ID'
              />
              </div>
 
@@ -101,17 +101,17 @@ export default function RentReqCus() {
              value={customerName}
              onChange={(e)=>setCusname(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter customer name'
              />
              </div>
 
              <div className='form-group'>
-           <label htmlFor="customerNIC">customerName</label>
+           <label htmlFor="customerNIC">CustomerNIC</label>
             <input type={'text'}
              value={customerNIC}
              onChange={(e)=>setCusnic(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter customer NIC'
              />
              </div>
 
@@ -123,7 +123,7 @@ export default function RentReqCus() {
              value={cusEmail}
              onChange={(e)=>setcusEmail(e.target.value)}
              className='form-control'
-             placeholder='email'
+             placeholder=' Enter email'
              />
              </div>
 
@@ -133,7 +133,7 @@ export default function RentReqCus() {
              value={Phone}
              onChange={(e)=>setCusPhone(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter Phone number'
              />
              </div>
 
@@ -143,7 +143,7 @@ export default function RentReqCus() {
              value={StartDate}
              onChange={(e)=>setCusStart(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter StartDate'
              />
              </div>
 
@@ -153,7 +153,7 @@ export default function RentReqCus() {
              value={EndDate}
              onChange={(e)=>setCusEnd(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter EndDate'
              />
              </div>
 
@@ -163,7 +163,7 @@ export default function RentReqCus() {
              image="NIC"
              onChange={onChangeFile}
              className='form-control'
-             placeholder='add c'
+             placeholder='NIC Scan Copy'
              />
              </div>
 

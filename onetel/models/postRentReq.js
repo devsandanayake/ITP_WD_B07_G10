@@ -17,7 +17,7 @@ const postRentReqSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    CustomerNIC: {
+    customerNIC: {
         type: String,
         
     },

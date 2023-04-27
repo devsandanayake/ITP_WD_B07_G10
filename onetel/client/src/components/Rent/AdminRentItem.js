@@ -88,7 +88,7 @@ export default class AdminRentItem extends Component {
                        <a className="btn btn-primary" href={`/add/rentitem`} style={{marginLeft:'5rem'}}>
                          <BsDatabaseFillAdd/>
                          &nbsp;ADD
-                       </a>
+                       </a>&nbsp;&nbsp;
                        <a className="btn btn-primary" href={`/adminrentreq`} style={{marginLeft:'5rem'}}>
                          <BsDatabaseFillAdd/>
                          &nbsp;Rent Request

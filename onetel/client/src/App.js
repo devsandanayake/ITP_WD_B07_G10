@@ -44,11 +44,18 @@ import AddReturn from './components/Return/Returncus';
 import AdminReturn from './components/Return/AdminReturn';
 import EditReturn from './components/Return/EditReturn';
 import RentReqR from './components/Report/RentReqR';
+
 import PostOrder from './components/Order/PostOrder'
 import Adminorder from './components/Order/Adminorder'
 import Editorder from './components/Order/Editorder';
 import OrderR from './components/Report/OrderR'
 import Payment from './components/payment';
+import RequestControl from './components/Rent/RequestControl';
+import RentedItems from './components/Rent/RentedItems';
+import RentC from './components/Rent/RentC';
+
+
+
  export default class App extends Component {
    render() {
      return (
@@ -119,6 +126,10 @@ import Payment from './components/payment';
         < Route exact path="/rentitemdisplay" element={<RentItemdisplay/>}/>
         < Route exact path="/adminrentreq" element={<AdminRentReq/>}/>
         < Route exact path="/rentreqr" element={<RentReqR/>}/>
+        < Route exact path="/reqc/:id" element={<RequestControl/>}/>
+        < Route exact path="/rented" element={<RentedItems/>}/>
+        < Route exact path="/rentc/:id" element={<RentC/>}/>
+
 
        
         //return

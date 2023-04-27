@@ -105,7 +105,7 @@ router.post('/add/rent', (req, res) => {
                 ItemName: req.body.ItemName,
                 customerID: req.body.customerID,
                 customerName: req.body.customerName,
-                CustomerNIC:req.body.CustomerNIC,
+                CustomerNIC:req.body.customerNIC,
                 cusEmail:req.body.cusEmail,
                 Phone:req.body.Phone,
                 StartDate:req.body.StartDate,
