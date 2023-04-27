@@ -50,7 +50,7 @@ import { BsWhatsapp } from 'react-icons/bs';
               <NavDropdown.Item href="/rentitemdisplay">Rent Item</NavDropdown.Item>
               <NavDropdown.Item href="/AddReturn">ReturnItem</NavDropdown.Item>
 
-              <NavDropdown.Item href="/">Rent Item</NavDropdown.Item>
+               
 
               <NavDropdown.Divider />
               
