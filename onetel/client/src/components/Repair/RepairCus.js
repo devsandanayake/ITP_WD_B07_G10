@@ -88,11 +88,11 @@ export default class RepairCus extends Component {
         </Form.Group>
 
         <Form.Group className="mb-3" >
-          <Form.Control  placeholder="Enter Your Contact-Num" name='contactNumber' value={this.state.contactNumber} onChange={this.handleInputChange} />
+          <Form.Control  placeholder="Enter Your Contact-Num" type="number" name='contactNumber' value={this.state.contactNumber} onChange={this.handleInputChange} />
         </Form.Group>
 
        <Form.Group className='mb-3'>
-         <Form.Control placeholder='Email'  required={true} name='email' value={this.state.email} onChange={this.handleInputChange}/>
+         <Form.Control placeholder='Email'  required={true} name='email'  type="email" value={this.state.email} onChange={this.handleInputChange}/>
         </Form.Group>    
         <Form.Group className='mb-3'>
         Select Your Item  :&nbsp; <select name='category'
