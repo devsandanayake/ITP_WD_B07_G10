@@ -37,10 +37,17 @@ import Editemp from './components/Account/Editemp';
 import RentReqCus from './components/Rent/RentReqCus';
 import RentItemdisplay from './components/Rent/RentItemdisplay';
 import AdminRentReq from './components/Rent/AdminRentReq';
+import EmpR from './components/Report/EmpR'
+import WarR from './components/Report/WarR'
+import ProductR from './components/Report/ProductR';
+import AddReturn from './components/Return/Returncus';
+import AdminReturn from './components/Return/AdminReturn';
+import EditReturn from './components/Return/EditReturn';
 import RentReqR from './components/Report/RentReqR';
 import RequestControl from './components/Rent/RequestControl';
 import RentedItems from './components/Rent/RentedItems';
 import RentC from './components/Rent/RentC';
+
 
  export default class App extends Component {
    render() {
@@ -99,6 +106,7 @@ import RentC from './components/Rent/RentC';
         <Route exact path="/Emp"  element={<AdminEmp/>}></Route> 
         <Route exact path="/add/emp"  element={<Addemp/>}></Route> 
         <Route exact path="/Editemp/:id" element={<Editemp/>}></Route> 
+        <Route exact path = "/Empreport" element={<EmpR/>}/>
 
 
         //rentItem
@@ -115,10 +123,16 @@ import RentC from './components/Rent/RentC';
 
 
        
+        //return
 
+<Route exact path="/AddReturn" element={<AddReturn/>}/>
+<Route exact path="/AdminReturn" element={<AdminReturn/>}/>
+<Route exact path="/EditReturn" element={<EditReturn/>}/>
 
         <Route exact path = "/report" element={<ReportHome/> } />
         <Route exact path = "/repair/report" element={<RepairR/>}/>
+        <Route exact path = "/warrentyReport" element={<WarR/>}/>
+        <Route exact path = "/productReport"  element={<ProductR/>}/>
        </Routes>
         </div>
         <Footer/>          

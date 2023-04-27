@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { BsDatabaseFillAdd,BsFillCaretLeftFill } from 'react-icons/bs';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-export default class AdminWarrenty extends Component {
+
+export default class AdminReturn extends Component {
 
  constructor(props){
    super(props);
@@ -17,7 +16,7 @@ export default class AdminWarrenty extends Component {
  }
 //retrivew funtion
  viewPosts(){
-   axios.get("http://localhost:8070/Warrenty").then(res =>{
+   axios.get("http://localhost:8070/Return").then(res =>{
      if(res.data.success){
        this.setState({
          posts:res.data.existingPosts
@@ -29,58 +28,16 @@ export default class AdminWarrenty extends Component {
  }
   //delete function
   onDelete=(id)=>{
-    axios.delete(`http://localhost:8070/Warrenty/delete/${id}`).then((res)=>{
+    axios.delete(`http://localhost:8070/Return/delete/${id}`).then((res)=>{
       alert("Deleted");
       this.viewPosts();
     })
   }
- //seraching part  
- filterData(posts,searchKey){
-  
 
-  const result = posts.filter((post)=>
-      post.ItemCode.toLowerCase().includes(searchKey)||
-      post.customerID.toLowerCase().includes(searchKey)||
-      post.cusEmail.toLowerCase().includes(searchKey)
-       
-       
-
-      
-  )
-  this.setState({posts:result})
-}
-
-
-handleSearchArea =(e)=>{
-
-console.log(e.currentTarget.value);
-
-const searchKey = e.currentTarget.value;
-
-axios.get("http://localhost:8070/Warrenty").then(res =>{
-if(res.data.success){
-  
-  this.filterData(res.data.existingPosts,searchKey)
-         
-}
-});
-}
-   
 
   render() {
     return (
       <div className='container'>
-         <Form className="d-flex mb-4 mx-0" >
-                  <Form.Control
-                    type="search"
-                    placeholder="Enter"
-                    className="me-2"
-                    aria-label="Search"
-                    name="searchQuary"
-                    onChange={this.handleSearchArea}
-                  />
-                  <Button variant="danger">Search</Button>
-                </Form><br/>
         <div className='row my-4'>
           <div className='col-lg-12'>
             <div className='table-responsive'>
@@ -93,8 +50,9 @@ if(res.data.success){
              <th scope="col">customerID</th>
              <th scope="col">customerName</th>
              <th scope="col">cusEmail</th>
-             <th scope="col">cReason</th>
-             <th scope="col">Items-Image</th>
+             <th scope="col">Address</th>
+             <th scope="col">Reason</th>
+            
              <th scope="col"></th>
              </tr>
            </thead>
@@ -108,11 +66,14 @@ if(res.data.success){
                     <td>{posts.customerID}</td>
                     <td>{posts.customerName}</td>
                     <td>{posts.cusEmail}</td>
+                    <td>{posts.Address}</td>
                     <td>{posts.Reason}</td>
+                  
+                   
 
-                    <td><img src={posts.warrenty} width={50}/></td>
+                   
                     <td>
-                       <a className="btn btn-warning" href={`/editWarranty/${posts._id}`}>
+                       <a className="btn btn-warning" href={`/EditReturn/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit
                        </a>
                        &nbsp; &nbsp; 
@@ -129,7 +90,7 @@ if(res.data.success){
        <a className="btn btn-warning" href={`/admin`}>
        <BsFillCaretLeftFill/>Back
                        </a>
-                       <a className="btn btn-primary" href={`/Addwarrenty`} style={{marginLeft:'5rem'}}>
+                       <a className="btn btn-primary" href={`/Addreturn`} style={{marginLeft:'5rem'}}>
                          <BsDatabaseFillAdd/>
                          &nbsp;ADD
                        </a>

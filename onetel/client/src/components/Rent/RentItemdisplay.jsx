@@ -80,7 +80,7 @@ onSubmit=()=>{
       {this.state.posts.map((posts)=>(
       <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
         <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
-         <img src={posts.imageRent} className='card-img-top img-fluid' alt='brand'/>   
+         <img src={posts.imageRent}  className='card-img-top img-fluid' alt='brand' height={75}/>   
              <div className='card-body text-center'>  
              <h4 className='card-title'>{posts.ProductName}</h4>
                         UPC:<h6 className='card-title'>{posts.UPC}</h6>

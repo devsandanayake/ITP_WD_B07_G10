@@ -24,7 +24,7 @@ export default class RepairR extends Component {
       doc.text(85, 10, "OneTel Mobile");
       doc.setTextColor(0, 0, 255);
       doc.setFontSize(16);
-      doc.text(10, 70, "Repair Details");
+      doc.text(10, 70, "Delivery Management");
       doc.setTextColor(0, 255, 0);
       doc.setFontSize(12);
       
@@ -81,7 +81,7 @@ export default class RepairR extends Component {
   }
 
   viewPosts(){
-    axios.get("/repair").then(res =>{
+    axios.get("/Warrenty").then(res =>{
       if(res.data.success){
         this.setState({
           ReportData:res.data.existingPosts,
@@ -109,13 +109,13 @@ export default class RepairR extends Component {
            <thead>
              <tr>
              <th scope="col">Index</th>
-             <th scope="col">Customer-Name</th>
-             <th scope="col">Address</th>
-             <th scope="col">Phone</th>
-             <th scope="col">Email</th>
-             <th scope="col">Category</th>
-             <th scope="col">Model-Num</th>
-             <th scope="col">Reason</th>
+             <th scope="col">ItemCode</th>
+             <th scope="col">ItemName</th>
+             <th scope="col">customerID</th>
+             <th scope="col">customerName</th>
+             <th scope="col">cusEmail</th>
+             <th scope="col">cReason</th>
+             <th scope="col">Items-Image</th>
             
              </tr>
            </thead>
@@ -123,14 +123,15 @@ export default class RepairR extends Component {
          <tbody style={{background:'pink'}}>
             {this.state.ReportData.map((posts,index)=>(
                  <tr key={index}>
-                    <th scope="row">{index+1}</th>
-                    <td>{posts.name}</td>
-                    <td>{posts.address}</td>
-                    <td>{posts.contactNumber}</td>
-                    <td>{posts.email}</td>
-                    <td>{posts.category}</td>
-                    <td>{posts.Model}</td>
-                    <td>{posts.reason}</td>
+                     <th scope="row">{index+1}</th>
+                    <td>{posts.ItemCode}</td>
+                    <td>{posts.ItemName}</td>
+                    <td>{posts.customerID}</td>
+                    <td>{posts.customerName}</td>
+                    <td>{posts.cusEmail}</td>
+                    <td>{posts.Reason}</td>
+
+                    <td><img src={posts.warrenty} width={50}/></td>
                     
                     
                  </tr>
