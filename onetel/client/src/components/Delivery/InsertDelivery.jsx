@@ -6,11 +6,9 @@ import {
   Spin,
   Tooltip,
   notification,
-  DatePicker,
-  Select,
-} from "antd";
+  } from "antd";
  
-import { FileDoneOutlined, InfoCircleOutlined, LoadingOutlined } from "@ant-design/icons";
+import { InfoCircleOutlined, LoadingOutlined } from "@ant-design/icons";
 import "./form.css"
 
 import axios from "axios";
