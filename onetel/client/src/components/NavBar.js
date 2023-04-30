@@ -84,6 +84,9 @@ import { BsWhatsapp } from 'react-icons/bs';
          <li className="nav-item">
             <a className="nav-link"   href='#'>About</a>
           </li>
+          <li className="nav-item">
+            <a className="nav-link"    href="/chat">ChatBot</a>
+          </li>
         </ul>   
         {localStorage.usertoken? userLink:loginRegLink}
          

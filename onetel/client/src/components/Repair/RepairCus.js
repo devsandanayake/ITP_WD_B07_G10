@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
  
+
  
 export default class RepairCus extends Component {
  
@@ -28,6 +29,7 @@ export default class RepairCus extends Component {
     })
 
   }
+  
 
   onSubmit=(e)=>{
     e.preventDefault();
@@ -116,6 +118,10 @@ export default class RepairCus extends Component {
         <Button type="submit" onClick={this.onSubmit}>Submit Your Details</Button>
       
     </Form>
+    
+    <div> 
+    
+    </div>
     </div>
     )
   }

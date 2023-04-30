@@ -54,7 +54,7 @@ import RequestControl from './components/Rent/RequestControl';
 import RentedItems from './components/Rent/RentedItems';
 import RentC from './components/Rent/RentC';
 
-
+import Chat from './components/Chatbot/chat';
 
  export default class App extends Component {
    render() {
@@ -150,6 +150,9 @@ import RentC from './components/Rent/RentC';
         <Route exact path = "/adminorder"  element={<Adminorder/>}/>
         <Route exact path = "/editOrder/:id"  element={<Editorder/>}/>
         <Route exact path = "/orderReport"  element={<OrderR/>}/>
+
+
+        <Route exact path = "/chat"  element={<Chat/>}/>
 
        </Routes>
         </div>

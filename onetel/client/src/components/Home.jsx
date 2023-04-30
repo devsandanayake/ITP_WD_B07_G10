@@ -137,6 +137,7 @@ onSubmit=()=>{
                     aria-label="Search"
                     name="searchQuary"
                     onChange={this.handleSearchArea}
+                    style={{width:"40%" , marginRight:"auto"} }
                   />
                   <Button variant="success">Search</Button>
                </Form><br/>
