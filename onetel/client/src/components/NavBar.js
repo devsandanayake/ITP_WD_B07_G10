@@ -16,7 +16,7 @@ import { BsWhatsapp } from 'react-icons/bs';
 
   render() {
      const loginRegLink = (
-       <nav className="navbar navbar-expand-lg bg-light" id="navbarNav">
+       <nav className="navbar navbar-expand-lg bg-secondary" id="navbarNav">
        <ul className="navbar-nav"> 
         <li className='nav-item'>
         <a className="nav-link" style={{ color: '#1dff1d' }}   href="/login">Login</a>
@@ -33,7 +33,7 @@ import { BsWhatsapp } from 'react-icons/bs';
     )
     
     const userLink = (
-      <nav className="navbar navbar-expand-lg bg-light" id="navbarNav">
+      <nav className="navbar navbar-expand-lg bg-secondary" id="navbarNav">
       <ul className="navbar-nav"> 
        <li className='nav-item'>
        <a className="nav-link"    href="/profile">profile</a>
@@ -70,7 +70,7 @@ import { BsWhatsapp } from 'react-icons/bs';
     )  
     
     return(
-    <nav className="navbar navbar-expand-lg bg-light" >
+    <nav className="navbar navbar-expand-lg bg-secondary" >
     <div className="container-fluid">
     <a className="navbar-brand" href="#" >Onetel</a>
       <button className="navbar-toggler bg-white"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
