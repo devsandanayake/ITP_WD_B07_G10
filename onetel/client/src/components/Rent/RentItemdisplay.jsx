@@ -1,135 +1,135 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
 
  
-import axios from 'axios';
-import Button from 'react-bootstrap/Button';
-import { BsCart4} from "react-icons/bs";
-import Form from 'react-bootstrap/Form';
+// import axios from 'axios';
+// import Button from 'react-bootstrap/Button';
+// import { BsCart4} from "react-icons/bs";
+// import Form from 'react-bootstrap/Form';
 
 
-export default class RentItemdisplay extends Component {
-  constructor(props){
-    super(props);
+// export default class RentItemdisplay extends Component {
+//   constructor(props){
+//     super(props);
  
-    this.state={
-      posts:[]
-    };
-  }
-  componentDidMount(){
-    this.viewPosts();
-  }
+//     this.state={
+//       posts:[]
+//     };
+//   }
+//   componentDidMount(){
+//     this.viewPosts();
+//   }
    
- //retrivew funtion
-  viewPosts(){
-    axios.get("http://localhost:8070/rentItems").then(res =>{
-      if(res.data.success){
-        this.setState({
-          posts:res.data.existingPosts
-        });
-        //show array list 
-        console.log(this.state.posts)        
-      }
-    });
-  }
-    //seraching part  
-    filterData(posts,searchKey){
+//  //retrivew funtion
+//   viewPosts(){
+//     axios.get("http://localhost:8070/rentItems").then(res =>{
+//       if(res.data.success){
+//         this.setState({
+//           posts:res.data.existingPosts
+//         });
+//         //show array list 
+//         console.log(this.state.posts)        
+//       }
+//     });
+//   }
+//     //seraching part  
+//     filterData(posts,searchKey){
          
 
-      const result = posts.filter((post)=>
-          post.ProductName.toLowerCase().includes(searchKey)||
-          post.Price.toLowerCase().includes(searchKey)
+//       const result = posts.filter((post)=>
+//           post.ProductName.toLowerCase().includes(searchKey)||
+//           post.Price.toLowerCase().includes(searchKey)
           
-      )
-      this.setState({posts:result})
-  }
+//       )
+//       this.setState({posts:result})
+//   }
   
   
-  handleSearchArea =(e)=>{
+//   handleSearchArea =(e)=>{
   
-  //console.log(e.currentTarget.value); okey
+//   //console.log(e.currentTarget.value); okey
   
-  const searchKey = e.currentTarget.value;
+//   const searchKey = e.currentTarget.value;
   
-  axios.get("http://localhost:8070/rentItems").then(res =>{
-    if(res.data.success){
+//   axios.get("http://localhost:8070/rentItems").then(res =>{
+//     if(res.data.success){
       
-      this.filterData(res.data.existingPosts,searchKey)
+//       this.filterData(res.data.existingPosts,searchKey)
              
-    }
-  });
+//     }
+//   });
   
-  }
-onSubmit=()=>{
-  if(localStorage.getItem('usertoken')){
-    window.location='/RenyReqcus'
-  }
-  else{
-    window.alert("Login Your account");
-  }
+//   }
+// onSubmit=()=>{
+//   if(localStorage.getItem('usertoken')){
+//     window.location='/RenyReqcus'
+//   }
+//   else{
+//     window.alert("Login Your account");
+//   }
 
-}
+// }
    
 
-  render() {
+//   render() {
 
     
     
-    const homeLink = (
+//     const homeLink = (
       
-      <div className='row'>
-      {this.state.posts.map((posts)=>(
-      <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
-        <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
-         <img src={posts.imageRent} className='card-img-top img-fluid' alt='brand'/>   
-             <div className='card-body text-center'>  
-             <h4 className='card-title'>{posts.ProductName}</h4>
-                        UPC:<h6 className='card-title'>{posts.UPC}</h6>
-                        <p>ItemCode:<h6 className='card-title'>{posts.SKU}</h6></p>
-                        Model:<h6 className='card-title'>{posts.Model}</h6>
-                        <h5 className='card-title'>{posts.Price}</h5>
-                        Features:<p className='card-text'> {posts.Features}</p>
+//       <div className='row'>
+//       {this.state.posts.map((posts)=>(
+//       <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
+//         <div className='card p-0 overflow-hidden h-100 shadow' alt='im'>
+//          <img src={posts.imageRent} className='card-img-top img-fluid' alt='brand'/>   
+//              <div className='card-body text-center'>  
+//              <h4 className='card-title'>{posts.ProductName}</h4>
+//                         UPC:<h6 className='card-title'>{posts.UPC}</h6>
+//                         <p>ItemCode:<h6 className='card-title'>{posts.SKU}</h6></p>
+//                         Model:<h6 className='card-title'>{posts.Model}</h6>
+//                         <h5 className='card-title'>{posts.Price}</h5>
+//                         Features:<p className='card-text'> {posts.Features}</p>
                   
-                  <a className="btn btn-success" href={`/RentReqCus`}>Rent </a>                
+//                   <a className="btn btn-success" href={`/RentReqCus`}>Rent </a>                
                   
-              </div>
-          </div>
+//               </div>
+//           </div>
           
-       </div>
+//        </div>
              
-     ))}
-     </div>
+//      ))}
+//      </div>
              
     
        
-    )  
+//     )  
 
 
 
 
 
-    return (
-       <div  className='container'>
-           <div className='banner'>
+//     return (
+//        <div  className='container'>
+//            <div className='banner'>
               
-               <br/>
-               <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-3"
-                    aria-label="Search"
-                    name="searchQuary"
-                    onChange={this.handleSearchArea}
-                  />
-                  <Button variant="success">Search</Button>
-               </Form><br/>
+//                <br/>
+//                <Form className="d-flex">
+//                   <Form.Control
+//                     type="search"
+//                     placeholder="Search"
+//                     className="me-3"
+//                     aria-label="Search"
+//                     name="searchQuary"
+//                     onChange={this.handleSearchArea}
+//                   />
+//                   <Button variant="success">Search</Button>
+//                </Form><br/>
                       
             
-          </div>
-          {localStorage.usertoken? homeLink:loginLink}
-       </div>        
+//           </div>
+//           {localStorage.usertoken? homeLink:loginLink}
+//        </div>        
          
     
-  )
-}
-}
+//   )
+// }
+// }

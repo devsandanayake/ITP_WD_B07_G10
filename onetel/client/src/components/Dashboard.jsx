@@ -19,6 +19,7 @@ import { SlLogout} from "react-icons/sl";
 import {MdAttachMoney} from "react-icons/md";
 import {AiOutlineHome} from "react-icons/ai";
 import {FiPhoneCall} from "react-icons/fi";
+
 export default function Dashboard() {
   return (
     <div className="admin"> 
@@ -34,7 +35,7 @@ export default function Dashboard() {
         
          <div className="log"><img  src={logo}></img>
          </div><br/>
-         <div className='copyright'>Copyright © dev_Snayake_2023 </div><br/>
+         <div className='copyright'>Copyright © 2023 </div><br/>
         </div>
        <br/><br/>
     <div className='container row'>

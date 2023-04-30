@@ -3,10 +3,9 @@
 
 body {
     line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
-    background-color: #4b83c4;
+    /* font-family: 'Poppins', sans-serif; */
+    background-color: #ecd8d8;
     background-size: cover;
-    
     background-position: center;
     background-attachment: fixed;
 }
@@ -15,7 +14,7 @@ body {
     line-height: 1.5;
     font-family: 'Poppins', sans-serif;
     background-color: #00DBDE;
-    background-image: linear-gradient(90deg, #232729 0%, #1a44b8 100%);
+    background-image: linear-gradient(90deg, #232729 0%, #000000 100%);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -61,7 +60,7 @@ ul {
 
 .footer-col h4 {
     font-size: 18px;
-    color: rgb(235, 235, 235);
+    color: rgb(176, 32, 32);
     text-transform: capitalize;
     margin-bottom: 30px;
     font-weight: 500;
@@ -86,7 +85,7 @@ ul {
 .footer-col ul li a {
     font-size: 16px;
     text-transform: capitalize;
-    color: #09b1ff;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 300;
     /* color: #bbbbbb; */

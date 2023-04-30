@@ -1,0 +1,16 @@
+.deliveryform{
+   display: block;
+   position: relative;
+   padding: 30px;
+   margin:auto;
+   margin-bottom: 50px;
+   width: 70%;
+  /* From https://css.glass */
+background: rgba(211, 218, 219, 0.548);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.7px);
+-webkit-backdrop-filter: blur(6.7px);
+border: 1px solid rgba(74, 113, 236, 0.41);
+   
+}
