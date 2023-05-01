@@ -41,39 +41,20 @@ export default function chat() {
           {
       
             id: "issues",
-      
             options: [
-      
-              {
-      
-                value: "Repair",
-      
-                label: "Repair Your Phone",
-      
-                trigger: "Repair",
-      
-              },
-      
-              { value: "Contact", label: "Contact us", trigger: "Contact" },
-      
-            ],
-      
+             {value: "Repair", label: "Repair Your Phone",trigger: "Repair"},
+             {value: "Contact", label: "Contact us", trigger: "Contact"}
+            ]
           },
-      
           {
-      
-            id: "Repair",
-            message:"Thanks for letting your issue, Our team will resolve your issue ASAP",
-            end: true,
-      
+           id: "Repair",
+           message:"Thanks for letting your issue, Our team will resolve your issue ASAP",
+           end: true,
           },
-      
           {
-      
-            id: "Contact",
-            message:"Thanks for letting your Angular issue, Our team will resolve your issue ASAP",
-            end: true,
-      
+           id: "Contact",
+           message:"Thanks for letting your Angular issue, Our team will resolve your issue ASAP",
+           end: true,
           },
       
         
