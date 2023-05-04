@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useState } from 'react'
+import "./wform.css"
  
 export default function AddWarranty() {
     
@@ -53,78 +54,78 @@ export default function AddWarranty() {
    
    return (
      
-     <div className='container'>
-      <h4>AddWarranty</h4>
+     <div className='warrantyform'>
+      <h4>Add Warranty Clame</h4>
          <form onSubmit={changeOnClick} encType='multipart/form-data'>
-           <div className='form-group'>
+           <div className='warrantyform'>
            <label htmlFor="ItemCode">ItemCode</label>
             <input type={'text'}
              value={ItemCode}
              onChange={(e)=>setitemcode(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Item Code'
              />
              </div>
 
-             <div className='form-group'>
+             <div className='warrantyform'>
            <label htmlFor="ItemName">ItemName</label>
             <input type={'text'}
              value={ItemName}
              onChange={(e)=> setItemname(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Item Name'
              />
              </div>
 
-             <div className='form-group'>
+             <div className='warrantyform'>
            <label htmlFor="customerID">customerID</label>
             <input type={'customerID'}
              value={customerID}
              onChange={(e)=>setCusId(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Customer ID'
              />
              </div>
 
 
-           <div className='form-group'>
+           <div className='warrantyform'>
            <label htmlFor="customerName">customerName</label>
             <input type={'text'}
              value={customerName}
              onChange={(e)=>setCusname(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter Name'
              />
              </div>
 
-           <div className='form-group'>
+           <div className='warrantyform'>
            <label htmlFor="Email">customerEmail</label>
             <input type={'email'}
              value={cusEmail}
              onChange={(e)=>setcusEmail(e.target.value)}
              className='form-control'
-             placeholder='email'
+             placeholder='Enter email'
              />
              </div>
 
-             <div className='form-group'>
+             <div className='warrantyform'>
            <label htmlFor="file">image</label>
             <input type={'file'}
              image="warrenty"
              onChange={onChangeFile}
              className='form-control'
-             placeholder='add c'
+             placeholder='Upload Image'
              />
              </div>
 
 
-             <div className='form-group'>
+             <div className='warrantyform'>
            <label htmlFor="Reason">Reason</label>
             <input type={'text'}
              value={Reason}
              onChange={(e)=>setReason(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter Reason'
              />
              </div>
 
