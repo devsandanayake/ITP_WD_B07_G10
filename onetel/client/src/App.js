@@ -55,6 +55,7 @@ import RentedItems from './components/Rent/RentedItems';
 import RentC from './components/Rent/RentC';
 
 import Chat from './components/Chatbot/chat';
+import AdminDashboard from "./components/Admin/dashboard";
 
  export default class App extends Component {
    render() {
@@ -153,6 +154,8 @@ import Chat from './components/Chatbot/chat';
 
 
         <Route exact path = "/chat"  element={<Chat/>}/>
+
+        <Route path="/stock" element={<AdminDashboard/>} />
 
        </Routes>
         </div>

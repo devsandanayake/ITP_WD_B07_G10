@@ -119,7 +119,7 @@ export default function Dashboard() {
         </div> 
         <div className="text-center"> 
                     <div className='card-title'>Stock Management</div>
-                    <a className="btn btn-primary" href={``}><BsCaretRightSquare/></a>
+                    <a className="btn btn-primary" href={`/stock`}><BsCaretRightSquare/></a>
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

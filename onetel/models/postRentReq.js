@@ -33,12 +33,12 @@ const postRentReqSchema = new mongoose.Schema({
 
     StartDate:{
         type: Date,
-        required:true
+         
     },
 
     EndDate:{
         type: Date,
-        required:true
+         
     },
 
     ReqStatus:{
