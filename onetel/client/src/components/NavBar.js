@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { BsWhatsapp } from 'react-icons/bs';
+import { IoLogoChrome } from 'react-icons/io';
+import logo from '../images/lo.png'
+import "./Navbar.css"
   class NavBar extends Component {
    
 
@@ -16,7 +19,7 @@ import { BsWhatsapp } from 'react-icons/bs';
 
   render() {
      const loginRegLink = (
-       <nav className="navbar navbar-expand-lg bg-secondary" id="navbarNav">
+       <nav className="navbar navbar-expand-lg" id="navbarNav">
        <ul className="navbar-nav"> 
         <li className='nav-item'>
         <a className="nav-link" style={{ color: '#1dff1d' }}   href="/login">Login</a>
@@ -33,7 +36,7 @@ import { BsWhatsapp } from 'react-icons/bs';
     )
     
     const userLink = (
-      <nav className="navbar navbar-expand-lg bg-secondary" id="navbarNav">
+      <nav className="navbar navbar-expand-lg" id="navbarNav">
       <ul className="navbar-nav"> 
        <li className='nav-item'>
        <a className="nav-link"    href="/profile">profile</a>
@@ -41,7 +44,7 @@ import { BsWhatsapp } from 'react-icons/bs';
       
 
         
-       <NavDropdown title="Service" id="collasible-nav-dropdown">
+       <NavDropdown title="Service" id="collasible-nav-dropdown" className='tog'>
               <NavDropdown.Item href="/repairCus">Repair Item</NavDropdown.Item>
               <NavDropdown.Item href="/Addwarrenty">
                 Warrenty Clame
@@ -70,9 +73,9 @@ import { BsWhatsapp } from 'react-icons/bs';
     )  
     
     return(
-    <nav className="navbar navbar-expand-lg bg-secondary" >
+    <nav className="navbar navbar-expand-lg navbarNav" >
     <div className="container-fluid">
-    <a className="navbar-brand" href="#" >Onetel</a>
+    <a className="navbar-brand" href="#" ><img className='logs' src={logo}></img>&nbsp;&nbsp;ONETEL</a>
       <button className="navbar-toggler bg-white"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon bg-white"></span>
       </button>

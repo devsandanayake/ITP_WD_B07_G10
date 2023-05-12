@@ -7,6 +7,14 @@
      animation: ease-in;
      background-color: rgb(199, 147, 14);
      margin-left: 25rem;
+
+      /* From https://css.glass */
+background: rgba(190, 178, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(190, 178, 255, 0.59);
  }
  
  .card-container1:hover {
@@ -22,6 +30,14 @@
      transition: 0.3s;
      animation: ease-in;
      background-color: rgb(156, 199, 14);
+
+     /* From https://css.glass */
+background: rgba(190, 178, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(190, 178, 255, 0.59);
  }
  
  .card-container2:hover {
@@ -37,6 +53,14 @@
      transition: 0.3s;
      animation: ease-in;
      background-color: rgb(199, 76, 14);
+
+    /* From https://css.glass */
+background: rgba(190, 178, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(190, 178, 255, 0.59);
  }
  
  .card-container3:hover {
@@ -53,6 +77,14 @@
      animation: ease-in;
      background-color: rgb(14, 199, 140);
      margin-left: 25rem;
+
+     /* From https://css.glass */
+background: rgba(190, 178, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(190, 178, 255, 0.59);
  }
  
  .card-container4:hover {
@@ -68,6 +100,14 @@
      transition: 0.3s;
      animation: ease-in;
      background-color: rgb(193, 14, 199);
+
+     /* From https://css.glass */
+background: rgba(190, 178, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(190, 178, 255, 0.59);
  }
  
  .card-container5:hover {
@@ -83,6 +123,14 @@
      transition: 0.3s;
      animation: ease-in;
      background-color: rgb(199, 14, 94);
+
+    /* From https://css.glass */
+background: rgba(190, 178, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(190, 178, 255, 0.59);
  }
  
  .card-container6:hover {
@@ -99,6 +147,13 @@
      animation: ease-in;
      background-color: rgb(14, 171, 199);
      margin-left: 25rem;
+/* From https://css.glass */
+background: rgba(190, 178, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(190, 178, 255, 0.59);
  }
  
  .card-container7:hover {
@@ -114,6 +169,14 @@
      transition: 0.3s;
      animation: ease-in;
      background-color: rgb(254, 240, 41);
+
+    /* From https://css.glass */
+background: rgba(190, 178, 255, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(190, 178, 255, 0.59);
  }
  
  .card-container8:hover {
@@ -129,6 +192,14 @@
      transition: 0.3s;
      animation: ease-in;
      background-color: rgb(14, 199, 140);
+
+     /* From https://css.glass */
+background: rgba(248, 143, 225, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.3px);
+-webkit-backdrop-filter: blur(6.3px);
+border: 1px solid rgba(248, 143, 225, 0.59);
  }
  
  .card-container10:hover {

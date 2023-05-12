@@ -27,7 +27,7 @@ export default class Login extends Component {
     }    
     
     if(this.state.email == "admin@gmail.com" && this.state.password == "1234"){
-          console.log('admin log')
+         toast.success("Admin Login")
           window.location="/admin";
    }
     else if(this.state.email == "run@email.com" && this.state.password == "1234"){ 

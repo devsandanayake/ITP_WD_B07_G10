@@ -1,0 +1,26 @@
+ .navbar-nav{
+    margin-left: auto;
+    
+    
+ }
+ .nav-item{
+   
+    padding: 0px 10px 0px;
+    font-weight: 900;
+    font-size: 18px;
+    
+     
+    
+ }
+ .nav-item:hover {
+   
+    font-style: italic; 
+  
+     
+}
+.logs{
+    width: 60px;
+    height: 50px;
+  
+
+}

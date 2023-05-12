@@ -5,7 +5,8 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import { BsCart4} from "react-icons/bs";
 import Form from 'react-bootstrap/Form';
-
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 export default class Home extends Component {
   constructor(props){
@@ -64,7 +65,10 @@ onSubmit=()=>{
     window.location='/insertDelivery'
   }
   else{
-    window.alert("Login Your account");
+    toast.error("Login Your account",{
+      position: toast.POSITION.TOP_CENTER
+     
+    });
   }
 
 }
@@ -74,6 +78,7 @@ onSubmit=()=>{
 
     const loginLink = (
       <div className='row'>
+         <ToastContainer/>
       {this.state.posts.map((posts)=>(
       <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
         <div className='card p-0 overflow-hidden h-100 shadow custome-card' alt='im'>
@@ -97,6 +102,7 @@ onSubmit=()=>{
     const homeLink = (
       
       <div className='row'>
+         <ToastContainer/>
       {this.state.posts.map((posts)=>(
       <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
         <div className='card p-0 overflow-hidden h-100 shadow custome-card' alt='im'>
