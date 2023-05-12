@@ -93,9 +93,7 @@ export default function ReportHome() {
                     <div className='card-title'>Rent Report</div>
 
                     <a className="btn btn-dark" href={`/rentreqr`}><BsCaretRightSquare/></a>
-
-                  
-                    <a className="btn btn-info" href={`/rentreqr`}><BsCaretRightSquare/></a>
+                            
 
           </div>          
        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
