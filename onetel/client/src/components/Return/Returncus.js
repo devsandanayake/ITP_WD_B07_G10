@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useState } from 'react'
+import "./rform.css"
  
 export default function AddReturn() {
     
@@ -54,78 +55,78 @@ export default function AddReturn() {
    
    return (
    
-     <div className='container'>
+     <div className='returnform'>
       <h4>Add Return</h4>
          <form onSubmit={changeOnClick} encType='multipart/form-data'>
-           <div className='form-group'>
+           <div className='returnform'>
            <label htmlFor="ItemCode">ItemCode</label>
             <input type={'text'}
              value={ItemCode}
              onChange={(e)=>setitemcode(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter Item Code'
              />
              </div>
 
-             <div className='form-group'>
+             <div className='returnform'>
            <label htmlFor="ItemName">ItemName</label>
             <input type={'text'}
              value={ItemName}
              onChange={(e)=> setItemname(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter Item Name'
              />
              </div>
 
-             <div className='form-group'>
+             <div className='returnform'>
            <label htmlFor="customerID">customerID</label>
             <input type={'customerID'}
              value={customerID}
              onChange={(e)=>setCusId(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter CID'
              />
              </div>
 
 
-           <div className='form-group'>
+           <div className='returnform'>
            <label htmlFor="customerName">customerName</label>
             <input type={'text'}
              value={customerName}
              onChange={(e)=>setCusname(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter Name'
              />
              </div>
 
-           <div className='form-group'>
+           <div className='returnform'>
            <label htmlFor="Email">customerEmail</label>
             <input type={'email'}
              value={cusEmail}
              onChange={(e)=>setcusEmail(e.target.value)}
              className='form-control'
-             placeholder='email'
+             placeholder='Enter email'
              />
              </div>
 
              
-             <div className='form-group'>
+             <div className='returnform'>
            <label htmlFor="Reason">Reason</label>
             <input type={'text'}
              value={Reason}
              onChange={(e)=>setReason(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter Reason'
              />
              </div>
 
-             <div className='form-group'>
+             <div className='returnform'>
            <label htmlFor="Address">Address</label>
             <input type={'text'}
              value={Address}
              onChange={(e)=>setAddress(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Enter Address'
              />
              </div>
 
