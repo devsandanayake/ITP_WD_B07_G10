@@ -3,7 +3,7 @@ import {register} from './userFuntion';
 
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
- 
+import "./login.css"
 class Register extends Component {
 
   constructor(props){
@@ -64,11 +64,11 @@ class Register extends Component {
       <div className='container'>
           <ToastContainer/>
         <h2>
-            <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
+            <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow regi'>
                 <div className='cil-md-6 mt-5 mx-auto'>
                     <form noValidate onSubmit={this.onSubmit}>
                         <h1 className='h6 mb-3 font-weight-normal'>
-                            <p className='h2 mb-5' style={{color:"pink"}}align="left">Registration</p>
+                            <p className='h2 mb-5' align="left">Registration</p>
 
                             <div className='form-group'>
                                 <label htmlFor='first_name'>First Name</label><br/><br/>
@@ -112,9 +112,9 @@ class Register extends Component {
                                        value={this.state.password}
                                        onChange={this.onChange}
                                        />
-                             </div><br/><center>
-                               <button className='btn btn-warning' >Register</button> 
-                               <Link className="btn btn-danger mx-2" to="/login">Login</Link></center>
+                             </div><br/><br/><br/>
+                               <button className='btn regibtn' >Register</button><br/><br/> 
+                              <center> <Link className="link" to="/login">Already have an account? Sign in</Link></center>
                         </h1>
                     </form>
                 </div>
