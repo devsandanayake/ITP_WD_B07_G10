@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap');
  
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 
 body {
     line-height: 1.5;
     font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
     background-size: cover;
+    background-image: url('../images/R.jpeg');
     background-position: center;
     background-attachment: fixed;
-}
+  }
+  
 
 .main-footer {
     line-height: 1.5;

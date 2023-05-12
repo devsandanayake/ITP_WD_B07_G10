@@ -11,7 +11,11 @@ export const register =  newUser => {
    .then(res =>{
     console.log("Registered");
     window.alert("Registered");
-   }) 
+    return res.data; 
+   })   .catch(err => {
+    console.log('Registration failed:', err);
+    throw err; // re-throw the error for the caller to handle it
+  });
     
 }
 
