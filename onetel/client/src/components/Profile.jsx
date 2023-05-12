@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
+import "./profile.css"
 //import axios from 'axios';
 export default class Profile extends Component {
   constructor(props){
@@ -44,14 +45,14 @@ export default class Profile extends Component {
     
     return (
         <div className="container">
-              <div className="jumbotron mt-5">
+              <div className="jumbotron mt-5 profile">
                   <div className="col-sm8 mx-auto">
-                     <h1 className="text-center">Profile</h1>
+                     <h6 className="text-center">Profile</h6>
                    </div>
                   <table className="table col-md-6 mx-auto">
-                      <h2>
+                     
                          <tbody>
-                         <tr>
+                       <tr>
                             <td>First Name :</td>
                             <td>{this.state.first_name}</td>
                             </tr>
@@ -64,7 +65,7 @@ export default class Profile extends Component {
                             <td>{this.state.email}</td>
                             </tr>
                          </tbody>
-                      </h2>
+                     
                    </table>
                  
              </div>
