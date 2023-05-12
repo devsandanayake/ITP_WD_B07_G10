@@ -23,6 +23,23 @@ class Register extends Component {
   }
   onSubmit(e){
     e.preventDefault()
+     // Check for empty fields
+     if (
+      !this.state.first_name ||
+      !this.state.last_name ||
+      !this.state.email ||
+      !this.state.password
+    ) {
+      toast.error('Please fill in all fields');
+      return;
+    }
+
+     // Email validation
+     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     if (!emailRegex.test(this.state.email)) {
+       toast.error('Invalid email format');
+       return;
+     }
 
     const user ={
         first_name:this.state.first_name,
@@ -38,7 +55,7 @@ class Register extends Component {
           
            
         }
-    })
+    }) 
   }
   
 
