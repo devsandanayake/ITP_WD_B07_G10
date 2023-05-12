@@ -1,23 +1,37 @@
 .orders{
     height: 400px;
     width:350px;
-    margin-top: 30px;
+    margin-top: -15px;
     position: relative;
     
 }
 .details{
-    background-color: rgb(46, 199, 219);
     margin-left: 400px;
     margin-top: -360px;
-    border-color:red;
-    border-radius: 5px;
     align-items: center;
     position: absolute;
     width:  600px;
-    height: 350px;
+    height: 600px;
     box-shadow: 0px 0px 15px -5px;
-    transition: 0.3s;
-    animation: ease-in;
+   
+
+
+    display: block;
+    position: relative;
+    padding: 30px;
+    
+    margin-bottom: 50px;
+    
+    font-weight: 200;
+    font-size: medium;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+ /* From https://css.glass */
+background: rgba(134, 192, 219, 0.452);
+ 
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.6px);
+-webkit-backdrop-filter: blur(3.6px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 /* .details:hover{
     transform: scale(1.1);
@@ -30,4 +44,12 @@
     align-items: center;
     max-width: 250px;
     margin-left: 185px;
+}
+.imgOd{
+    width:  200px;
+    
+    
+}
+.qty{
+    width:110px;
 }

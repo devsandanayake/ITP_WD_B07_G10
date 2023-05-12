@@ -105,7 +105,7 @@ axios.get("http://localhost:8070/orders").then(res =>{
                     <td>{posts.Price}</td>
                     <td>{posts.Model}</td>
                     <td>{posts.Email}</td>
-                    <td>{posts.Quntity}</td>
+                    <td>{posts.Quantity}</td>
                     <td>
                        <a className="btn btn-warning" href={`/editOrder/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit

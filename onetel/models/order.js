@@ -4,27 +4,23 @@ const postorderSchema = new mongoose.Schema({
      
     Categories:{
         type:String,
-        required:true
+        
     },
     Brand:{
         type:String,
-        required:true
+        
     },
     Price:{
-        type:String,
-        required:true
+        type:Number,
+        
     },
     Model:{
         type:String,
-        required:true
+        
     },
-    Email:{
+    Quantity:{
         type:String,
-        required:true
-    },
-    Quntity:{
-        type:String,
-        required:true
+         
     }
     
     
