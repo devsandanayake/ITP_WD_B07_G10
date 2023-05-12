@@ -1,0 +1,12 @@
+.custome-card{
+    display: block;
+    position: relative;
+    
+   /* From https://css.glass */
+ background: rgba(49, 212, 185, 0.644);
+ border-radius: 16px;
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(6.7px);
+ -webkit-backdrop-filter: blur(6.7px);
+ border: 2px solid rgba(74, 113, 236, 0.41);
+}
