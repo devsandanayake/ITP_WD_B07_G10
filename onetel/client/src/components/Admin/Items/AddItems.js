@@ -63,7 +63,7 @@ const AddItems = () => {
     try {
       await axios.post(
         //use axios API
-        "/create",
+        "/items/create",
         {
           itemName,
           itemDescrip,

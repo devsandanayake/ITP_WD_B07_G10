@@ -60,7 +60,7 @@ const EditeItems = () => {
     }, 5000);
     (async () => {
       await axios
-        .get(`/get/${id}`)
+        .get(`/items/get/${id}`)
         .then((res) => {
           form.setFieldsValue({
             itemName: res.data.itemName,
@@ -95,7 +95,7 @@ const EditeItems = () => {
     try {
       await axios.put(
         //use axios API
-        `/update/${id}`,
+        `/items/update/${id}`,
         {
           itemName,
           itemDescrip,

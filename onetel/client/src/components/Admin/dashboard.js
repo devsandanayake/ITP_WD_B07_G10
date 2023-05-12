@@ -86,7 +86,7 @@ const Dashboard = () => {
             src={!collapsed ? Logo : "OneTell Mobile"}
             //alt="logo"
             onClick={() => {
-              history("/stock");
+              history("/");
               setHeader("dashboard");
             }}
             style={{ cursor: "pointer", height:"200px",marginLeft:"40px" }}
@@ -151,7 +151,7 @@ const Dashboard = () => {
             <Breadcrumb.Item>Admin</Breadcrumb.Item>
           </Breadcrumb>
           {location.pathname ===
-            "/stock" &&
+            "/" &&
             !queryProduct &&
             !queryAddProduct &&
             !queryViewProduct && 
