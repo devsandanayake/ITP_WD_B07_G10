@@ -17,7 +17,10 @@ router.post('/register',(req,res)=>{
         email:req.body.email,
         password:req.body.password,
         created:today
-    }
+    }// Check if any required field is empty
+  if (!userData.first_name || !userData.last_name || !userData.email || !userData.password) {
+    return res.json({ error: 'Please fill in all required fields' });
+  }
     User.findOne({
         email:req.body.email
     })
@@ -42,35 +45,31 @@ router.post('/register',(req,res)=>{
     })
 })
 
-router.post('/login',(req,res)=>{
-    User.findOne({
-         email:req.body.email
-    })
-       .then(user=>{
-          if(user){
-            if(bcrypt.compareSync(req.body.password,user.password)){
-              const payload ={
-                _id:user._id,
-                first_name:user.first_name,
-                last_name:user.last_name,
-                email:user.email
-              }
-              let token =jwt.sign(payload,process.env.SECRET_KEY,{
-                expiresIn:1440
-              })
-              res.send(token)
-            }else{
-                res.json({error:"User not exist"})
-            }
-
-          }else{
-            res.json({error:"User not exist"})
+router.post('/login', (req, res) => {
+    User.findOne({ email: req.body.email })
+      .then(user => {
+        if (user) {
+          if (bcrypt.compareSync(req.body.password, user.password)) {
+            const payload = {
+              _id: user._id,
+              first_name: user.first_name,
+              last_name: user.last_name,
+              email: user.email
+            };
+            let token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: 1440 });
+            res.send(token);
+          } else {
+            res.status(401).json({ error: 'Invalid password' });
           }
-       })
-       .catch(err=>{
-        res.send("error" +err);
-       })
-})
+        } else {
+          res.status(404).json({ error: 'User not found' });
+        }
+      })
+      .catch(err => {
+        res.status(500).json({ error: 'Server error' });
+      });
+  });
+  
 
 router.get('/profile',(req,res)=>{
     var decoded = jwt.verify(req.headers['authorization'],process.env.SECRET_KEY)
