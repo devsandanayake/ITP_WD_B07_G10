@@ -30,7 +30,7 @@ class Register extends Component {
       !this.state.email ||
       !this.state.password
     ) {
-      toast.error('Please fill in all fields');
+      toast.warn('Please fill in all fields');
       return;
     }
 

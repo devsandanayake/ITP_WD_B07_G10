@@ -1,0 +1,41 @@
+.loginds{
+    display: block;
+    position: relative;
+    padding: 30px;
+    margin:auto;
+    margin-bottom: 50px;
+    width: 40%;
+  
+ /* From https://css.glass */
+background: rgba(255, 255, 255, 0.171);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.6px);
+-webkit-backdrop-filter: blur(3.6px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+ 
+ 
+
+.logbtn{
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 100%;
+    color: black;
+    background: rgba(255,255,255,0.7);
+    cursor: pointer;
+    transition: .3s ;
+}
+.logbtn:hover{
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+    background: rgba(240, 31, 31, 0.938);
+}
+.link{
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+    color: aliceblue;
+    text-decoration: none;
+}
+ 

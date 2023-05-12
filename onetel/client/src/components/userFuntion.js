@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export const register = async newUser => {
   // Check if any required field is empty
   if (!newUser.first_name || !newUser.last_name || !newUser.email || !newUser.password) {
-    toast.error('Please fill in all required fields');
+    toast.warn('Please fill in all required fields');
     return;
   }
 
@@ -24,7 +24,7 @@ export const register = async newUser => {
     console.log('Registration failed:', err);
     if (err.response && err.response.data) {
       // Display error message from the server response
-      toast.error(err.response.data.error);
+      toast.warn(err.response.data.error);
     } else {
       // Display a generic error message
       toast.error('Registration failed. Please try again later.');
@@ -38,7 +38,7 @@ export const register = async newUser => {
   export const login = async user => {
       // Check if email and password are empty
   if (!user.email || !user.password) {
-    toast.error('Please enter both email and password');
+    toast.warn('Please enter both email and password');
     return;
   }
     try {

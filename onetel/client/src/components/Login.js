@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {login} from './userFuntion';
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-
+import "./login.css"
+ 
 export default class Login extends Component {
 
   constructor(props){
@@ -61,13 +62,13 @@ export default class Login extends Component {
       <div className='container'>
             <ToastContainer/>
         <h2>
-            <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
+            <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow loginds'>
                 <div className='cil-md-6 mt-5 mx-auto'>
                     <form noValidate onSubmit={this.onSubmit}>
                         <h6 className='h6 mb-3 font-weight-normal text-center'>
-                            <p className='h2 mb-5' style={{color:"pink"}}align="left">Login</p>
+                            <p className='h2 mb-5'   align="left">Login</p>
                             <div className='form-group'>
-                                <label htmlFor='email'>Email Address</label><br/>
+                                <label htmlFor='email'>Email Address</label><br/><br/>
                                 <input type='email' 
                                        className='form-control'
                                        name='email'
@@ -77,7 +78,7 @@ export default class Login extends Component {
                                        />
                             </div><br/>
                             <div className='form-group'>
-                            <label htmlFor='password'>Password</label><br/>
+                            <label htmlFor='password'>Password</label><br/><br/>
                                 <input type='password' 
                                        className='form-control'
                                        name='password'
@@ -85,10 +86,10 @@ export default class Login extends Component {
                                        value={this.state.password}
                                        onChange={this.onChange}
                                        />
-                             </div><br/><center>
-                             <button className='btn  btn-primary'>Sign in</button>
-                               
-                               <Link className="btn btn-danger mx-2" to="/register"> register </Link></center>
+                             </div><br/><br/>
+                             <button className='btn logbtn'>Sign in</button>
+                               <br/><br/><br/>
+                               <Link className="link" to="/register">Have an account?</Link>
                         </h6>
                     </form>
                 </div>
