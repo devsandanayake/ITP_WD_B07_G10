@@ -57,19 +57,23 @@ import RentC from './components/Rent/RentC';
 import Chat from './components/Chatbot/chat';
 import AdminDashboard from "./components/Admin/dashboard";
 
+  
+
+
  export default class App extends Component {
    render() {
      return (
        <div>
         <BrowserRouter>
+        
         <MaybeShowNavBar>
         <NavBar/>
         </MaybeShowNavBar>
-                
+        
         <div className="container">
         <Routes>
         <Route exact path="/"  element={<Home/>}></Route> 
-
+      
         <Route exact path="/payment"  element={<Payment/>}></Route> 
        
         <Route exact path="/admin"  element={<Dashboard/>}></Route> 
