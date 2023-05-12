@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {login} from './userFuntion';
 import { Link } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
 
 export default class Login extends Component {
 
@@ -59,6 +59,7 @@ export default class Login extends Component {
   render() {
     return (
       <div className='container'>
+            <ToastContainer/>
         <h2>
             <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
                 <div className='cil-md-6 mt-5 mx-auto'>

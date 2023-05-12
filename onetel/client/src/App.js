@@ -12,7 +12,7 @@ import Home from './components/Home';
 import Footer from './components/footer';
 import RepairCus from './components/Repair/RepairCus';
 import RepairAdmin from './components/Repair/RepairAdmin';
-import AddProduct from './components/Product/AddProduct'; 
+import AddProduct from './components/Product/addProduct'; 
 import AdminProduct from './components/Product/AdminProduct';
 import EditProduct from './components/Product/Editproduct';
 import CustomerAdmin from './components/Customer/CustomerAdmin';

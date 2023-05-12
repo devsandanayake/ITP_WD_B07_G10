@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {register} from './userFuntion';
 
 import { Link } from "react-router-dom";
- 
+import { ToastContainer, toast } from 'react-toastify';
  
 class Register extends Component {
 
@@ -45,6 +45,7 @@ class Register extends Component {
   render() {
     return (
       <div className='container'>
+          <ToastContainer/>
         <h2>
             <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
                 <div className='cil-md-6 mt-5 mx-auto'>

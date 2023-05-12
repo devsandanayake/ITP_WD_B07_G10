@@ -97,6 +97,10 @@ const storage = multer.diskStorage({
     
  //Inster an user into database router
 router.post('/add/pro',upload,(req,res)=>{
+    if (!req.body.Categories || !req.body.Brand || !req.body.Price || !req.body.Model || !req.body.Status || !req.file) {
+        window.alert('Please fill in all required fields');
+        return;
+      }
      const product = new Postproduct({
          Categories:req.body.Categories,
          Brand:req.body.Brand,
@@ -110,6 +114,7 @@ router.post('/add/pro',upload,(req,res)=>{
              res.json({massage:err.massage,type:'want fill all fill'}); 
          }else{
              console.log("success");
+              
          }
      })
  })

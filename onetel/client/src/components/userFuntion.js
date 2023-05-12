@@ -1,10 +1,11 @@
 import axios from'axios';
-import { toast } from 'react-toastify';
  
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export const register = async newUser => {
   // Check if any required field is empty
   if (!newUser.first_name || !newUser.last_name || !newUser.email || !newUser.password) {
-    window.alert('Please fill in all required fields');
+    toast.error('Please fill in all required fields');
     return;
   }
 
@@ -17,16 +18,16 @@ export const register = async newUser => {
     });
 
     console.log('Registered');
-    window.alert('Registered');
+    toast.success('Registered');
     return res.data;
   } catch (err) {
     console.log('Registration failed:', err);
     if (err.response && err.response.data) {
       // Display error message from the server response
-      window.alert(err.response.data.error);
+      toast.error(err.response.data.error);
     } else {
       // Display a generic error message
-      window.alert('Registration failed. Please try again later.');
+      toast.error('Registration failed. Please try again later.');
     }
     throw err; // re-throw the error for the caller to handle it
   }
@@ -37,7 +38,7 @@ export const register = async newUser => {
   export const login = async user => {
       // Check if email and password are empty
   if (!user.email || !user.password) {
-    window.alert('Please enter both email and password');
+    toast.error('Please enter both email and password');
     return;
   }
     try {
@@ -52,10 +53,10 @@ export const register = async newUser => {
       console.log(err);
       if (err.response && err.response.data) {
         // Display error message from the server response
-        window.alert(err.response.data.error);
+        toast.error(err.response.data.error);
       } else {
         // Display a generic error message
-        window.alert('Login failed. Please try again later.');
+        toast.error('Login failed. Please try again later.');
       }
       throw err;
     }
