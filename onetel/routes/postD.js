@@ -13,7 +13,7 @@ router.post('/post/save',(req,res)=>{
     newPost.save((err)=>{
         if(err){
             return res.status(400).json({
-                error:err
+                error: "Failed to save post"
             });
         }
         return res.status(200).json({

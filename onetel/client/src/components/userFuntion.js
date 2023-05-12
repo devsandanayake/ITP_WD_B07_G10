@@ -22,7 +22,7 @@ export const register = async newUser => {
       console.log('Registration failed:', err);
       if (err.response && err.response.data) {
         // Display error message from the server response
-        window.alert(err.response.data.message);
+        window.alert(err.response.data.error);
       } else {
         // Display a generic error message
         window.alert('Registration failed. Please try again later.');
@@ -30,6 +30,7 @@ export const register = async newUser => {
       throw err; // re-throw the error for the caller to handle it
     }
   };
+  
   
 
   export const login = async user => {
