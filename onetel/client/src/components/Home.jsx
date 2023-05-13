@@ -130,7 +130,7 @@ const Home = () => {
             aria-label="Search"
             name="searchQuery"
             onChange={handleSearchArea}
-            style={{ width: "40%", marginRight: "auto" }}
+            style={{ width: "50%", marginRight: "auto" }}
           />
           <Button variant="success"  className='search-button'>Search</Button>
         </Form>
