@@ -11,6 +11,8 @@ import ran3 from '../images/ran3.png'
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [headerImageUrl, setHeaderImageUrl] = useState('');
+  const [cartItems, setCartItems] = useState([]);
+
 
   useEffect(() => {
     viewPosts();
@@ -72,6 +74,26 @@ const Home = () => {
       });
     }
   }
+  const addToCart = (itemId) => {
+    // Find the selected item from the posts array
+    const selectedItem = posts.find((post) => post._id === itemId);
+  
+    // Check if the item is already in the cart
+    const itemInCart = cartItems.find((item) => item._id === itemId);
+  
+    if (itemInCart) {
+      toast.warning('Item is already in the cart', {
+        position: toast.POSITION.TOP_CENTER
+      });
+    } else {
+      // Add the selected item to the cart
+      setCartItems([...cartItems, selectedItem]);
+      toast.success('Item added to cart', {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+  };
+  
 
   const loginLink = (
     <div className='row'>
@@ -84,11 +106,12 @@ const Home = () => {
               <h5 className='card-title'>{post.Brand}</h5>
               <h5 className='card-title'>{post.Price}</h5>
               <p className='card-text'>{post.Status}</p>
-              <Button type="submit" className='btn btn-success' onClick={onSubmit}>Buy</Button>
+              <Button type="submit" className='btn btn-buy' onClick={onSubmit}>Buy</Button>
             </div>
           </div>
         </div>
       ))}
+      
     </div>
   );
 
@@ -104,12 +127,30 @@ const Home = () => {
              
               <h5 className='card-title'>{post.Price}</h5>
               <p className='card-text'>{post.Status}</p>
-              <a className="btn btn-primary" href={``}><BsCart4/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <Button className="btn btn-primary" onClick={() => addToCart(post._id)}><BsCart4/></Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <a className="btn btn-success" href={`/${post._id}`}>Buy</a>
+            
+    
             </div>
           </div>
         </div>
       ))}
+       <div>
+        {/* Display cart and item count in the navbar */}
+         <div className="carts">
+           <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="/cart">
+                  <BsCart4 /> Cart ({cartItems.length})
+                </a>
+              </li>
+            </ul>
+          </div>
+        
+      </div>
+        <div>
+      
+      </div>
     </div>
   );
 
