@@ -1,160 +1,140 @@
-import React, { Component } from 'react'
-// import Ds from "./HomeDesign/Design"
+import React, { useState, useEffect } from 'react';
 import "./home.css" 
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-import { BsCart4} from "react-icons/bs";
+import { BsCart4 } from "react-icons/bs";
 import Form from 'react-bootstrap/Form';
-import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 
-export default class Home extends Component {
-  constructor(props){
-    super(props);
- 
-    this.state={
-      posts:[]
+const Home = () => {
+  const [posts, setPosts] = useState([]);
+  const [headerImageUrl, setHeaderImageUrl] = useState('');
+
+  useEffect(() => {
+    viewPosts();
+    setRandomHeaderImage();
+
+     // Change header image randomly every 5 seconds
+     const interval = setInterval(() => {
+      setRandomHeaderImage();
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
     };
-  }
-  componentDidMount(){
-    this.viewPosts();
-  }
-   
- //retrivew funtion
-  viewPosts(){
-    axios.get("http://localhost:8070/products").then(res =>{
-      if(res.data.success){
-        this.setState({
-          posts:res.data.existingPosts
-        });
-        //show array list 
-        console.log(this.state.posts)        
+  }, []);
+
+  // Retrieve function
+  const viewPosts = () => {
+    axios.get("http://localhost:8070/products").then(res => {
+      if (res.data.success) {
+        setPosts(res.data.existingPosts);
+        console.log(posts);
       }
     });
   }
-    //seraching part  
-    filterData(posts,searchKey){
-         
 
-      const result = posts.filter((post)=>
-          post.Brand.toLowerCase().includes(searchKey)||
-          post.Price.toLowerCase().includes(searchKey)
-          
-      )
-      this.setState({posts:result})
+  const setRandomHeaderImage = () => {
+    const headerImages = [
+      'https://www.premierprint.co.uk/wp-content/uploads/2020/05/Banner-1920x500-1.png',
+      'https://menu.1percent.nl/wp-content/uploads/2015/05/Banner-1920-500.jpg',
+      'https://th.bing.com/th/id/OIP.35ESXoCA_AiTvsf4TGGhhQHaB7?pid=ImgDet&rs=1'   
+      // Add more image URLs for the header
+    ];
+    const randomIndex = Math.floor(Math.random() * headerImages.length);
+    setHeaderImageUrl(headerImages[randomIndex]);
+  };
+
+  // Searching part  
+  const filterData = (searchKey) => {
+    const result = posts.filter((post) =>
+      post.Brand.toLowerCase().includes(searchKey) ||
+      post.Price.toLowerCase().includes(searchKey)
+    );
+    setPosts(result);
   }
-  
-  
-  handleSearchArea =(e)=>{
-  
-  //console.log(e.currentTarget.value); okey
-  
-  const searchKey = e.currentTarget.value;
-  
-  axios.get("http://localhost:8070/products").then(res =>{
-    if(res.data.success){
-      
-      this.filterData(res.data.existingPosts,searchKey)
-             
-    }
-  });
-  
-  }
-onSubmit=()=>{
-  if(localStorage.getItem('usertoken')){
-    window.location='/insertDelivery'
-  }
-  else{
-    toast.error("Login Your account",{
-      position: toast.POSITION.TOP_CENTER
-     
+
+  const handleSearchArea = (e) => {
+    const searchKey = e.currentTarget.value;
+    axios.get("http://localhost:8070/products").then(res => {
+      if (res.data.success) {
+        filterData(searchKey);
+      }
     });
   }
 
-}
-   
+  const onSubmit = () => {
+    if (localStorage.getItem('usertoken')) {
+      window.location = '/insertDelivery';
+    } else {
+      toast.error("Login to your account", {
+        position: toast.POSITION.TOP_CENTER
+      });
+    }
+  }
 
-  render() {
-
-    const loginLink = (
-      <div className='row'>
-         <ToastContainer/>
-      {this.state.posts.map((posts)=>(
-      <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
-        <div className='card p-0 overflow-hidden h-100 shadow custome-card' alt='im'>
-        <img src={posts.image} className='card-img-top img-fluid' alt='brand'/>   
-             <div className='card-body text-center'>  
-                  <h5 className='card-title'>{posts.Brand}</h5>
-                  <h5 className='card-title'>{posts.Price}</h5>
-                  <p className='card-text'> {posts.Status}</p>
-           
-                  <Button type="submit" className='btn btn-success' onClick={this.onSubmit}>Buy</Button>
-              </div>
+  const loginLink = (
+    <div className='row'>
+      <ToastContainer/>
+      {posts.map((post) => (
+        <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4' key={post._id}>
+          <div className='card p-0 overflow-hidden h-100 shadow custome-card' alt='im'>
+            <img src={post.image} className='card-img-top img-fluid' alt='brand'/>   
+            <div className='card-body text-center'>  
+              <h5 className='card-title'>{post.Brand}</h5>
+              <h5 className='card-title'>{post.Price}</h5>
+              <p className='card-text'>{post.Status}</p>
+              <Button type="submit" className='btn btn-success' onClick={onSubmit}>Buy</Button>
+            </div>
           </div>
-          
-       </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  const homeLink = (
+    <div className='row'>
+      <ToastContainer/>
+      {posts.map((post) => (
+        <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4' key={post._id}>
+          <div className='card p-0 overflow-hidden h-100 shadow custome-card' alt='im'>
+            <img src={post.image} className='card-img-top img-fluid' alt='brand'/>   
+            <div className='card-body text-center'>  
+              <h5 className='card-title'>{post.Brand}</h5>
              
-     ))}
-     </div>
-             
-    )
-    
-    const homeLink = (
-      
-      <div className='row'>
-         <ToastContainer/>
-      {this.state.posts.map((posts)=>(
-      <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>    
-        <div className='card p-0 overflow-hidden h-100 shadow custome-card' alt='im'>
-         <img src={posts.image} className='card-img-top img-fluid' alt='brand'/>   
-             <div className='card-body text-center'>  
-                  <h5 className='card-title'>{posts.Brand}</h5>
-                  <h5 className='card-title'>{posts.Price}</h5>
-                  <p className='card-text'> {posts.Status}</p>
-                  <a className="btn btn-primary" href={``}><BsCart4/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a className="btn btn-success" href={`/${posts._id}`}>Buy</a>                
-                  
-              </div>
+              <h5 className='card-title'>{post.Price}</h5>
+              <p className='card-text'>{post.Status}</p>
+              <a className="btn btn-primary" href={``}><BsCart4/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a className="btn btn-success" href={`/${post._id}`}>Buy</a>
+            </div>
           </div>
-          
-       </div>
-             
-     ))}
-     </div>
-             
-    
-       
-    )  
+        </div>
+      ))}
+    </div>
+  );
 
+  return (
+    <div className='container'><br/>
+      <div className='banner'>
+        <img src={headerImageUrl} alt='Header Image' className='header-image' style={{width:1300}}/>
+        <br/><br/><br/>
+        <Form className="d-flex">
+          <Form.Control
+            type="search"
+            placeholder="Search"
+            className="me-3"
+            aria-label="Search"
+            name="searchQuery"
+            onChange={handleSearchArea}
+            style={{ width: "40%", marginRight: "auto" }}
+          />
+          <Button variant="success">Search</Button>
+        </Form>
+        <br/><br/>
+      </div>
+      {localStorage.usertoken ? homeLink : loginLink}
+    </div>
+  );
+};
 
-
-
-
-    return (
-       <div  className='container'>
-        {/* <Ds/> */}
-           <div className='banner'>
-              
-               <br/>
-               <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-3"
-                    aria-label="Search"
-                    name="searchQuary"
-                    onChange={this.handleSearchArea}
-                    style={{width:"40%" , marginRight:"auto"} }
-                  />
-                  <Button variant="success">Search</Button>
-               </Form><br/><br/>
-                      
-            
-          </div>
-          {localStorage.usertoken? homeLink:loginLink}
-       </div>        
-         
-    
-  )
-}
-}
+export default Home;

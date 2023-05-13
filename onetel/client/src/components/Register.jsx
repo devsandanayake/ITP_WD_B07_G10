@@ -112,8 +112,8 @@ class Register extends Component {
                                        value={this.state.password}
                                        onChange={this.onChange}
                                        />
-                             </div><br/><br/><br/>
-                               <button className='btn regibtn' >Register</button><br/><br/> 
+                             </div><br/><br/>
+                              <center><button className='btn regibtn' >Register</button><br/><br/></center> 
                               <center> <Link className="link" to="/login">Already have an account? Sign in</Link></center>
                         </h1>
                     </form>

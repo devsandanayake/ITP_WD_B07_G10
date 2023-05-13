@@ -8,7 +8,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-size: cover;
     background-image: url('../images/R.jpeg');
-    background: linear-gradient(to bottom, #667eea, #764ba2);
+    background: linear-gradient(to bottom, #e0e0e0, #8fdfdb);
     background-position: center;
     background-attachment: fixed;
   }
