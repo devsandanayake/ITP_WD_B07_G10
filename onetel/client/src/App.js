@@ -56,7 +56,7 @@ import RentC from './components/Rent/RentC';
 import Chat from './components/Chatbot/chat';
 import AdminDashboard from "./components/Admin/dashboard";
 
-  
+ 
 
 
  export default class App extends Component {
@@ -91,6 +91,7 @@ import AdminDashboard from "./components/Admin/dashboard";
         <Route exact path = "/delivery/person" element={<DeliveryPerson/> } />
         <Route exact path = "/editc/:id" element={<Checkperson/> } />
         <Route exact path = "/delivery/report" element={<DeliveryR/> } />
+        
         
        
 

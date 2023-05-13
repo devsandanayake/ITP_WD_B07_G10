@@ -47,8 +47,8 @@ export default class DeliveryAdmin extends Component {
     const result = posts.filter((post)=>
         post.NIC.toLowerCase().includes(searchKey)||
         post.email.toLowerCase().includes(searchKey)||
-        post.Name.toLowerCase().includes(searchKey)
-        
+        post.Name.toLowerCase().includes(searchKey)||
+        post.id.toLowerCase().includes(searchKey)
     )
     this.setState({posts:result})
 }

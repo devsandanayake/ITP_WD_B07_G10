@@ -4,7 +4,7 @@ const Postdelivery = require('../models/postDelivery')
  
 
 const router = express.Router();
-
+ 
 //save posts
 
 router.post('/post/save',(req,res)=>{
@@ -114,6 +114,72 @@ router.get('/deliveryP/:id', async (req, res) => {
         return res.status(400).json({ success: false, error: err.message});
 }
 });
+
+
+
+// //new
+
+// router.post('/post/savess', verifyToken, (req, res) => {
+//   const userId = req.user.id; // Extract the user ID from the authenticated user's request
+
+//   // Create a new post and associate it with the user ID
+//   const newPost = new Postdelivery({
+//     ...req.body,
+//     user: userId
+//   });
+
+//   newPost.save((err) => {
+//     if (err) {
+//       return res.status(400).json({
+//         error: "Failed to save post"
+//       });
+//     }
+
+//     return res.status(200).json({
+//       success: "Post saved successfully"
+//     });
+//   });
+// });
+
+// // Token verification middleware
+// function verifyToken(req, res, next) {
+//   const token = req.headers.authorization;
+
+//   if (!token) {
+//     return res.status(401).json({
+//       error: 'Unauthorized'
+//     });
+//   }
+
+//   jwt.verify(token, process.env.SECRET_KEY, (err, decoded) => {
+//     if (err) {
+//       return res.status(401).json({
+//         error: 'Unauthorized'
+//       });
+//     }
+
+//     req.user = decoded; // Set the user object in the request for further use
+//     next();
+//   });
+// }
+
+ 
+  
+//   router.get('/posts', verifyToken, (req, res) => {
+//     Postdelivery.find({ user: req.user.id }).exec((err, postsDelivery) => {
+//       if (err) {
+//         return res.status(400).json({
+//           error: err,
+//         });
+//       }
+//       return res.status(200).json({
+//         success: true,
+//         existingPosts: postsDelivery,
+//       });
+//     });
+//   });
+  
+ 
 
 
 module.exports = router;

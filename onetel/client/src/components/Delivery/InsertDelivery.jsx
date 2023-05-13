@@ -84,12 +84,12 @@ const InsertDelivery = () => {
         setLoading(false);
         notification.info({
           message: `Notification`,
-          description: "Successfully",
+          description: "Successfully Your Order",
           placement:"topRight",
           
           
         });
-        window.location="/"
+        
          
       }, 3000); //5seconds timeout
     } catch (error) {
@@ -276,3 +276,8 @@ const InsertDelivery = () => {
 }
 
 export default InsertDelivery
+
+
+
+ 
+    

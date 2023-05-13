@@ -89,7 +89,7 @@ const Home = () => {
       // Add the selected item to the cart
       setCartItems([...cartItems, selectedItem]);
       toast.success('Item added to cart', {
-        position: toast.POSITION.TOP_CENTER
+        position: toast.POSITION.TOP_LEFT
       });
     }
   };
