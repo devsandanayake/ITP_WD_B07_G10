@@ -122,13 +122,13 @@ const Home = () => {
           <Form.Control
             type="search"
             placeholder="Search"
-            className="me-3"
+            className="me-3 Searchbar"
             aria-label="Search"
             name="searchQuery"
             onChange={handleSearchArea}
             style={{ width: "40%", marginRight: "auto" }}
           />
-          <Button variant="success">Search</Button>
+          <Button variant="success"  className='search-button'>Search</Button>
         </Form>
         <br/><br/>
       </div>
