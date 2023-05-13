@@ -5,7 +5,9 @@ import Button from 'react-bootstrap/Button';
 import { BsCart4 } from "react-icons/bs";
 import Form from 'react-bootstrap/Form';
 import { ToastContainer, toast } from 'react-toastify';
-
+import ran1 from '../images/ran1.png'
+import ran2 from '../images/ran2.png'
+import ran3 from '../images/ran3.png'
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [headerImageUrl, setHeaderImageUrl] = useState('');
@@ -36,9 +38,11 @@ const Home = () => {
 
   const setRandomHeaderImage = () => {
     const headerImages = [
-      'https://www.premierprint.co.uk/wp-content/uploads/2020/05/Banner-1920x500-1.png',
-      'https://menu.1percent.nl/wp-content/uploads/2015/05/Banner-1920-500.jpg',
-      'https://th.bing.com/th/id/OIP.35ESXoCA_AiTvsf4TGGhhQHaB7?pid=ImgDet&rs=1'   
+      // 'https://www.premierprint.co.uk/wp-content/uploads/2020/05/Banner-1920x500-1.png',
+      // 'https://menu.1percent.nl/wp-content/uploads/2015/05/Banner-1920-500.jpg',
+      // 'https://th.bing.com/th/id/OIP.35ESXoCA_AiTvsf4TGGhhQHaB7?pid=ImgDet&rs=1' 
+      ran1,ran2,ran3
+        
       // Add more image URLs for the header
     ];
     const randomIndex = Math.floor(Math.random() * headerImages.length);

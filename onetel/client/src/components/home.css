@@ -14,12 +14,12 @@
  border: 2px solid rgba(74, 113, 236, 0.41);
 }
 .header-image{
-  background: rgba(238, 142, 98, 0.945);
+    
  border-radius: 16px;
  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
  backdrop-filter: blur(6.7px);
  -webkit-backdrop-filter: blur(6.7px);
- border: 6px solid rgba(78, 113, 226, 0.596);
+  
 }
 .Searchbar{
   border-radius: 50px;
