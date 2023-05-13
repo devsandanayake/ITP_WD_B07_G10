@@ -15,8 +15,7 @@ const Home = () => {
   useEffect(() => {
     viewPosts();
     setRandomHeaderImage();
-
-     // Change header image randomly every 5 seconds
+    // Change header image randomly every 5 seconds
      const interval = setInterval(() => {
       setRandomHeaderImage();
     }, 5000);
@@ -38,10 +37,7 @@ const Home = () => {
 
   const setRandomHeaderImage = () => {
     const headerImages = [
-      // 'https://www.premierprint.co.uk/wp-content/uploads/2020/05/Banner-1920x500-1.png',
-      // 'https://menu.1percent.nl/wp-content/uploads/2015/05/Banner-1920-500.jpg',
-      // 'https://th.bing.com/th/id/OIP.35ESXoCA_AiTvsf4TGGhhQHaB7?pid=ImgDet&rs=1' 
-      ran1,ran2,ran3
+        ran1,ran2,ran3
         
       // Add more image URLs for the header
     ];
