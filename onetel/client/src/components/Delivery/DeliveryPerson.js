@@ -106,6 +106,7 @@ axios.get("http://localhost:8070/posts").then(res =>{
                     <li className='card-text'>Phone:-{posts.phone}</li>
                     <li className='card-text'>NIC:-{posts.NIC}</li>
                     <li className='card-text'>Email:-{posts.email}</li>
+                    <b><li className='card-text'>Order ID:-{posts.id}</li></b>
                     </ol>
                     <center><a className="btn btn-outline-primary"href={`/editc/${posts._id}`}>
                        < BsFillSendCheckFill/> &nbsp; Status

@@ -86,11 +86,11 @@ axios.get("http://localhost:8070/orders").then(res =>{
            <thead>
              <tr>
              <th scope="col">Index</th>
+             <th scope="col">Order ID</th>
              <th scope="col">Categories</th>
              <th scope="col">Brand</th>
              <th scope="col">Price</th>
              <th scope="col">Model</th>
-             <th scope="col">Email</th>
              <th scope="col">Quntity</th>
              
              </tr>
@@ -100,11 +100,11 @@ axios.get("http://localhost:8070/orders").then(res =>{
             {this.state.posts.map((posts,index)=>(
                  <tr key={index}>
                     <th scope="row">{index+1}</th>
+                    <th>{posts.OrderId}</th>
                     <td>{posts.Categories}</td>
                     <td>{posts.Brand}</td>
                     <td>{posts.Price}</td>
                     <td>{posts.Model}</td>
-                    <td>{posts.Email}</td>
                     <td>{posts.Quantity}</td>
                     <td>
                        <a className="btn btn-warning" href={`/editOrder/${posts._id}`}>

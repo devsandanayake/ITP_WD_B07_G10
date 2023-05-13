@@ -10,6 +10,7 @@ import {
  
 import { InfoCircleOutlined, LoadingOutlined } from "@ant-design/icons";
 import "./form.css"
+import { useParams } from 'react-router-dom';
 
 import axios from "axios";
 
@@ -31,12 +32,14 @@ const tailLayout = {
  
 
 const InsertDelivery = () => {
+  const { id } = useParams();
   const [loader, setLoader] = useState(false);
   const [Name, setName] = useState("");
   const [Address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [NIC, setNIC] = useState("");
   const [email, setEmail] = useState("");
+
    
 
   const [loading, setLoading] = useState(false); //additional
@@ -69,6 +72,7 @@ const InsertDelivery = () => {
            phone,
            NIC,
            email,
+           id
         },
         config
         );
@@ -85,7 +89,7 @@ const InsertDelivery = () => {
           
           
         });
-        window.location="/payment"
+        window.location="/"
          
       }, 3000); //5seconds timeout
     } catch (error) {
@@ -124,7 +128,7 @@ const InsertDelivery = () => {
             form={form}
             name="control-hooks"
             onFinish={() => Handler("top")}
-          >  <h2> Add Your Details </h2>
+          ><h2> Add Your Details</h2> <p>Your Order ID :{id}</p>
             <center>
               {error && <span style={{ color: "red" }}>{error}</span>}
             </center>
@@ -264,6 +268,7 @@ const InsertDelivery = () => {
               </Button>
             </Form.Item>
           </Form>
+        
         </div>
       )}
     </>

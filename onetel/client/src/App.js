@@ -49,11 +49,10 @@ import PostOrder from './components/Order/PostOrder'
 import Adminorder from './components/Order/Adminorder'
 import Editorder from './components/Order/Editorder';
 import OrderR from './components/Report/OrderR'
-import Payment from './components/payment';
 import RequestControl from './components/Rent/RequestControl';
 import RentedItems from './components/Rent/RentedItems';
 import RentC from './components/Rent/RentC';
-
+ 
 import Chat from './components/Chatbot/chat';
 import AdminDashboard from "./components/Admin/dashboard";
 
@@ -74,7 +73,7 @@ import AdminDashboard from "./components/Admin/dashboard";
         <Routes>
         <Route exact path="/"  element={<Home/>}></Route> 
       
-        <Route exact path="/payment"  element={<Payment/>}></Route> 
+     
        
         <Route exact path="/admin"  element={<Dashboard/>}></Route> 
         <Route exact path="/account"  element={<Adminacc/>}></Route> 
@@ -85,7 +84,7 @@ import AdminDashboard from "./components/Admin/dashboard";
        <Route exact path="/register"  element={<Register/>}></Route>
 
        {/* delivery Management part */}
-        <Route exact path="/insertDelivery"  element={<InsertDelivery/>}></Route> 
+        <Route exact path="/insertDelivery/:id"  element={<InsertDelivery/>}></Route> 
         <Route exact path="/delivery/ad"  element={<DeliveryAdmin/>}></Route> 
         <Route exact  path="/edit/:id"  element={<EditDelivery/>}/>
         <Route exact path = "/delivery/person" element={<DeliveryPerson/> } />

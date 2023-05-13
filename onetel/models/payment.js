@@ -1,22 +1,24 @@
 const mongoose = require('mongoose');
 
 const paymentSchema = new mongoose.Schema({
-    Name:{
-        type:String,
-        required:true
-    },
-    Address:{
-        type:String,
-        required:true
-    },
-    phone:{
-        type:String,
-        required:true
-    },
-    NIC:{
-        type:String,
-        required:true
-    }
+  CardNumber: {
+    type: String,
+    required: true
+  },
+  CardHolderName: {
+    type: String,
+    required: true
+  },
+  ExpiryDate: {
+    type: String,
+    required: true
+  },
+  CVV: {
+    type: String,
+    required: true
+  }
 });
 
-module.exports = mongoose.model('payment',paymentSchema);
+module.exports  = mongoose.model('Payment', paymentSchema);
+
+ 

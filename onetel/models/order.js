@@ -21,6 +21,9 @@ const postorderSchema = new mongoose.Schema({
     Quantity:{
         type:String,
          
+    },
+    OrderId:{
+        type:String
     }
     
     

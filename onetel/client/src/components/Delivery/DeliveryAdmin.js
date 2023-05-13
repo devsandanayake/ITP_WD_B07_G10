@@ -86,6 +86,7 @@ axios.get("http://localhost:8070/posts").then(res =>{
            <thead>
              <tr className='table-dark'>
              <th scope="col">Index</th>
+             <th scope="col">Order ID</th>
              <th scope="col">Name</th>
              <th scope="col">Address</th>
              <th scope="col">Phone</th>
@@ -101,6 +102,7 @@ axios.get("http://localhost:8070/posts").then(res =>{
                  <tr key={index}>
                 
                     <th scope="row">{index+1}</th>
+                    <td>{posts.id}</td>
                     <td>{posts.Name}</td>
                     <td>{posts.Address}</td>
                     <td>{posts.phone}</td>
@@ -153,6 +155,7 @@ axios.get("http://localhost:8070/posts").then(res =>{
            <thead>
              <tr className='table-dark'>
              <th scope="col">Index</th>
+             <th scope="col">Order ID</th>
              <th scope="col">Name</th>
              <th scope="col">Address</th>
              <th scope="col">Phone</th>
@@ -167,6 +170,7 @@ axios.get("http://localhost:8070/posts").then(res =>{
             {this.state.posts.map((posts,index)=>(
                  <tr key={index}>
                     <th scope="row">{index+1}</th>
+                    <td>{posts.id}</td>
                     <td>{posts.Name}</td>
                     <td>{posts.Address}</td>
                     <td>{posts.phone}</td>

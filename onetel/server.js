@@ -19,6 +19,7 @@ const postRent = require('./routes/postRent');
 const postRebtReq = require('./routes/postRentReq');
 const postReturn = require('./routes/postReturn');
 const postStock = require('./routes/stock')
+const pay = require('./routes/payment')
 
 
 
@@ -45,6 +46,7 @@ app.use(postRent);
 app.use(postRebtReq);
 app.use(postReturn);
 app.use(postStock)
+app.use(pay)
 
 
 app.get("/", (req, res) => {

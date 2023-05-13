@@ -39,6 +39,10 @@ const postdeliverySchema = new mongoose.Schema({
         default:"Pending"
                         
     },
+    id:{
+      type:String,
+      required:true
+    },
     date: {
         type: Date,
         default: Date.now

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+// import Ds from "./HomeDesign/Design"
 import "./home.css" 
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
@@ -132,6 +132,7 @@ onSubmit=()=>{
 
     return (
        <div  className='container'>
+        {/* <Ds/> */}
            <div className='banner'>
               
                <br/>
@@ -146,7 +147,7 @@ onSubmit=()=>{
                     style={{width:"40%" , marginRight:"auto"} }
                   />
                   <Button variant="success">Search</Button>
-               </Form><br/>
+               </Form><br/><br/>
                       
             
           </div>
