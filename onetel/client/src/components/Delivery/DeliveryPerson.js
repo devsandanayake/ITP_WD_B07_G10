@@ -301,6 +301,6 @@ export default class DeliveryPerson extends Component {
       </DialogActions>
     </Dialog>
   </div>
-);
-        }
-      }
+  );
+ }
+}
