@@ -86,11 +86,11 @@ export default function AddOrder() {
   return (
     <div className='container'>
       <div className='orders'></div>
-      <div className='details'>
+      <div className='details'><h4 className='text-center'>{order.Categories}</h4>
         <center>
           <img src={order.image} className='imgOd' alt='brand' />
         </center>
-        <h4 className='text-center'>{order.Categories}</h4>
+        
         <p className='text-center'>{order.Brand}</p>
         <p className='text-center'>{order.Model}</p>
         <p className='text-center'>Price - {order.Price}</p>

@@ -95,7 +95,7 @@ const Home = () => {
     }
   }; 
 
-  
+
   // Pagination logic
   const totalPages = Math.ceil(posts.length / cardsPerPage);
 
@@ -110,7 +110,7 @@ const Home = () => {
           className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}
           key={index + 1}
         >
-          <button
+          <button 
             className="page-link"
             onClick={() => handlePageChange(index + 1)}
           >
