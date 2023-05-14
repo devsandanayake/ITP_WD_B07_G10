@@ -103,9 +103,14 @@ const Home = () => {
           <div className='card p-0 overflow-hidden h-100 shadow custome-card' alt='im'>
             <img src={post.image} className='card-img-top img-fluid' alt='brand'/>   
             <div className='card-body text-center'>  
-              <h5 className='card-title'>{post.Brand}</h5>
-              <h5 className='card-title'>{post.Price}</h5>
-              <p className='card-text'>{post.Status}</p>
+            <h5 className='card-title'>{post.Brand}</h5>
+              <h5 className='card-title'>{post.Model}</h5>
+              <p className='card-title'>{post.Price}</p>
+              {post.Status === 'In Stock' ? (
+              <p className='card-text' style={{ color: 'green' }}>{post.Status}</p>
+            ) : (
+              <p className='card-text' style={{ color: 'red' }}>{post.Status}</p>
+            )}
               <Button type="submit" className='btn btn-buy' onClick={onSubmit}>Buy</Button>
             </div>
           </div>
@@ -123,10 +128,14 @@ const Home = () => {
           <div className='card p-0 overflow-hidden h-100 shadow custome-card' alt='im'>
             <img src={post.image} className='card-img-top img-fluid' alt='brand'/>   
             <div className='card-body text-center'>  
-              <h5 className='card-title'>{post.Brand}</h5>
-             
-              <h5 className='card-title'>{post.Price}</h5>
-              <p className='card-text'>{post.Status}</p>
+            <h5 className='card-title'>{post.Brand}</h5>
+              <h5 className='card-title'>{post.Model}</h5>
+              <p className='card-title'>{post.Price}</p>
+              {post.Status === 'In Stock' ? (
+              <p className='card-text' style={{ color: 'green' }}>{post.Status}</p>
+            ) : (
+              <p className='card-text' style={{ color: 'red' }}>{post.Status}</p>
+            )}
               <Button className="btn btn-primary" onClick={() => addToCart(post._id)}><BsCart4/></Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <a className="btn btn-success" href={`/${post._id}`}>Buy</a>
             

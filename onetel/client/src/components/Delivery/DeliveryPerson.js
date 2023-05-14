@@ -245,7 +245,11 @@ export default class DeliveryPerson extends Component {
           <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4" style={{ width: '23rem' }} key={post._id}>
             <div className="card p-0 overflow-hidden h-100 shadow" alt="im">
               <h5 className="text-center" style={{ background: '#709bcc' }}>
-                {post.Status}
+              {post.Status === 'Successful' ? (
+              <h5 className='text-center' style={{ color: 'green' }}>{post.Status}</h5>
+            ) : (
+              <h5 className='text-center' style={{ color: 'red' }}>{post.Status}</h5>
+            )}
         </h5><img src={R} className="card-img-top img-fluid" alt="icon" />
           <div className="card-body text-left">
             <ol>
@@ -283,7 +287,7 @@ export default class DeliveryPerson extends Component {
           >
             <option value="">--Select Task--</option>
             <option value="Successful">Successful</option>
-            <option value="❗️❗️Unsuccessful❗️❗️">Unsuccessful</option>
+            <option value="Unsuccessful">Unsuccessful</option>
           </select>
         </Form>
       </DialogContent>
