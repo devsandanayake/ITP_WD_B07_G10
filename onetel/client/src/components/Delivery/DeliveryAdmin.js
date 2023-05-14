@@ -178,10 +178,11 @@ axios.get("http://localhost:8070/posts").then(res =>{
                     <td>{posts.email}</td>
                     {posts.Status === 'Successful' ? (
               <td className='card-text' style={{ color: 'green' }}>{posts.Status}</td>
+            ) : posts.Status === 'Pending' ? (
+              <td className='card-text' style={{ color: 'blue' }}>{posts.Status}</td>
             ) : (
               <td className='card-text' style={{ color: 'red' }}>{posts.Status}</td>
-            )}
-                    
+            )}                   
                     <td>
                        <a className="btn btn-warning" href={`/edit/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit

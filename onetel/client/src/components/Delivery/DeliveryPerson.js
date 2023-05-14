@@ -247,8 +247,10 @@ export default class DeliveryPerson extends Component {
               <h5 className="text-center" style={{ background: '#709bcc' }}>
               {post.Status === 'Successful' ? (
               <h5 className='text-center' style={{ color: 'green' }}>{post.Status}</h5>
+            ) : post.Status === 'Pending' ? (
+              <h5 className='card-text' style={{ color: 'blue' }}>{post.Status}</h5>
             ) : (
-              <h5 className='text-center' style={{ color: 'red' }}>{post.Status}</h5>
+              <h5 className='card-text' style={{ color: 'red' }}>{post.Status}</h5>
             )}
         </h5><img src={R} className="card-img-top img-fluid" alt="icon" />
           <div className="card-body text-left">
