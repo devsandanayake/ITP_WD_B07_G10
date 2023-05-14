@@ -193,13 +193,13 @@ const InsertDelivery = () => {
                <Input
                 style={{ width: "50%" }}
                 placeholder="enter your Number"
-                
+                type="number"
                 suffix={
                   <Tooltip title="Enter Your Phone number: +941238989">
                     <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
                   </Tooltip>
                 }
-                showCount
+                
                 maxLength={10}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
