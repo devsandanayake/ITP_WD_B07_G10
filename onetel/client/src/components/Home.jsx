@@ -132,7 +132,7 @@ const Home = () => {
               <h5 className='card-title'>{post.Model}</h5>
               <p className='card-title'>{post.Price}</p>
               {post.Status === 'In Stock' ? (
-              <p className='card-text' style={{ color: 'green' }}>{post.Status}</p>
+              <p className='card-text' style={{ color: 'blue' }}>{post.Status}</p>
             ) : (
               <p className='card-text' style={{ color: 'red' }}>{post.Status}</p>
             )}
