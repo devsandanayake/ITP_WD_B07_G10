@@ -121,16 +121,18 @@ export default function Editproduct() {
         </div>
 
         <div className='form-group'>
-          <label>Status:</label>
-          <input
-            type='text'
-            className='form-control'
-            name='Status'
-            value={Status}
-            onChange={handleInputChange}
-          />
-        </div>
-          
+              <label htmlFor='Status'>Status</label>
+              <select
+                name='Status'
+                value={Status}
+                onChange={handleInputChange}
+                className='form-control'
+              > 
+               
+                <option value='In Stock'>In Stock</option>
+                <option value='Out of Stock'>Out of Stock</option>
+              </select>
+            </div>
      
 
         <button
