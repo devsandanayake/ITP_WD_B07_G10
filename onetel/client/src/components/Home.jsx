@@ -12,7 +12,8 @@ const Home = () => {
   const [posts, setPosts] = useState([]);
   const [headerImageUrl, setHeaderImageUrl] = useState('');
   const [cartItems, setCartItems] = useState([]);
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [cardsPerPage] = useState(4);
 
   useEffect(() => {
     viewPosts();
@@ -92,7 +93,33 @@ const Home = () => {
         position: toast.POSITION.TOP_LEFT
       });
     }
+  }; 
+
+  
+  // Pagination logic
+  const totalPages = Math.ceil(posts.length / cardsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
+
+  const pagination = (
+    <ul className="pagination justify-content-center">
+      {Array.from({ length: totalPages }, (_, index) => (
+        <li
+          className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}
+          key={index + 1}
+        >
+          <button
+            className="page-link"
+            onClick={() => handlePageChange(index + 1)}
+          >
+            {index + 1}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
   
 
   const loginLink = (
@@ -105,7 +132,7 @@ const Home = () => {
             <div className='card-body text-center'>  
             <h5 className='card-title'>{post.Brand}</h5>
               <h5 className='card-title'>{post.Model}</h5>
-              <p className='card-title'>{post.Price}</p>
+              <p className='card-title'>LKR&nbsp;{post.Price}</p>
               {post.Status === 'In Stock' ? (
               <p className='card-text' style={{ color: 'green' }}>{post.Status}</p>
             ) : (
@@ -130,7 +157,7 @@ const Home = () => {
             <div className='card-body text-center'>  
             <h5 className='card-title'>{post.Brand}</h5>
               <h5 className='card-title'>{post.Model}</h5>
-              <p className='card-title'>{post.Price}</p>
+              <p className='card-title'>LKR&nbsp;{post.Price}</p>
               {post.Status === 'In Stock' ? (
               <p className='card-text' style={{ color: 'blue' }}>{post.Status}</p>
             ) : (
@@ -183,6 +210,8 @@ const Home = () => {
         <br/><br/>
       </div>
       {localStorage.usertoken ? homeLink : loginLink}
+
+      {pagination}
     </div>
   );
 };
