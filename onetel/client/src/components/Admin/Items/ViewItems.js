@@ -30,7 +30,7 @@ const ViewItems = () => {
 
   const deleteHandler = async (id) => {
     try {
-      await axios.delete(`http://localhost:8070/items/delete/${id}`);
+      await axios.delete(`http://localhost:8070/delete/${id}`);
       notification.info({
         title: "Delete Form",
         message: "Successfully Deleted the Item",

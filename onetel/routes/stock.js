@@ -42,7 +42,7 @@ router.route("/items").get(async (req, res) => {
     .catch((error) => res.status(500).json({ success: false, error: error }));
 });
 
-router.route("items/get/:id").get(async (req, res) => {
+router.route("/get/:id").get(async (req, res) => {
   //route for getting a relavant document using id
   const { id } = req.params;
 
@@ -60,7 +60,7 @@ router.route("/delete/:id").delete(async (req, res) => {
     .catch((error) => res.status(500).json({ success: false, error: error }));
 });
 
-router.route("items/update/:id").put(async (req, res) => {
+router.route("/update/:id").put(async (req, res) => {
   //route for updating a relavant document using id
   //backend route for updating relavant data and passing back
   const { id } = req.params;
