@@ -69,7 +69,7 @@ const Dashboard = () => {
   };
 
   const logoutHandler = () => {
-    history("#home");
+    history("/admin");
     //window.location.reload();
   };
 
