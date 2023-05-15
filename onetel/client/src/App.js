@@ -56,7 +56,7 @@ import RentC from './components/Rent/RentC';
 import Chat from './components/Chatbot/chat';
 import AdminDashboard from "./components/Admin/dashboard";
 
- 
+import Payment from './components/payment/payment';
 
 
  export default class App extends Component {
@@ -71,7 +71,9 @@ import AdminDashboard from "./components/Admin/dashboard";
         
         <div className="container">
         <Routes>
-        <Route exact path="/"  element={<Home/>}></Route> 
+        <Route exact path="/"  element={<Home/>}></Route>
+
+         <Route exact path="/pay"  element={<Payment/>}></Route>  
          
       
      

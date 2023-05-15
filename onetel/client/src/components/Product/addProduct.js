@@ -109,7 +109,7 @@ export default function AddProduct() {
             type='text'
             value={Model}
             onChange={(e) => setModel(e.target.value)}
-            className='form-control'
+            className='form-control'   
             
             />
             </div>
