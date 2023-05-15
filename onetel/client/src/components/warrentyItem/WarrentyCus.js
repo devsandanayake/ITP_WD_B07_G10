@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
 import axios from 'axios';
-import { useState } from 'react'
-import "./wform.css"
+import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './wform.css';
+
  
 export default function AddWarranty() {
     
@@ -25,6 +28,18 @@ export default function AddWarranty() {
 
    const changeOnClick = (e) =>{
     e.preventDefault();
+     // Validate fields
+  if (!ItemCode || !ItemName || !customerID || !customerName || !cusEmail || !warrenty || !Reason) {
+    toast.error('Please fill in all fields');
+    return;
+  }
+
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(cusEmail)) {
+    toast.error('Invalid email address');
+    return;
+  }
     
     const formData = new FormData();
 
@@ -45,7 +60,8 @@ export default function AddWarranty() {
     axios.post("http://localhost:8070/add/War",formData)
     .then((res) =>setMessage(res.data))
     .catch((err)=>{
-        console.log(err);
+      console.log(err);
+      toast.error('An error occurred');
     });
         
 
@@ -55,6 +71,7 @@ export default function AddWarranty() {
    return (
      
      <div className='warrantyform'>
+       <ToastContainer /> 
       <h4>Add Warranty Clame</h4>
          <form onSubmit={changeOnClick} encType='multipart/form-data'>
            <div className='warrantyform'>
