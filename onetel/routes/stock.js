@@ -42,7 +42,7 @@ router.route("/items").get(async (req, res) => {
     .catch((error) => res.status(500).json({ success: false, error: error }));
 });
 
-router.route("/get/:id").get(async (req, res) => {
+router.route("items/get/:id").get(async (req, res) => {
   //route for getting a relavant document using id
   const { id } = req.params;
 
