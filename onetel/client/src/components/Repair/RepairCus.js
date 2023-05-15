@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
- 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
  
 export default class RepairCus extends Component {
@@ -35,6 +37,24 @@ export default class RepairCus extends Component {
     e.preventDefault();
 
     const {name,address,contactNumber,email,category,Model,reason} = this.state;
+// Validate fields
+if (!name || !address || !contactNumber || !email || !category || !Model || !reason) {
+  toast.error('Please fill in all fields');
+  return;
+}
+// Validate email format
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailRegex.test(email)) {
+  toast.error('Invalid email address');
+  return;
+}
+
+// Validate contact number
+const contactNumberRegex = /^\d{10}$/;
+if (!contactNumberRegex.test(contactNumber)) {
+  toast.error('Invalid contact number');
+  return;
+}
 
     const data ={
        name:name,
@@ -64,7 +84,10 @@ export default class RepairCus extends Component {
       window.alert("Sussesful");
       window.location = "/"
       }
-    })
+    }).catch((error) => {
+      toast.error('An error occurred');
+      console.error(error);
+    });
 
   }
 
@@ -76,6 +99,7 @@ export default class RepairCus extends Component {
     return (
         <div>
         <h1 className='h3 mb-3 font-weight-normal'>
+        <ToastContainer /> 
                     <p align="center">Repair Item Details</p>
             </h1>   
          
