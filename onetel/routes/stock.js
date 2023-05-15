@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Items = require("../models/stock");
 
-router.route("/create").post(async (req, res) => {
+router.route("/items/create").post(async (req, res) => {
   const { itemName, itemDescrip, itemCategory, status } =
     req.body;
 
@@ -60,7 +60,7 @@ router.route("/delete/:id").delete(async (req, res) => {
     .catch((error) => res.status(500).json({ success: false, error: error }));
 });
 
-router.route("/update/:id").put(async (req, res) => {
+router.route("items/update/:id").put(async (req, res) => {
   //route for updating a relavant document using id
   //backend route for updating relavant data and passing back
   const { id } = req.params;
