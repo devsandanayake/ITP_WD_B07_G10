@@ -62,7 +62,7 @@ export default class RepairCus extends Component {
           
       })
       window.alert("Sussesful");
-      window.location = "/home"
+      window.location = "/"
       }
     })
 
