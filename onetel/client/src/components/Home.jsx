@@ -92,7 +92,7 @@ const Home = () => {
       toast.success('Item added to cart', {
         position: toast.POSITION.TOP_LEFT
       });
-    }
+      }
   }; 
 
 
@@ -176,7 +176,8 @@ const Home = () => {
          <div className="carts">
            <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/cart">
+                <a className="nav-link" href='/#'> 
+    
                   <BsCart4 /> Cart ({cartItems.length})
                 </a>
               </li>

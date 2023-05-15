@@ -55,11 +55,9 @@ import RentC from './components/Rent/RentC';
  
 import Chat from './components/Chatbot/chat';
 import AdminDashboard from "./components/Admin/dashboard";
-
  
 
-
- export default class App extends Component {
+export default class App extends Component {
    render() {
      return (
        <div>
@@ -72,9 +70,7 @@ import AdminDashboard from "./components/Admin/dashboard";
         <div className="container">
         <Routes>
         <Route exact path="/"  element={<Home/>}></Route>
-
        
-         
       
      
        
