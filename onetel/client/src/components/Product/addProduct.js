@@ -50,27 +50,25 @@ export default function AddProduct() {
     setPrice('');
     setModel('');
     setStatus('');
-    try {
-      const res = await axios.post('/add/pro', formData);
+    setImage('');
+    axios
+    .post('http://localhost:8070/add/pro', formData)
+    .then((res) => {
       setMessage(res.data);
-      toast.success('Product added successfully');
-    } catch (err) {
+      toast.success('Data submitted successfully');
+    })
+    .catch((err) => {
       console.log(err);
-      if (err.response && err.response.data) {
-        // Display error message from the server response
-        window.alert(err.response.data.message);
-      } else {
-        // Display a generic error message
-        window.alert('An error occurred. Please try again later.');
-      }
-    }
+    });
+  
   };
 
   return (
     <div className='container'>
+       <ToastContainer />
       <form onSubmit={changeOnClick} encType='multipart/form-data'>
-        <ToastContainer />
-        <div className='form-group'>
+       <div className='row'>
+        <div className='col-md-6'>
           <label htmlFor='Categories'>Categories</label>
           <input
             type='text'
@@ -101,6 +99,8 @@ export default function AddProduct() {
             className='form-control'
           
           />
+        </div>
+
         </div>
 
         <div className='form-group'>

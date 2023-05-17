@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios';
 import { useState } from 'react'
- 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Addemp() {
     
     const [first_name , setfirst_name] = useState("");
@@ -22,6 +23,18 @@ export default function Addemp() {
 
    const changeOnClick = (e) =>{
     e.preventDefault();
+
+     // Validate fields
+  if (!first_name || !last_name || !email || !Address || !NIC || !Phone || !CusImg) {
+    toast.error('Please fill in all fields');
+    return;
+  }
+   // Validate email format
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   if (!emailRegex.test(email)) {
+     toast.error('Invalid email address');
+     return;
+   }
     
     const formData = new FormData();
 
@@ -40,11 +53,16 @@ export default function Addemp() {
      setNIC("");
      setPhone("");
      setCusImg("");
-    axios.post("http://localhost:8070/add/emp",formData)
-    .then((res) =>setMessage(res.data))
-    .catch((err)=>{
-        console.log(err);
-    });
+     axios
+     .post('http://localhost:8070/add/emp', formData)
+     .then((res) => {
+       setMessage(res.data);
+       toast.success('Data submitted successfully');
+     })
+     .catch((err) => {
+       console.log(err);
+     });
+  
         
 
     }
@@ -52,6 +70,7 @@ export default function Addemp() {
    
    return (
      <div className='container'>
+       <ToastContainer /> 
          <form onSubmit={changeOnClick} encType='multipart/form-data'>
            <div className='form-group'>
            <label htmlFor="first_name">First Name</label>

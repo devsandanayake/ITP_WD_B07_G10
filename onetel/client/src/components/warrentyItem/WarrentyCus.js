@@ -58,7 +58,10 @@ export default function AddWarranty() {
     setcusEmail("");
     setReason("");
     axios.post("http://localhost:8070/add/War",formData)
-    .then((res) =>setMessage(res.data))
+    .then((res) => {
+      setMessage(res.data);
+      toast.success('Data submitted successfully');
+    })
     .catch((err)=>{
       console.log(err);
       toast.error('An error occurred');
@@ -69,86 +72,84 @@ export default function AddWarranty() {
     
    
    return (
-     
-     <div className='warrantyform'>
-       <ToastContainer /> 
-      <h4>Add Warranty Clame</h4>
-         <form onSubmit={changeOnClick} encType='multipart/form-data'>
-           <div className='warrantyform'>
-           <label htmlFor="ItemCode">ItemCode</label>
-            <input type={'text'}
-             value={ItemCode}
-             onChange={(e)=>setitemcode(e.target.value)}
-             className='form-control'
-             placeholder='Item Code'
-             />
-             </div>
-
-             <div className='warrantyform'>
-           <label htmlFor="ItemName">ItemName</label>
-            <input type={'text'}
-             value={ItemName}
-             onChange={(e)=> setItemname(e.target.value)}
-             className='form-control'
-             placeholder='Item Name'
-             />
-             </div>
-
-             <div className='warrantyform'>
-           <label htmlFor="customerID">customerID</label>
-            <input type={'customerID'}
-             value={customerID}
-             onChange={(e)=>setCusId(e.target.value)}
-             className='form-control'
-             placeholder='Customer ID'
-             />
-             </div>
-
-
-           <div className='warrantyform'>
-           <label htmlFor="customerName">customerName</label>
-            <input type={'text'}
-             value={customerName}
-             onChange={(e)=>setCusname(e.target.value)}
-             className='form-control'
-             placeholder='Enter Name'
-             />
-             </div>
-
-           <div className='warrantyform'>
-           <label htmlFor="Email">customerEmail</label>
-            <input type={'email'}
-             value={cusEmail}
-             onChange={(e)=>setcusEmail(e.target.value)}
-             className='form-control'
-             placeholder='Enter email'
-             />
-             </div>
-
-             <div className='warrantyform'>
-           <label htmlFor="file">image</label>
-            <input type={'file'}
-             image="warrenty"
-             onChange={onChangeFile}
-             className='form-control'
-             placeholder='Upload Image'
-             />
-             </div>
-
-
-             <div className='warrantyform'>
-           <label htmlFor="Reason">Reason</label>
-            <input type={'text'}
-             value={Reason}
-             onChange={(e)=>setReason(e.target.value)}
-             className='form-control'
-             placeholder='Enter Reason'
-             />
-             </div>
-
-         
-             <button type='submit'>Submit</button>
-         </form>
-     </div>
+    <div className='container'>
+    <ToastContainer />
+    <h4>Add Warranty Claim</h4>
+    <form onSubmit={changeOnClick} encType=''>
+      <div className='row'>
+        <div className='col-md-6'>
+          <label htmlFor='ItemCode'>Item Code</label>
+          <input
+            type={'text'}
+            value={ItemCode}
+            onChange={(e) => setitemcode(e.target.value)}
+            className='form-control mb-3'
+            placeholder='Item Code'
+          />
+          <label htmlFor='ItemName'>Item Name</label>
+          <input
+            type={'text'}
+            value={ItemName}
+            onChange={(e) => setItemname(e.target.value)}
+            className='form-control mb-3'
+            placeholder='Item Name'
+          />
+          <label htmlFor='customerID'>Customer ID</label>
+          <input
+            type={'text'}
+            value={customerID}
+            onChange={(e) => setCusId(e.target.value)}
+            className='form-control mb-3'
+            placeholder='Customer ID'
+          />
+        </div>
+        <div className='col-md-6'>
+          <label htmlFor='customerName'>Customer Name</label>
+          <input
+            type={'text'}
+            value={customerName}
+            onChange={(e) => setCusname(e.target.value)}
+            className='form-control mb-3'
+            placeholder='Enter Name'
+          />
+          <label htmlFor='Email'>Customer Email</label>
+          <input
+            type={'email'}
+            value={cusEmail}
+            onChange={(e) => setcusEmail(e.target.value)}
+            className='form-control mb-3'
+            placeholder='Enter Email'
+          />
+          <label htmlFor='file'>Image</label>
+          <input
+            type={'file'}
+            image='warranty'
+            onChange={onChangeFile}
+            className='form-control mb-3'
+            placeholder='Upload Image'
+          />
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col'>
+          <label htmlFor='Reason'>Reason</label>
+          <input
+            type={'text'}
+            value={Reason}
+            onChange={(e) => setReason(e.target.value)}
+            className='form-control mb-3'
+            placeholder='Enter Reason'
+          />
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col'>
+          <button type='submit' className='btn btn-primary'>
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
    )
  }

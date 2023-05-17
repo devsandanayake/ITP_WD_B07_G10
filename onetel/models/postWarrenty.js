@@ -28,6 +28,11 @@ const postwarrentySchema = new mongoose.Schema({
     Reason: {
         type: String,
         required: true
+    },
+    Status:{
+        type:String,
+        default:"Pending"
+
     }
 
 

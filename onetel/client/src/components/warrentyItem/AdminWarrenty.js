@@ -95,6 +95,7 @@ if(res.data.success){
              <th scope="col">cusEmail</th>
              <th scope="col">cReason</th>
              <th scope="col">Items-Image</th>
+             <th scope="col">Status</th>
              <th scope="col"></th>
              </tr>
            </thead>
@@ -111,6 +112,8 @@ if(res.data.success){
                     <td>{posts.Reason}</td>
 
                     <td><img src={posts.warrenty} width={50}/></td>
+
+                    <td>{posts.Status}</td>
                     <td>
                        <a className="btn btn-warning" href={`/editWarranty/${posts._id}`}>
                          <i className="fas fa-edit"></i>&nbsp;Edit

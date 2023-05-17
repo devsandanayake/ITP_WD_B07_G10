@@ -12,7 +12,8 @@ export default function RepairEdit() {
      customerID:"",
      customerName:"",
      cusEmail:"",
-     Reason:""
+     Reason:"",
+     Status:""
     
   });
 
@@ -26,7 +27,8 @@ export default function RepairEdit() {
           customerID: res.data.post.customerID,
           customerName: res.data.post.customerName,
           cusEmail: res.data.post.cusEmail,
-          Reason: res.data.post.Reason
+          Reason: res.data.post.Reason,
+          Status: res.data.post.Status
           
            
         });
@@ -35,7 +37,7 @@ export default function RepairEdit() {
   }, [id]);
   console.log(post);
 
-  const {ItemCode,ItemName,customerID,customerName,cusEmail,Reason} = updatedPost;
+  const {ItemCode,ItemName,customerID,customerName,cusEmail,Reason,Status} = updatedPost;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -55,7 +57,8 @@ export default function RepairEdit() {
       customerID: updatedPost.customerID,
       customerName: updatedPost.customerName,
       cusEmail: updatedPost.cusEmail,
-      Reason: updatedPost.Reason
+      Reason: updatedPost.Reason,
+      Status: updatedPost.Status
        
     };
 
@@ -68,7 +71,8 @@ export default function RepairEdit() {
         customerID:"",
         customerName:"",
         cusEmail:"",
-        Reason:""
+        Reason:"",
+        Status:""
          
       });
       navigate('/AdminWarrenty');
@@ -147,6 +151,20 @@ export default function RepairEdit() {
             onChange={handleInputChange}
           />
         </div>
+
+        <div className='form-group'>
+              <label htmlFor='Status'>Status</label>
+              <select
+                value={Status}
+                onChange={(e) => handleInputChange(e)} 
+                className='form-control'
+                name='Status' // Add the name attribute
+              > 
+               
+                <option value='Accept'>Accept</option>
+                <option value='Deny'>Deny</option>
+              </select>
+            </div>
 
         <button
           type='submit'

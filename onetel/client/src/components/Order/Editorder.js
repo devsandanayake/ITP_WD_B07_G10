@@ -12,7 +12,7 @@ export default function Editorder() {
     Brand: "",
     Price: "",
     Model:"",
-    Email:"",
+  
     Quntity:""
     
   });
@@ -26,7 +26,7 @@ export default function Editorder() {
           Brand: res.data.post.Brand,
           Price: res.data.post.Price,
           Model: res.data.post.Model,
-          Email: res.data.post.Email,
+        
           Quntity: res.data.post.Quntity
           
            
@@ -36,7 +36,7 @@ export default function Editorder() {
   }, [id]);
   console.log(post);
 
-  const {Categories, Brand, Price,Model , Email,Quntity} = updatedPost;
+  const {Categories, Brand, Price,Model , Quntity} = updatedPost;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -55,7 +55,7 @@ export default function Editorder() {
       Brand: updatedPost.Brand,
       Price: updatedPost.Price,
       Model: updatedPost.Model,
-      Email: updatedPost.Email,
+       
       Quntity: updatedPost.Quntity
        
     };
@@ -125,16 +125,7 @@ export default function Editorder() {
           />
         </div>
 
-        <div className='form-group'>
-          <label>Email:</label>
-          <input
-            type='Email'
-            className='form-control'
-            name='Email'
-            value={Email}
-            onChange={handleInputChange}
-          />
-        </div>
+       
 
         <div className='form-group'>
           <label>Quntity:</label>

@@ -109,15 +109,10 @@ router.post('/add/pro',upload,(req,res)=>{
          Status:req.body.Status,
          image:req.file.filename,
      });
-     product.save((err)=>{
-         if(err){
-             res.json({massage:err.massage,type:'want fill all fill'}); 
-         }else{
-             console.log("success");
-              
-         }
+     product.save().then(() => res.send("successfull uploaded"))
+     .catch((err) => console.log(err));
      })
- })
+ 
   
 
 
