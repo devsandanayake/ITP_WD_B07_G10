@@ -12,8 +12,7 @@ export default function Editorder() {
     Brand: "",
     Price: "",
     Model:"",
-  
-    Quntity:""
+    Quantity:""
     
   });
 
@@ -26,8 +25,7 @@ export default function Editorder() {
           Brand: res.data.post.Brand,
           Price: res.data.post.Price,
           Model: res.data.post.Model,
-        
-          Quntity: res.data.post.Quntity
+          Quantity: res.data.post.Quantity
           
            
         });
@@ -36,7 +34,7 @@ export default function Editorder() {
   }, [id]);
   console.log(post);
 
-  const {Categories, Brand, Price,Model , Quntity} = updatedPost;
+  const {Categories, Brand, Price,Model , Quantity} = updatedPost;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -56,7 +54,7 @@ export default function Editorder() {
       Price: updatedPost.Price,
       Model: updatedPost.Model,
        
-      Quntity: updatedPost.Quntity
+      Quantity: updatedPost.Quantity
        
     };
 
@@ -69,7 +67,7 @@ export default function Editorder() {
         Price: "",
         Model:"",
         Email:"",
-        Quntity:""
+        Quantity:""
       });
       navigate('/adminorder');
     });
@@ -132,8 +130,8 @@ export default function Editorder() {
           <input
             type='number'
             className='form-control'
-            name='Quntity'
-            value={Quntity}
+            name='Quantity'
+            value={Quantity}
             onChange={handleInputChange}
           />
         </div>
