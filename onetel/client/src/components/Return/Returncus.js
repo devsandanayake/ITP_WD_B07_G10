@@ -1,144 +1,115 @@
-import React from 'react'
+import React from 'react';
 import axios from 'axios';
-import { useState } from 'react'
-import "./rform.css"
- 
+import { useState } from 'react';
+import { Form, Input, Button, message } from 'antd';
+import { ToastContainer, toast } from 'react-toastify';
 export default function AddReturn() {
-    
-    const [ItemCode , setitemcode] = useState("");
-    const [ItemName, setItemname] = useState("");
-    const [customerID,setCusId] = useState("");
-    const [ customerName,setCusname] = useState("");
-    const [cusEmail,setcusEmail] = useState("");
-    const[Address,setAddress] = useState("");
-    const[message,setMessage] = useState("");
-    
-    const[Reason,setReason] = useState("")
-   
-   
-   
-   
-   
-    
-  
+  const [message, setMessage] = useState('');
 
-   const changeOnClick = (e) =>{
-    e.preventDefault();
-    
+  const onFinish = (values) => {
+     
     const formData = new FormData();
 
-    formData.append("ItemCode",ItemCode)
-    formData.append("ItemName",ItemName)
-    formData.append("customerID",customerID)
-    formData.append("customerName",customerName)
-    formData.append("cusEmail",cusEmail)
-    formData.append("Address",Address)
-    formData.append("Reason",Reason)
+    formData.append('ItemCode', values.ItemCode);
+    formData.append('ItemName', values.ItemName);
+    formData.append('customerID', values.customerID);
+    formData.append('customerName', values.customerName);
+    formData.append('cusEmail', values.cusEmail);
+    formData.append('Address', values.Address);
+    formData.append('Reason', values.Reason);
 
-    setitemcode("");
-    setItemname("");
-    setCusId("");
-    setCusname("");
-    setcusEmail("");
-    setAddress("");
-    setReason("");
-   
-    axios.post("http://localhost:8070/add/Ret",formData)
-    .then((res) =>setMessage(res.data))
-    .catch((err)=>{
+    axios
+      .post('http://localhost:8070/add/Ret', formData)
+      .then((res) => {
+        setMessage(res.data);
+        toast.success('Form submitted successfully');
+      })
+      .catch((err) => {
         console.log(err);
-    });
-        
+      });
+  };
 
-    }
-    
-   
-   return (
-   
-     <div className='returnform'>
-      <h4>Add Return</h4>
-         <form onSubmit={changeOnClick} encType='multipart/form-data'>
-           <div className='returnform'>
-           <label htmlFor="ItemCode">ItemCode</label>
-            <input type={'text'}
-             value={ItemCode}
-             onChange={(e)=>setitemcode(e.target.value)}
-             className='form-control'
-             placeholder='Enter Item Code'
-             />
-             </div>
+  return (
+    <div className='card-container'>
+      <ToastContainer/>
+      <div
+        className='card'
+        style={{
+          backgroundImage: 'linear-gradient(to bottom right, #ffffff,   #34b7a8)',
+          width: '38rem',
+          padding: '25px',
+          marginLeft: '350px',
+        }}
+      >
+        <h4>Add Return</h4>
+        <Form name='addReturnForm' onFinish={onFinish}>
+          <Form.Item
+            name='ItemCode'
+            label='Item Code'
+            rules={[{ required: true, message: 'Please enter Item Code' }]}
+          >
+            <Input placeholder='Enter Item Code' />
+          </Form.Item>
 
-             <div className='returnform'>
-           <label htmlFor="ItemName">ItemName</label>
-            <input type={'text'}
-             value={ItemName}
-             onChange={(e)=> setItemname(e.target.value)}
-             className='form-control'
-             placeholder='Enter Item Name'
-             />
-             </div>
+          <Form.Item
+            name='ItemName'
+            label='Item Name'
+            rules={[{ required: true, message: 'Please enter Item Name' }]}
+          >
+            <Input placeholder='Enter Item Name' />
+          </Form.Item>
 
-             <div className='returnform'>
-           <label htmlFor="customerID">customerID</label>
-            <input type={'customerID'}
-             value={customerID}
-             onChange={(e)=>setCusId(e.target.value)}
-             className='form-control'
-             placeholder='Enter CID'
-             />
-             </div>
+          <Form.Item
+            name='customerID'
+            label='Customer ID'
+            rules={[{ required: true, message: 'Please enter Customer ID' }]}
+          >
+            <Input placeholder='Enter CID' />
+          </Form.Item>
 
+          <Form.Item
+            name='customerName'
+            label='Customer Name'
+            rules={[{ required: true, message: 'Please enter Customer Name' }]}
+          >
+            <Input placeholder='Enter Name' />
+          </Form.Item>
 
-           <div className='returnform'>
-           <label htmlFor="customerName">customerName</label>
-            <input type={'text'}
-             value={customerName}
-             onChange={(e)=>setCusname(e.target.value)}
-             className='form-control'
-             placeholder='Enter Name'
-             />
-             </div>
+          <Form.Item
+            name='cusEmail'
+            label='Customer Email'
+            rules={[
+              { required: true, message: 'Please enter Customer Email' },
+              { type: 'email', message: 'Invalid email address' },
+            ]}
+          >
+            <Input placeholder='Enter Email' />
+          </Form.Item>
 
-           <div className='returnform'>
-           <label htmlFor="Email">customerEmail</label>
-            <input type={'email'}
-             value={cusEmail}
-             onChange={(e)=>setcusEmail(e.target.value)}
-             className='form-control'
-             placeholder='Enter email'
-             />
-             </div>
+          <Form.Item
+            name='Reason'
+            label='Reason'
+            rules={[{ required: true, message: 'Please enter Reason' }]}
+          >
+            <Input placeholder='Enter Reason' />
+          </Form.Item>
 
-             
-             <div className='returnform'>
-           <label htmlFor="Reason">Reason</label>
-            <input type={'text'}
-             value={Reason}
-             onChange={(e)=>setReason(e.target.value)}
-             className='form-control'
-             placeholder='Enter Reason'
-             />
-             </div>
+          <Form.Item
+            name='Address'
+            label='Address'
+            rules={[{ required: true, message: 'Please enter Address' }]}
+          >
+            <Input placeholder='Enter Address' />
+          </Form.Item>
 
-             <div className='returnform'>
-           <label htmlFor="Address">Address</label>
-            <input type={'text'}
-             value={Address}
-             onChange={(e)=>setAddress(e.target.value)}
-             className='form-control'
-             placeholder='Enter Address'
-             />
-             </div>
-
-        
-
-
-
-         
-             <button type='submit'>Submit</button>
-         </form>
-     </div>
-   )
- }
-
-
+          <Form.Item>
+            <Button type='primary' htmlType='submit'>
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+        {message && <p>{message}</p>}
+      </div>
+    </div>
+  );
+}
