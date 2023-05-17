@@ -77,7 +77,7 @@ export default function RepairEdit() {
 
   return (
     <div style={{ marginTop: '20px' }}>
-      <h4>Edit Repairs</h4>
+      <h4>Edit RentItem</h4>
       <hr />
 
       <form onSubmit={handleFormSubmit}>
