@@ -1,73 +1,36 @@
 import React from 'react';
+import { Form, Input, Button, message } from 'antd';
 import axios from 'axios';
-import { useState } from 'react';
 
-export default function RentReqCus() {
-  const [ItemCode, setItemCode] = useState('');
-  const [ItemName, setItemName] = useState('');
-  const [customerID, setCustomerID] = useState('');
-  const [customerName, setCustomerName] = useState('');
-  const [customerNIC, setCustomerNIC] = useState('');
-  const [cusEmail, setCusEmail] = useState('');
-  const [Phone, setCusPhone] = useState('');
-  const [StartDate, setCusStart] = useState('');
-  const [EndDate, setCusEnd] = useState('');
-  const [NIC, setNIC] = useState('');
-  const [message, setMessage] = useState('');
+const RentReqCus = () => {
+  const [form] = Form.useForm();
 
-  const onChangeFile = (e) => {
-    setNIC(e.target.files[0]);
-  };
-
-  const changeOnClick = (e) => {
-    e.preventDefault();
-
-    // Validate all fields are filled
-    if (
-      ItemCode.trim() === '' ||
-      ItemName.trim() === '' ||
-      customerID.trim() === '' ||
-      customerName.trim() === '' ||
-      customerNIC.trim() === '' ||
-      cusEmail.trim() === '' ||
-      Phone.trim() === '' ||
-      StartDate.trim() === '' ||
-      EndDate.trim() === '' ||
-      NIC === ''
-    ) {
-      setMessage('Please fill in all fields');
-      return;
-    }
-
+  const onFinish = (values) => {
     const formData = new FormData();
-
-    formData.append('ItemCode', ItemCode);
-    formData.append('ItemName', ItemName);
-    formData.append('customerID', customerID);
-    formData.append('customerName', customerName);
-    formData.append('CustomerNIC', customerNIC);
-    formData.append('cusEmail', cusEmail);
-    formData.append('Phone', Phone);
-    formData.append('StartDate', StartDate);
-    formData.append('EndDate', EndDate);
-    formData.append('NIC', NIC);
-
-    setItemCode('');
-    setItemName('');
-    setCustomerID('');
-    setCustomerName('');
-    setCustomerNIC('');
-    setCusEmail('');
-    setCusPhone('');
-    setCusStart('');
-    setCusEnd('');
+    formData.append('ItemCode', values.ItemCode);
+    formData.append('ItemName', values.ItemName);
+    formData.append('customerID', values.customerID);
+    formData.append('customerName', values.customerName);
+    formData.append('CustomerNIC', values.customerNIC);
+    formData.append('cusEmail', values.cusEmail);
+    formData.append('Phone', values.Phone);
+    formData.append('StartDate', values.StartDate);
+    formData.append('EndDate', values.EndDate);
+    formData.append('NIC', values.NIC);
 
     axios
       .post('http://localhost:8070/add/rent', formData)
-      .then((res) => setMessage(res.data))
+      .then((res) => {
+        message.success(res.data);
+        form.resetFields();
+      })
       .catch((err) => {
         console.log(err);
       });
+  };
+
+  const onFinishFailed = () => {
+    message.error('Please fill in all fields');
   };
 
   return (
@@ -78,145 +41,111 @@ export default function RentReqCus() {
           backgroundImage: 'linear-gradient(to bottom right, #ffffff,   #34a9e8)',
           width: '38rem',
           padding: '25px',
-          marginLeft:"300px"
+          marginLeft: '300px'
         }}
         border="primary"
         size="sm"
       >
-        <form onSubmit={changeOnClick} encType="multipart/form-data">
-          <div className="form-group">
-            <label htmlFor="ItemCode">ItemCode</label>
-            <input
-              type="text"
-              value={ItemCode}
-              onChange={(e) => setItemCode(e.target.value)}
-              className="form-control form-control-sm"
-              placeholder="Enter ItemCode"
-              required
-            />
-          </div>
+        <Form
+          form={form}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          encType="multipart/form-data"
+        >
+          <Form.Item
+            name="ItemCode"
+            label="ItemCode"
+            rules={[{ required: true, message: 'Please enter ItemCode' }]}
+          >
+            <Input placeholder="Enter ItemCode" />
+          </Form.Item>
 
-          <div className="form-group">
-            <label htmlFor="ItemName">ItemName</label>
-            <input
-              type="text"
-              value={ItemName}
-              onChange={(e) => setItemName(e.target.value)}
-              className="form-control form-control-sm"
-              placeholder="Enter ItemName"
-              required
-            />
-          </div>
+          <Form.Item
+            name="ItemName"
+            label="ItemName"
+            rules={[{ required: true, message: 'Please enter ItemName' }]}
+          >
+            <Input placeholder="Enter ItemName" />
+          </Form.Item>
 
-          <div className="form-group">
-            <label htmlFor="customerID">customerID</label>
-            <input
-              type="customerID"
-              value={customerID}
-              onChange={(e) => setCustomerID(e.target.value)}
-              className="form-control form-control-sm"
-              placeholder="Enter customer ID"
-              required
-            />
-          </div>
+          <Form.Item
+            name="customerID"
+            label="customerID"
+            rules={[{ required: true, message: 'Please enter customer ID' }]}
+          >
+            <Input placeholder="Enter customer ID" />
+          </Form.Item>
 
-          <div className="form-group">
-            <label htmlFor="customerName">customerName</label>
-            <input
-              type="text"
-              value={customerName}
-              onChange={(e) => setCustomerName(e.target.value)}
-              className="form-control form-control-sm"
-              placeholder="Enter customer name"
-              required
-            />
-          </div>
+          <Form.Item
+            name="customerName"
+            label="customerName"
+            rules={[{ required: true, message: 'Please enter customer name' }]}
+          >
+            <Input placeholder="Enter customer name" />
+          </Form.Item>
 
-          <div className="form-group">
-            <label htmlFor="customerNIC">CustomerNIC</label>
-            <input
-              type="text"
-              value={customerNIC}
-              onChange={(e) => setCustomerNIC(e.target.value)}
-              className="form-control form-control-sm"
-              placeholder="Enter customer NIC"
-              required
-            />
-          </div>
+          <Form.Item
+            name="customerNIC"
+            label="CustomerNIC"
+            rules={[{ required: true, message: 'Please enter customer NIC' }]}
+          >
+            <Input placeholder="Enter customer NIC" />
+          </Form.Item>
 
-          <div className="form-group">
-            <label htmlFor="Email">customerEmail</label>
-            <input
-              type="email"
-              value={cusEmail}
-              onChange={(e) => setCusEmail(e.target.value)}
-              className="form-control form-control-sm"
-              placeholder="Enter email"
-              required
-            />
-          </div>
+          <Form.Item
+            name="cusEmail"
+            label="customerEmail"
+            rules={[
+              { required: true, message: 'Please enter email' },
+              { type: 'email', message: 'Please enter a valid email' }
+            ]}
+          >
+            <Input placeholder="Enter email" />
+          </Form.Item>
 
-          <div className="form-group">
-            <label htmlFor="Phone">Phone</label>
-            <input
-              type="text"
-              value={Phone}
-              onChange={(e) => setCusPhone(e.target.value)}
-              className="form-control form-control-sm"
-              placeholder="Enter Phone number"
-              required
-            />
-          </div>
+          <Form.Item
+            name="Phone"
+            label="Phone"
+            rules={[{ required: true, message: 'Please enter Phone number' }]}
+          >
+            <Input placeholder="Enter Phone number" />
+          </Form.Item>
 
-          <div className="form-group">
-            <label htmlFor="StartDate">StartDate</label>
-            <input
-              type="text"
-              value={StartDate}
-              onChange={(e) => setCusStart(e.target.value)}
-              className="form-control form-control-sm"
-              placeholder="Enter StartDate"
-              required
-            />
-          </div>
+          <Form.Item
+            name="StartDate"
+            label="StartDate"
+            rules={[{ required: true, message: 'Please enter StartDate' }]}
+          >
+            <Input placeholder="Enter StartDate" />
+          </Form.Item>
 
-          <div className="form-group">
-            <label htmlFor="EndDate">EndDate</label>
-            <input
-              type="text"
-              value={EndDate}
-              onChange={(e) => setCusEnd(e.target.value)}
-              className="form-control form-control-sm"
-              placeholder="Enter EndDate"
-              required
-            />
-          </div>
+          <Form.Item
+            name="EndDate"
+            label="EndDate"
+            rules={[{ required: true, message: 'Please enter EndDate' }]}
+          >
+            <Input placeholder="Enter EndDate" />
+          </Form.Item>
 
-          <div className="form-group">
-            <label htmlFor="file">image</label>
-            <input
-              type="file"
-              image="NIC"
-              onChange={onChangeFile}
-              className="form-control form-control-sm"
-              placeholder="NIC Scan Copy"
-              required
-            />
-          </div>
-          <br />
-          <div className="text-center">
-            {/* Added a div with 'text-center' class */}
-            <button type="submit" className="btn btn-primary">
+          <Form.Item
+            name="NIC"
+            label="image"
+            rules={[{ required: true, message: 'Please upload NIC scan copy' }]}
+            valuePropName="file"
+            getValueFromEvent={(e) => e.target.files[0]}
+          >
+            <Input type="file" />
+          </Form.Item>
+
+          <Form.Item>
+            <center><Button type="primary" htmlType="submit">
               Submit
-            </button>
-          </div>
-        </form>
-        {message && (
-          <div className="text-center">
-            <p>{message}</p>
-          </div>
-        )}
+            </Button></center>
+          </Form.Item>
+        </Form>
       </div>
     </div>
   );
-}
+};
+
+export default RentReqCus;
