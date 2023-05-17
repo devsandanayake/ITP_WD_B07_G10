@@ -102,7 +102,7 @@ export default function Editorder() {
         </div>
 
         <div className='form-group'>
-          <label>Phone Number:</label>
+          <label>Price:</label>
           <input
             type='number'
             className='form-control'
