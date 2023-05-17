@@ -20,13 +20,13 @@ export default class RentReqR extends Component {
       var img = new Image();
       const doc = new jsPDF("p", "mm", "a4");
       doc.setTextColor(255, 0, 0);
-      doc.setFontSize(28);
+      doc.setFontSize(20);
       doc.text(85, 10, "OneTel Mobile");
       doc.setTextColor(0, 0, 255);
       doc.setFontSize(16);
-      doc.text(10, 70, "Delivery Management");
+      doc.text(10, 70, "Rent Management");
       doc.setTextColor(0, 255, 0);
-      doc.setFontSize(12);
+      doc.setFontSize(10);
       
       //Date
       var m_names = new Array(
@@ -102,10 +102,10 @@ export default class RentReqR extends Component {
     return (
       <>
       <div className='container' id="pdfdiv">
-         <div className='row my-4'>
-          <div className='col-lg-12'>
+         <div className='row'>
+          <div className='col'>
             <div className='table-responsive'> 
-       <table className="table table-striped text-center" >
+       <table className="table table-striped text-center table-sm" >
            <thead>
            <tr className='table-dark'>
              <th scope="col">Index</th>
@@ -138,8 +138,7 @@ export default class RentReqR extends Component {
                     <td>{posts.StartDate}</td>
                     <td>{posts.EndDate}</td>
                     <td>{posts.ReqStatus}</td>
-                    
-                    
+                                 
                  </tr>
 
             ))}
