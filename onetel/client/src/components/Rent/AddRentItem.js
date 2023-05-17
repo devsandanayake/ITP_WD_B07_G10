@@ -53,7 +53,12 @@ export default function AddRentItem() {
     
    
    return (
-     <div className='container'>
+     <div className='container'  style={{
+          backgroundImage: 'linear-gradient(to bottom right, #ffffff,   #34a9e8)',
+          width: '50rem',
+          padding: '25px',
+          marginLeft: '250px'
+        }}>
          <form onSubmit={changeOnClick} encType='multipart/form-data'>
            <div className='form-group'>
            <label htmlFor="ProductName">ProductName</label>
@@ -61,7 +66,7 @@ export default function AddRentItem() {
              value={ProductName}
              onChange={(e)=>setProductName(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Product Name'
              />
              </div>
 
@@ -71,7 +76,7 @@ export default function AddRentItem() {
              value={SKU}
              onChange={(e)=>setSKU(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='SKU'
              />
              </div>
 
@@ -81,7 +86,7 @@ export default function AddRentItem() {
              value={Model}
              onChange={(e)=>setModel(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Model'
              />
              </div>
 
@@ -92,7 +97,7 @@ export default function AddRentItem() {
              value={UPC}
              onChange={(e)=>setUPC(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='UPC'
              />
              </div>
 
@@ -103,7 +108,7 @@ export default function AddRentItem() {
              value={Price}
              onChange={(e)=>setPrice(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Price'
              />
              </div>
 
@@ -113,7 +118,7 @@ export default function AddRentItem() {
              value={Features}
              onChange={(e)=>setFeatures(e.target.value)}
              className='form-control'
-             placeholder='add c'
+             placeholder='Features'
              />
              </div>
 
@@ -123,10 +128,11 @@ export default function AddRentItem() {
              image="imageRent"
              onChange={onChangeFile}
              className='form-control'
-             placeholder='add c'
+             placeholder='image'
              />
-             </div>
-             <button type='submit'>add</button>
+             </div><br/>
+             <div className="d-flex justify-content-center">
+             <button type='submit' className='btn btn-primary'>Add RentItem</button></div>
          </form>
      </div>
    )

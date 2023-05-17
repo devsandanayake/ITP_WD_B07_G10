@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-
 import  Button  from "react-bootstrap/Button";
 
 
