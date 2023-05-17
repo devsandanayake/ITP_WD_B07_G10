@@ -130,7 +130,6 @@ export default function Editorder() {
           <input
             type='number'
             className='form-control'
-            name='Quantity'
             value={Quantity}
             onChange={handleInputChange}
           />
