@@ -129,7 +129,13 @@ export default class DeliveryR extends Component {
                     <td>{posts.phone}</td>
                     <td>{posts.NIC}</td>
                     <td>{posts.email}</td>
-                    <td style={{background:'#FF6833'}}>{posts.Status}</td>
+                    {posts.Status === 'Successful' ? (
+              <td className='card-text' style={{ color: 'green' }}>{posts.Status}</td>
+            ) : posts.Status === 'Pending' ? (
+              <td className='card-text' style={{ color: 'blue' }}>{posts.Status}</td>
+            ) : (
+              <td className='card-text' style={{ color: 'red' }}>{posts.Status}</td>
+            )}         
                     <td>{posts.date}</td>
                     
                  </tr>
