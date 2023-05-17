@@ -70,7 +70,7 @@ export default class Login extends Component {
                             <div className='form-group'>
                                 <label htmlFor='email'>Email Address</label><br/><br/>
                                 <input type='email' 
-                                       className='form-control'
+                                       className='form-control form-control-sm'
                                        name='email'
                                        placeholder='Enter Email'
                                        value={this.state.email}
@@ -80,7 +80,7 @@ export default class Login extends Component {
                             <div className='form-group'>
                             <label htmlFor='password'>Password</label><br/><br/>
                                 <input type='password' 
-                                       className='form-control'
+                                       className='form-control form-control-sm'
                                        name='password'
                                        placeholder='Enter Password'
                                        value={this.state.password}

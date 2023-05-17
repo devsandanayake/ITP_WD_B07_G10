@@ -73,7 +73,7 @@ class Register extends Component {
                             <div className='form-group'>
                                 <label htmlFor='first_name'>First Name</label><br/><br/>
                                 <input type='text' 
-                                       className='form-control'
+                                       className='form-control form-control-sm'
                                        name='first_name'
                                        placeholder='Enter First Name'
                                        value={this.state.first_name}
@@ -84,7 +84,7 @@ class Register extends Component {
                             <div className='form-group'>
                                 <label htmlFor='last_name'>Last Name</label><br/><br/>
                                 <input type='text' 
-                                       className='form-control'
+                                       className='form-control form-control-sm'
                                        name='last_name'
                                        placeholder='Enter Last Name'
                                        value={this.state.last_name}
@@ -96,7 +96,7 @@ class Register extends Component {
                             <div className='form-group'>
                                 <label htmlFor='email'>Email Address</label><br/><br/>
                                 <input type='email' 
-                                       className='form-control'
+                                       className='form-control form-control-sm'
                                        name='email'
                                        placeholder='Enter Email'
                                        value={this.state.email}
@@ -106,7 +106,7 @@ class Register extends Component {
                             <div className='form-group'>
                             <label htmlFor='password'>Password</label><br/><br/>
                                 <input type='password' 
-                                       className='form-control'
+                                       className='form-control form-control-sm'
                                        name='password'
                                        placeholder='Enter Password'
                                        value={this.state.password}
