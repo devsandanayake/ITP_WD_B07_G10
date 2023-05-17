@@ -7,12 +7,7 @@ export default function Chat() {
   const steps = [
     {
       id: "Greet",
-      message: "Hello, Welcome to our shop",
-      trigger: "Done",
-    },
-    {
-      id: "Done",
-      message: "Please enter your name!",
+      message: "Hello, Welcome to our shop. Please enter your name!",
       trigger: "waiting1",
     },
     {
@@ -45,7 +40,7 @@ export default function Chat() {
   ];
 
   return (
-    <div className='chat'><br/>
+    <div className='chat'>
       <Segment floated="right">
         <ChatBot steps={steps} />
       </Segment>

@@ -45,8 +45,7 @@ export default class ViewEmp extends Component {
   
 
   const result = posts.filter((post)=>
-      post.first_name.toLowerCase().includes(searchKey)||
-      post.last_name.toLowerCase().includes(searchKey)||
+     
       post.email.toLowerCase().includes(searchKey)||
       post.NIC.toLowerCase().includes(searchKey)
        
@@ -86,7 +85,7 @@ if(res.data.success){
           <Form className="d-flex mb-4 mx-0" >
                   <Form.Control
                     type="search"
-                    placeholder="Enter"
+                    placeholder="Enter Email OR NIC"
                     className="me-2"
                     aria-label="Search"
                     name="searchQuary"
