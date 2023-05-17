@@ -9,7 +9,7 @@ export default function AddProduct() {
   const [Brand, setBrand] = useState('');
   const [Price, setPrice] = useState('');
   const [Model, setModel] = useState('');
-  const [Status, setStatus] = useState('In Stock');
+  const [Status, setStatus] = useState('Stock Type');
   const [message, setMessage] = useState('');
   const [image, setImage] = useState('');
 
@@ -52,94 +52,86 @@ export default function AddProduct() {
     setStatus('');
     setImage('');
     axios
-    .post('http://localhost:8070/add/pro', formData)
-    .then((res) => {
-      setMessage(res.data);
-      toast.success('Data submitted successfully');
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  
+      .post('http://localhost:8070/add/pro', formData)
+      .then((res) => {
+        setMessage(res.data);
+        toast.success('Data submitted successfully');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
     <div className='container'>
-       <ToastContainer />
-      <form onSubmit={changeOnClick} encType='multipart/form-data'>
-       <div className='row'>
-        <div className='col-md-6'>
-          <label htmlFor='Categories'>Categories</label>
-          <input
-            type='text'
-            value={Categories}
-            onChange={(e) => setCategories(e.target.value)}
-            className='form-control'
-            
-          />
-        </div>
+      <ToastContainer />
+      <div className='card bg-dark'>
+        <div className='card-body'>
+          <form onSubmit={changeOnClick} encType='multipart/form-data'>
+            <div className='row'>
+              <div className='col-md-6'>
+                <label htmlFor='Categories' className='text-white'>Categories</label>
+                <input
+                  type='text'
+                  value={Categories}
+                  onChange={(e) => setCategories(e.target.value)}
+                  className='form-control mb-3'
+                />
 
-        <div className='form-group'>
-          <label htmlFor='Brand'>Brand</label>
-          <input
-            type='text'
-            value={Brand}
-            onChange={(e) => setBrand(e.target.value)}
-            className='form-control'
-            
-          />
-        </div>
+                <label htmlFor='Brand'className='text-white'>Brand</label>
+                <input
+                  type='text'
+                  value={Brand}
+                  onChange={(e) => setBrand(e.target.value)}
+                  className='form-control mb-3'
+                />
 
-        <div className='form-group'>
-          <label htmlFor='Price'>Price</label>
-          <input
-            type='text'
-            value={Price}
-            onChange={(e) => setPrice(e.target.value)}
-            className='form-control'
-          
-          />
-        </div>
+                <label htmlFor='Price'className='text-white'>Price</label>
+                <input
+                  type='text'
+                  value={Price}
+                  onChange={(e) => setPrice(e.target.value)}
+                  className='form-control mb-3'
+                />
+              </div>
 
-        </div>
+              <div className='col-md-6'>
+                <label htmlFor='Model'className='text-white'>Model</label>
+                <input
+                  type='text'
+                  value={Model}
+                  onChange={(e) => setModel(e.target.value)}
+                  className='form-control mb-3'
+                />
 
-        <div className='form-group'>
-          <label htmlFor='Model'>Model</label>
-          <input
-            type='text'
-            value={Model}
-            onChange={(e) => setModel(e.target.value)}
-            className='form-control'   
-            
-            />
+                <label htmlFor='Status'className='text-white'>Status</label>
+                <select
+                  value={Status}
+                  onChange={(e) => setStatus(e.target.value)}
+                  className='form-control mb-3'
+                >
+                  <option value='In Stock'>In Stock</option>
+                  <option value='Out of Stock'>Out of Stock</option>
+                </select>
+
+                <label htmlFor='file'className='text-white'>image</label>
+                <input
+                  type='file'
+                  image='image'
+                  onChange={onChangeFile}
+                  className='form-control mb-3'
+                />
+              </div>
             </div>
-    
-            <div className='form-group'>
-              <label htmlFor='Status'>Status</label>
-              <select
-                value={Status}
-                onChange={(e) => setStatus(e.target.value)}
-                className='form-control'
-              > 
-               
-                <option value='In Stock'>In Stock</option>
-                <option value='Out of Stock'>Out of Stock</option>
-              </select>
+
+            <div className='d-flex justify-content-center'>
+              <button type='submit' className='btn btn-primary btn-md'>
+                Add Product
+              </button>
             </div>
-    
-            <div className='form-group'>
-              <label htmlFor='file'>image</label>
-              <input
-                type='file'
-                image='image'
-                onChange={onChangeFile}
-                className='form-control'
-                
-              />
-            </div>
-            <button type='submit' className='btn btn-primary'>add</button>
           </form>
         </div>
-      );
-    }
-    
+      </div>
+    </div>
+  );
+}
