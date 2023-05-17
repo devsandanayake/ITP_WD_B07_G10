@@ -43,10 +43,8 @@ export default class RepairAdmin extends Component {
     const result = posts.filter((post)=>
         post.name.toLowerCase().includes(searchKey)||
         post.address.toLowerCase().includes(searchKey)||
-        post.contactNumber.toLowerCase().includes(searchKey)||
-        post.email.toLowerCase().includes(searchKey)||
-        post.Model.toLowerCase().includes(searchKey)||
-        post.category.toLowerCase().includes(searchKey)
+        post.contactNumber.toLowerCase().includes(searchKey)
+            
         
     )
     this.setState({posts:result})
@@ -76,7 +74,7 @@ axios.get("http://localhost:8070/repair").then(res =>{
         <Form className="d-flex mb-4 mx-0" >
                   <Form.Control
                     type="search"
-                    placeholder="Search"
+                    placeholder="Enter Name OR Phone Number"
                     className="me-2"
                     aria-label="Search"
                     name="searchQuary"
