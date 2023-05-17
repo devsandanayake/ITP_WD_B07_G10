@@ -1,137 +1,137 @@
 import React from 'react';
+import { Form, Input, Button, Select,  message } from 'antd';
 import axios from 'axios';
-import { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const { Option } = Select;
 
-export default function AddProduct() {
-  const [Categories, setCategories] = useState('');
-  const [Brand, setBrand] = useState('');
-  const [Price, setPrice] = useState('');
-  const [Model, setModel] = useState('');
-  const [Status, setStatus] = useState('Stock Type');
-  const [message, setMessage] = useState('');
-  const [image, setImage] = useState('');
+const AddProduct = () => {
+  const [form] = Form.useForm();
 
-  const onChangeFile = (e) => {
-    setImage(e.target.files[0]);
-  };
-
-  const changeOnClick = async (e) => {
-    e.preventDefault();
-    // Validate form fields
-    if (!Categories || !Brand || !Price || !Model || !Status || !image) {
-      toast.error('Please fill in all fields', {
-        position: toast.POSITION.TOP_RIGHT,
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-      return;
-    }
-    if (isNaN(Price)) {
-      toast.error('Please enter a valid numeric value for Price');
-      return;
-    }
+  const onFinish = (values) => {
     const formData = new FormData();
+    formData.append('Categories', values.Categories);
+    formData.append('Brand', values.Brand);
+    formData.append('Price', values.Price);
+    formData.append('Model', values.Model);
+    formData.append('Status', values.Status);
+    formData.append('image', values.image);
 
-    formData.append('Categories', Categories);
-    formData.append('Brand', Brand);
-    formData.append('Price', Price);
-    formData.append('Model', Model);
-    formData.append('Status', Status);
-    formData.append('image', image);
-
-    setCategories('');
-    setBrand('');
-    setPrice('');
-    setModel('');
-    setStatus('');
-    setImage('');
     axios
       .post('http://localhost:8070/add/pro', formData)
       .then((res) => {
-        setMessage(res.data);
-        toast.success('Data submitted successfully');
+        form.resetFields();
+        message.success(res.data);
+        // toast.success('Data submitted successfully');
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+  const onFinishFailed = (errorInfo) => {
+    message.error('Please fill in all fields');
+  };
+
   return (
-    <div className='container'>
-      <ToastContainer />
-      <div className='card bg-dark'>
-        <div className='card-body'>
-          <form onSubmit={changeOnClick} encType='multipart/form-data'>
-            <div className='row'>
-              <div className='col-md-6'>
-                <label htmlFor='Categories' className='text-white'>Categories</label>
-                <input
-                  type='text'
-                  value={Categories}
-                  onChange={(e) => setCategories(e.target.value)}
-                  className='form-control mb-3'
-                />
+    <div className="container">
+      {/* <ToastContainer /> */}
+      <br />
+      <br />
+      <div
+        className="card-body"
+        style={{
+          backgroundImage: 'linear-gradient(to bottom right, #ffffff,   #34a9e8)',
+          width: '50rem',
+          padding: '25px',
+          marginLeft: '250px'
+        }}
+      >
+        <Form
+          form={form}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          encType="multipart/form-data"
+        >
+          <div className="row">
+            <div className="col-md-6">
+              <Form.Item
+                name="Categories"
+                label="Categories"
+                rules={[{ required: true, message: 'Please enter Categories' }]}
+              >
+               <Select placeholder="Select Categories">
+                  <Option value="Mobile Phone">Mobile-Phone</Option>
+                  <Option value="Accessories">Accessories</Option>
+                  <Option value="Tablet">Tablet</Option>
+                  <Option value="Laptops">Laptops</Option>
+                </Select>
+              </Form.Item>
 
-                <label htmlFor='Brand'className='text-white'>Brand</label>
-                <input
-                  type='text'
-                  value={Brand}
-                  onChange={(e) => setBrand(e.target.value)}
-                  className='form-control mb-3'
-                />
+              <Form.Item
+                name="Brand"
+                label="Brand"
+                rules={[{ required: true, message: 'Please enter Brand' }]}
+              >
+                <Input placeholder="Enter Brand" />
+              </Form.Item>
 
-                <label htmlFor='Price'className='text-white'>Price</label>
-                <input
-                  type='text'
-                  value={Price}
-                  onChange={(e) => setPrice(e.target.value)}
-                  className='form-control mb-3'
-                />
-              </div>
-
-              <div className='col-md-6'>
-                <label htmlFor='Model'className='text-white'>Model</label>
-                <input
-                  type='text'
-                  value={Model}
-                  onChange={(e) => setModel(e.target.value)}
-                  className='form-control mb-3'
-                />
-
-                <label htmlFor='Status'className='text-white'>Status</label>
-                <select
-                  value={Status}
-                  onChange={(e) => setStatus(e.target.value)}
-                  className='form-control mb-3'
-                >
-                  <option value='In Stock'>In Stock</option>
-                  <option value='Out of Stock'>Out of Stock</option>
-                </select>
-
-                <label htmlFor='file'className='text-white'>image</label>
-                <input
-                  type='file'
-                  image='image'
-                  onChange={onChangeFile}
-                  className='form-control mb-3'
-                />
-              </div>
+              <Form.Item
+                name="Price"
+                label="Price"
+                rules={[
+                  { required: true, message: 'Please enter Price' },
+                
+                ]}
+              >
+                <Input placeholder="Enter Price" type="number" />
+              </Form.Item>
             </div>
 
-            <div className='d-flex justify-content-center'>
-              <button type='submit' className='btn btn-primary btn-md'>
-                Add Product
-              </button>
+            <div className="col-md-6">
+              <Form.Item
+                name="Model"
+                label="Model"
+                rules={[{ required: true, message: 'Please enter Model' }]}
+              >
+                <Input placeholder="Enter Model" />
+              </Form.Item>
+
+              <Form.Item
+                name="Status"
+                label="Status"
+                rules={[{ required: true, message: 'Please select Status' }]}
+              >
+                <Select placeholder="Select Status">
+                  <Option value="In Stock">In Stock</Option>
+                  <Option value="Out of Stock">Out of Stock</Option>
+                </Select>
+              </Form.Item>
+
+              <Form.Item
+                name="image"
+                label="Add Product Image"
+                rules={[{ required: true, message: 'Please upload Product Image' }]}
+                valuePropName="file"
+                getValueFromEvent={(e) => e.target.files[0]}
+              >
+                <Input type="file" />
+              </Form.Item>
             </div>
-          </form>
-        </div>
+          </div>
+
+          <div className="d-flex justify-content-center">
+            <Button type="primary" htmlType="submit">
+              Add Product
+            </Button>
+          </div>
+        </Form>
+        <br />
+        <br />
       </div>
     </div>
   );
-}
+};
+
+export default AddProduct;

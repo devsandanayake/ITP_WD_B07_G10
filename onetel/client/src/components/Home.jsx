@@ -174,7 +174,7 @@ const Home = () => {
         </div>
       ))}
        <div>
-        {/* Display cart and item count in the navbar */}
+        {/* Display cart and item count in the navbar
          <div className="carts">
            <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -184,7 +184,7 @@ const Home = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         
       </div>
         <div>
