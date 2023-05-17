@@ -8,6 +8,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import ran1 from '../images/ran1.png'
 import ran2 from '../images/ran2.png'
 import ran3 from '../images/ran3.png'
+ 
+ 
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [headerImageUrl, setHeaderImageUrl] = useState('');
@@ -213,6 +215,13 @@ const Home = () => {
       {localStorage.usertoken ? homeLink : loginLink}
 
       {pagination}
+      {posts.length === 0 && (
+        <center>
+          <span style={{ color: 'black', fontSize: '1.5vw' }}>
+            No Results Match
+          </span>
+        </center>
+      )}
     </div>
   );
 };
