@@ -24,17 +24,29 @@ export default function Chat() {
       id: "issues",
       options: [
         { value: "Repair", label: "Repair Your Phone", trigger: "Repair" },
-        { value: "Contact", label: "Contact us", trigger: "Contact" }
+        { value: "Contact", label: "Contact us", trigger: "Contact" },
+        { value: "More details", label: "More", trigger: "More" },
+        { value: "Warranty Claim", label: "Claim", trigger: "Claim" }
       ]
     },
     {
       id: "Repair",
-      message: "Thanks for letting us know about your phone repair issue. Our team will resolve it ASAP.",
+      message: "Please login to our wedsite and describe the problem in the repair form",
       end: true,
     },
     {
       id: "Contact",
-      message: "Thanks for contacting us. Our team will get back to you soon.",
+      message: "Please dial our hotline '1446'",
+      end: true,
+    },
+    {
+      id: "More",
+      message: "Please follow our FB page '",
+      end: true,
+    },
+    {
+      id: "Claim",
+      message: "Please login to our website and describe the problem in the warranty claim form '",
       end: true,
     },
   ];
