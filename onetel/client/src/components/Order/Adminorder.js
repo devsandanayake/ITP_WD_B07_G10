@@ -42,7 +42,7 @@ export default class Adminorder extends Component {
 
     const result = posts.filter((post)=>
         post.Categories.toLowerCase().includes(searchKey)||
-        post.Email.toLowerCase().includes(searchKey)||
+        
         post.Model.toLowerCase().includes(searchKey)
         
         
