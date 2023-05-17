@@ -75,7 +75,7 @@ export default class ProductR extends Component {
       const date = Date().split(" ");
       // we use a date string to generate our filename.
       const dateStr =
-        "Order_Management" + date[0] + date[1] + date[2] + date[3] + date[4];
+        "Product_Management" + date[0] + date[1] + date[2] + date[3] + date[4];
       doc.save(`report_${dateStr}.pdf`);
     });
   }

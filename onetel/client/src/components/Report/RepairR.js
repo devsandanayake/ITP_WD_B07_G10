@@ -74,7 +74,7 @@ export default class RepairR extends Component {
       const date = Date().split(" ");
       // we use a date string to generate our filename.
       const dateStr =
-        "Delivery_Management" + date[0] + date[1] + date[2] + date[3] + date[4];
+        "Repair_Management" + date[0] + date[1] + date[2] + date[3] + date[4];
       doc.save(`report_${dateStr}.pdf`);
     });
   }
