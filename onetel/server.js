@@ -54,7 +54,7 @@ app.get("/", (req, res) => {
 })
 
 
-const DB_URL = 'mongodb+srv://SLIIT:sliit123@sliit.9pcigl8.mongodb.net/onetel?retryWrites=true&w=majority'
+const DB_URL = ''
 mongoose.set('strictQuery', false);
 mongoose.set('strictQuery', true);
 
